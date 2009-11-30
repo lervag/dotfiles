@@ -48,7 +48,7 @@ alias vim="gvim"
 #}}}
 #{{{ Load system settings
 
-sysfile=~/system_files/vsl_setup.sh
+sysfile=~/system_files/bashrc.sh
 [ -f $sysfile ] && . $sysfile
 
 #}}}
