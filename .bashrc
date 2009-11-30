@@ -1,6 +1,13 @@
 # Bashrc --- Karl Yngve Lervåg
 # -----------------------------------------------------------------------------
 #
+#{{{ Test if already sourced
+if [ "$already_sourced" ]; then
+  exit
+else
+  already_sourced=1
+fi
+#}}}
 #{{{ Set environmental variables
 
 # Set some environmental variables
