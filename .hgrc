@@ -1,0 +1,31 @@
+[pager]
+pager = more
+ignore = version
+
+[extensions]
+hgext.convert =
+hgext.graphlog =
+hgext.extdiff =
+pager =
+color =
+hgk =
+
+[hgk]
+path=~/scripts/bin/hgk
+
+[ui]
+#style = compact
+username = Karl Yngve Lervåg <karl.lervag@sintef.no>
+
+[color]
+status.modified = magenta
+status.added    = green bold
+status.removed  = red bold
+status.deleted  = red bold black_background
+status.ignored  = black
+status.unknown  = 
+status.clean    = black bold
+
+[extdiff]
+cmd.vimdiff = gvimdiff
+opts.vimdiff = -f
