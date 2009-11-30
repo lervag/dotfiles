@@ -1,13 +1,11 @@
 # Bashrc --- Karl Yngve Lervåg
 # -----------------------------------------------------------------------------
 #
-#{{{ Test if already sourced
-if [ "$already_sourced" ]; then
-  exit
-else
+if [ ! "$already_sourced" ]; then
   already_sourced=1
-fi
-#}}}
+  #
+  # We only do the following part once
+  #
 #{{{ Set environmental variables
 
 # Set some environmental variables
@@ -70,6 +68,7 @@ if [ -t 0 ] && [ -t 1 ]; then
   stty start undef
 fi
 #}}}
+fi
 #
 # -----------------------------------------------------------------------------
 # vim: set foldmethod=marker ff=unix:
