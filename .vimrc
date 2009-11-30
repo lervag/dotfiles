@@ -171,7 +171,7 @@ map! <F1> <ESC>:h<Space>
 " F2 and F3 to source/open vimrc
 if has("unix")
   map <F2> :so ~/.vimrc<cr>
-  map <F3> :e  ~/system_files/vimrc.vim<cr>
+  map <F3> :e  ~/.vimrc<cr>
 endif
 if has("win32")
   map <F2> :so $VIM/_vimrc<cr>
