@@ -331,11 +331,6 @@ function! Set_LaTeX_settings()
   " For all tex files use forward slash in filenames
   setlocal shellslash nocindent
   setlocal iskeyword+=:
-  let g:Tex_Com_sqrt = "\\sqrt[<++>]{<++>}<++>"
-  let g:Tex_BIBINPUTS = $HOME . "/system_files/"
-  let g:Tex_FoldedEnvironments="verbatim,comment,eq,gather,scope,tikzpicture,align,figure,table,thebibliography,keywords,itemize,enumerate,frame,abstract,titlepage"
-  let g:Tex_FoldedSections="part,chapter,section,subsection,subsubsection,paragraph,%%fakesection"
-  let g:Tex_FoldedMisc="preamble,<<<"
 endfunction
 "}}}
 "}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
