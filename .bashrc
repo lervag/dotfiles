@@ -19,7 +19,7 @@ export HGENCODING="latin-1"
 export NTNUSRV="login.stud.ntnu.no"
 export PATH=$PATH:$HOME/scripts/bin
 export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
-export BIBINPUTS="~/.references"
+export BIBINPUTS="~/.references.bib"
 
 # Default file permissions
 umask 022
