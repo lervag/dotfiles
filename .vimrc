@@ -224,6 +224,9 @@ if has("win32")
   set grepprg=c:/Cygwin/bin/grep\ -nH\ $* 
 endif
 
+" Set Enhanced commentify settings
+let g:EnhCommentifyUserBindings='Yes'
+
 "}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{" VCSCommand
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

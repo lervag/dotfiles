@@ -33,7 +33,6 @@ alias du="du -c"
 alias grep="grep -i"
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -oh'
-alias dir='ll'
 alias dato='date +"Uke %V, %A %d. %B, %Y -- %T"'
 alias mplayer='~/.MPlayer/MPlayer-1.0rc1/mplayer'
 alias ..='cd ..'
