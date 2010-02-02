@@ -137,11 +137,6 @@ if !exists("autocommands_loaded")
   au BufReadPost *.txt loadview
   au BufWrite *.txt mkview
   "}}}"
-  "{{{" Python
-  au BufReadPost *.py setlocal sw=4 sts=4
-  au BufReadPost *.py setlocal makeprg=python\ %
-  "au FileType python set complete+=k~/.vim/syntax/python.vim "isk+=.,(
-  "}}}"
   "{{{" MATLAB
   au BufReadPost *.m set foldmethod=manual
   au BufReadPost *.m loadview
