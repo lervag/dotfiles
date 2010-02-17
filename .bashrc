@@ -20,7 +20,6 @@ export NTNUSRV="login.stud.ntnu.no"
 export PATH=$PATH:$HOME/scripts/bin
 export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:
-export WORKDIR=$HOME
 
 # Default file permissions
 umask 022
