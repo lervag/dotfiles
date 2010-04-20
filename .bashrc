@@ -40,7 +40,6 @@ alias ...='cd ../..'
 alias cd..='cd ..'
 alias e2n="ssh $NTNUSRV e2n"
 alias n2e="ssh $NTNUSRV n2e"
-alias vim="gvim"
 [ ! "`which xpdf 2> /dev/null`" ] && [ "`which kpdf 2> /dev/null`" ] \
   && alias xpdf='kpdf'
 
