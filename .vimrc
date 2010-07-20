@@ -166,26 +166,23 @@ map! <F1> <ESC>:h<Space>
 " F2 and F3 to source/open vimrc
 if has("unix")
   map <F2> :so ~/.vimrc<cr>
-  map <F3> :e  ~/.vimrc<cr>
+  map <F3> :tabe  ~/.vimrc<cr>
 endif
 if has("win32")
   map <F2> :so $VIM/_vimrc<cr>
-  map <F3> :e  $VIM/_vimrc<cr>
+  map <F3> :tabe  $VIM/_vimrc<cr>
 endif
 
 " Calls some functions
 map <F4> :call ChooseVCSCommandType()<cr>
 map <S-m> :TlistToggle<cr>
-"map <F9> :make<cr>
+map <F9> :make<cr>
 map <F10> :call ChooseMakePrg()<cr>
 map <F12> ggVGg? " encypt the file (toggle)
 
-" cycle through buffers
-nnoremap <C-P> :bp<CR>
-nnoremap <C-N> :bn<CR>
-" cycle through tabs
-"nnoremap <C-P> :tabp<CR>
-"nnoremap <C-N> :tabn<CR>
+" Tab settings
+nnoremap <silent> <C-p> :tabprev<CR>
+nnoremap <silent> <C-n> :tabnext<CR>
 
 " Close buffer
 nnoremap <C-U> :bd<CR>
