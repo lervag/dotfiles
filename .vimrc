@@ -120,7 +120,6 @@ if !exists("autocommands_loaded")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
-
   "}}}"
   "{{{" Vimrc
   if has("unix")
@@ -148,11 +147,8 @@ if !exists("autocommands_loaded")
   "{{{" LaTeX
   au BufReadPost *.tex call Set_LaTeX_settings()
   "}}}"
-  "{{{" FORTRAN
-  " Manual folding
-  "au BufReadPost *.f90 setlocal foldmethod=manual makeprg=make
-  "au BufReadPost *.f90 loadview
-  "au BufWrite *.f90 mkview
+  "{{{" Python
+  au FileType python syn keyword pythonDecorator True None False self
   "}}}"
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 endif
@@ -163,15 +159,13 @@ endif
 map <F1> <ESC>:h<Space>
 map! <F1> <ESC>:h<Space>
 
-" F2 and F3 to source/open vimrc
+" F3 to open vimrc
 if has("unix")
-  map <F2> :so ~/.vimrc<cr>
-  map <F3> :tabe  ~/.vimrc<cr>
+  map <F3> :e  ~/.vimrc<cr>
+elseif has("win32")
+  map <F3> :e  $VIM/_vimrc<cr>
 endif
-if has("win32")
-  map <F2> :so $VIM/_vimrc<cr>
-  map <F3> :tabe  $VIM/_vimrc<cr>
-endif
+autocmd! bufwritepost vimrc source $VIM/_vimrc
 
 " Calls some functions
 map <F4> :call ChooseVCSCommandType()<cr>
@@ -180,19 +174,25 @@ map <F9> :make<cr>
 map <F10> :call ChooseMakePrg()<cr>
 map <F12> ggVGg? " encypt the file (toggle)
 
-" Tab settings
-nnoremap <silent> <C-p> :tabprev<CR>
-nnoremap <silent> <C-n> :tabnext<CR>
-
-" Close buffer
+" Tabs and buffer settings
+"nnoremap <silent> <C-p> :bp<CR>
+"nnoremap <silent> <C-n> :bn<CR>
 nnoremap <C-U> :bd<CR>
+let g:miniBufExplMapCTabSwitchBufs = 1 
 
-" Turn on spell checking
+" Cope
+map <leader>qc :botright cope<cr>
+map <leader>n  :cn<cr>
+map <leader>p  :cp<cr>
+
+" Spell checking
 let sc_on = 0
-nnoremap <S-S> :let sc_on = SpellCheck(sc_on)<CR>
-
-" Choose language
-nnoremap <expr> <S-Q> ChooseLanguage()
+nnoremap <leader>ss :let sc_on = SpellCheck(sc_on)<CR>
+nnoremap <leader>sq :ChooseLanguage()<CR>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
 
 " Y behave as D and C
 noremap Y y$
@@ -212,6 +212,7 @@ iab tihs this
 "{{{" Other
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " sets grepprogram for windows and makes it always generate file-name
+let Grep_Skip_Dirs = 'CVS .svn .hg'
 if has("win32")
   set grepprg=c:/Cygwin/bin/grep\ -nH\ $* 
 endif
