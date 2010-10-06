@@ -92,7 +92,7 @@ set shiftwidth=2      " width of indent
 set tw=79             " width of text
 set fo=tcrq1          " text format options (:help 'fo')
 set ff=unix           " never use windows file format
-set wrap              " wraps text
+set nowrap            " wraps text
 set smarttab          " tabs at start of line, space elsewhere
 set expandtab         " replace tabs with spaces
 
