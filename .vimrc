@@ -175,8 +175,8 @@ map <F10> :call ChooseMakePrg()<cr>
 map <F12> ggVGg? " encypt the file (toggle)
 
 " Tabs and buffer settings
-"nnoremap <silent> <C-p> :bp<CR>
-"nnoremap <silent> <C-n> :bn<CR>
+nnoremap <silent> <C-p> :bp<CR>
+nnoremap <silent> <C-n> :bn<CR>
 nnoremap <C-U> :bd<CR>
 let g:miniBufExplMapCTabSwitchBufs = 1 
 
