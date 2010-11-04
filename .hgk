@@ -9,10 +9,10 @@ set geometry(width) 935
 set geometry(height) 888
 set geometry(canv1) 450
 set geometry(canv2) 300
-set geometry(canv3) 150
+set geometry(canv3) 156
 set geometry(canvh) 404
-set geometry(ctextw) 77
-set geometry(cflistw) 46
+set geometry(ctextw) 76
+set geometry(cflistw) 43
 #
 # authorcolors format:
 #
