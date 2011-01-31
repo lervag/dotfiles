@@ -68,7 +68,7 @@ endif
 "{{{" Visual cues
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set showmatch         " show matching brackets
-set matchtime=5       " how long to show matching brackets
+set matchtime=2       " how long to show matching brackets
 set matchpairs+=<:>   " also match angled brackets
 set nohlsearch        " no colors for search matches
 set incsearch         " shows matches while writing search
@@ -162,13 +162,18 @@ map! <F1> <ESC>:h<Space>
 " F3 to open vimrc
 if has("unix")
   map <F3> :e  ~/.vimrc<cr>
+  autocmd! bufwritepost vimrc source ~/.vimrc
 elseif has("win32")
   map <F3> :e  $VIM/_vimrc<cr>
+  autocmd! bufwritepost vimrc source $VIM/_vimrc
 endif
-autocmd! bufwritepost vimrc source $VIM/_vimrc
 
 " Calls some functions
 map <F4> :call ChooseVCSCommandType()<cr>
+if has("unix")
+  map <F5> :e  ~/.vim/snippets/<cr>
+endif
+map <F6> :Scratch<cr>
 map <S-m> :TlistToggle<cr>
 map <F9> :make<cr>
 map <F10> :call ChooseMakePrg()<cr>
@@ -184,6 +189,9 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 map <leader>qc :botright cope<cr>
 map <leader>n  :cn<cr>
 map <leader>p  :cp<cr>
+
+" Rainbow parantheses
+map <leader>rr :RainbowParenthesesToggle<CR>
 
 " Spell checking
 let sc_on = 0
