@@ -23,6 +23,10 @@ else
   set backupdir=$VIM/backup/
   set directory=$VIM/backup/
 endif
+if v:version >= 730
+  set undofile
+  set undodir=$HOME/.vim/backup/
+end
 
 "}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{" Theme/Colors
