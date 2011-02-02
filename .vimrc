@@ -90,7 +90,7 @@ endif
 "{{{" Text formatting/layout
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent        " copies indent from previous line
-"set cindent           " C-like indenting
+set nocindent         " C-like indenting
 set softtabstop=2     " read help
 set shiftwidth=2      " width of indent
 set tw=79             " width of text
