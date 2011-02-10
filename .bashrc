@@ -1,4 +1,4 @@
-# Bashrc --- Karl Yngve Lerv�g
+# Bashrc --- Karl Yngve LervÃÂ¥g
 # -----------------------------------------------------------------------------
 #
 if [ ! "$already_sourced" ]; then

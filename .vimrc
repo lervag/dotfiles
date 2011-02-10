@@ -125,13 +125,6 @@ if !exists("autocommands_loaded")
     \   exe "normal! g`\"" |
     \ endif
   "}}}"
-  "{{{" Vimrc
-  if has("unix")
-    au BufReadPost .vimrc setlocal foldmethod=marker
-  else
-    au BufReadPost _vimrc setlocal foldmethod=marker
-  endif
-  "}}}"
   "{{{" Bash scripts
   let g:sh_fold_enabled=1
   "}}}"
@@ -216,14 +209,9 @@ imap <C-j> <ESC>@a
 vmap <z> :'<,'>s/^/%
 vmap <Z> :'<,'>s/^%//
 "}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Abbreviations
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-iab tihs this
-
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{" Other
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" sets grepprogram for windows and makes it always generate file-name
+" Sets grepprogram for windows and makes it always generate file-name
 let Grep_Skip_Dirs = 'CVS .svn .hg'
 if has("win32")
   set grepprg=c:/Cygwin/bin/grep\ -nH\ $* 
@@ -231,6 +219,10 @@ endif
 
 " Set Enhanced commentify settings
 let g:EnhCommentifyUserBindings='Yes'
+
+" Supertab
+let g:SuperTabSetDefaultCompletionType = "context"
+let g:SuperTabRetainCompletionDuration = "session"
 
 "}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{" VCSCommand
