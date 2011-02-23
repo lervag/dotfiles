@@ -48,7 +48,7 @@ alias n2e="ssh $NTNUSRV n2e"
 #{{{ Load system settings
 
 sysfile=~/system_files/bashrc.sh
-bashmarks=~/system_files/bashmarks.sh
+bashmarks=~/.bashmarks.sh
 [ -f $sysfile ]   && . $sysfile
 [ -f $bashmarks ] && . $bashmarks
 
