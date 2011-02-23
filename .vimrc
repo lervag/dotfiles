@@ -124,6 +124,11 @@ if !exists("autocommands_loaded")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+
+  augroup NoSimultaneousEdits
+    autocmd!
+    autocmd SwapExists * :let v:swapchoice = 'q'
+  augroup END
   "}}}"
   "{{{" Bash scripts
   let g:sh_fold_enabled=1

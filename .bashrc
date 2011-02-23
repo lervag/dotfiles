@@ -1,4 +1,4 @@
-# Bashrc --- Karl Yngve LervÃÂ¥g
+# Bashrc --- Karl Yngve Lervåg
 # -----------------------------------------------------------------------------
 #
 if [ ! "$already_sourced" ]; then
@@ -48,7 +48,9 @@ alias n2e="ssh $NTNUSRV n2e"
 #{{{ Load system settings
 
 sysfile=~/system_files/bashrc.sh
-[ -f $sysfile ] && . $sysfile
+bashmarks=~/system_files/bashmarks.sh
+[ -f $sysfile ]   && . $sysfile
+[ -f $bashmarks ] && . $bashmarks
 
 #}}}
 #{{{ Welcome message

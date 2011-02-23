@@ -103,6 +103,18 @@
   volume        = {239},
   pages         = {201-219},
 }
+@Article{Fritsch80,
+  author        = {F. N. Fritsch and R. E. Carlson},
+  title         = {Monotone Piecewise Cubic Interpolation},
+  year          = 1980,
+  journal       = {SIAM Journal of Numerical Analysis},
+  volume        = 17,
+  number        = 2,
+  pages         = 238-246,
+  comment       = {Derives necessary and sufficient conditions for a cubic
+                   interpolant to be monotone on an interval.
+                   Keywords: Cubic splines.}
+}
 @Article{Ghia82,
   author        = {U. Ghia and K. N. Ghia and C. T. Shin},
   title         = {High-Re Solutions for Incompressible Flow Using the
@@ -218,6 +230,20 @@
   stability, interfacial tension gradients, mathematical model, simulations,
   film thickness.},
 }
+@Article{Herrmann08,
+  title         = {A balanced force refined level set grid method for two-phase
+    flows on unstructured flow solver grids},
+  author        = {M. Herrmann},
+  journal       = {Journal of Computational Physics},
+  year          = 2008,
+  volume        = 227,
+  pages         = 2674-2706,
+  comment       = {Presents a second-order converging curvature evaluation
+  technique for level-set methods.
+  Keywords: Level set method, two-phase flow, grid refinement, curvature
+  evaluation, surface tension, spurious currents, Rayleigh-Taylor, surface
+  wave.},
+}
 @Article{Hu10,
   title         = {An adaptive central-upwind weighted essentially
                    non-oscillatory scheme},
@@ -280,8 +306,8 @@
       Fr        = 1.0                     Fr        = 0.6
       mu1       = 0.0190 Pa s             mu1       = 0.0480 Pa s
       mu2       = 0.0063 Pa s             mu2       = 0.0067 Pa s
-      rho1      = 949.000 kg/cm3          rho1      = 960.000 kg/cm3
-      rho2      =   1.128 kg/cm3          rho2      =   1.131 kg/cm3
+      rho1      = 0.949 g/cm3             rho1      = 0.960 g/cm3
+      rho2      = 1.128 g/cm3             rho2      = 1.131 g/cm3
       mu1/mu2   = 0.33                    mu1/mu2   = 0.14
       rho1/rho2 = 1.189                   rho1/rho2 = 1.178
       sigma     = 0.0291 N/m              sigma     = 0.0295 N/m
@@ -336,6 +362,19 @@
   number        = {8},
   issn          = {0309-1708},
   pages         = {1125-1146},
+}
+@Article{Lorensen87,
+  author        = {William E. Lorensen and Harvey E. Cline},
+  title         = {Marching Cubes: A High Resolution 3D Surface Construction
+    Algorithm},
+  year          = 1987,
+  month         = July,
+  journal       = {Computer Graphics},
+  volume        = 21,
+  number        = 4,
+  pages         = 163-169,
+  comment       = {I use the marching-squares algorithm, which is
+  a two-dimensional version of the here presented marching-cubes algorithm.}
 }
 @Article{Leal04,
   author        = {L. G. Leal},
@@ -415,23 +454,35 @@
   volume        = {231},
   pages         = {345-359},
 }
-@Article{Macklin04,
+@Article{Macklin05,
   author        = {Paul Macklin and John Lowengrub},
   title         = {Evolving interfaces via gradients of geometry-dependent
-    interior Poisson problems: application to tumor growth},
-  year          = {2004},
+                   interior Poisson problems: application to tumor growth},
+  year          = {2005},
   journal       = {Journal of Computational Physics},
   volume        = {203},
   pages         = {191-220},
 }
-@Article{Macklin05,
+@Article{Macklin06,
   author        = {Paul Macklin and John Lowengrub},
   title         = {An improved geometry-aware curvature discretziation for
-    level set methods: Application to tumor growth},
-  year          = {2005},
+                   level set methods: Application to tumor growth},
+  year          = 2006,
   journal       = {Journal of Computational Physics},
-  volume        = {215},
-  pages         = {392-401},
+  volume        = 215,
+  pages         = 392-401,
+}
+@Article{Macklin08,
+  author        = {Paul Macklin and John S. Lowengrub},
+  title         = {A New Ghost Cell/Level Set Method for Moving Boundary
+                   Problems: Application to Tumor Growth},
+  year          = 2008,
+  journal       = {Journal of Scientific Computing},
+  volume        = 35,
+  pages         = 266-299,
+  comment       = {Uses the geometry-aware method also for normal vectors.  The
+  strange thing is that he also uses that x_I = x - \phi(x)*n(x), which is
+  strange since he doesn't know n(x).},
 }
 @Article{Marella05,
   author        = {S. Marella and S. Krishnan and H. Liu and H. S. Udaykumar},
@@ -520,6 +571,21 @@
     the problem.  I am not sure if we have this problem, but I should
     investigate.}
 }
+@Article{Salac08,
+  title         = {A Local Semi-Implicit Level-Set Method for Interface
+                   Motion},
+  author        = {David Salac and Wei Lu},
+  journal       = {Journal of Scientific Computing},
+  year          = 2008,
+  volume        = 35,
+  pages         = 330-349,
+  comment       = {Combines a semi-implicit approach with the local level-set
+  approach to get a more computational effective method.  They use a level-set
+  extraction approach to seperate distinct bodies.  This actually seems very
+  smart.
+  Keywords: Interface motion, Surface diffusion, level-set method,
+            semi-implicit scheme, localized treatment, hybrid algorithm.}
+}
 @Article{Sellier04,
   author        = {Anoine Sellier},
   title         = {On the slow motion of a cluster of bubbles under the
@@ -528,6 +594,20 @@
   journal       = {C. R. Mecanique},
   volume        = {333},
   pages         = {111-116},
+}
+@Article{Sethian03,
+  author        = {J. A. Sethian and Peter Smereka},
+  title         = {Level Set Methods for Fluid Interfaces},
+  year          = 2003,
+  journal       = {Annual Review of Fluid Mechanics},
+  volume        = 35,
+  pages         = 341-372,
+  comment       = {An overview of level-set methods for fluid-interface
+  problems.  Does not mention the curvature problem.  Good reference
+  litterature.  Includes description of how to use the level-set method for
+  two-phase flow.  Projection method.  Explicitely states that surface tension
+  is approximated with central differences.
+  Keywords: Material interfaces, ink-jet design, level-set method}
 }
 @Article{Shu88,
   author        = {Chi-Wang Shu and Stanley Osher},
@@ -653,6 +733,19 @@
   volume        = {212},
   pages         = {590-616},
   month         = {March},
+}
+@Article{Wang10,
+  author        = {Zhaoyuan Wang and Alberg Y. Tong},
+  title         = {A sharp surface tension mdeling method for two-phase
+                   incompressible interfacial flows},
+  year          = 2010,
+  journal       = {International Journal for Numerical Methods in Fluids},
+  volume        = 64,
+  pages         = 709-732,
+  comment       = {Mentions the curvature problem, uses combined level-set and
+  volume-of-fluid method.  Compares level-set method with height function.  
+  Keywords: Volume-of-fluid, level set, sharp interface, surface tension,
+  curvature, two-phase flow.},
 }
 @Article{Welch07,
   author        = {Samuel W. J. Welch and Gautam Biswas},
@@ -826,6 +919,15 @@
   publisher     = {Springer},
   year          = {2003},
   ISBN          = {0387954821}
+}
+@Book{Prautzsh02,
+  author        = {H. Prautzsh and W. Boehm and M. Paluszny},
+  title         = {Bézier and B-spline Techniques},
+  publisher     = {Springer},
+  year          = {2002},
+  ISBN          = {3-540-43761-4},
+  comment       = {Book used for a reference to Hermite splines, which I have
+                   used in my curvature method.  I used the pages 48 to 51.},
 }
 @Book{Saad03,
   author        = {Yousef Saad},

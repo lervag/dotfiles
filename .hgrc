@@ -14,8 +14,9 @@ hgk =
 path=~/scripts/bin/hgk
 
 [ui]
-#style = compact
 username = Karl Yngve Lervåg <karl.lervag@sintef.no>
+merge = vimdiff
+#style = compact
 
 [color]
 status.modified = magenta
@@ -26,6 +27,6 @@ status.ignored  = black
 status.unknown  = 
 status.clean    = black bold
 
-[extdiff]
-cmd.vimdiff = gvimdiff
-opts.vimdiff = -f
+[merge-tools]
+vimdiff.executable = gvim
+vimdiff.args = -d $base $local $output $other +close +close
