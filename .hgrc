@@ -9,6 +9,7 @@ hgext.extdiff =
 pager =
 color =
 hgk =
+fetch =
 
 [hgk]
 path=~/scripts/bin/hgk
