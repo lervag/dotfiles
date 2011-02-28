@@ -39,32 +39,36 @@ fi
 touch $SDIRS
 
 # save current directory to bookmarks
-function s {
+function s
+{
 	check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
 	cat $SDIRS | grep -v "export DIR_$1=" > $SDIRS.tmp
-	mv $SDIRS.tmp $SDIRS
+	mv -f $SDIRS.tmp $SDIRS
 	echo "export DIR_$1='$PWD'" >> $SDIRS
     fi
 }
 
 # jump to bookmark
-function g {
+function g
+{
 	check_help $1
     source $SDIRS
     cd "$(eval $(echo echo $(echo \$DIR_$1)))"
 }
 
 # print bookmark
-function p {
+function p
+{
 	check_help $1
     source $SDIRS
     echo "$(eval $(echo echo $(echo \$DIR_$1)))"
 }
 
 # delete bookmark
-function d {
+function d
+{
 	check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
@@ -75,7 +79,8 @@ function d {
 }
 
 # print out help for the forgetful
-function check_help {
+function check_help
+{
 	if [ "$1" = "-h" ] || [ "$1" = "-help" ] || [ "$1" = "--help" ] ; then
 		echo ''
 	    echo 's <bookmark_name> - Saves the current directory as "bookmark_name"'
@@ -88,19 +93,23 @@ function check_help {
 }
 
 # list bookmarks with dirnam
-function l {
+function l
+{
 	check_help $1
 	source $SDIRS
 	env | grep "^DIR_" | cut -c5- | grep "^.*="
 }
+
 # list bookmarks without dirname
-function _l {
+function _l
+{
     source $SDIRS
     env | grep "^DIR_" | cut -c5- | grep "^.*=" | cut -f1 -d "="
 }
 
 # validate bookmark name
-function _bookmark_name_valid {
+function _bookmark_name_valid
+{
     exit_message=""
     if [ -z $1 ]; then
 		exit_message="bookmark name required"
@@ -112,7 +121,8 @@ function _bookmark_name_valid {
 }
 
 # completion command
-function _comp {
+function _comp
+{
     local curw
     COMPREPLY=()
     curw=${COMP_WORDS[COMP_CWORD]}
@@ -121,7 +131,8 @@ function _comp {
 }
 
 # ZSH completion command
-function _compzsh {
+function _compzsh
+{
     reply=($(_l))
 }
 
