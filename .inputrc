@@ -1,0 +1,5 @@
+set show-all-if-ambiguous on
+set visible-stats on
+set editing-mode vi
+#set keymap vi
+set keymap vi-insert
