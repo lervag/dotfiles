@@ -28,6 +28,11 @@ export CDPATH=.:~/documents             # As PATH but for cd
 export HISTIGNORE="&:ls:ls *:exit"      # Ignore some commands in history
 set -o vi                               # Set input style to vi
 
+# Enable bash completion in interactive shells
+if [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion
+fi
+
 # Default file permissions
 umask 022
 
