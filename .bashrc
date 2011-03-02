@@ -26,7 +26,6 @@ export PETSC_DIR=/home/petsc/petsc-current
 # Nice additions
 export CDPATH=.:~/documents             # As PATH but for cd
 export HISTIGNORE="&:ls:ls *:exit"      # Ignore some commands in history
-shopt -s cdspell                        # Correct simple spelling error for cd
 set -o vi                               # Set input style to vi
 
 # Default file permissions
