@@ -130,8 +130,8 @@ if !exists("autocommands_loaded")
     autocmd SwapExists * :let v:swapchoice = 'q'
   augroup END
 
-  au BufWinLeave * mkview
-  au BufWinEnter * loadview
+  au BufWinLeave *.* mkview
+  au BufWinEnter *.* loadview
   "}}}"
   "{{{" Bash scripts
   let g:sh_fold_enabled=1
