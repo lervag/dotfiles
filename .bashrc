@@ -30,8 +30,10 @@ export HISTIGNORE="&:ls:ls *:exit"      # Ignore some commands in history
 # Vi mode
 set -o vi                               # Set input style to vi
 bind -m vi-insert "\C-l":clear-screen
-bind -m vi-insert "\C-p":dynamic-complete-history
-bind -m vi-insert "\C-n":menu-complete
+bind -m vi-insert "\C-p":previous-history
+bind -m vi-insert "\C-n":next-history
+bind -m vi-insert "\C-a":beginning-of-line
+bind -m vi-insert "\C-e":end-of-line
 
 # Enable bash completion in interactive shells
 if [ -f /etc/bash_completion ]; then
