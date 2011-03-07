@@ -129,19 +129,18 @@ if !exists("autocommands_loaded")
     autocmd!
     autocmd SwapExists * :let v:swapchoice = 'q'
   augroup END
+
+  au BufWinLeave * mkview
+  au BufWinEnter * loadview
   "}}}"
   "{{{" Bash scripts
   let g:sh_fold_enabled=1
   "}}}"
   "{{{" Textfiles
-  au BufReadPost *.txt setlocal textwidth=78 foldmethod=manual fo=t1
-  au BufReadPost *.txt loadview
-  au BufWrite *.txt mkview
+  au BufReadPost *.txt setlocal textwidth=78
   "}}}"
   "{{{" MATLAB
   au BufReadPost *.m set foldmethod=manual
-  au BufReadPost *.m loadview
-  au BufWrite *.m mkview
   "}}}"
   "{{{" C++
   au BufReadPost *.c++ setlocal cindent
