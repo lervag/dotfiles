@@ -26,7 +26,12 @@ export PETSC_DIR=/home/petsc/petsc-current
 # Nice additions
 export CDPATH=.:~/documents             # As PATH but for cd
 export HISTIGNORE="&:ls:ls *:exit"      # Ignore some commands in history
+
+# Vi mode
 set -o vi                               # Set input style to vi
+bind -m vi-insert "\C-l":clear-screen
+bind -m vi-insert "\C-p":dynamic-complete-history
+bind -m vi-insert "\C-n":menu-complete
 
 # Enable bash completion in interactive shells
 if [ -f /etc/bash_completion ]; then
