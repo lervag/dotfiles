@@ -125,11 +125,6 @@ if !exists("autocommands_loaded")
     \   exe "normal! g`\"" |
     \ endif
 
-  augroup NoSimultaneousEdits
-    autocmd!
-    autocmd SwapExists * :let v:swapchoice = 'q'
-  augroup END
-
   au BufWinLeave *.* mkview
   au BufWinEnter *.* loadview
   "}}}"
