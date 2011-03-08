@@ -1,7 +1,7 @@
 " -----------------------------------------------------------------------------
 " Setup for VIM: The number one text editor!
 " -----------------------------------------------------------------------------
-" Karl Yngve Lervåg, 2009-11-30
+" Karl Yngve Lervåg, 2011-03-08
 " -----------------------------------------------------------------------------
 "{{{" General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,8 +125,8 @@ if !exists("autocommands_loaded")
     \   exe "normal! g`\"" |
     \ endif
 
-  au BufWinLeave *.* mkview
-  au BufWinEnter *.* loadview
+  "au BufWinLeave *.* mkview
+  "au BufWinEnter *.* loadview
   "}}}"
   "{{{" Bash scripts
   let g:sh_fold_enabled=1
