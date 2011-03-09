@@ -51,18 +51,18 @@ endif
 "}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{" Vim user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildmenu            " shows nice command completion
-set ruler               " shows line and column in the bottom
-set lazyredraw          " lazy draw, faster
-set mouse=              " makes mouse activated
-set ignorecase          " search case insensitive...
-set smartcase           " except when search contains upper-case
-set foldmethod=syntax   " general foldmethod
-set foldlevel=0         " starting foldlevel
-set foldcolumn=0        " show folds in left column
-set hidden              " can change buffer withour saving
-set modelines=5         " set number of "vim-script lines" at end of file
-set tags=tags;/         " set tag file directories
+set wildmode=longest,list:longest  " shows nice command completion
+set ruler                          " shows line and column in the bottom
+set lazyredraw                     " lazy draw, faster
+set mouse=                         " makes mouse activated
+set ignorecase                     " search case insensitive...
+set smartcase                      " except when search contains upper-case
+set foldmethod=syntax              " general foldmethod
+set foldlevel=0                    " starting foldlevel
+set foldcolumn=0                   " show folds in left column
+set hidden                         " can change buffer withour saving
+set modelines=5                    " set number of "vim-script lines" at EOF
+set tags=tags;/                    " set tag file directories
 
 if has("unix")
   set clipboard=autoselect
