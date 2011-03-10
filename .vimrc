@@ -337,6 +337,13 @@ function! Set_LaTeX_settings()
   " For all tex files use forward slash in filenames
   setlocal shellslash nocindent
   setlocal iskeyword+=:
+
+  " Add mapping to be able to select a single paragraph, and to format it
+  vmap p ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>o//-1<CR>$
+  map gw} vpgw
+
+  " Start with fold open and center screen
+  normal zO zz
 endfunction
 "}}}
 "{{{" AlignAssignments
