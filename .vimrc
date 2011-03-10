@@ -357,7 +357,11 @@ function! AlignAssignments ()
   let lines = []
   for linetext in getline(firstline, lastline)
     let fields = matchlist(linetext, ASSIGN_LINE)
-    call add(lines, fields[1:3])
+    if len(fields)
+      call add(lines, {'lval':fields[1], 'op':fields[2], 'rval':fields[3]})
+    else
+      call add(lines, {'text':linetext,  'op':''})
+    endif
   endfor
 
   " Determine maximal lengths of lvalue and operator...
@@ -368,11 +372,10 @@ function! AlignAssignments ()
   " Recompose lines with operators at the maximum length...
   let linenum = firstline
   for line in lines
-    if !empty(line)
-      let newline = 
-            \ printf("%-*s%*s%s", max_lval, line[0], max_op, line[1], line[2])
-      call setline(linenum, newline)
-    endif
+    let newline = empty(line.op)
+      \ ? line.text : 
+      \ : printf("%-*s%*s%s", max_lval, line.lval, max_op, line.op, line.rval)
+    call setline(linenum, newline)
     let linenum += 1
   endfor
 endfunction
