@@ -286,7 +286,7 @@ endfunction
 "{{{" ChooseLanguage
 function! ChooseLanguage()
   let choice = 
-    \confirm("Choose Language", "&Bokmaal\n&Nynorsk\nEnglish &GB\nEnglish &USA")
+        \confirm("Choose Language", "&Bokmaal\n&Nynorsk\nEnglish &GB\nEnglish &USA")
   if choice == 1
     set spelllang=nb
   elseif choice == 2
@@ -380,8 +380,8 @@ function! AlignAssignments ()
   let linenum = firstline
   for line in lines
     let newline = empty(line.op)
-      \ ? line.text : 
-      \ : printf("%-*s%*s%s", max_lval, line.lval, max_op, line.op, line.rval)
+          \ ? line.text : 
+          \ printf("%-*s%*s%s", max_lval, line.lval, max_op, line.op, line.rval)
     call setline(linenum, newline)
     let linenum += 1
   endfor

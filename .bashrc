@@ -50,7 +50,7 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias du="du -c"
 alias grep="grep -i"
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls -X --color=auto --group-directories-first'
 alias ll='ls -oh'
 alias dato='date +"Uke %V, %A %d. %B, %Y -- %T"'
 alias ..='cd ..'
