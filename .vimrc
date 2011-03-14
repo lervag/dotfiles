@@ -143,19 +143,24 @@ if !exists("autocommands_loaded")
   au BufReadPost *.c++ setlocal cindent
   "}}}"
   "{{{ LaTeX
-  au BufReadPost *.tex call Set_LaTeX_settings()
+  au BufReadPost *.tex call LaTeXSettings()
 
-  function! Set_LaTeX_settings()
+  function! LaTeXSettings()
     " For all tex files use forward slash in filenames
     setlocal shellslash nocindent
     setlocal iskeyword+=:
 
     " Add mapping to be able to select a single paragraph, and to format it
     vmap p ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>o//-1<CR>$
-    map gw} vpgw
+    map gw} :call LaTeXFormatParagraph()<CR>
 
     " Start with fold open and center screen
     silent! normal zO zz
+  endfunction
+  function! LaTeXFormatParagraph()
+    let cpp = getpos('.')
+    normal vpgw
+    call setpos('.', cpp)
   endfunction
   "}}}"
   "{{{ Python
