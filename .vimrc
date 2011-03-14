@@ -154,47 +154,10 @@ if !exists("autocommands_loaded")
     map <silent> <expr> { LaTeXStartOfParagraph()
     map <silent> <expr> } LaTeXEndOfParagraph()
     vmap p {o}
-    map gwp :call LaTeXFormatParagraph()<CR>
+    map <silent> gwp :call LaTeXFormatParagraph()<CR>
 
     " Start with fold open and center screen
     silent! normal zO zz
-  endfunction
-  function! LaTeXStartOfParagraph()
-    let delimitors = ['begin', 'end', '\(sub\)*section', 'label']
-    let pattern = '^$\|^\s*\(\\' . join(delimitors,'\|\\') . '\)'
-    let cpp = getpos('.')
-    let spp = searchpos(pattern,'b')
-    let spp[0] += 1
-    if cpp[1:2] == spp
-      return 'k?' . pattern . '?1'
-    elseif cpp[1]-1 == spp[1]
-      return 'k?' . pattern . '?1'
-    else
-      return '?' . pattern . '?1'
-    endif
-  endfunction
-  function! LaTeXEndOfParagraph()
-    let delimitors = ['begin', 'end', '\(sub\)*section', 'label']
-    let pattern = '^$\|^\s*\(\\' . join(delimitors,'\|\\') . '\)'
-    let cpp = getpos('.')
-    call searchpos(pattern)
-    let spp = getpos('.')
-    let spp[1] -= 1
-    call setpos('.',spp)
-    call searchpos('$')
-    let spp = getpos('.')
-    if cpp[1:2] == spp[1:2]
-      return 'j/' . pattern . '/-1$'
-    elseif cpp[1]+1 == spp[1]
-      return 'j/' . pattern . '/-1$'
-    else
-      return '/' . pattern . '/-1$'
-    endif
-  endfunction
-  function! LaTeXFormatParagraph()
-    let cpp = getpos('.')
-    normal vpgw
-    call setpos('.', cpp)
   endfunction
   "}}}"
   "{{{ Python
