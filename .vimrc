@@ -1,18 +1,19 @@
-" -----------------------------------------------------------------------------
 " Setup for VIM: The number one text editor!
 " -----------------------------------------------------------------------------
-" Karl Yngve Lervåg, 2011-03-08
-" -----------------------------------------------------------------------------
-"{{{" General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible                  " don't need vi-compatible
-set history=100                   " undo-history
-set confirm                       " raise confirmation dialogs
-filetype plugin indent on         " enables file type plugins/indentation
-if has("win32")
-  source $VIMRUNTIME/mswin.vim    " add some windows-stuff
-endif
+"{{{ General stuff and theme
+
+" Some general options
+set nocompatible
+set history=100
+set confirm
 set winaltkeys=no
+filetype plugin indent on
+syntax on
+
+" Set some windows specific options
+if has("win32")
+  source $VIMRUNTIME/mswin.vim
+endif
 
 " Sets backup and temporary file directories
 set backup
@@ -28,29 +29,18 @@ if v:version >= 730
   set undodir=$HOME/.vim/backup/
 end
 
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Theme/Colors
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enables syntax highlighting
-syntax on
-
 " Use 256 colors and colorscheme if possible
 if &t_Co > 2 || has("gui_running")
   " Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
   " Select brightness: 'low', 'med', 'high', 'default' or custom levels.
+  set t_Co=256
   let xterm16_colormap    = 'soft'
   let xterm16_brightness  = 'high'
   colorscheme xterm16
-  set t_Co=256
 endif
 
-if expand("$OS") ==? 'Solaris'
-  set term=ansi
-endif
-
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Vim user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
+"{{{ Vim user interface
 set wildmode=longest,list:longest  " shows nice command completion
 set ruler                          " shows line and column in the bottom
 set lazyredraw                     " lazy draw, faster
@@ -68,9 +58,8 @@ if has("unix")
   set clipboard=autoselect
 endif
 
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Visual cues
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
+"{{{ Visual cues
 set showmatch         " show matching brackets
 set matchtime=2       " how long to show matching brackets
 set matchpairs+=<:>   " also match angled brackets
@@ -86,9 +75,8 @@ if has("gui_running")
   set guifont=Monospace\ 10
 endif
 
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Text formatting/layout
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
+"{{{ Text formatting/layout
 set autoindent        " copies indent from previous line
 set nocindent         " C-like indenting
 set softtabstop=2     " read help
@@ -110,47 +98,73 @@ if has("unix")
   set backspace=indent,eol,start
 endif
 
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Autocommands and filetype specific settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
+"{{{ Autocommands and filetype specific settings
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
-  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  "{{{" General
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+  "{{{ General
+  augroup GeneralStuff
+    autocmd!
 
-  "au BufWinLeave *.* mkview
-  "au BufWinEnter *.* loadview
+    " Create directory if it does not exist when opening a new file
+    autocmd BufNewFile  * :call EnsureDirExists()
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
+  augroup END
+
+  function! EnsureDirExists ()
+    let dir = expand("%:h")
+    if !isdirectory(dir)
+      call AskQuit("Directory '" . dir . "' doesn't exist.", "&Create it?")
+      try
+        call mkdir(dir, 'p')
+      catch
+        call AskQuit("Can't create '" . dir . "'", "&Continue anyway?")
+      endtry
+    endif
+  endfunction
   "}}}"
-  "{{{" Bash scripts
-  let g:sh_fold_enabled=1
+  "{{{ Bash scripts
+  au BufReadPost *.sh let g:sh_fold_enabled=1
   "}}}"
-  "{{{" Textfiles
+  "{{{ Textfiles
   au BufReadPost *.txt setlocal textwidth=78
   "}}}"
-  "{{{" MATLAB
+  "{{{ MATLAB
   au BufReadPost *.m set foldmethod=manual
   "}}}"
-  "{{{" C++
+  "{{{ C++
   au BufReadPost *.c++ setlocal cindent
   "}}}"
-  "{{{" LaTeX
+  "{{{ LaTeX
   au BufReadPost *.tex call Set_LaTeX_settings()
+
+  function! Set_LaTeX_settings()
+    " For all tex files use forward slash in filenames
+    setlocal shellslash nocindent
+    setlocal iskeyword+=:
+
+    " Add mapping to be able to select a single paragraph, and to format it
+    vmap p ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>o//-1<CR>$
+    map gw} vpgw
+
+    " Start with fold open and center screen
+    normal zO zz
+  endfunction
   "}}}"
-  "{{{" Python
+  "{{{ Python
   au FileType python syn keyword pythonDecorator True None False self
   "}}}"
-  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 endif
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" General mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
+"{{{ General mappings
+
 " F1 gives help
 map <F1> <ESC>:h<Space>
 map! <F1> <ESC>:h<Space>
@@ -158,10 +172,8 @@ map! <F1> <ESC>:h<Space>
 " F3 to open vimrc
 if has("unix")
   map <F3> :e  ~/.vimrc<cr>
-  autocmd! bufwritepost vimrc source ~/.vimrc
 elseif has("win32")
   map <F3> :e  $VIM/_vimrc<cr>
-  autocmd! bufwritepost vimrc source $VIM/_vimrc
 endif
 
 " Calls some functions
@@ -214,9 +226,9 @@ imap <silent> <c-t><c-t> <c-r>=strftime("%l:%M %p")<CR>
 vmap <silent>  ;=  :call AlignAssignments()<CR>
 nmap <silent>  ;=  :call AlignAssignments()<CR>
 
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Other
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
+"{{{ Plugin settings and other
+
 " Sets grepprogram for windows and makes it always generate file-name
 let Grep_Skip_Dirs = 'CVS .svn .hg'
 if has("win32")
@@ -230,17 +242,13 @@ let g:EnhCommentifyUserBindings='Yes'
 let g:SuperTabSetDefaultCompletionType = "context"
 let g:SuperTabRetainCompletionDuration = "session"
 
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" VCSCommand
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VCSCommand
 let VCSCommandSplit = 'horizontal'
 if v:version < 700
   let VCSCommandDisableAll='1'
 end
 
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Taglist - nice plugin
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Taglist - nice plugin
 let Tlist_Use_Right_Window = 1
 let Tlist_Close_On_Select = 1
 let Tlist_File_Fold_Auto_Close = 1
@@ -257,10 +265,9 @@ let tlist_tex_settings='tex;k:command;a:abstract;p:part;c:chapter;s:section;l:la
 " Bibtex taglist settings
 let tlist_bib_settings='bib;a:article;b:book;m:misc;p:part;s:string;t:thesis'
 
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" Functions and Commands
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"{{{" SpellCheck
+"}}}
+"{{{ Functions
+"{{{ SpellCheck
 function! SpellCheck(sc_on)
   if a:sc_on
     echo "Spell checking turned off!"
@@ -273,7 +280,7 @@ function! SpellCheck(sc_on)
   endif
 endfunction
 "}}}
-"{{{" ChooseVCSCommandType
+"{{{ ChooseVCSCommandType
 function! ChooseVCSCommandType()
   let choice = confirm("Choose VCS Type", "&CVS\n&Mercurial")
   if choice == 1
@@ -283,7 +290,7 @@ function! ChooseVCSCommandType()
   endif
 endfunction
 "}}}
-"{{{" ChooseLanguage
+"{{{ ChooseLanguage
 function! ChooseLanguage()
   let choice = 
         \confirm("Choose Language", "&Bokmaal\n&Nynorsk\nEnglish &GB\nEnglish &USA")
@@ -298,7 +305,7 @@ function! ChooseLanguage()
   endif
 endfunction
 "}}}
-"{{{" ChooseMakePrg
+"{{{ ChooseMakePrg
 function! ChooseMakePrg()
   let choice = confirm("Choose make program" , "&Python\n&Makefile")
   if choice == 1
@@ -308,7 +315,7 @@ function! ChooseMakePrg()
   endif
 endfunction
 "}}}
-"{{{" CreateTags
+"{{{ CreateTags
 function! CreateTags()
   !silent! lcd %:h
   let choice = confirm("What kind of tags?" , "&Stop\n&C++\n&Fortran" , 1)
@@ -324,7 +331,7 @@ function! CreateTags()
   silent! lcd -
 endfunction
 "}}}
-"{{{" ShowFunctions
+"{{{ ShowFunctions
 function! ShowFunctions()
   30vsplit tagsmenu
   set nowrap
@@ -332,21 +339,18 @@ function! ShowFunctions()
   map <CR> 0ye:bd<CR>:tag <C-R>"<CR>
 endfunction
 "}}}
-"{{{" Set_LaTeX_settings
-function! Set_LaTeX_settings()
-  " For all tex files use forward slash in filenames
-  setlocal shellslash nocindent
-  setlocal iskeyword+=:
+"{{{ UpdateCopyrightLine
+function! UpdateCopyrightLine()
+  let copyrights = {
+    \ 'Copyright (c) .\{-}, \d\d\d\d-\zs\d\d\d\d' : 'strftime("%Y")',
+    \}
 
-  " Add mapping to be able to select a single paragraph, and to format it
-  vmap p ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>o//-1<CR>$
-  map gw} vpgw
-
-  " Start with fold open and center screen
-  normal zO zz
+  for [copyright, year] in items(copyrights)
+    silent! execute "'[,']s/" . copyright . '/\= ' . replacement . '/'
+  endfor
 endfunction
 "}}}
-"{{{" AlignAssignments
+"{{{ AlignAssignments
 function! AlignAssignments ()
   " Patterns needed to locate assignment operators...
   let ASSIGN_OP   = '[-+*/%|&]\?=\@<!=[=~]\@!'
@@ -387,6 +391,15 @@ function! AlignAssignments ()
   endfor
 endfunction
 "}}}
-"}}}"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"{{{ AskQuit
+function! AskQuit (msg, proposed_action)
+  if confirm(a:msg, "&Quit?\n" . a:proposed_action) == 1
+    exit
+  endif
+endfunction
+"}}}
+"}}}
+" -----------------------------------------------------------------------------
+" Copyright, Karl Yngve Lervåg (c) 2008 - 2011
 " -----------------------------------------------------------------------------
 " vim: foldmethod=marker:ff=unix
