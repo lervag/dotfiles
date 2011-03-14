@@ -155,7 +155,7 @@ if !exists("autocommands_loaded")
     map gw} vpgw
 
     " Start with fold open and center screen
-    normal zO zz
+    silent! normal zO zz
   endfunction
   "}}}"
   "{{{ Python
