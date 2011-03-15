@@ -24,8 +24,8 @@ export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
 
 # Nice additions
-export CDPATH=.:~/documents             # As PATH but for cd
-export HISTIGNORE="&:ls:ls *:exit"      # Ignore some commands in history
+export CDPATH=.:~/documents # As PATH but for cd
+export HISTIGNORE="&:exit"  # Ignore some commands in history
 
 # Vi mode
 set -o vi                               # Set input style to vi
@@ -51,7 +51,8 @@ alias cp="cp -i"
 alias du="du -c"
 alias grep="grep -i"
 alias ls='ls -X --color=auto --group-directories-first'
-alias ll='ls -oh'
+alias ll='ls -ogh'
+alias lsa='ls -A'
 alias dato='date +"Uke %V, %A %d. %B, %Y -- %T"'
 alias ..='cd ..'
 alias ...='cd ../..'

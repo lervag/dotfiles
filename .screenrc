@@ -1,0 +1,32 @@
+# Screen setup
+# Karl Yngve Lervåg
+
+# No annoying audible bell, please
+vbell on
+vbell_msg "Hey - something's ringing on %t (%n)"
+activity "Hey - something's moving in %t(%n)"
+
+# Don't display the copyright page
+startup_message off
+
+# Detach on hangup
+autodetach on
+
+# Number of lines in buffer
+defscrollback 2000
+
+### The caption line - screen status bar!
+#
+#   %{= bb}%{+b w} 	colors
+#   %t			window name
+#   %= 			end of line
+#   %Y-%m-%d		year-month-date
+#   %c			clock
+#
+caption always
+caption string '%{= wk}[ %{k}%H %{k}][%= %{= wk}%?%-Lw%?%{r}(%{r}%n*%f%t%?(%u)%?%{r})%{k}%?%+Lw%?%?%= %{k}][%{b} %d/%m %{k}%c %{k}]'
+
+### New keybindings
+# F5 and F6 to change screen windows
+bindkey -k k5 prev
+bindkey -k k6 next
