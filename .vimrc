@@ -237,6 +237,10 @@ if has("win32")
   set grepprg=c:/Cygwin/bin/grep\ -nH\ $* 
 endif
 
+" Set ack settings
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackhighlight=1
+
 " Set Enhanced commentify settings
 let g:EnhCommentifyUserBindings='Yes'
 
