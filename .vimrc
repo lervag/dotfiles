@@ -87,6 +87,7 @@ set ff=unix           " never use windows file format
 set nowrap            " wraps text
 set smarttab          " tabs at start of line, space elsewhere
 set expandtab         " replace tabs with spaces
+set spelllang=en_gb,en-rare
 
 " vimdiff options
 if v:version >= 700
