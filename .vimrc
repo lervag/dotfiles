@@ -9,7 +9,7 @@ call pathogen#helptags()
 
 " Some general options
 set nocompatible
-set history=100
+set history=1000
 set confirm
 set winaltkeys=no
 filetype plugin indent on
@@ -23,15 +23,19 @@ endif
 " Sets backup and temporary file directories
 set backup
 if has("unix")
-  set backupdir=$HOME/.vim/backup/
-  set directory=$HOME/.vim/backup/
+  set backupdir=$HOME/.vim/backup
+  set directory=$HOME/.vim/backup
 else
-  set backupdir=$VIM/backup/
-  set directory=$VIM/backup/
+  set backupdir=$VIM/backup
+  set directory=$VIM/backup
 endif
-if v:version >= 730
+
+" Sets undo file directory
+if v:version >= 703
+  set undodir=$HOME/.vim/undofiles
   set undofile
-  set undodir=$HOME/.vim/backup/
+  set undolevels=1000
+  set undoreload=10000
 end
 
 " Use 256 colors and colorscheme if possible
@@ -58,6 +62,24 @@ set foldcolumn=0                   " show folds in left column
 set hidden                         " can change buffer withour saving
 set modelines=5                    " set number of "vim-script lines" at EOF
 set tags=tags;/                    " set tag file directories
+
+" Add some file types to ignore list
+set wildignore+=*.o
+set wildignore+=*.obj
+set wildignore+=*.tgz
+set wildignore+=*.zip
+set wildignore+=*.pdf
+set wildignore+=*.doc*
+set wildignore+=*.ods
+set wildignore+=*.xcf
+set wildignore+=*.aux
+set wildignore+=*.synctex*
+set wildignore+=*.latexmain
+set wildignore+=*.png
+set wildignore+=*.eps
+set wildignore+=*.dvi
+set wildignore+=*.vim/backup/*
+set wildignore+=*.vim/view/*
 
 if has("unix")
   set clipboard=autoselect
@@ -261,6 +283,12 @@ let VCSCommandSplit = 'horizontal'
 if v:version < 700
   let VCSCommandDisableAll='1'
 end
+
+" Command-t
+let g:CommandTScanDotDirectories = 1
+nmap <silent> <Leader>tt :CommandT<CR>
+nmap <silent> <Leader>tb :CommandTBuffer<CR>
+nmap <silent> <Leader>t :CommandT 
 
 " Taglist - nice plugin
 let Tlist_Use_Right_Window = 1
