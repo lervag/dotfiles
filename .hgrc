@@ -14,9 +14,17 @@ fetch =
 [hgk]
 path=~/scripts/bin/hgk
 
+[email]
+from = "Karl Yngve Lervåg <karl.yngve@lervag.net>"
+method = /usr/bin/sendmail
+charsets = iso-8859-1
+
 [ui]
-username = Karl Yngve Lervaag <karl.yngve@lervag.net>
+username = Karl Yngve Lervåg <karl.yngve@lervag.net>
+editor = vim
 merge = vimdiff
+ssh = ssh -C
+commitsubrepos = False
 #style = compact
 
 [color]
