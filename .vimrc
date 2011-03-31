@@ -2,6 +2,11 @@
 " -----------------------------------------------------------------------------
 "{{{ General stuff and theme
 
+" Activate pathogen
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " Some general options
 set nocompatible
 set history=100
@@ -60,14 +65,15 @@ endif
 
 "}}}
 "{{{ Visual cues
-set showmatch         " show matching brackets
-set matchtime=2       " how long to show matching brackets
-set matchpairs+=<:>   " also match angled brackets
-set nohlsearch        " no colors for search matches
-set incsearch         " shows matches while writing search
-set scrolloff=10      " keep 10 lines over and below the cursor at all times
-set showcmd           " shows your commands while typing
-set columns=80        " number of columns in window
+set showmatch              " show matching brackets
+runtime macros/matchit.vim " make % bounce between tags, begin/end, etc
+set matchtime=2            " how long to show matching brackets
+set matchpairs+=<:>        " also match angled brackets
+set nohlsearch             " no colors for search matches
+set incsearch              " shows matches while writing search
+set scrolloff=10           " keep 10 lines over/below the cursor at all times
+set showcmd                " shows your commands while typing
+set columns=80             " number of columns in window
 if has("gui_running")
   " Options for gui-based vim
   set lines=50
@@ -186,6 +192,7 @@ if has("unix")
 endif
 map <F6> :Scratch<cr>
 map <S-m> :TlistToggle<cr>
+map <S-u> :GundoToggle<cr>
 map <F9> :make<cr>
 map <F10> :call ChooseMakePrg()<cr>
 map <F12> ggVGg? " encypt the file (toggle)

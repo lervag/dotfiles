@@ -53,9 +53,9 @@
 }
 @Article{Cristini01,
   title   = {An Adaptive Mesh Algorithm for Evolving Surfaces: Simulations of
-          Drop Breakup and Coalescence},
+             Drop Breakup and Coalescence},
   author  = {Vittorio Cristini and Jerzy Blawzdziewicz and Michael Loewenberg},
-  journal =  {Journal of Computational Physics}
+  journal = {Journal of Computational Physics},
   volume  = 168,
   pages   = {445-463},
   month   = December,
@@ -68,6 +68,19 @@
   C = 0.135, lambda = 1.37 (mu2=mu1*lambda), initially centered at (0, 0, 0)
   and (-11, 0.51, 0), reference to Guido and Simeone, graph of relative
   displacement.  Keywords: break-up, coalescence, drop, simulations.},
+}
+@Article{Desjardins08,
+  title   = {An accurate conservative level set/ghost fluid method for
+             simulating turbulent atomization},
+  author  = {Olivier Desjardins and Vincent Moureau and Heinz Pitsch},
+  journal = {Journal of Computational Physics},
+  volume  = 227,
+  pages   = 8395-8416,
+  year    = 2008,
+  comment = {Uses a conservative level-set method with a ghost-fluid approach
+  for two-phase flow.  A least-squares approach for calculating curvature.
+  Keywords: Two-phase flow, DNS, conservative level-set method, GFM, implicit
+  scheme, primary atomization, mass conservation.},
 }
 @Article{Ergun52,
   author        = {S. Ergun},
@@ -494,6 +507,17 @@
   strange thing is that he also uses that x_I = x - \phi(x)*n(x), which is
   strange since he doesn't know n(x).},
 }
+@Article{Marchandise07,
+  author        = {Emilie Marchandise and Philippe Geuzaine and Nicolas
+                   Chevaugeon and Jean-Francois Remacle},
+  title         = {A stabilized finite element method using a discontinuous
+                   level set approach for the computation of bubble dynamics},
+  year          = 2007,
+  journal       = {Journal of Computational Physics},
+  volume        = 225,
+  pages         = 949-974,
+  comment       = {},
+}
 @Article{Marella05,
   author        = {S. Marella and S. Krishnan and H. Liu and H. S. Udaykumar},
   title         = {Sharp interface Cartesian grid method I: An easily
@@ -512,9 +536,10 @@
   journal       = {International Journal of Multiphase Flow},
   volume        = {33},
   pages         = {510-524},
-  comment       = {Very impressive work!  Important.  Detailed simulation with
-  the level-set method of a jet break-up.  Keywords: level-set, ghost fluid
-  method, VOF, Rayleigh instability, mass conservation.},
+  comment       = {Very impressive work!  Important.  The combine the level-set
+  method with VOF to minimize mass loss.  Detailed simulation with the
+  level-set method of a jet break-up.  Keywords: level-set, GFM, VOF, Rayleigh
+  instability, mass conservation.},
 }
 @Article{Osher88,
   author        = {S. Osher and J. A. Sethian},
@@ -524,6 +549,20 @@
   journal       = {Journal of Computational Physics},
   volume        = {79},
   pages         = {12-49},
+}
+@Article{Pan05,
+  author        = {Yu Pan and Kazuhiko Suga},
+  title         = {Numerical simulation of binary liquid droplet collision},
+  year          = 2005,
+  journal       = {Physics of Fluids},
+  volume        = 17,
+  number        = 8,
+  comment       = {Presents a numerical investigation of binary droplet
+    collisions with the Navier-Stokes equations and the level-set method.  Does
+    not contain details about numerical methods at all.  Many impressive
+    results of coalescence.
+    Keywords: Drop-drop collisions, level-set method, two-phase flow, regimes
+              for drop-drop collisions, binary droplet collisions,},
 }
 @Article{Pawar96,
   author        = {Yashodhara Pawar and Kathleen J. Stebe},

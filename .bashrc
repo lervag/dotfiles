@@ -24,7 +24,7 @@ export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
 
 # Nice additions
-export CDPATH=.:~/documents # As PATH but for cd
+#export CDPATH=.:~/documents # As PATH but for cd
 export HISTIGNORE="&:exit"  # Ignore some commands in history
 
 # Vi mode
