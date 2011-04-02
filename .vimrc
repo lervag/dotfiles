@@ -64,22 +64,22 @@ set modelines=5                    " set number of "vim-script lines" at EOF
 set tags=tags;/                    " set tag file directories
 
 " Add some file types to ignore list
-set wildignore+=*.o
-set wildignore+=*.obj
-set wildignore+=*.tgz
-set wildignore+=*.zip
-set wildignore+=*.pdf
-set wildignore+=*.doc*
-set wildignore+=*.ods
-set wildignore+=*.xcf
-set wildignore+=*.aux
-set wildignore+=*.synctex*
-set wildignore+=*.latexmain
-set wildignore+=*.png
-set wildignore+=*.eps
-set wildignore+=*.dvi
-set wildignore+=*.vim/backup/*
-set wildignore+=*.vim/view/*
+"set wildignore+=*.o
+"set wildignore+=*.obj
+"set wildignore+=*.tgz
+"set wildignore+=*.zip
+"set wildignore+=*.pdf
+"set wildignore+=*.doc*
+"set wildignore+=*.ods
+"set wildignore+=*.xcf
+"set wildignore+=*.aux
+"set wildignore+=*.synctex*
+"set wildignore+=*.latexmain
+"set wildignore+=*.png
+"set wildignore+=*.eps
+"set wildignore+=*.dvi
+"set wildignore+=*.vim/backup/*
+"set wildignore+=*.vim/view/*
 
 if has("unix")
   set clipboard=autoselect
@@ -215,6 +215,7 @@ endif
 map <F6> :Scratch<cr>
 map <S-m> :TlistToggle<cr>
 map <S-u> :GundoToggle<cr>
+map <F2> :NERDTreeToggle<CR>
 map <F9> :make<cr>
 map <F10> :call ChooseMakePrg()<cr>
 map <F12> ggVGg? " encypt the file (toggle)
@@ -300,6 +301,9 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 if ! has("gui_running")
   let Tlist_Use_Horiz_Window = 1
 endif
+
+" Tabular
+nmap <silent> <Leader>tl :Tab<cr>
 
 " Latex taglist settings
 let tlist_tex_settings='tex;k:command;a:abstract;p:part;c:chapter;s:section;l:label;r:ref;u:subsection;g:paragraph;t:thebibliography;o:tableofcontents;f:frontmatter;m:mainmatter;b:backmatter;x:appendix'
