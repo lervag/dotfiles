@@ -38,14 +38,12 @@ if v:version >= 703
   set undoreload=10000
 end
 
-" Use 256 colors and colorscheme if possible
-if &t_Co > 2 || has("gui_running")
-  " Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
-  " Select brightness: 'low', 'med', 'high', 'default' or custom levels.
-  set t_Co=256
-  let xterm16_colormap    = 'soft'
-  let xterm16_brightness  = 'high'
-  colorscheme xterm16
+" Colorscheme
+set background=light
+if has("gui_running")
+  colorscheme solarized
+else
+  colorscheme default
 endif
 
 "}}}
@@ -62,6 +60,7 @@ set foldcolumn=0                   " show folds in left column
 set hidden                         " can change buffer withour saving
 set modelines=5                    " set number of "vim-script lines" at EOF
 set tags=tags;/                    " set tag file directories
+set fillchars=fold:\ 
 
 " Add some file types to ignore list
 "set wildignore+=*.o
@@ -449,3 +448,4 @@ endfunction
 " Copyright, Karl Yngve Lervåg (c) 2008 - 2011
 " -----------------------------------------------------------------------------
 " vim: foldmethod=marker:ff=unix
+"
