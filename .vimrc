@@ -285,7 +285,8 @@ if v:version < 700
 end
 
 " Command-t
-let g:CommandTScanDotDirectories = 1
+"let g:CommandTScanDotDirectories = 1
+"let g:CommandTMaxFiles=40000
 nmap <silent> <Leader>tt :CommandT<CR>
 nmap <silent> <Leader>tb :CommandTBuffer<CR>
 nmap <silent> <Leader>t :CommandT 
