@@ -46,6 +46,15 @@ else
   colorscheme default
 endif
 
+" Set standard omnicompletion (unless already defined)
+if has("autocmd") && exists("+omnifunc")
+  setlocal completeopt=menuone,menu,longest
+  autocmd Filetype *
+    \ if &omnifunc == "" |
+    \   setlocal omnifunc=syntaxcomplete#Complete |
+    \ endif
+endif
+
 "}}}
 "{{{ Vim user interface
 set wildmode=longest,list:longest  " shows nice command completion
@@ -253,8 +262,8 @@ vmap <z> :'<,'>s/^/%
 vmap <Z> :'<,'>s/^%//
 
 " Handy functions
-imap <silent> <c-d><c-d> <c-r>=strftime("%e %b %Y")<CR>
-imap <silent> <c-t><c-t> <c-r>=strftime("%l:%M %p")<CR>
+imap <silent> <c-r><c-d> <c-r>=strftime("%e %b %Y")<CR>
+imap <silent> <c-r><c-t> <c-r>=strftime("%l:%M %p")<CR>
 vmap <silent>  ;=  :call AlignAssignments()<CR>
 nmap <silent>  ;=  :call AlignAssignments()<CR>
 
@@ -275,8 +284,12 @@ let g:ackhighlight=1
 let g:EnhCommentifyUserBindings='Yes'
 
 " Supertab
-let g:SuperTabSetDefaultCompletionType = "context"
 let g:SuperTabRetainCompletionDuration = "session"
+let g:SuperTabDefaultCompletionType    = "context"
+let g:SuperTabCompletionContexts       = ['s:ContextText', 's:ContextDiscover']
+let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+let g:SuperTabContextDiscoverDiscovery  =
+      \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
 " VCSCommand
 let VCSCommandSplit = 'horizontal'
