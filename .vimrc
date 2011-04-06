@@ -113,16 +113,16 @@ endif
 
 "}}}
 "{{{ Text formatting/layout
-set autoindent        " copies indent from previous line
-set nocindent         " C-like indenting
-set softtabstop=2     " read help
-set shiftwidth=2      " width of indent
-set tw=79             " width of text
-set fo=tcrq1          " text format options (:help 'fo')
-set ff=unix           " never use windows file format
-set wrap              " wraps text
-set smarttab          " tabs at start of line, space elsewhere
-set expandtab         " replace tabs with spaces
+set autoindent
+set nocindent
+set softtabstop=2
+set shiftwidth=2
+set textwidth=79
+set formatoptions=tcrq1
+set fileformat=unix
+set wrap
+set smarttab
+set expandtab
 set spelllang=en_gb
 
 " vimdiff options
@@ -186,12 +186,6 @@ if !exists("autocommands_loaded")
     " For all tex files use forward slash in filenames
     setlocal shellslash nocindent
     setlocal iskeyword+=:
-
-    " Add mapping to be able to select a single paragraph, and to format it
-    map <silent> <expr> { LaTeXStartOfParagraph()
-    map <silent> <expr> } LaTeXEndOfParagraph()
-    vmap p {o}
-    map <silent> gwp :call LaTeXFormatParagraph()<CR>
 
     " Start with fold open and center screen
     silent! normal zO zz
@@ -314,15 +308,11 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 if ! has("gui_running")
   let Tlist_Use_Horiz_Window = 1
 endif
+let tlist_tex_settings='tex;k:command;a:abstract;p:part;c:chapter;s:section;l:label;r:ref;u:subsection;g:paragraph;t:thebibliography;o:tableofcontents;f:frontmatter;m:mainmatter;b:backmatter;x:appendix'
+let tlist_bib_settings='bib;a:article;b:book;m:misc;p:part;s:string;t:thesis'
 
 " Tabular
 nmap <silent> <Leader>tl :Tab<cr>
-
-" Latex taglist settings
-let tlist_tex_settings='tex;k:command;a:abstract;p:part;c:chapter;s:section;l:label;r:ref;u:subsection;g:paragraph;t:thebibliography;o:tableofcontents;f:frontmatter;m:mainmatter;b:backmatter;x:appendix'
-
-" Bibtex taglist settings
-let tlist_bib_settings='bib;a:article;b:book;m:misc;p:part;s:string;t:thesis'
 
 "}}}
 "{{{ Functions
