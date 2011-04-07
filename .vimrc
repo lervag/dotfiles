@@ -70,6 +70,10 @@ set hidden                         " can change buffer withour saving
 set modelines=5                    " set number of "vim-script lines" at EOF
 set tags=tags;/                    " set tag file directories
 set fillchars=fold:\ 
+set complete+=U
+set thesaurus+=~/.vim/thesaurus/mythesaurus.txt
+set spellfile+=~/.vim/spell/mywords.latin1.add
+set spellfile+=~/.vim/spell/mywords.utf-8.add
 
 " Add some file types to ignore list
 "set wildignore+=*.o
@@ -281,8 +285,7 @@ let g:EnhCommentifyUserBindings='Yes'
 let g:SuperTabRetainCompletionDuration = "session"
 let g:SuperTabDefaultCompletionType    = "context"
 let g:SuperTabCompletionContexts       = ['s:ContextText', 's:ContextDiscover']
-let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-let g:SuperTabContextDiscoverDiscovery  =
+let g:SuperTabContextDiscoverDiscovery =
       \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
 " VCSCommand
@@ -292,8 +295,6 @@ if v:version < 700
 end
 
 " Command-t
-"let g:CommandTScanDotDirectories = 1
-"let g:CommandTMaxFiles=40000
 nmap <silent> <Leader>tt :CommandT<CR>
 nmap <silent> <Leader>tb :CommandTBuffer<CR>
 nmap <silent> <Leader>t :CommandT 
