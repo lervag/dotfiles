@@ -122,9 +122,10 @@ set nocindent
 set softtabstop=2
 set shiftwidth=2
 set textwidth=79
-set formatoptions=tcrq1
+set formatoptions=tcrq1n
+set formatlistpat=^\\s*\\(\\(\\d\\+\\\|[a-z]\\)[.:)]\\\|[-*]\\)\\s\\+
 set fileformat=unix
-set wrap
+set wrap linebreak showbreak=\ 
 set smarttab
 set expandtab
 set spelllang=en_gb
@@ -176,6 +177,7 @@ if !exists("autocommands_loaded")
   "}}}"
   "{{{ Textfiles
   au BufReadPost *.txt setlocal textwidth=78
+  au BufReadPost *.txt setlocal formatoptions-=c
   "}}}"
   "{{{ MATLAB
   au BufReadPost *.m set foldmethod=manual
