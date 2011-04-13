@@ -315,6 +315,13 @@ let tlist_bib_settings='bib;a:article;b:book;m:misc;p:part;s:string;t:thesis'
 " Tabular
 nmap <silent> <Leader>tl :Tab<cr>
 
+" ConqueTerm
+let g:ConqueTerm_SendVisKey = ',cc'
+let g:ConqueTerm_SendFileKey = ',ca'
+let g:ConqueTerm_ExecFileKey = ',cf'
+let g:ConqueTerm_CloseOnEnd = 1
+let g:ConqueTerm_TERM = 'xterm'
+
 "}}}
 "{{{ Functions
 "{{{ SpellCheck
