@@ -1,7 +1,9 @@
+require 'rubygems'
+require 'interactive_editor'
 require 'irb/completion'
-$: << File.expand_path("~/lib/")
 ARGV.concat [ "--readline", "--promt-mode", "simple" ]
 
+# Improve the history log file
 module Readline
   module History
     LOG = "#{ENV['HOME']}/.irb-history"
@@ -32,7 +34,6 @@ module Readline
     ln
   end
 end
-
 Readline::History.start_session_log
 
 # vim: ft=ruby
