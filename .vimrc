@@ -72,6 +72,7 @@ endif
 set background=light
 if has("gui_running")
   colorscheme solarized
+  nnoremap <F5> :call ToggleBackground()<cr>
 else
   colorscheme default
 endif
@@ -244,6 +245,15 @@ let g:ConqueTerm_TERM = 'xterm'
 let g:miniBufExplMapCTabSwitchBufs = 1 
 
 "{{{1 Functions
+function! ToggleBackground()                                             "{{{2
+  if (g:solarized_style=="dark")
+    let g:solarized_style="light"
+    colorscheme solarized
+  else
+    let g:solarized_style="dark"
+    colorscheme solarized
+  endif
+endfunction
 function! LaTeXSettings()                                                 "{{{2
   " For all tex files use forward slash in filenames
   setlocal shellslash nocindent
