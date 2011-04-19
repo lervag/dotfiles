@@ -141,6 +141,9 @@ augroup SpecificAutocommands
   au BufReadPost *.txt setlocal textwidth=78
   au BufReadPost *.txt setlocal formatoptions-=c
 
+  " Fortran
+  au BufReadPost *.f90 set foldmethod=syntax
+
   " MATLAB
   au BufReadPost *.m set foldmethod=manual
 
@@ -240,9 +243,6 @@ let g:ConqueTerm_SendFileKey = ',ca'
 let g:ConqueTerm_ExecFileKey = ',cf'
 let g:ConqueTerm_CloseOnEnd = 1
 let g:ConqueTerm_TERM = 'xterm'
-
-"{{{2 MiniBufExplorer
-let g:miniBufExplMapCTabSwitchBufs = 1 
 
 "{{{1 Functions
 function! ToggleBackground()                                             "{{{2
