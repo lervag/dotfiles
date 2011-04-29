@@ -232,6 +232,7 @@ let tlist_bib_settings='bib;a:article;b:book;m:misc;p:part;s:string;t:thesis'
 nmap <silent> <Leader>tl :Tab<cr>
 
 "{{{2 Gundo
+let g:gundo_width=60
 map <S-u> :GundoToggle<cr>
 
 "{{{2 NERDTree
