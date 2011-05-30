@@ -35,6 +35,10 @@ bind -m vi-insert "\C-n":next-history
 bind -m vi-insert "\C-a":beginning-of-line
 bind -m vi-insert "\C-e":end-of-line
 
+# Set some bash options
+shopt -s globstar
+shopt -s extglob
+
 # Enable bash completion in interactive shells
 if [ -f /etc/bash_completion ]; then
   source /etc/bash_completion

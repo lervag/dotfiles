@@ -68,6 +68,19 @@
   and (-11, 0.51, 0), reference to Guido and Simeone, graph of relative
   displacement.  Keywords: break-up, coalescence, drop, simulations.},
 }
+@Article{Deganello11,
+  title   = {Level-set method for the modelling of liquid bridge formation and
+             break-up},
+  author  = {D. Deganello and A. J. Williams and T. N. Croft and A. S. Lubansky
+             and D. T. Gethin and T.C. Claypole},
+  journal = {Computers and Fluids},
+  volume  = 40,
+  pages   = {42-51},
+  year    = 2011,
+  comment = {Includes contact angle modelling. Does not mention the curvature
+  issue, even though it should be relevant. Article is not very interesting,
+  but could be used for reference and perhaps when modeling contact angles.}
+}
 @Article{Desjardins08,
   title   = {An accurate conservative level set/ghost fluid method for
     simulating turbulent atomization},
@@ -271,7 +284,7 @@
   volume  = 229,
   pages   = {8952-8965},
   comment = {Finite volume context.  Presents a 6th order central WENO
-  scheme which has s much smaller dissipation error than the standard WENO
+  scheme which has a much smaller dissipation error than the standard WENO
   scheme.  Should be possible to implement in a finite difference context.
   Probably not very important for our work.  Keywords: Numerical method,
   compressible flow, high-order scheme.}
@@ -333,6 +346,27 @@
       impvel    = 0.132 m/s               impvel    = 0.098 m/s
      ================================================================},
 }
+@article{Kees11,
+  author   = {C.E. Kees and I. Akkerman and M.W. Farthing and Y. Bazilevs},
+  title    = {A conservative level set method suitable for variable-order
+              approximations and unstructured meshes},
+  journal  = {Journal of Computational Physics},
+  volume   = {230},
+  number   = {12},
+  pages    = {4536 - 4558},
+  year     = {2011},
+  doi      = {DOI: 10.1016/j.jcp.2011.02.030},
+  keywords = {Free-surface flow},
+  keywords = {Level set},
+  keywords = {Mass conservation},
+  keywords = {Finite elements},
+  keywords = {Fluids},
+  keywords = {Residual-based variational multiscale method},
+  comment = {Proposes a technique  for correcting level-set method with respect
+  to mass  conservation. FEM (and family)  setting. Seems like a  good article,
+  but abit difficult to  interpret and use. Results from dam  break test in 3D,
+  with and without obstacle. Very impressive results with obstacle.},
+}
 @Article{Ketcheson05,
   author  = {David I. Ketcheson and Allen C. Robinson},
   title   = {On the practical importance of the SSP property for
@@ -342,6 +376,21 @@
   volume  = {48},
   pages   = {271-303},
   year    = {2005},
+}
+@Article{Kim11,
+  title    = {Accurate adaptive level set method and sharpening technique for
+              three dimensional deforming interfaces},
+  author   = {Hyoungjin Kim and Meng-Sing Liou},
+  journal  = {Computers and Fluids},
+  volume   = {44},
+  pages    = {111-129},
+  year     = {2011},
+  doi      = {DOI: 10.1016/j.compfluid.2010.12.020},
+  keywords = {Level set, Re-initialization, Interface tracking, Interface
+              sharpening},
+  comment =  {They develop an accurate  level set method on  adaptive Cartesian
+  grids. They use a curvature-based artificial sharpening method which restores
+  volume losses.},
 }
 @Article{Koh89,
   author  = {C. J. Koh and L. G. Leal},
@@ -475,6 +524,16 @@
   pages         = {685-722},
   month         = {December},
 }
+@Article{Louda11,
+  author        = {Petr Louda and many others},
+  title         = {Numerical solution of incompressible flow through branched
+                   channels},
+  year          = {2011},
+  journal       = {Computers and Fluids},
+  volume        = {46},
+  pages         = {318-324},
+  comment       = {Deals with turbulent flows in branched channels.}
+}
 @Article{Louge91,
   author        = {M. Louge and E. Mastorakos and J. T. Jenkins},
   title         = {The role of particle collisions in pneumatic transport},
@@ -547,6 +606,23 @@
   method with VOF to minimize mass loss.  Detailed simulation with the
   level-set method of a jet break-up.  Keywords: level-set, GFM, VOF, Rayleigh
   instability, mass conservation.},
+}
+@Article{Nave10,
+  title         = {A gradient-augmented level set method with an optimally
+                   local, coherent advection scheme},
+  author        = {Jean-Christophe Nave and Rodolfo Ruben Rosales and Benjamin
+                   Seibold},
+  year          = 2010,
+  journal       = {Journal of Computational Physics},
+  volume        = 229,
+  pages         = {3802-3827},
+  comment =  {Presents an  idea to  also advect the  gradient of  the level-set
+  function. Note they  also use Hermite (cubic) interpolation  to represent the
+  level-set  function at  all  points. The  benefits are  that  the new  scheme
+  includes a certain  level of subgrid resolution,  that curvature calculations
+  are more  accurate/robust, and  also that higher  order schemes  are possible
+  with local (small) stencils. The article is detailed and contains a lot of
+  mathematical candy.},
 }
 @Article{Osher88,
   author        = {S. Osher and J. A. Sethian},
@@ -887,6 +963,47 @@
   pages         = {102102-1 - 102102-14},
   month         = {October},
   year          = {2006},
+}
+@Article{Zahedi09,
+  author        = {Sara Zahedi and Katarina Gustavsson and Gunilla Kreiss},
+  title         = {A conservative level set method for contact line dynamics},
+  journal       = {Journal of Computational Physics},
+  volume        = {228},
+  pages         = {6361-6375},
+  year          = {2009},
+  doi           = {DOI: 10.1016/j.jcp.2009.05.043},
+  keywords      = {Contact line, contact angles, level set method, conservative
+                   method, two-phase flow},
+  comment = {Seems like a simple way  to model contact lines. Shows a couple of
+  good test  cases that  I may want  to use:  (a) Droplet on  a flat  plate (b)
+  Capillary dominated channel flow},
+}
+@Article{Zahedi10,
+  author        = {Sara Zahedi and Anna-Karin Tornberg},
+  title         = {Delta function approximations in level set methods by
+                   distance function extension},
+  journal       = {Journal of Computational Physics},
+  volume        = {229},
+  pages         = {2199-2219},
+  year          = {2010},
+  doi           = {DOI: 10.1016/j.jcp.2009.11.030},
+  keywords      = {Level set method, delta function, consistent approximations,
+                   discretization, distance function},
+  comment       = {Shows an improved delta function for the level-set method.},
+}
+@Article{Zhang11,
+  author        = {Peng Zhang and Chung K. Law},
+  title         = {An analysis of head-on droplet collision with large
+                   deformation in gaseous medium},
+  journal       = {Physics of Fluids},
+  volume        = {23},
+  number        = {4},
+  year          = {2011},
+  doi           = {DOI: 10.1063/1.3580754},
+  keywords      = {Theoretical, droplet collision, head-on collision},
+  comment       = {A comprehensive research model of head-on droplet collisions
+  with We = O(1-10) and Ca<<1.  Article is interesting, since it gives a good
+  theoretical reference for verification of our numerical model.},
 }
 @Article{Zhao96,
   author        = {H. K. Zhao and T. Chan and B. Merriman and S. Osher},

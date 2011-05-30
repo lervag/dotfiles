@@ -1,7 +1,7 @@
 " Setup for VIM: The number one text editor!
 " -----------------------------------------------------------------------------
 " Author: Karl Yngve Lervåg
-" Date: 2011-04-15
+" Date: 2011-05-30
 "
 "{{{1 Activate pathogen
 if !exists("pathogen_loaded")
@@ -237,6 +237,12 @@ map <S-u> :GundoToggle<cr>
 
 "{{{2 NERDTree
 map ,nt :NERDTreeToggle<CR>
+
+"{{{2 NERDCommenter
+let NERDBlockComIgnoreEmpty = 0
+let NERDCommentWholeLinesInVMode=1
+let NERDCreateDefaultMappings=0
+map <C-A-c> <plug>NERDCommenterToggle
 
 "{{{2 ConqueTerm
 let g:ConqueTerm_SendVisKey = ',cc'
