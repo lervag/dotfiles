@@ -1,13 +1,13 @@
 # Bashrc --- Karl Yngve Lervåg
 # -----------------------------------------------------------------------------
 #
+# Check if already sourced
 if [ ! "$already_sourced" ]; then
   already_sourced=1
-  #
-  # We only do the following part once
-  #
-#{{{ Set environmental variables
-
+else
+  return
+fi
+#{{{1 Set environmental variables
 # Set some environmental variables
 export HOSTNAME="`hostname -s`"
 export EDITOR="vim"
@@ -22,13 +22,10 @@ export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
-
-# Nice additions
-#export CDPATH=.:~/documents # As PATH but for cd
-export HISTIGNORE="&:exit"  # Ignore some commands in history
+export HISTIGNORE="&:exit"
 
 # Vi mode
-set -o vi                               # Set input style to vi
+set -o vi
 bind -m vi-insert "\C-l":clear-screen
 bind -m vi-insert "\C-p":previous-history
 bind -m vi-insert "\C-n":next-history
@@ -44,11 +41,10 @@ if [ -f /etc/bash_completion ]; then
   source /etc/bash_completion
 fi
 
-# Default file permissions
-umask 022
+umask 022           # Default file permissions
+ulimit -s unlimited # Set stack size limit
 
-#}}}
-#{{{ Define some aliases
+#{{{1 Define some aliases
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
@@ -66,16 +62,11 @@ alias n2e="ssh $NTNUSRV n2e"
 [ ! "`which xpdf 2> /dev/null`" ] && [ "`which kpdf 2> /dev/null`" ] \
   && alias xpdf='kpdf'
 
-#}}}
-#{{{ Load system settings
-
+#{{{1 Load system settings
 sysfile=~/system_files/bashrc.sh
-bashmarks=~/.bashmarks.sh
 [ -f $sysfile ]   && . $sysfile
-[ -f $bashmarks ] && . $bashmarks
 
-#}}}
-#{{{ Welcome message
+#{{{1 Welcome message
 if [ -t 0 ] && [ -t 1 ]; then
   if [ ! "$tasks_written" ]; then
     echo "Velkomen til $HOSTNAME! "
@@ -90,8 +81,6 @@ if [ -t 0 ] && [ -t 1 ]; then
   stty stop undef
   stty start undef
 fi
-#}}}
-fi
-#
-# -----------------------------------------------------------------------------
+
+#{{{1 Modeline ----------------------------------------------------------------
 # vim: set foldmethod=marker ff=unix:

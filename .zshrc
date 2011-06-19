@@ -1,101 +1,34 @@
 # zshrc --- Karl Yngve Lervåg
 # -----------------------------------------------------------------------------
+# Created 2011-06-19
 #
-#{{{1 Set general environmental variables
+# Check if already sourced
+if [ ! "$already_sourced" ]; then
+  already_sourced=1
+else
+  return
+fi
+#{{{1 Set environmental variables
+# General
 export HOSTNAME="`hostname -s`"
 export EDITOR="vim"
 export XEDITOR="vim +%l %f"
 export OPSYS=$(uname)
-export HISTFILE=$HOME/.zhistory
 export HISTSIZE=20000
 export SAVEHIST=10000
+export PATH=$PATH:$HOME/scripts/bin
+export PAGER='less'
+
+# Other
 export HGENCODING="latin-1"
 export NTNUSRV="login.stud.ntnu.no"
-export PATH=$PATH:$HOME/scripts/bin
 export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
-export HISTIGNORE="&:exit"  # Ignore some commands in history
-export PAGER='less'
-
-#{{{1 Options
-#{{{2 General options
-# Vi mode in readline
-set -o vi
-
-# Default file permissions
-umask 022
-
-#{{{2 zsh options
 eval `dircolors -b`
 
-unsetopt bgnice
-
-setopt nohup
-setopt interactive_comments
-setopt extended_history \
-       inc_append_history \
-       no_bang_hist \
-       hist_expire_dups_first \
-       hist_reduce_blanks
-setopt correct_all
-setopt notify
-setopt complete_aliases \
-       rec_exact
-setopt glob_dots \
-       extended_glob
-setopt longlistjobs
-setopt auto_cd \
-       cdable_vars \
-       auto_list
-setopt auto_pushd \
-       pushd_ignore_dups \
-       pushd_to_home
-
-#{{{2 Autoload zsh modules when they are referenced
-zmodload -a zsh/stat stat
-zmodload -a zsh/zpty zpty
-zmodload -a zsh/zprof zprof
-zmodload -ap zsh/mapfile mapfile
-
-#{{{2 Add plugins and stuff
-autoload -U compinit
-autoload -U colors
-autoload -U zsh/terminfo
-compinit
-colors
-
-#{{{2 Set command prompt
-ps_blue="%{$terminfo[bold]$fg[blue]%}"
-ps_green="%{$terminfo[bold]$fg[green]%}"
-ps_red="%{$terminfo[bold]$fg[red]%}"
-ps_white="%{$terminfo[bold]$fg[white]%}"
-ps_reset="%{$terminfo[sgr0]%}"
-export PS1="$ps_blue%n$ps_white@$ps_green%m$ps_reset:$ps_red%3~$ps_reset%(!.#.$) " 
-#export RPS1="$PR_LIGHT_YELLOW(%D{%m-%d %H:%M})$PR_NO_COLOR"
-
-
-#{{{2 Add some keybindings
-bindkey ' '    magic-space
-bindkey '^I'   expand-or-complete-prefix
-bindkey "^R"   history-incremental-search-backward
-bindkey "\e[Z" reverse-menu-complete
-
-#{{{2 Autocompletion styles
-# allow approximate
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
-# tab completion for PID :D
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*' force-list always
-
-# cd not select parent dir
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
-
-#{{{2 Define aliases
+#{{{1 Define aliases
 # General aliases
 alias rm="rm -i"
 alias mv="mv -i"
@@ -121,14 +54,90 @@ alias -s bz2='tar -xjvf'
 alias -s txt=gvim
 alias -s tex=gvim
 
-#{{{1 Load system settings
-sysfile=~/system_files/zshrc
-[ -f $sysfile ] && . $sysfile
+#{{{1 Options
+umask 022           # Default file permissions
+ulimit -s unlimited # Set stack size limit
+watch=all           # Notify all logins or logouts
 
-#{{{1 Welcome message
-echo "Velkomen til $HOSTNAME! "
-echo "---------------------------------------------------------------------"
-echo
+# Turn on/off some zsh options
+unsetopt bgnice
+setopt nohup
+setopt interactive_comments
+setopt clobber
+setopt extended_history \
+       inc_append_history \
+       bang_hist \
+       hist_expire_dups_first \
+       hist_ignore_dups \
+       hist_reduce_blanks
+setopt correct_all
+setopt notify
+setopt complete_aliases \
+       rec_exact
+setopt extended_glob
+setopt longlistjobs
+setopt auto_cd \
+       auto_list
+setopt auto_pushd \
+       pushd_ignore_dups \
+       pushd_to_home
 
-# -----------------------------------------------------------------------------
+# Autoload zsh modules when they are referenced
+zmodload -a zsh/stat stat
+zmodload -a zsh/zpty zpty
+zmodload -a zsh/zprof zprof
+zmodload -ap zsh/mapfile mapfile
+
+# Add plugins and stuff
+autoload -U compinit
+autoload -U colors
+autoload -U zsh/terminfo
+compinit
+colors
+
+#{{{1 Autocompletion styles
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-prompt \
+       '%SAt %p: Hit TAB for more, or the character to insert%s'
+zstyle ':completion:*:match:*' original only
+zstyle -e ':completion:*:approximate:*' max-errors \
+          'reply=( $(( ($#PREFIX+$#SUFFIX)/2 )) numeric )'
+zstyle ':completion:*:expand:*' tag-order all-expansions
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:*:kill:*:processes' \
+       command 'ps --forest -u lervag -o pid,user,cmd'
+zstyle ':completion:*:processes-names' command 'ps axho command'
+
+#{{{1 Set command prompt
+ps_blue="%{$terminfo[bold]$fg[blue]%}"
+ps_green="%{$terminfo[bold]$fg[green]%}"
+ps_red="%{$terminfo[bold]$fg[red]%}"
+ps_white="%{$terminfo[bold]$fg[white]%}"
+ps_reset="%{$terminfo[sgr0]%}"
+export PS1="$ps_blue%n$ps_white@$ps_green%m$ps_reset:$ps_red%3~$ps_reset%(!.#.$) " 
+#export RPS1="$PR_LIGHT_YELLOW(%D{%m-%d %H:%M})$PR_NO_COLOR"
+
+#{{{1 Add some keybindings
+bindkey -v
+bindkey ' '    magic-space
+bindkey '^I'   expand-or-complete-prefix
+bindkey "^R"   history-incremental-search-backward
+bindkey "\e[Z" reverse-menu-complete
+
+#{{{1 Load system-specific settings
+sysfile=~/system_files/bashrc.sh
+[ -f $sysfile ] && source $sysfile
+
+#{{{1 Modeline ----------------------------------------------------------------
 # vim: set foldmethod=marker ff=unix:
