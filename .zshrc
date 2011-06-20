@@ -46,6 +46,9 @@ alias e2n="ssh $NTNUSRV e2n"
 alias n2e="ssh $NTNUSRV n2e"
 [ ! "`which xpdf 2> /dev/null`" ] && [ "`which kpdf 2> /dev/null`" ] \
   && alias xpdf='kpdf'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] \
+  && echo terminal || echo error)" "$(history|tail -n1| \
+  sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
@@ -138,6 +141,8 @@ bindkey "\e[Z" reverse-menu-complete
 #{{{1 Load system-specific settings
 sysfile=~/system_files/bashrc.sh
 [ -f $sysfile ] && source $sysfile
+
+#{{{1 ...
 
 #{{{1 Modeline ----------------------------------------------------------------
 # vim: set foldmethod=marker ff=unix:
