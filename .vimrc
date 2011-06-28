@@ -188,6 +188,9 @@ imap <silent> <c-r><c-d> <c-r>=strftime("%e %b %Y")<CR>
 imap <silent> <c-r><c-t> <c-r>=strftime("%l:%M %p")<CR>
 map <F12> ggVGg? " encypt the file (toggle)
 
+" Make it possible to save as sudo
+cmap w!! %!sudo tee > /dev/null %
+
 "{{{1 Plugin settings
 "{{{2 Ack settings
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
