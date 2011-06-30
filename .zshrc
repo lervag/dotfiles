@@ -16,6 +16,7 @@ export XEDITOR="vim +%l %f"
 export OPSYS=$(uname)
 export HISTSIZE=20000
 export SAVEHIST=10000
+export HISTFILE=".zsh_history"
 export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
 
@@ -35,6 +36,8 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias du="du -c"
 alias grep="grep -i"
+alias s='ls'
+alias l='ls'
 alias ls='ls -X --color=auto --group-directories-first'
 alias ll='ls -ogh'
 alias lsa='ls -A'
@@ -72,19 +75,22 @@ okular() { command okular ${*:-*.pdf(om[1])} }
 #{{{1 Options
 umask 022           # Default file permissions
 ulimit -s unlimited # Set stack size limit
-watch=all           # Notify all logins or logouts
+watch=( notme )     # Notify all logins or logouts (that are not me)
 
 # Turn on/off some zsh options
 unsetopt bgnice
-setopt nohup
+setopt nohup \
+       print_exit_value
 setopt interactive_comments
 setopt clobber
 setopt extended_history \
        inc_append_history \
        bang_hist \
+       hist_verify \
        hist_expire_dups_first \
        hist_ignore_dups \
-       hist_reduce_blanks
+       hist_reduce_blanks \
+       share_history
 setopt correct_all
 setopt notify
 setopt complete_aliases \
@@ -98,15 +104,14 @@ setopt auto_pushd \
        pushd_to_home
 
 # Autoload zsh modules when they are referenced
-zmodload -a zsh/stat stat
-zmodload -a zsh/zpty zpty
-zmodload -a zsh/zprof zprof
-zmodload -ap zsh/mapfile mapfile
+zmodload zsh/stat
+zmodload zsh/mathfunc
 
 # Add plugins and stuff
+autoload -U zmv
+autoload -U zsh/terminfo
 autoload -U compinit
 autoload -U colors
-autoload -U zsh/terminfo
 compinit
 colors
 
