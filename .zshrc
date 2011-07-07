@@ -16,7 +16,7 @@ export XEDITOR="vim +%l %f"
 export OPSYS=$(uname)
 export HISTSIZE=20000
 export SAVEHIST=10000
-export HISTFILE=".zsh_history"
+export HISTFILE="$HOME/.zsh_history"
 export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
 
