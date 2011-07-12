@@ -106,6 +106,7 @@ setopt auto_pushd \
 # Autoload zsh modules when they are referenced
 zmodload zsh/stat
 zmodload zsh/mathfunc
+zmodload zsh/complist
 
 # Add plugins and stuff
 autoload -U zmv
@@ -124,19 +125,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # Set more verbose output
 zstyle ':completion:*' verbose yes
 
-# Fuzzy matching of completions for when you mistype them
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle -e ':completion:*:approximate:*' max-errors \
-          'reply=($((($#PREFIX+$#SUFFIX)/2)) numeric)'
-
-# First simple completion, then case-insensitive completion
-zstyle ':completion:*' matcher-list '' '+m:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
-#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# Ignore completion functions for commands I don't have
-zstyle ':completion:*:functions' ignored-patterns '_*'
-
 # Remove trailing slash (usefull in ln)
 zstyle ':completion:*' squeeze-slashes true
 
@@ -150,28 +138,38 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt \
        '%SAt %p, %l: Hit TAB for more or character to insert.%s'
 
+# Set completer functions
+zstyle ':completion:*' completer _complete _match _approximate
+
+# Fuzzy matching of completions for when you mistype them
+zstyle ':completion:*:match:*' original only
+zstyle -e ':completion:*:approximate:*' max-errors \
+          'reply=($((($#PREFIX+$#SUFFIX)/2)) numeric)'
+
+# First simple completion, then case-insensitive completion
+zstyle ':completion:*' matcher-list '' '+m:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 #{{{2 Unprocessed
 zstyle ':completion:*:expand:*' tag-order all-expansions
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
-zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 zstyle ':completion:*:processes-names' command 'ps axho command'
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
 #{{{2 Program specific settings
-# Have words sorted by time for okular and evince
-zstyle ':completion:*:*:okular:*' meny yes select
+# Have pdf-files sorted by time for okular and evince
 zstyle ':completion:*:*:okular:*' file-sort time
-zstyle ':completion:*:*:evince:*' meny yes select
+zstyle ':completion:*:*:okular:*' file-patterns '*.pdf:pdf-files'
 zstyle ':completion:*:*:evince:*' file-sort time
+zstyle ':completion:*:*:evince:*' file-patterns '*.pdf:pdf-files'
 
 # Options for kill
-zstyle ':completion:*:kill:*' force-list always
-zstyle ':completion:*:*:kill:*' meny yes select
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:*:kill:*:processes' \
-       command 'ps --forest -u lervag -o pid,user,cmd'
+         command 'ps --forest -u lervag -o pid,user,cmd'
 
 # cd wil never select parent directory
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
@@ -194,6 +192,14 @@ bindkey "\E[Z" reverse-menu-complete
 bindkey "^U"   backward-kill-line
 bindkey "^F"   vi-forward-char
 bindkey "^B"   vi-backward-char
+
+# Special keys
+bindkey "\e[1~" beginning-of-line    # Home
+bindkey "\e[4~" end-of-line          # End
+bindkey "\e[5~" beginning-of-history # PageUp
+bindkey "\e[6~" end-of-history       # PageDown
+bindkey "\e[2~" beginning-of-line    # Ins
+bindkey "\e[3~" delete-char          # Del
 
 #{{{1 Load system-specific settings
 sysfile=~/system_files/bashrc.sh
