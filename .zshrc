@@ -94,6 +94,7 @@ setopt extended_history \
 setopt correct_all
 setopt notify
 setopt complete_aliases \
+       always_to_end \
        rec_exact
 setopt extended_glob
 setopt longlistjobs
@@ -146,9 +147,42 @@ zstyle ':completion:*:match:*' original only
 zstyle -e ':completion:*:approximate:*' max-errors \
           'reply=($((($#PREFIX+$#SUFFIX)/2)) numeric)'
 
-# First simple completion, then case-insensitive completion
-zstyle ':completion:*' matcher-list '' '+m:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
-#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# Case-insensitive and fuzzy completion
+zstyle ':completion:*' matcher-list '+m:{a-zA-Z}={A-Za-z}' \
+                                    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+#{{{2 Program specific settings
+# Have pdf-files sorted by time for okular and evince
+zstyle ':completion:*:*:okular:*' file-sort time
+zstyle ':completion:*:*:okular:*' file-patterns \
+  '*.pdf:pdf-files:pdf\ files' \
+  '*(-/):directories:directories' \
+  '^*.pdf(-^/):other-files:other\ files'
+zstyle ':completion:*:*:evince:*' file-sort time
+zstyle ':completion:*:*:evince:*' file-patterns \
+  '*.pdf:pdf-files:pdf\ files' \
+  '*(-/):directories:directories' \
+  '^*.pdf(-^/):other-files:other\ files'
+
+# Options for kill
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:*:kill:*:processes' \
+         command 'ps --forest -u lervag -o pid,user,cmd'
+
+# cd wil never select parent directory
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+#{{{2 Ignore uninteresting users
+zstyle ':completion:*:*:*:users' ignored-patterns \
+      adm amanda apache avahi avahi-autoipd backup beaglidx bin cacti      \
+      canna cl-builder clamav couchdb daemon dbus distcache dovecot fax    \
+      ftp games gdm gkrellmd gnats gopher hacluster haldaemon halt hplip   \
+      hsqldb ident irc junkbust kernoops ldap libuuid list lp mail mailman \
+      mailnull man messagebus mldonkey mysql nagios named netdump news     \
+      nfsnobody nobody nscd ntp nut nx openvpn operator pcap postfix       \
+      postgres privoxy proxy pulse pvm quagga radvd rpc rpcuser rpm rtkit  \
+      saned shutdown speech-dispatcher squid sshd sync sys syslog usbmux   \
+      uucp vcsa www-data xfs
 
 #{{{2 Unprocessed
 zstyle ':completion:*:expand:*' tag-order all-expansions
@@ -158,21 +192,6 @@ zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*:processes-names' command 'ps axho command'
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
-
-#{{{2 Program specific settings
-# Have pdf-files sorted by time for okular and evince
-zstyle ':completion:*:*:okular:*' file-sort time
-zstyle ':completion:*:*:okular:*' file-patterns '*.pdf:pdf-files'
-zstyle ':completion:*:*:evince:*' file-sort time
-zstyle ':completion:*:*:evince:*' file-patterns '*.pdf:pdf-files'
-
-# Options for kill
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:*:kill:*:processes' \
-         command 'ps --forest -u lervag -o pid,user,cmd'
-
-# cd wil never select parent directory
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 #{{{1 Set command prompt
 ps_blue="%{$terminfo[bold]$fg[blue]%}"
