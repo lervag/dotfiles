@@ -10,6 +10,7 @@ pager =
 color =
 hgk =
 fetch =
+progress =
 
 [hgk]
 path=~/scripts/bin/hgk
@@ -25,7 +26,6 @@ editor = vim
 merge = vimdiff
 ssh = ssh -C
 commitsubrepos = False
-#style = compact
 
 [color]
 status.modified = magenta
@@ -39,3 +39,11 @@ status.clean    = black bold
 [merge-tools]
 vimdiff.executable = gvim
 vimdiff.args = -d $base $local $output $other +close +close
+
+[diff]
+git = True
+
+[alias]
+show = log --color=always --stat -r
+slog = log --template '{date|shortdate}: {desc|firstline}\n'
+glog = glog --template 'changeset:   {rev}:{node|short} {tags}\nsummary: {desc|firstline|fill68|tabindent|tabindent}\n\n'
