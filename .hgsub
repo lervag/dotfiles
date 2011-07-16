@@ -1,1 +1,1 @@
-.vim = ssh://hg@bitbucket.org/lervag/vimfiles
+.vim = https://lervag@bitbucket.org/lervag/vimfiles
