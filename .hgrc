@@ -11,6 +11,7 @@ color =
 hgk =
 fetch =
 progress =
+rebase =
 
 [hgk]
 path=~/scripts/bin/hgk
