@@ -79,8 +79,7 @@ watch=( notme )     # Notify all logins or logouts (that are not me)
 
 # Turn on/off some zsh options
 unsetopt bgnice
-setopt nohup \
-       print_exit_value
+setopt nohup
 setopt interactive_comments
 setopt clobber
 setopt extended_history \
