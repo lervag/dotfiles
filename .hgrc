@@ -12,6 +12,7 @@ hgk =
 fetch =
 progress =
 rebase =
+transplant = 
 
 [hgk]
 path=~/scripts/bin/hgk
