@@ -31,7 +31,7 @@ set foldlevel=0
 set foldcolumn=0
 set hidden
 set modelines=5
-set tags=tags;/
+set tags+=tags;/
 set fillchars=fold:\ 
 set complete+=U
 set thesaurus+=~/.vim/thesaurus/mythesaurus.txt
@@ -60,7 +60,8 @@ set expandtab
 set spelllang=en_gb
 set diffopt=filler,context:4,foldcolumn:2,horizontal
 set completeopt=menuone,menu,longest
-"runtime macros/matchit.vim
+set grepprg=ack-grep
+set list lcs=tab:>-,trail:-,nbsp:-
 
 "{{{1 Gui and colorscheme options
 if has("gui_running")
@@ -191,6 +192,11 @@ map <F12> ggVGg? " encypt the file (toggle)
 " Make it possible to save as sudo
 cmap w!! %!sudo tee > /dev/null %
 
+map ,gg :grep <C-R>=expand(expand("<cword>") . " " . expand("%:h"))<CR><CR>
+map ,go :botright cwindow<CR>
+map ,gp :cprev<CR>
+map ,gn :cnext<CR>
+
 "{{{1 Plugin settings
 "{{{2 Ack settings
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
@@ -217,19 +223,22 @@ map ,cc :call ChooseVCSCommandType()<cr>
 nmap <silent> <Leader>tt :CommandT<CR>
 nmap <silent> <Leader>t :CommandT 
 
-"{{{2 Taglist - nice plugin
-map <S-m> :TlistToggle<cr>
+"{{{2 Taglist
+"map <S-m> :TlistToggle<cr>
 let Tlist_Use_Right_Window = 1
 let Tlist_Close_On_Select = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Compact_Format = 0
 let Tlist_Exist_OnlyWindow = 0
 let Tlist_GainFocus_On_ToggleOpen = 1
-if ! has("gui_running")
-  let Tlist_Use_Horiz_Window = 1
-endif
 let tlist_tex_settings='tex;k:command;a:abstract;p:part;c:chapter;s:section;l:label;r:ref;u:subsection;g:paragraph;t:thebibliography;o:tableofcontents;f:frontmatter;m:mainmatter;b:backmatter;x:appendix'
 let tlist_bib_settings='bib;a:article;b:book;m:misc;p:part;s:string;t:thesis'
+
+"{{{2 Tagbar
+map <S-m> :TagbarToggle<cr>
+let g:tagbar_expand = 1
+let g:tagbar_autoshowtag = 1
+let g:tagbar_compact = 1
 
 "{{{2 Tabular
 nmap <silent> <Leader>tl :Tab<cr>
@@ -240,6 +249,10 @@ map <S-u> :GundoToggle<cr>
 
 "{{{2 NERDTree
 map ,nt :NERDTreeToggle<CR>
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.hg$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks=1
 
 "{{{2 NERDCommenter
 let NERDBlockComIgnoreEmpty = 0
