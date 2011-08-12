@@ -223,23 +223,6 @@ map ,cc :call ChooseVCSCommandType()<cr>
 nmap <silent> <Leader>tt :CommandT<CR>
 nmap <silent> <Leader>t :CommandT 
 
-"{{{2 Taglist
-"map <S-m> :TlistToggle<cr>
-let Tlist_Use_Right_Window = 1
-let Tlist_Close_On_Select = 1
-let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Compact_Format = 0
-let Tlist_Exist_OnlyWindow = 0
-let Tlist_GainFocus_On_ToggleOpen = 1
-let tlist_tex_settings='tex;k:command;a:abstract;p:part;c:chapter;s:section;l:label;r:ref;u:subsection;g:paragraph;t:thebibliography;o:tableofcontents;f:frontmatter;m:mainmatter;b:backmatter;x:appendix'
-let tlist_bib_settings='bib;a:article;b:book;m:misc;p:part;s:string;t:thesis'
-
-"{{{2 Tagbar
-map <S-m> :TagbarToggle<cr>
-let g:tagbar_expand = 1
-let g:tagbar_autoshowtag = 1
-let g:tagbar_compact = 1
-
 "{{{2 Tabular
 nmap <silent> <Leader>tl :Tab<cr>
 
