@@ -1,7 +1,6 @@
 " Setup for VIM: The number one text editor!
 " -----------------------------------------------------------------------------
 " Author: Karl Yngve Lervåg
-" Date: 2011-05-30
 "
 "{{{1 Activate pathogen
 if !exists("pathogen_loaded")
@@ -62,21 +61,32 @@ set diffopt=filler,context:4,foldcolumn:2,horizontal
 set completeopt=menuone,menu,longest
 set grepprg=ack-grep
 set list lcs=tab:>-,trail:-,nbsp:-
+set cursorline
+set laststatus=2
+set statusline=[%n]\ %t                         " tail of the filename
+set statusline+=\ %m                            " modified flag
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " file encoding
+set statusline+=%{&ff}                          " file format
+set statusline+=%Y                              " filetype
+set statusline+=%H                              " help file flag
+set statusline+=%R]                             " read only flag
+set statusline+=%q                              " quickfix-tag
+set statusline+=%w                              " preview-tag
+set statusline+=%=                              " left/right separator
+set statusline+=(%c,                            " cursor column
+set statusline+=%l/%L)                          " cursor line/total lines
+set statusline+=\ %P                            " percent through file
 
 "{{{1 Gui and colorscheme options
 if has("gui_running")
   set lines=50
-  set guioptions=aegirLt 
+  set guioptions=aegirLt
   set guifont=Monospace\ 10
 endif
 
-set background=light
-if has("gui_running")
-  colorscheme solarized
-  nnoremap <F5> :call ToggleBackground()<cr>
-else
-  colorscheme default
-endif
+set background=dark
+let g:solarized_contrast="high"
+colorscheme solarized
 
 "{{{1 OS-specific options (including backup and undofile options)
 set backup
@@ -158,6 +168,9 @@ augroup SpecificAutocommands
   au FileType python syn keyword pythonDecorator True None False self
 augroup END
 "{{{1 Key mappings (general)
+" Exit insert mode
+inoremap jkj <Esc>
+
 " Open certain files with ,v...
 map ,vv :e $MYVIMRC<cr>
 map ,vs :e  ~/.vim/snippets/<cr>
@@ -181,10 +194,13 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-" Other stuff
-noremap Y y$
+" Navigate folds
 map <c-j> zcjzo
 map <c-k> zckzo
+nnoremap <space> za
+
+" Other stuff
+noremap Y y$
 imap <silent> <c-r><c-d> <c-r>=strftime("%e %b %Y")<CR>
 imap <silent> <c-r><c-t> <c-r>=strftime("%l:%M %p")<CR>
 map <F12> ggVGg? " encypt the file (toggle)
@@ -250,16 +266,12 @@ let g:ConqueTerm_ExecFileKey = ',cf'
 let g:ConqueTerm_CloseOnEnd = 1
 let g:ConqueTerm_TERM = 'xterm'
 
+"{{{2 delimitMate
+let delimitMate_balance_matchpairs = 1
+let delimitMate_expand_space       = 1
+let delimitMate_excluded_regions   = "Comments,String"
+
 "{{{1 Functions
-function! ToggleBackground()                                             "{{{2
-  if (g:solarized_style=="dark")
-    let g:solarized_style="light"
-    colorscheme solarized
-  else
-    let g:solarized_style="dark"
-    colorscheme solarized
-  endif
-endfunction
 function! LaTeXSettings()                                                 "{{{2
   " For all tex files use forward slash in filenames
   setlocal shellslash nocindent
