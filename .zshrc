@@ -27,7 +27,7 @@ export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
-eval `dircolors -b`
+eval `dircolors -b $HOME/scripts/dircolors-solarized/dircolors.ansi-dark`
 
 #{{{1 Define aliases
 # General aliases
