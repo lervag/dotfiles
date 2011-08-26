@@ -208,11 +208,14 @@ bindkey "\C-R" history-incremental-pattern-search-backward
 bindkey "\C-X" history-incremental-pattern-search-forward
 bindkey "\E[Z" reverse-menu-complete
 bindkey "^U"   backward-kill-line
+bindkey "^K"   kill-line
 bindkey "^F"   vi-forward-char
 bindkey "^B"   vi-backward-char
 
 # Special keys
+bindkey "\eOH"  beginning-of-line    # Home
 bindkey "\e[1~" beginning-of-line    # Home
+bindkey "\eOF"  end-of-line          # End
 bindkey "\e[4~" end-of-line          # End
 bindkey "\e[5~" beginning-of-history # PageUp
 bindkey "\e[6~" end-of-history       # PageDown
