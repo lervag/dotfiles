@@ -204,7 +204,7 @@ RPS1="$ps_white<i>$ps_reset"
 
 # To change prompt depending on vi mode
 function zle-keymap-select {
-  if [[ $KEYMAP = vicmd ]]; then
+  if [ $KEYMAP = vicmd ]; then
     RPS1="$ps_red<n>$ps_reset"
   else
     RPS1="$ps_white<i>$ps_reset"
