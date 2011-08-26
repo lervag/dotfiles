@@ -195,11 +195,23 @@ zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 #{{{1 Set command prompt
 ps_blue="%{$terminfo[bold]$fg[blue]%}"
 ps_green="%{$terminfo[bold]$fg[green]%}"
+ps_yellow="%{$fg[yellow]%}"
 ps_red="%{$terminfo[bold]$fg[red]%}"
 ps_white="%{$terminfo[bold]$fg[white]%}"
 ps_reset="%{$terminfo[sgr0]%}"
-export PS1="$ps_blue%n$ps_white@$ps_green%m$ps_reset:$ps_red%3~$ps_reset%(!.#.$) " 
-#export RPS1="$PR_LIGHT_YELLOW(%D{%m-%d %H:%M})$PR_NO_COLOR"
+PS1="$ps_yellow%n$ps_white@$ps_green%m$ps_reset:$ps_red%3~$ps_reset%(!.#.$) "
+RPS1="$ps_white<i>$ps_reset"
+
+# To change prompt depending on vi mode
+function zle-keymap-select {
+  if [[ $KEYMAP = vicmd ]]; then
+    RPS1="$ps_red<n>$ps_reset"
+  else
+    RPS1="$ps_white<i>$ps_reset"
+  fi
+  zle reset-prompt
+}
+zle -N zle-keymap-select
 
 #{{{1 Add some keybindings
 bindkey -v
