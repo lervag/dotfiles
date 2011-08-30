@@ -195,21 +195,33 @@ zstyle ':completion:*:processes-names' command 'ps axho command'
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
 #{{{1 Set command prompt
-ps_blue="%{$terminfo[bold]$fg[blue]%}"
-ps_green="%{$terminfo[bold]$fg[green]%}"
+# Define colors
+ps_blue="%{$fg[blue]%}"
+ps_green="%{$fg[green]%}"
 ps_yellow="%{$fg[yellow]%}"
-ps_red="%{$terminfo[bold]$fg[red]%}"
-ps_white="%{$terminfo[bold]$fg[white]%}"
+ps_red="%{$fg[red]%}"
+ps_white="%{$fg[white]%}"
 ps_reset="%{$terminfo[sgr0]%}"
-PS1="$ps_yellow%n$ps_white@$ps_green%m$ps_reset:$ps_red%3~$ps_reset%(!.#.$) "
-RPS1="$ps_white<i>$ps_reset"
+rps_start="${ps_white}["
+rps_err="$ps_red%(?..%? )"
+rps_wdir="$ps_yellow%3~ "
+rps_vii="${ps_white}i"
+rps_vin="${ps_red}n"
+rps_stop="${ps_white}]$ps_reset"
+
+# Set PS1 and RPS1
+PS1="$ps_yellow%n$ps_white@$ps_green%m$ps_reset%(!.#.$) "
+RPS1="$rps_start$rps_err$rps_wdir$rps_vii$rps_stop"
+
+#PS2="$ps_yellow%n$ps_white@$ps_green%m$ps_reset:$ps_red%_$ps_reset> "
+#RPS2="$ps_white<i>$ps_reset"
 
 # To change prompt depending on vi mode
 function zle-keymap-select {
   if [ $KEYMAP = vicmd ]; then
-    RPS1="$ps_red<n>$ps_reset"
+    RPS1="$rps_start$rps_wdir$rps_vin$rps_stop"
   else
-    RPS1="$ps_white<i>$ps_reset"
+    RPS1="$rps_start$rps_err$rps_wdir$rps_vii$rps_stop"
   fi
   zle reset-prompt
 }
