@@ -69,8 +69,11 @@ alias -g ....='../../..'
 alias -g .....='../../../..'
 
 # Utility functions
-evince() { command evince ${*:-*.pdf(om[1])} }
-okular() { command okular ${*:-*.pdf(om[1])} }
+evince() { command evince ${*:-*.pdf(om[1])(.N)} }
+okular() { command okular ${*:-*.pdf(om[1])(.N)} }
+
+# To get colors in man
+alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 
 #{{{1 Options
 umask 022           # Default file permissions
@@ -88,9 +91,7 @@ setopt extended_history \
        hist_verify \
        hist_expire_dups_first \
        hist_ignore_dups \
-       hist_reduce_blanks \
-       share_history
-setopt correct_all
+       hist_reduce_blanks
 setopt notify
 setopt complete_aliases \
        always_to_end \
@@ -102,6 +103,7 @@ setopt auto_cd \
 setopt auto_pushd \
        pushd_ignore_dups \
        pushd_to_home
+setopt no_case_glob
 
 # Autoload zsh modules when they are referenced
 zmodload zsh/stat
