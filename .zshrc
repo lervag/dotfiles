@@ -19,6 +19,7 @@ export SAVEHIST=10000
 export HISTFILE="$HOME/.zsh_history"
 export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
+export TERM=rxvt
 
 # Other
 export HGENCODING="latin-1"
@@ -74,6 +75,11 @@ okular() { command okular ${*:-*.pdf(om[1])(.N)} }
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
+
+# Making GNU fileutils more verbose
+for c in cp rm chmod chown rename; do
+    alias $c="$c -v"
+done
 
 #{{{1 Options
 umask 022           # Default file permissions
@@ -212,16 +218,17 @@ rps_stop="${ps_white}]$ps_reset"
 # Set PS1 and RPS1
 PS1="$ps_yellow%n$ps_white@$ps_green%m$ps_reset%(!.#.$) "
 RPS1="$rps_start$rps_err$rps_wdir$rps_vii$rps_stop"
-
-#PS2="$ps_yellow%n$ps_white@$ps_green%m$ps_reset:$ps_red%_$ps_reset> "
-#RPS2="$ps_white<i>$ps_reset"
+PS2="$ps_yellow%n$ps_white@$ps_green%m$ps_reset:$ps_yellow%_$ps_reset%(!.#.$) "
+RPS2="$rps_start$rps_vii$rps_stop"
 
 # To change prompt depending on vi mode
 function zle-keymap-select {
   if [ $KEYMAP = vicmd ]; then
     RPS1="$rps_start$rps_wdir$rps_vin$rps_stop"
+    RPS2="$rps_start$rps_vin$rps_stop"
   else
     RPS1="$rps_start$rps_err$rps_wdir$rps_vii$rps_stop"
+    RPS2="$rps_start$rps_vii$rps_stop"
   fi
   zle reset-prompt
 }
@@ -247,6 +254,19 @@ bindkey "\e[5~" beginning-of-history # PageUp
 bindkey "\e[6~" end-of-history       # PageDown
 bindkey "\e[2~" beginning-of-line    # Ins
 bindkey "\e[3~" delete-char          # Del
+
+# Other
+bindkey -s '\el' 'ls^M'
+
+# On slow infrastructure where tab-completion takes a while? Show "waiting dots"
+# while something tab-completes.
+expand-or-complete-with-dots() {
+  echo -n "\e[31m......\e[0m"
+  zle expand-or-complete
+  zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots
 
 #{{{1 Load system-specific settings
 sysfile=~/system_files/bashrc.sh
