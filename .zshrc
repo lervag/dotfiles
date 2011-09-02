@@ -257,6 +257,7 @@ bindkey "\e[3~" delete-char          # Del
 
 # Other
 bindkey -s '\el' 'ls^M'
+bindkey -s '\ep' '^Upopd >/dev/null; dirs -v^M'
 
 # On slow infrastructure where tab-completion takes a while? Show "waiting dots"
 # while something tab-completes.
