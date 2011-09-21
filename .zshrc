@@ -32,9 +32,9 @@ eval `dircolors -b $HOME/scripts/dircolors-solarized/dircolors.ansi-dark`
 
 #{{{1 Define aliases
 # General aliases
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
+alias rm="rm -v"
+alias mv="mv -iv"
+alias cp="cp -iv"
 alias du="du -c"
 alias grep="grep -i"
 alias s='ls'
@@ -70,16 +70,11 @@ alias -g ....='../../..'
 alias -g .....='../../../..'
 
 # Utility functions
-evince() { command evince ${*:-*.pdf(om[1])(.N)} }
-okular() { command okular ${*:-*.pdf(om[1])(.N)} }
+evince() { command evince ${*:-*.pdf(om[1]N)} }
+okular() { command okular ${*:-*.pdf(om[1]N)} }
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
-
-# Making GNU fileutils more verbose
-for c in cp rm chmod chown rename; do
-    alias $c="$c -v"
-done
 
 #{{{1 Options
 umask 022           # Default file permissions
@@ -163,13 +158,11 @@ zstyle ':completion:*' matcher-list '+m:{a-zA-Z}={A-Za-z}' \
 zstyle ':completion:*:*:okular:*' file-sort time
 zstyle ':completion:*:*:okular:*' file-patterns \
   '*.pdf:pdf-files:pdf\ files' \
-  '*(-/):directories:directories' \
-  '^*.pdf(-^/):other-files:other\ files'
+  '%p:all-files:all\ files'
 zstyle ':completion:*:*:evince:*' file-sort time
 zstyle ':completion:*:*:evince:*' file-patterns \
   '*.pdf:pdf-files:pdf\ files' \
-  '*(-/):directories:directories' \
-  '^*.pdf(-^/):other-files:other\ files'
+  '%p:all-files:all\ files'
 
 # Options for kill
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
@@ -178,6 +171,12 @@ zstyle ':completion:*:*:kill:*:processes' \
 
 # cd wil never select parent directory
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+# Options for tecplot
+zstyle ':completion:*:*:tecplot:*' file-sort time
+zstyle ':completion:*:*:tecplot:*' file-patterns \
+  '*.{lay,plt,tec}::data\ files' \
+  '%p::other\ files'
 
 #{{{2 Ignore uninteresting users
 zstyle ':completion:*:*:*:users' ignored-patterns \
