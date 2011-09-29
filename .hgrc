@@ -25,7 +25,6 @@ charsets = iso-8859-1
 [ui]
 username = Karl Yngve Lervåg <karl.yngve@lervag.net>
 editor = vim
-merge = vimdiff
 ssh = ssh -C
 commitsubrepos = False
 
@@ -39,8 +38,11 @@ status.unknown  =
 status.clean    = black bold
 
 [merge-tools]
-vimdiff.executable = gvim
-vimdiff.args = -d $base $local $output $other +close +close
+threesome.executable = gvim
+threesome.args = -f $base $local $other $output -c 'set co=177' \
+                 -c 'ThreesomeInit'
+threesome.premerge = keep
+threesome.priority = 1
 
 [diff]
 git = True

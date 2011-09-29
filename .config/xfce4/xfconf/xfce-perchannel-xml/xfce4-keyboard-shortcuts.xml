@@ -85,7 +85,6 @@
       <property name="&lt;Control&gt;F9" type="string" value="workspace_9_key"/>
       <property name="&lt;Alt&gt;F10" type="string" value="maximize_window_key"/>
       <property name="&lt;Alt&gt;F11" type="string" value="fullscreen_key"/>
-      <property name="&lt;Alt&gt;F12" type="string" value="above_key"/>
       <property name="&lt;Control&gt;&lt;Alt&gt;Up" type="string" value="up_workspace_key"/>
       <property name="Escape" type="string" value="cancel_key"/>
       <property name="&lt;Alt&gt;&lt;Shift&gt;Tab" type="string" value="cycle_reverse_windows_key"/>
@@ -130,6 +129,7 @@
       <property name="&lt;Alt&gt;2" type="string" value="workspace_2_key"/>
       <property name="&lt;Alt&gt;3" type="string" value="workspace_3_key"/>
       <property name="&lt;Alt&gt;4" type="string" value="workspace_4_key"/>
+      <property name="&lt;Alt&gt;t" type="string" value="above_key"/>
     </property>
   </property>
   <property name="providers" type="array">
