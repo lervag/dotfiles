@@ -236,23 +236,24 @@ zle -N zle-keymap-select
 #{{{1 Add some keybindings
 bindkey -v
 bindkey ' '    magic-space
-bindkey "\C-R" history-incremental-pattern-search-backward
-bindkey "\C-X" history-incremental-pattern-search-forward
-bindkey "\E[Z" reverse-menu-complete
+bindkey "^R"   history-incremental-pattern-search-backward
+bindkey "^X"   history-incremental-pattern-search-forward
 bindkey "^U"   backward-kill-line
 bindkey "^K"   kill-line
 bindkey "^F"   vi-forward-char
 bindkey "^B"   vi-backward-char
+bindkey "^A"   beginning-of-line
+bindkey "^E"   end-of-line
+bindkey "\E[Z" reverse-menu-complete
 
 # Special keys
 bindkey "\eOH"  beginning-of-line    # Home
-bindkey "\e[1~" beginning-of-line    # Home
 bindkey "\eOF"  end-of-line          # End
-bindkey "\e[4~" end-of-line          # End
 bindkey "\e[5~" beginning-of-history # PageUp
 bindkey "\e[6~" end-of-history       # PageDown
 bindkey "\e[2~" beginning-of-line    # Ins
 bindkey "\e[3~" delete-char          # Del
+bindkey "^?"    backward-delete-char # Backspace
 
 # Other
 bindkey -s '\el' 'ls^M'
