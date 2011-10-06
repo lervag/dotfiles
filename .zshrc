@@ -255,9 +255,9 @@ bindkey "\e[2~" beginning-of-line    # Ins
 bindkey "\e[3~" delete-char          # Del
 bindkey "^?"    backward-delete-char # Backspace
 
-# Other
-bindkey -s '\el' 'ls^M'
-bindkey -s '\ep' '^Upopd >/dev/null; dirs -v^M'
+# Change escape to normal mode
+bindkey -r "\e"
+bindkey "jkj" "vi-cmd-mode"
 
 # On slow infrastructure where tab-completion takes a while? Show "waiting dots"
 # while something tab-completes.
