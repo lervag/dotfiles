@@ -201,36 +201,29 @@ zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
 #{{{1 Set command prompt
 # Define colors
-ps_blue="%{$fg[blue]%}"
-ps_green="%{$fg[green]%}"
-ps_yellow="%{$fg[yellow]%}"
-ps_red="%{$fg[red]%}"
-ps_white="%{$fg[white]%}"
-ps_reset="%{$terminfo[sgr0]%}"
-rps_start="${ps_white}["
-rps_err="$ps_red%(?..%? )"
-rps_wdir="$ps_yellow%3~ "
-rps_vii="${ps_white}i"
-rps_vin="${ps_red}n"
-rps_stop="${ps_white}]$ps_reset"
+blue="%{$fg[blue]%}"
+green="%{$fg[green]%}"
+yellow="%{$fg[yellow]%}"
+red="%{$fg[red]%}"
+white="%{$fg[white]%}"
+reset="%{$terminfo[sgr0]%}"
 
-# Set PS1 and RPS1
-PS1="$ps_yellow%n$ps_white@$ps_green%m$ps_reset%(!.#.$) "
-RPS1="$rps_start$rps_err$rps_wdir$rps_vii$rps_stop"
-PS2="$ps_yellow%n$ps_white@$ps_green%m$ps_reset:$ps_yellow%_$ps_reset%(!.#.$) "
-RPS2="$rps_start$rps_vii$rps_stop"
+# Set PS1, PS2, RPS1 and RPS2
+PS1="$yellow%n$white@$green%m$reset%(!.#.$) "
+PS2="$yellow%n$white@$green%m$reset:$yellow%_$reset%(!.#.$) "
+RPS1="${white}[$yellow%~ %(?.$white.$red)%?${white}]$reset"
+RPS2="${white}[$yellow%~ %(?.$white.$red)%?${white}]$reset"
 
-# To change prompt depending on vi mode
-function zle-keymap-select {
-  if [ $KEYMAP = vicmd ]; then
-    RPS1="$rps_start$rps_wdir$rps_vin$rps_stop"
-    RPS2="$rps_start$rps_vin$rps_stop"
-  else
-    RPS1="$rps_start$rps_err$rps_wdir$rps_vii$rps_stop"
-    RPS2="$rps_start$rps_vii$rps_stop"
-  fi
+# Update RPS1 and RPS2 when changing vi mode
+print -n '\e]12;#aaaaaa\a'
+function zle-line-init zle-keymap-select {
+  case $KEYMAP in
+    (vicmd)      print -n '\e]12;#aa2222\a';;
+    (viins|main) print -n '\e]12;#aaaaaa\a';;
+  esac
   zle reset-prompt
 }
+zle -N zle-line-init
 zle -N zle-keymap-select
 
 #{{{1 Add some keybindings
@@ -259,10 +252,13 @@ bindkey "^?"    backward-delete-char # Backspace
 bindkey -r "\e"
 bindkey "jkj" "vi-cmd-mode"
 
-# On slow infrastructure where tab-completion takes a while? Show "waiting dots"
-# while something tab-completes.
+# Some more additions
+bindkey "\eq" push-line-or-edit
+
+# On slow infrastructure where tab-completion takes a while?
+# Show "waiting dots" while something tab-completes.
 expand-or-complete-with-dots() {
-  echo -n "\e[31m......\e[0m"
+  echo -n " \e[31m...\e[0m"
   zle expand-or-complete
   zle redisplay
 }
