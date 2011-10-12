@@ -41,3 +41,14 @@ ColorPalette14=#6c6c7171c4c4
 ColorPalette15=#9393a1a1a1a1
 ColorPalette16=#fdfdf6f6e3e3
 Term=xterm-color
+ShortcutsNoMenukey=TRUE
+ShortcutsNoMnemonics=TRUE
+AccelFullscreen=
+AccelSelectAll=
+AccelNewTab=
+AccelNewWindow=
+AccelDetachTab=
+AccelCloseWindow=
+AccelCloseTab=
+AccelContents=
+
