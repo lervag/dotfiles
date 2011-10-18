@@ -106,6 +106,10 @@ setopt auto_pushd \
        pushd_to_home
 setopt no_case_glob
 
+# Behave more like bash
+setopt magic_equal_subst
+setopt ksh_typeset
+
 # Autoload zsh modules when they are referenced
 zmodload zsh/stat
 zmodload zsh/mathfunc
@@ -238,6 +242,11 @@ bindkey "^B"   vi-backward-char
 bindkey "^A"   beginning-of-line
 bindkey "^E"   end-of-line
 bindkey "\E[Z" reverse-menu-complete
+
+# Edit line with vim
+autoload    edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # Special keys
 bindkey "\eOH"  beginning-of-line    # Home

@@ -6,7 +6,6 @@ push @generated_exts, "nav";
 push @generated_exts, "snm";
 push @generated_exts, "tdo";
 push @generated_exts, "nmo";
-push @generated_exts, "bbl";
 push @generated_exts, "synctex.gz";
 push @generated_exts, "tex.latexmain";
 $latex = 'latex --src-specials %O %S';
