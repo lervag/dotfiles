@@ -83,28 +83,31 @@ watch=( notme )     # Notify all logins or logouts (that are not me)
 
 # Turn on/off some zsh options
 unsetopt bgnice
-setopt nohup
-setopt interactive_comments
+setopt always_to_end
+setopt auto_cd
+setopt auto_list
+setopt auto_pushd
+setopt auto_param_slash
+setopt auto_param_keys
+setopt bang_hist
 setopt clobber
-setopt extended_history \
-       inc_append_history \
-       bang_hist \
-       hist_verify \
-       hist_expire_dups_first \
-       hist_ignore_dups \
-       hist_reduce_blanks
-setopt notify
-setopt complete_aliases \
-       always_to_end \
-       rec_exact
+setopt complete_aliases
+setopt complete_in_word
 setopt extended_glob
-setopt longlistjobs
-setopt auto_cd \
-       auto_list
-setopt auto_pushd \
-       pushd_ignore_dups \
-       pushd_to_home
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt inc_append_history
+setopt interactive_comments
+setopt list_rows_first
+setopt long_list_jobs
 setopt no_case_glob
+setopt nohup
+setopt notify
+setopt pushd_ignore_dups
+setopt pushd_to_home
 
 # Behave more like bash
 setopt magic_equal_subst
@@ -125,12 +128,13 @@ colors
 
 #{{{1 Autocompletion styles
 #{{{2 Global settings
-# Turn on cache
+
+# General settings
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
-
-# Set more verbose output
 zstyle ':completion:*' verbose yes
+zstyle ':completion:*' menu select=10
+zstyle ':completion:*' use-compctl false
 
 # Remove trailing slash (usefull in ln)
 zstyle ':completion:*' squeeze-slashes true
@@ -231,22 +235,29 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 #{{{1 Add some keybindings
+
+# Standard or basic bindings
 bindkey -v
 bindkey ' '    magic-space
 bindkey "^R"   history-incremental-pattern-search-backward
-bindkey "^X"   history-incremental-pattern-search-forward
 bindkey "^U"   backward-kill-line
 bindkey "^K"   kill-line
 bindkey "^F"   vi-forward-char
 bindkey "^B"   vi-backward-char
 bindkey "^A"   beginning-of-line
-bindkey "^E"   end-of-line
+bindkey "^W"   end-of-line
 bindkey "\E[Z" reverse-menu-complete
+bindkey "^E"   expand-word
 
-# Edit line with vim
-autoload    edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
+# Change escape to normal mode
+bindkey -r    "\e"
+bindkey "jkj" "vi-cmd-mode"
+
+# Some more nice utility widgets
+bindkey "^X"  execute-named-cmd
+bindkey "^W"  where-is
+bindkey "^_"  undo
+bindkey "\eq" push-line-or-edit
 
 # Special keys
 bindkey "\eOH"  beginning-of-line    # Home
@@ -257,22 +268,10 @@ bindkey "\e[2~" beginning-of-line    # Ins
 bindkey "\e[3~" delete-char          # Del
 bindkey "^?"    backward-delete-char # Backspace
 
-# Change escape to normal mode
-bindkey -r "\e"
-bindkey "jkj" "vi-cmd-mode"
-
-# Some more additions
-bindkey "\eq" push-line-or-edit
-
-# On slow infrastructure where tab-completion takes a while?
-# Show "waiting dots" while something tab-completes.
-expand-or-complete-with-dots() {
-  echo -n " \e[31m...\e[0m"
-  zle expand-or-complete
-  zle redisplay
-}
-zle -N expand-or-complete-with-dots
-bindkey "^I" expand-or-complete-with-dots
+# Edit line with vim
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 #{{{1 Load system-specific settings
 sysfile=~/system_files/bashrc.sh
