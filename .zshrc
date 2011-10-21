@@ -135,12 +135,19 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select=10
 zstyle ':completion:*' use-compctl false
-
-# Remove trailing slash (usefull in ln)
 zstyle ':completion:*' squeeze-slashes true
 
+# Change some formats
+zstyle ':completion:*:descriptions' format 'Completing %d'
+
+# Define completers
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle -e ':completion:*:approximate:*' max-errors \
+          'reply=$((($#PREFIX+$#SUFFIX)/2))'
+
 # Have all different types of matches displayed separately
-zstyle ':completion:*' group-name ''
+#zstyle ':completion:*' group-name ''
 
 # Set color specifications
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -149,14 +156,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt \
        '%SAt %p, %l: Hit TAB for more or character to insert.%s'
 
-# Set completer functions
-zstyle ':completion:*' completer _complete _match _approximate
-
-# Fuzzy matching of completions for when you mistype them
-zstyle ':completion:*:match:*' original only
-zstyle -e ':completion:*:approximate:*' max-errors \
-          'reply=($((($#PREFIX+$#SUFFIX)/2)) numeric)'
-
 # Case-insensitive and fuzzy completion
 zstyle ':completion:*' matcher-list '+m:{a-zA-Z}={A-Za-z}' \
                                     'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -164,9 +163,6 @@ zstyle ':completion:*' matcher-list '+m:{a-zA-Z}={A-Za-z}' \
 #{{{2 Program specific settings
 # Have pdf-files sorted by time for okular and evince
 zstyle ':completion:*:*:okular:*' file-sort time
-zstyle ':completion:*:*:okular:*' file-patterns \
-  '*.pdf:pdf-files:pdf\ files' \
-  '%p:all-files:all\ files'
 zstyle ':completion:*:*:evince:*' file-sort time
 zstyle ':completion:*:*:evince:*' file-patterns \
   '*.pdf:pdf-files:pdf\ files' \
@@ -258,6 +254,7 @@ bindkey "^X"  execute-named-cmd
 bindkey "^W"  where-is
 bindkey "^_"  undo
 bindkey "\eq" push-line-or-edit
+bindkey "^H"  _complete_help
 
 # Special keys
 bindkey "\eOH"  beginning-of-line    # Home
