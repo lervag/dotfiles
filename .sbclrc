@@ -19,3 +19,8 @@
         (funcall (intern "INSTALL-REPL" :linedit)
                  :eof-quits t 
                  :wrap-current t)))
+
+;;;
+;;; Load utility file
+;;;
+(load ".lisp-common")

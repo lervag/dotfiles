@@ -127,7 +127,6 @@ compinit
 colors
 
 #{{{1 Autocompletion styles
-#{{{2 Global settings
 
 # General settings
 zstyle ':completion:*' use-cache on
@@ -136,42 +135,40 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select=10
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' squeeze-slashes true
-
-# Change some formats
-zstyle ':completion:*:descriptions' format 'Completing %d'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-prompt \
+       '%SAt %p, %l: Hit TAB for more or character to insert.%s'
 
 # Define completers
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle -e ':completion:*:approximate:*' max-errors \
           'reply=$((($#PREFIX+$#SUFFIX)/2))'
-
-# Have all different types of matches displayed separately
-#zstyle ':completion:*' group-name ''
-
-# Set color specifications
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# Set list prompt if completion list fills more than one screen
-zstyle ':completion:*' list-prompt \
-       '%SAt %p, %l: Hit TAB for more or character to insert.%s'
-
-# Case-insensitive and fuzzy completion
-zstyle ':completion:*' matcher-list '+m:{a-zA-Z}={A-Za-z}' \
+zstyle ':completion:*' matcher-list '' '+m:{a-z-}={A-Z_}' \
                                     'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-#{{{2 Program specific settings
+# Change some formats
+zstyle ':completion:*:descriptions' format 'Completion: %B%d%b'
+zstyle ':completion:*:messages'     format '%d'
+zstyle ':completion:*:warnings'     format 'No matches for: %B%d%b'
+zstyle ':completion:*:corrections'  format '%Correction: B%d (errors: %e)%b'
+
+# Set tag order for subscripts
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+
 # Have pdf-files sorted by time for okular and evince
 zstyle ':completion:*:*:okular:*' file-sort time
+zstyle ':completion:*:*:okular:*' file-patterns \
+  '*.pdf:pdf-files:pdf\ files' '*(-/):directories'
 zstyle ':completion:*:*:evince:*' file-sort time
 zstyle ':completion:*:*:evince:*' file-patterns \
-  '*.pdf:pdf-files:pdf\ files' \
-  '%p:all-files:all\ files'
+  '*.pdf:pdf-files:pdf\ files' '*(-/):directories'
 
-# Options for kill
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:*:kill:*:processes' \
-         command 'ps --forest -u lervag -o pid,user,cmd'
+# Options for kill and other programs that uses the processes tag
+zstyle ':completion:*:processes' insert-ids single
+zstyle ':completion:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:processes' command 'ps -Hu lervag -o pid,user,cmd'
 
 # cd wil never select parent directory
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
@@ -182,8 +179,15 @@ zstyle ':completion:*:*:tecplot:*' file-patterns \
   '*.{lay,plt,tec}::data\ files' \
   '%p::other\ files'
 
-#{{{2 Ignore uninteresting users
-zstyle ':completion:*:*:*:users' ignored-patterns \
+# Define some hosts and ignore some users
+zstyle ':completion:*' users-hosts \
+      lervag@stud.ntnu.no lervag@olve.ivt.ntnu.no \
+      lervag@vsl142 lervag@vsl143 \
+      klervaag@pluripotent.math.uci.edu \
+      klervaag@levich.math.uci.edu \
+      klervaag@home.ps.uci.edu \
+      hg@bitbucket.org
+zstyle ':completion:*:users' ignored-patterns \
       adm amanda apache avahi avahi-autoipd backup beaglidx bin cacti      \
       canna cl-builder clamav couchdb daemon dbus distcache dovecot fax    \
       ftp games gdm gkrellmd gnats gopher hacluster haldaemon halt hplip   \
@@ -192,16 +196,7 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
       nfsnobody nobody nscd ntp nut nx openvpn operator pcap postfix       \
       postgres privoxy proxy pulse pvm quagga radvd rpc rpcuser rpm rtkit  \
       saned shutdown speech-dispatcher squid sshd sync sys syslog usbmux   \
-      uucp vcsa www-data xfs
-
-#{{{2 Unprocessed
-zstyle ':completion:*:expand:*' tag-order all-expansions
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:warnings' format 'No matches for: %d'
-zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
-zstyle ':completion:*:processes-names' command 'ps axho command'
-zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+      uucp vcsa www-data xfs Debian-exim Debian-gdm festival statd
 
 #{{{1 Set command prompt
 # Define colors
@@ -218,9 +213,10 @@ PS2="$yellow%n$white@$green%m$reset:$yellow%_$reset%(!.#.$) "
 RPS1="${white}[$yellow%~ %(?.$white.$red)%?${white}]$reset"
 RPS2="${white}[$yellow%~ %(?.$white.$red)%?${white}]$reset"
 
-# Update RPS1 and RPS2 when changing vi mode
-print -n '\e]12;#aaaaaa\a'
+# Update RPS1 and RPS2 when changing vi mode (not for term=rxvt)
+[[ ! $TERM = rxvt ]] && print -n '\e]12;#aaaaaa\a'
 function zle-line-init zle-keymap-select {
+  [[ $TERM = rxvt ]] && return
   case $KEYMAP in
     (vicmd)      print -n '\e]12;#aa2222\a';;
     (viins|main) print -n '\e]12;#aaaaaa\a';;
@@ -255,6 +251,13 @@ bindkey "^W"  where-is
 bindkey "^_"  undo
 bindkey "\eq" push-line-or-edit
 bindkey "^H"  _complete_help
+
+# Add prediction (but not on as default)
+autoload -U predict-on
+zle -N predict-on
+zle -N predict-off
+bindkey '^Xp' predict-on
+bindkey '^X^P' predict-off
 
 # Special keys
 bindkey "\eOH"  beginning-of-line    # Home
