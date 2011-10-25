@@ -30,7 +30,7 @@
 @Article{Deng94,
   author  = {G. B. Deng and J. Piquet and P. Queutey and M. Visonneau},
   title   = {Incompressible-flow calculations with a consistent physical
-    interpolation finite-volume approach.},
+             interpolation finite-volume approach.},
   journal = {Computers and Fluids},
   volume  = {23},
   number  = {8},
@@ -38,22 +38,36 @@
   year    = {1994},
   month   = {November},
 }
+@Article{Ding11,
+  author  = {Yan Ding and Li Yang and Li Yuan},
+  title   = {A finite difference real ghost fluid method on moving meshes
+             with comer-transport upwind interpolation},
+  journal = {Computers and Fluids},
+  volume  = {49},
+  pages   = {247-257},
+  year    = {2011},
+  doi     = {doi:10.1016/j.compfluid.2011.06.004},
+  comment = {Solves the two-medium Euler equations for water and air with the
+             level-set method and the Real Ghost Fluid Method (RGFM).  Uses
+             adaptive moving meshes.  The article was not very interesting, but
+             the part about the ghost fluid method might be interesting.},
+}
 @Article{Chesters91,
   author  = {A. K. Chesters},
   title   = {The modelling of coalescence processes in fluid-liquid
-    dispersions: A review of current understanding},
+             dispersions: A review of current understanding},
   journal = {Trans IChemE},
   volume  = {69},
   pages   = {259-270},
   month   = {July},
   year    = 1991,
-  comment = {Approximate modelling of coalescence.  Regimes: Partially
-  and fully mobile, inertia or viscous.  Keywords: Modelling, drop collision,
-  coalescence, drainage.},
+  comment = {Approximate modelling of coalescence.  Regimes: Partially and
+             fully mobile, inertia or viscous.  Keywords: Modelling, drop
+             collision, coalescence, drainage.},
 }
 @Article{Cristini01,
   title   = {An Adaptive Mesh Algorithm for Evolving Surfaces: Simulations of
-    Drop Breakup and Coalescence},
+             Drop Breakup and Coalescence},
   author  = {Vittorio Cristini and Jerzy Blawzdziewicz and Michael Loewenberg},
   journal = {Journal of Computational Physics},
   volume  = 168,
@@ -61,13 +75,15 @@
   month   = {December},
   year    = 2001,
   comment = {Adaptive mesh algorithm (for FEM).  Simulations of drop break-up
-  and coalescence: Length scaled by r, time scaled by mu*r/sigma.  Stationary
-  drop shapes.  Drop breakup in straining flow: Ca = 0.13, tb = 24.5.  Drop
-  breakup in shear flow: Ca = 0.42.  Near-contact in compressional flow: Ca
-  = 0.1, Initially centered at (0, 0, +-1.6).  Near-contact in shear flow:
-  C = 0.135, lambda = 1.37 (mu2=mu1*lambda), initially centered at (0, 0, 0)
-  and (-11, 0.51, 0), reference to Guido and Simeone, graph of relative
-  displacement.  Keywords: break-up, coalescence, drop, simulations.},
+             and coalescence: Length scaled by r, time scaled by mu*r/sigma.
+             Stationary drop shapes.  Drop breakup in straining flow: Ca
+             = 0.13, tb = 24.5.  Drop breakup in shear flow: Ca = 0.42.
+             Near-contact in compressional flow: Ca = 0.1, Initially centered
+             at (0, 0, +-1.6).  Near-contact in shear flow: C = 0.135, lambda
+             = 1.37 (mu2=mu1*lambda), initially centered at (0, 0, 0) and (-11,
+             0.51, 0), reference to Guido and Simeone, graph of relative
+             displacement.  Keywords: break-up, coalescence, drop,
+             simulations.},
 }
 @Article{Deganello11,
   title   = {Level-set method for the modelling of liquid bridge formation and
@@ -79,21 +95,23 @@
   pages   = {42-51},
   year    = 2011,
   comment = {Includes contact angle modelling. Does not mention the curvature
-  issue, even though it should be relevant. Article is not very interesting,
-  but could be used for reference and perhaps when modeling contact angles.}
+             issue, even though it should be relevant. Article is not very
+             interesting, but could be used for reference and perhaps when
+             modeling contact angles.}
 }
 @Article{Desjardins08,
   title   = {An accurate conservative level set/ghost fluid method for
-    simulating turbulent atomization},
+             simulating turbulent atomization},
   author  = {Olivier Desjardins and Vincent Moureau and Heinz Pitsch},
   journal = {Journal of Computational Physics},
   volume  = 227,
   pages   = {8395-8416},
   year    = 2008,
   comment = {Uses a conservative level-set method with a ghost-fluid approach
-  for two-phase flow.  A least-squares approach for calculating curvature.
-  Keywords: Two-phase flow, DNS, conservative level-set method, GFM, implicit
-  scheme, primary atomization, mass conservation.},
+             for two-phase flow.  A least-squares approach for calculating
+             curvature.  Keywords: Two-phase flow, DNS, conservative level-set
+             method, GFM, implicit scheme, primary atomization, mass
+             conservation.},
 }
 @Article{Enright02,
   author  = {Enright},
@@ -128,7 +146,7 @@
 @Article{Ferracina04,
   author  = {L. Ferracina and M. N. Spijker},
   title   = {Stepsize retrictions for the total-variation-diminishing property
-    in general Runge-Kutta methods},
+             in general Runge-Kutta methods},
   year    = {2004},
   journal = {SIAM Journal of Numerical Analysis},
   volume  = {42},
@@ -137,7 +155,7 @@
 @Article{Ferracina05,
   author  = {L. Ferracina and M. N. Spijker},
   title   = {An extension and analysis of the Shu-Osher representation of
-    Runge-Kutta methods},
+             Runge-Kutta methods},
   year    = {2005},
   journal = {Mathematics of Computation},
   volume  = {239},
@@ -152,12 +170,13 @@
   number  = 2,
   pages   = {238-246},
   comment = {Derives necessary and sufficient conditions for a cubic
-  interpolant to be monotone on an interval.  Keywords: Cubic splines.}
+             interpolant to be monotone on an interval.  Keywords: Cubic
+             splines.}
 }
 @Article{Ghia82,
   author  = {U. Ghia and K. N. Ghia and C. T. Shin},
   title   = {High-Re Solutions for Incompressible Flow Using the Navier-Stokes
-    Equations and a Multigrid Method},
+             Equations and a Multigrid Method},
   year    = {1982},
   month   = {December},
   journal = {Journal of Computational Physics},
@@ -168,7 +187,7 @@
 @Article{Gottlieb01,
   author  = {S. Gottlieb and C. W. Shu and E. Tadmor},
   title   = {Strong stability-preserving high-order time discretization
-    methods},
+             methods},
   year    = {2001},
   journal = {SIAM Review},
   volume  = {43},
@@ -176,7 +195,7 @@
 }
 @Article{Ha98,
   title   = {Effect of Nonionic Surfactant on the Deformation and Breakup of
-    a Drop in an Electric Field},
+             a Drop in an Electric Field},
   author  = {Jong-Wook Ha and Seung-Man Yang},
   journal = {Journal of Colloid and Interface Science},
   year    = 1998,
@@ -184,8 +203,9 @@
   volume  = 206,
   pages   = {195-204},
   comment = {Theoretical/Analytic study of small deformations.  Plots
-  elongation, D, as function of Weber number, WE.  Tip streaming and bulbuous
-  ends.  Tables (drop-deformation experiments):
+             elongation, D, as function of Weber number, WE.  Tip streaming and
+             bulbuous ends.  Tables (drop-deformation experiments):
+
   ============================================================================
   Experimental fluids                                R          S       lambda
   ============================================================================
@@ -237,15 +257,15 @@
 @Article{Hanratty03,
   title   = {Workshop Findings},
   author  = {Thomas J. Hanratty and Theo Theofanous and Jean-Marc Delhaye and
-    John Eaton and John McLaughlin and Adrea Prosperetti and Sankaran
-    Sundaresan and Gretar Tryggvason},
+             John Eaton and John McLaughlin and Adrea Prosperetti and Sankaran
+             Sundaresan and Gretar Tryggvason},
   journal = {International Journal of Multiphase Flow},
   year    = 2003,
   volume  = 29,
   pages   = {1047-1059},
   comment = {Important.  Outlines the major issues in multiphase flow
-  research.  A good reference for motivation.  Keywords: Scientific issues for
-  multiphase flows, general overview.},
+             research.  A good reference for motivation.  Keywords: Scientific
+             issues for multiphase flows, general overview.},
 }
 @Article{Hartmann10,
   title   = {The constrained reinitialization equation for level-set methods},
@@ -255,11 +275,11 @@
   volume  = 229,
   pages   = {1514-1535},
   comment = {Improved discretization of reinitialization scheme for the
-  level-set method.  Claims that the 2nd order discretization is one order
-  better then the standard fifth-order WENO scheme.  They also claim that it is
-  relatively easy to implement.
-  Keywords: Level set method, reinitialization, distance function, Eikonal
-  equation.},
+             level-set method.  Claims that the 2nd order discretization is one
+             order better then the standard fifth-order WENO scheme.  They also
+             claim that it is relatively easy to implement.  Keywords: Level
+             set method, reinitialization, distance function, Eikonal
+             equation.},
 }
 @Article{Hartland94,
   title   = {Effect of interfacial tension gradients on emulsion stability},
@@ -268,12 +288,12 @@
   year    = 1994,
   volume  = {A 88},
   pages   = {289-302},
-  comment = {Presents a model for the coalescence time and film-drainage
-  flow.  Classifies effects of interfacial-tension gradients on coalescence
-  time.  Calculates coalescence times for water drops in oil for several
-  different situations and surface mobilities.  Keywords: Drainage, emulsion
-  stability, interfacial tension gradients, mathematical model, simulations,
-  film thickness.},
+  comment = {Presents a model for the coalescence time and film-drainage flow.
+             Classifies effects of interfacial-tension gradients on coalescence
+             time.  Calculates coalescence times for water drops in oil for
+             several different situations and surface mobilities.  Keywords:
+             Drainage, emulsion stability, interfacial tension gradients,
+             mathematical model, simulations, film thickness.},
 }
 @Article{Herrmann08,
   title   = {A balanced force refined level set grid method for two-phase flows
@@ -283,11 +303,10 @@
   year    = 2008,
   volume  = 227,
   pages   = {2674-2706},
-  comment = {Presents a second-order converging curvature evaluation
-  technique for level-set methods.
-  Keywords: Level set method, two-phase flow, grid refinement, curvature
-  evaluation, surface tension, spurious currents, Rayleigh-Taylor, surface
-  wave.},
+  comment = {Presents a second-order converging curvature evaluation technique
+             for level-set methods.  Keywords: Level set method, two-phase
+             flow, grid refinement, curvature evaluation, surface tension,
+             spurious currents, Rayleigh-Taylor, surface wave.},
 }
 @Article{Hu10,
   title   = {An adaptive central-upwind weighted essentially non-oscillatory
@@ -297,11 +316,11 @@
   year    = 2010,
   volume  = 229,
   pages   = {8952-8965},
-  comment = {Finite volume context.  Presents a 6th order central WENO
-  scheme which has a much smaller dissipation error than the standard WENO
-  scheme.  Should be possible to implement in a finite difference context.
-  Probably not very important for our work.  Keywords: Numerical method,
-  compressible flow, high-order scheme.}
+  comment = {Finite volume context.  Presents a 6th order central WENO scheme
+             which has a much smaller dissipation error than the standard WENO
+             scheme.  Should be possible to implement in a finite difference
+             context.  Probably not very important for our work.  Keywords:
+             Numerical method, compressible flow, high-order scheme.}
 }
 @Article{Jiang00,
   author  = {G.-S. Jiang and D. Peng},
@@ -342,7 +361,7 @@
   adsurl  = {http://adsabs.harvard.edu/abs/2003PhFl...15.3263M},
   adsnote = {Provided by the Smithsonian/NASA Astrophysics Data System},
   comment = {Effect of Re on gravity-driven drop-film impact.  Two
-  combinations.  Experimental work.
+             combinations.  Experimental work.
 
        Combination 1                       Combination 2
      ================================================================
@@ -377,9 +396,10 @@
   keywords = {Fluids},
   keywords = {Residual-based variational multiscale method},
   comment = {Proposes a technique  for correcting level-set method with respect
-  to mass  conservation. FEM (and family)  setting. Seems like a  good article,
-  but abit difficult to  interpret and use. Results from dam  break test in 3D,
-  with and without obstacle. Very impressive results with obstacle.},
+             to mass  conservation. FEM (and family)  setting. Seems like
+             a  good article, but abit difficult to  interpret and use. Results
+             from dam  break test in 3D, with and without obstacle. Very
+             impressive results with obstacle.},
 }
 @Article{Ketcheson05,
   author  = {David I. Ketcheson and Allen C. Robinson},
@@ -402,9 +422,9 @@
   doi      = {DOI: 10.1016/j.compfluid.2010.12.020},
   keywords = {Level set, Re-initialization, Interface tracking, Interface
               sharpening},
-  comment =  {They develop an accurate  level set method on  adaptive Cartesian
-  grids. They use a curvature-based artificial sharpening method which restores
-  volume losses.},
+  comment  = {They develop an accurate  level set method on  adaptive Cartesian
+              grids. They use a curvature-based artificial sharpening method
+              which restores volume losses.},
 }
 @Article{Kockelkoren03,
   author        = {J. Kockelkoren and H. Levine and W. J. Rappel},
@@ -427,11 +447,12 @@
   number  = 9,
   pages   = {1309-1313},
   year    = 1989,
-  comment = {See also Koh90.  Simulations of droplet evolutions for
-  oblate and prolate droplets, study of shape stability.  Presents a plot of
-  critical Capillary numbers versus drop shape for several viscosity ratios,
-  where the critical Capillary number decides whether the drop is stable or
-  not.  Keywords: Stability, drop shape, boundary-integral calculations.},
+  comment = {See also Koh90.  Simulations of droplet evolutions for oblate and
+             prolate droplets, study of shape stability.  Presents a plot of
+             critical Capillary numbers versus drop shape for several viscosity
+             ratios, where the critical Capillary number decides whether the
+             drop is stable or not.  Keywords: Stability, drop shape,
+             boundary-integral calculations.},
 }
 @Article{Koh90,
   author        = {C. J. Koh and L. G. Leal},
@@ -443,9 +464,9 @@
   pages         = {2103-2109},
   year          = 1990,
   comment       = {See also Koh89.  Experiments which qualitatively shows that
-  the simulations in Koh89 are good.  Drop stability as a function of Capillary
-  number and initial drop shape.  Keywords: Experiments, stability, drop
-  shape},
+                   the simulations in Koh89 are good.  Drop stability as
+                   a function of Capillary number and initial drop shape.
+                   Keywords: Experiments, stability, drop shape},
 }
 @Article{Langtangen,
   author        = {H. P. Langtangen and K.-A. Mardal and R. Winther},
@@ -468,7 +489,8 @@
   number        = 4,
   pages         = {163-169},
   comment       = {I use the marching-squares algorithm, which is
-  a two-dimensional version of the here presented marching-cubes algorithm.}
+                   a two-dimensional version of the here presented
+                   marching-cubes algorithm.}
 }
 @Article{Leal04,
   author        = {L. G. Leal},
@@ -480,21 +502,24 @@
   number        = 6,
   pages         = {1833-1851},
   comment       = {Droplet coalescence in shear flow with and without
-  coalescence.  Describes a scaling model for drainage times and critical
-  Cappillary numbers.  Shows that the model is not good for viscosity ratious,
-  lambda>0.1.  Shows that coalescence may occur at angles>45degrees where the
-  shear flow force is negative (pulls the drops apart).  Drops with surfactants
-  coalesce slower than those without.  For offsets>0, the coalescence angle is
-  often greater for drops with surfactants.  The critical Capillary number is
-  reduced even with just a little surfactant.  For larger viscosity ratios, the
-  Capillary number is first reduced, than increased, with added surfactant.
-  Keywords: experiments, flow-induced coalescence, viscous drops, surfactants,
-  draining, minimum film thickness.},
+                   coalescence.  Describes a scaling model for drainage times
+                   and critical Cappillary numbers.  Shows that the model is
+                   not good for viscosity ratious, lambda>0.1.  Shows that
+                   coalescence may occur at angles>45degrees where the shear
+                   flow force is negative (pulls the drops apart).  Drops with
+                   surfactants coalesce slower than those without.  For
+                   offsets>0, the coalescence angle is often greater for drops
+                   with surfactants.  The critical Capillary number is reduced
+                   even with just a little surfactant.  For larger viscosity
+                   ratios, the Capillary number is first reduced, than
+                   increased, with added surfactant.  Keywords: experiments,
+                   flow-induced coalescence, viscous drops, surfactants,
+                   draining, minimum film thickness.},
 }
 @Article{LeVeque94,
   author        = {R. LeVeque and Z. Li},
   title         = {The immersed interface method for elliptic equations with
-    discontinuous coefficients and singular sources.},
+                   discontinuous coefficients and singular sources.},
   year          = {1994},
   journal       = {SIAM Journal of Numerical Analysis},
   volume        = {31},
@@ -503,7 +528,7 @@
 @Article{Li01,
   author        = {Zhilin Li and Ming-Chih Lai},
   title         = {The Immersed Interface Method for the Navier-Stokes
-    Equations with Singular Forces.},
+                   Equations with Singular Forces.},
   year          = {2001},
   journal       = {Journal of Computational Physics},
   volume        = {171},
@@ -545,7 +570,7 @@
 @Article{Lowengrub04,
   author        = {Ashley J. James and John Lowengrub},
   title         = {A surfactant-conserving volume-of-fluid method for
-    interfacial flows with insoluble surfactant.},
+                   interfacial flows with insoluble surfactant.},
   year          = {2004},
   journal       = {Journal of Computational Physics},
   volume        = {201},
@@ -598,8 +623,9 @@
   volume        = 35,
   pages         = {266-299},
   comment       = {Uses the geometry-aware method also for normal vectors.  The
-  strange thing is that he also uses that x_I = x - \phi(x)*n(x), which is
-  strange since he doesn't know n(x).},
+                   strange thing is that he also uses that x_I
+                   = x - \phi(x)*n(x), which is strange since he doesn't know
+                   n(x).},
 }
 @Article{Marchandise07,
   author        = {Emilie Marchandise and Philippe Geuzaine and Nicolas
@@ -632,9 +658,10 @@
   volume        = {33},
   pages         = {510-524},
   comment       = {Very impressive work!  Important.  The combine the level-set
-  method with VOF to minimize mass loss.  Detailed simulation with the
-  level-set method of a jet break-up.  Keywords: level-set, GFM, VOF, Rayleigh
-  instability, mass conservation.},
+                   method with VOF to minimize mass loss.  Detailed simulation
+                   with the level-set method of a jet break-up.  Keywords:
+                   level-set, GFM, VOF, Rayleigh instability, mass
+                   conservation.},
 }
 @Article{Nave10,
   title         = {A gradient-augmented level set method with an optimally
@@ -645,18 +672,20 @@
   journal       = {Journal of Computational Physics},
   volume        = 229,
   pages         = {3802-3827},
-  comment =  {Presents an  idea to  also advect the  gradient of  the level-set
-  function. Note they  also use Hermite (cubic) interpolation  to represent the
-  level-set  function at  all  points. The  benefits are  that  the new  scheme
-  includes a certain  level of subgrid resolution,  that curvature calculations
-  are more  accurate/robust, and  also that higher  order schemes  are possible
-  with local (small) stencils. The article is detailed and contains a lot of
-  mathematical candy.},
+  comment       = {Presents an  idea to  also advect the  gradient of  the
+                   level-set function. Note they  also use Hermite (cubic)
+                   interpolation  to represent the level-set  function at  all
+                   points. The  benefits are  that  the new  scheme includes
+                   a certain  level of subgrid resolution,  that curvature
+                   calculations are more  accurate/robust, and  also that
+                   higher  order schemes  are possible with local (small)
+                   stencils. The article is detailed and contains a lot of
+                   mathematical candy.},
 }
 @Article{Osher88,
   author        = {S. Osher and J. A. Sethian},
   title         = {Fronts propagating with curvature dependent speed:
-    Algorithms based on {H}amilton-{J}acobi formulations},
+                   Algorithms based on {H}amilton-{J}acobi formulations},
   year          = {1988},
   journal       = {Journal of Computational Physics},
   volume        = {79},
@@ -670,16 +699,18 @@
   volume        = 17,
   number        = 8,
   comment       = {Presents a numerical investigation of binary droplet
-    collisions with the Navier-Stokes equations and the level-set method.  Does
-    not contain details about numerical methods at all.  Many impressive
-    results of coalescence.
-    Keywords: Drop-drop collisions, level-set method, two-phase flow, regimes
-              for drop-drop collisions, binary droplet collisions,},
+                   collisions with the Navier-Stokes equations and the
+                   level-set method.  Does not contain details about numerical
+                   methods at all.  Many impressive results of coalescence.
+                   Keywords: Drop-drop collisions, level-set method, two-phase
+                   flow, regimes for drop-drop collisions, binary droplet
+                   collisions,},
 }
 @Article{Pawar96,
   author        = {Yashodhara Pawar and Kathleen J. Stebe},
   title         = {Marangoni effects on drop deformation in an extensional
-    flow: The role of surfactant physical chemistry. I. Insoluble surfactants.},
+                   flow: The role of surfactant physical chemistry. I.
+                   Insoluble surfactants.},
   year          = {1996},
   journal       = {Physics of Fluids},
   volume        = {8},
@@ -696,8 +727,9 @@
   volume        = {422},
   pages         = {261-278},
   doi           = {doi:10.1098/rspa.1989.0027},
-  comment       = {Cahn-Hilliard equation. Matched asymptotic expansions.
-                   Stefan problem},
+  comment       = {Cahn-Hilliard equation.  Matched asymptotic expansions.
+                   Stefan problem.  Seems to be a very good and early reference
+                   for how to use },
 }
 @Article{Raessi07,
   title         = {Advecting normal vectors: A new method for calculating
@@ -709,12 +741,13 @@
   volume        = {226},
   pages         = {774-797},
   comment       = {Presents a method for calculating normal vectors and
-    curvatures in two-phase flow.  Instead of calculating normal vectors:
-    advects the normal vectors with the flow.  Calculates curvature from
-    normal vectors.  Gives an overview of errors in the normal vectors and
-    curvatures calculated with different methods, e.g. level-set method,
-    volume of fluid.  Does not mention the curvature issue.
-    Keywords: Curvature, two-phase flow, normal vector, level-set, VOF.},
+                   curvatures in two-phase flow.  Instead of calculating normal
+                   vectors: advects the normal vectors with the flow.
+                   Calculates curvature from normal vectors.  Gives an overview
+                   of errors in the normal vectors and curvatures calculated
+                   with different methods, e.g. level-set method, volume of
+                   fluid.  Does not mention the curvature issue.  Keywords:
+                   Curvature, two-phase flow, normal vector, level-set, VOF.},
 }
 @Article{Ristenpart09,
   title   = {Non-coalescence of oppositely charged drops},
@@ -724,12 +757,12 @@
   month   = {September},
   volume  = 461,
   journal = {Nature},
-  comment = { States that there exists a critical field strength such that
-  drops do not coalesce.  Presents a model based on the capillary force to
-  explain why coalescence does not occur.  The basic point is that high field
-  strengts lead to large angles for the meniscus bridge, which again leads to
-  large capillary forces that prevents coalescence.
-  Keywords: Coalescence, drops, electric field.},
+  comment = {States that there exists a critical field strength such that drops
+             do not coalesce.  Presents a model based on the capillary force to
+             explain why coalescence does not occur.  The basic point is that
+             high field strengts lead to large angles for the meniscus bridge,
+             which again leads to large capillary forces that prevents
+             coalescence.  Keywords: Coalescence, drops, electric field.},
 }
 @Article{Russo00,
   title         = {A Remark on Computing Distance Functions},
@@ -739,10 +772,10 @@
   volume        = {163},
   pages         = {51-67},
   comment       = {Claudio sent the article to me.  It is regarding the fault
-    of standard upwinding methods for the reinitialization of the signed
-    distance function.  A new discretization scheme is presented which solves
-    the problem.  I am not sure if we have this problem, but I should
-    investigate.}
+                   of standard upwinding methods for the reinitialization of
+                   the signed distance function.  A new discretization scheme
+                   is presented which solves the problem.  I am not sure if we
+                   have this problem, but I should investigate.}
 }
 @Article{Salac08,
   title         = {A Local Semi-Implicit Level-Set Method for Interface
@@ -753,16 +786,17 @@
   volume        = 35,
   pages         = {330-349},
   comment       = {Combines a semi-implicit approach with the local level-set
-  approach to get a more computational effective method.  They use a level-set
-  extraction approach to seperate distinct bodies.  This actually seems very
-  smart.
-  Keywords: Interface motion, Surface diffusion, level-set method,
-            semi-implicit scheme, localized treatment, hybrid algorithm.}
+                   approach to get a more computational effective method.  They
+                   use a level-set extraction approach to seperate distinct
+                   bodies.  This actually seems very smart.  Keywords:
+                   Interface motion, Surface diffusion, level-set method,
+                   semi-implicit scheme, localized treatment, hybrid
+                   algorithm.}
 }
 @Article{Sellier04,
   author        = {Anoine Sellier},
   title         = {On the slow motion of a cluster of bubbles under the
-    combined action of gravity and thermocapillarity},
+                   combined action of gravity and thermocapillarity},
   year          = {2005},
   journal       = {C. R. Mecanique},
   volume        = {333},
@@ -776,16 +810,17 @@
   volume        = 35,
   pages         = {341-372},
   comment       = {An overview of level-set methods for fluid-interface
-  problems.  Does not mention the curvature problem.  Good reference
-  litterature.  Includes description of how to use the level-set method for
-  two-phase flow.  Projection method.  Explicitely states that surface tension
-  is approximated with central differences.
-  Keywords: Material interfaces, ink-jet design, level-set method}
+                   problems.  Does not mention the curvature problem.  Good
+                   reference litterature.  Includes description of how to use
+                   the level-set method for two-phase flow.  Projection method.
+                   Explicitely states that surface tension is approximated with
+                   central differences.  Keywords: Material interfaces, ink-jet
+                   design, level-set method}
 }
 @Article{Shu88,
   author        = {Chi-Wang Shu and Stanley Osher},
   title         = {Efficient Implementation of Essentially Non-oscillatory
-    Shock-Capturing Schemes},
+                   Shock-Capturing Schemes},
   year          = {1988},
   journal       = {Journal of Computational Physics},
   volume        = {77},
@@ -794,8 +829,8 @@
 @Article{Stone90,
   author        = {H. A. Stone},
   title         = {A simple derivation of the time-dependent
-                    convective-diffusion equation for surfactant transport
-                    along a deforming interface},
+                   convective-diffusion equation for surfactant transport along
+                   a deforming interface},
   journal       = {Physics of Fluids},
   number        = {1},
   volume        = {2},
@@ -806,7 +841,7 @@
 @Article{Subramanian85,
   author        = {R. Shankar Subramanian},
   title         = {The Stokes force on a droplet in an unbounded fluid medium
-    due to capillary effects},
+                   due to capillary effects},
   journal       = {Journal of Fluid Mechanics},
   volume        = {153},
   pages         = {389-400},
@@ -815,7 +850,7 @@
 @Article{Sussman94,
   author        = {M. Sussman and P. Smereka and S. Osher},
   title         = {A level set approach for computing solutions to
-    incompressible two-phase flow},
+                   incompressible two-phase flow},
   journal       = {Journal of Computational Physics},
   volume        = {114},
   pages         = {146-159},
@@ -868,7 +903,8 @@
 @Article{Tanaka91,
   author        = {T. Tanaka and Y. Tsuji},
   title         = {Numerical simulation of gas-solid two-phase flow in
-    a vertical pipe: on the effect of inter-particle collision.},
+                   a vertical pipe: on the effect of inter-particle
+                   collision.},
   year          = 1991,
   journal       = {4th Int. Symp. on Gas-Solid Flows},
   volume        = {121},
@@ -882,15 +918,16 @@
   volume        = {221},
   pages         = {837-853},
   comment       = {Nice article, using level-set method and ghost-fluid method
-  to study heat and phase transfer of a single droplet.  Verifies d^2 law.
-  Important: Should use as reference when starting with heat and phase
-  transfer!  Keywords: level set, ghost fluid method, two-phase flows, reactive
-  interface, phase change, heat transfer, stefan flow.},
+                   to study heat and phase transfer of a single droplet.
+                   Verifies d^2 law.  Important: Should use as reference when
+                   starting with heat and phase transfer!  Keywords: level set,
+                   ghost fluid method, two-phase flows, reactive interface,
+                   phase change, heat transfer, stefan flow.},
 }
 @Article{Tryggvason10,
   title         = {Multiscale issues in DNS of multiphase flows},
   author        = {G. Tryggvason and S. Thomas and J. Lu and B.
-    Aboulhasanzadeh},
+                   Aboulhasanzadeh},
   year          = 2010,
   journal       = {Acta Mathematica Scientia 2010},
   volume        = {30B},
@@ -901,7 +938,7 @@
 @Article{Tsuji84,
   author        = {Y. Tsuji and Y. Morikawa and H. Shiomi},
   title         = {LDV measurements of an air-solid two-phase flow in
-    a vertical pipe.},
+                   a vertical pipe.},
   year          = 1984,
   journal       = {Journal of Fluid Mechanics},
   volume        = {139},
@@ -909,15 +946,16 @@
 }
 @Article{Thurner89,
   author        = {V. Thurner and W. Eberl and A. Hübler and N. Packard and E.
-    Lüscher},
+                   Lüscher},
   title         = {Determination of the Absolute Maximum of Polynomials By
-    Algebraic Bisection},
+                   Algebraic Bisection},
   year          = 1989,
   journal       = CCSR,
   publisher     = {Beckman-Institute, Rbana-Champaign, IL, 61801, U.S.A},
   comment       = {Presents an algorithm to find the maximum of polynomials.
-  Algorithm for estimating upper and lower bound in polynomial intervals.
-  Keywords: maximum of polynomials, upper and lower bound.},
+                   Algorithm for estimating upper and lower bound in polynomial
+                   intervals.  Keywords: maximum of polynomials, upper and
+                   lower bound.},
 }
 @Article{Xu03,
   author        = {Jian-Jun Xu and Hongkai Zhau},
@@ -931,7 +969,7 @@
 }
 @Article{Xu06,
   author        = {Jian-Jun Xu and Zhilin Li and John Lowengrub and Hongkai
-                    Zhau},
+                   Zhau},
   title         = {A Level Set Method for Interfacial Flows with Surfactants},
   year          = {2006},
   journal       = {Journal of Computational Physics},
@@ -941,8 +979,8 @@
   month         = {March},
 }
 @Article{Wang08,
-  author        = {Jianfeng Wang and Ping Lu and Zhihui Wang and Chao Yang
-                   and Zai-Sha Mao},
+  author        = {Jianfeng Wang and Ping Lu and Zhihui Wang and Chao Yang and
+                   Zai-Sha Mao},
   title         = {Numerical simulation of unsteady mass transfer by the
                    level-set method},
   year          = 2008,
@@ -961,9 +999,10 @@
   volume        = 64,
   pages         = {709-732},
   comment       = {Mentions the curvature problem, uses combined level-set and
-  volume-of-fluid method.  Compares level-set method with height function.  
-  Keywords: Volume-of-fluid, level set, sharp interface, surface tension,
-  curvature, two-phase flow.},
+                   volume-of-fluid method.  Compares level-set method with
+                   height function.  Keywords: Volume-of-fluid, level set,
+                   sharp interface, surface tension, curvature, two-phase
+                   flow.},
 }
 @Article{Welch07,
   author        = {Samuel W. J. Welch and Gautam Biswas},
@@ -984,9 +1023,10 @@
 }
 @Article{Yamamoto01,
   author        = {Y. Yamamoto and M. Potthoff and T. Tanaka and T. Kajishima
-    and Y. Tsuji},
+                   and Y. Tsuji},
   title         = {Large-eddy simulations of turbulent gas-particle flow in
-    a vertical channel: effect of considering inter-particle collisions},
+                   a vertical channel: effect of considering inter-particle
+                   collisions},
   journal       = {Journal of Fluid Mechanics},
   pages         = {303-334},
   volume        = {442},
@@ -1002,10 +1042,11 @@
   month         = {October},
   year          = 2007,
   comment       = {Very nice fit between numerical and experimental results for
-  center-to-center distance of head-on collisions.  Interesting simulation
-  results, especially for comparison with the level-set code.
-  Keywords: Head-on collision, coalescence, droplets, boundary-integral method,
-  experiments, simulations.},
+                   center-to-center distance of head-on collisions.
+                   Interesting simulation results, especially for comparison
+                   with the level-set code.  Keywords: Head-on collision,
+                   coalescence, droplets, boundary-integral method,
+                   experiments, simulations.},
 }
 @Article{Young59,
   author        = {N. O. Young and J. S. Goldstein and M.J. Block},
@@ -1019,7 +1060,7 @@
 @Article{Yue06,
   author        = {Pengtau Yue and Chunfeng Zhou and James J. Feng},
   title         = {A computational study of the coalescence between a drop and
-                    an interface in Newtonian and viscoelastic fluids},
+                   an interface in Newtonian and viscoelastic fluids},
   journal       = {Physics of Fluids},
   number        = {10},
   volume        = {18},
@@ -1037,9 +1078,10 @@
   doi           = {DOI: 10.1016/j.jcp.2009.05.043},
   keywords      = {Contact line, contact angles, level set method, conservative
                    method, two-phase flow},
-  comment = {Seems like a simple way  to model contact lines. Shows a couple of
-  good test  cases that  I may want  to use:  (a) Droplet on  a flat  plate (b)
-  Capillary dominated channel flow},
+  comment       = {Seems like a simple way  to model contact lines. Shows
+                   a couple of good test  cases that  I may want  to use:  (a)
+                   Droplet on  a flat plate (b) Capillary dominated channel
+                   flow},
 }
 @Article{Zahedi10,
   author        = {Sara Zahedi and Anna-Karin Tornberg},
@@ -1065,8 +1107,9 @@
   doi           = {DOI: 10.1063/1.3580754},
   keywords      = {Theoretical, droplet collision, head-on collision},
   comment       = {A comprehensive research model of head-on droplet collisions
-  with We = O(1-10) and Ca<<1.  Article is interesting, since it gives a good
-  theoretical reference for verification of our numerical model.},
+                   with We = O(1-10) and Ca<<1.  Article is interesting, since
+                   it gives a good theoretical reference for verification of
+                   our numerical model.},
 }
 @Article{Zhao96,
   author        = {H. K. Zhao and T. Chan and B. Merriman and S. Osher},
@@ -1176,14 +1219,14 @@
   isbn      = 9780387953854,
   lccn      = 01054916,
   series    = {Graduate texts in mathematics},
-  url       = {http://books.google.com/books?id       = Fge-BwqhqIYC},
+  url       = {http://books.google.com/books?id=Fge-BwqhqIYC},
   year      = 2002,
   publisher = {Springer},
   comment   = {Used as reference to Sturm's theorem.}
 }
 @Book{Numrec07,
   author        = {William H. Press and Saul A. Teukolsky and William T.
-    Vetterling and Brian P. Flannery},
+                   Vetterling and Brian P. Flannery},
   title         = {Numerical recipies},
   year          = {2007},
   isbn          = {978-0-521-88068-8},
@@ -1297,7 +1340,7 @@
 @Inproceedings{Teigen07-C,
   author        = {Knut Erik Teigen and Robert Olsen and Inge R. Gran},
   title         = {Examining the level-set method's applicability for
-    computations of transient two-phase flow of natural gas.},
+                   computations of transient two-phase flow of natural gas.},
   booktitle     = {HEFAT 2007, Fifth International Conference on Heat Transfer,
                    Fluid Mechanics and Thermodynamics},
   month         = {July},
@@ -1343,7 +1386,7 @@
 @MastersThesis{Fosse06,
   author        = {Inge Fosse},
   title         = {Simulations of a Falling Droplet and Two Approaching
-                    Droplets in a Newtonian Fluid},
+                   Droplets in a Newtonian Fluid},
   year          = {2006},
   school        = {NTNU, Trondheim, Norway},
 }
@@ -1367,7 +1410,7 @@
 @Misc{memoTeigen07,
   author        = {Knut Erik Teigen},
   title         = {Level-set code development: support for axisymmetric
-    calculations.},
+                   calculations.},
   type          = {Memo},
   year          = {2007},
   publisher     = {SINTEF Energy Research},
@@ -1382,7 +1425,7 @@
 @Misc{memoLervag10_setsdc,
   author        = {Karl Yngve Lervåg},
   title         = {Modification of the special-cell data-structure in
-    \textsc{SpiderII}},
+                   \textsc{SpiderII}},
   type          = {Memo},
   year          = {2010},
   publisher     = {SINTEF Energy Research},
@@ -1390,7 +1433,7 @@
 @Misc{memoLervag10_spider,
   author        = {Karl Yngve Lervåg},
   title         = {Framtida til \textsc{SpiderII} som simuleringskode ved
-    SINTEF Energi AS},
+                   SINTEF Energi AS},
   type          = {Memo},
   year          = {2010},
   publisher     = {SINTEF Energy Research},
@@ -1405,7 +1448,7 @@
 @Misc{Munkejord06,
   author        = {Svend Tollak Munkejord},
   title         = {The lid-driven cavity test applied to the level-set
-                    code-to-be},
+                   code-to-be},
   year          = {2006},
   note          = {Can I reference this?!},
 }
@@ -1430,14 +1473,13 @@
 @Misc{kcpc,
   author        = {Unknown},
   title         = {Introduction to Surfactants},
-  howpublished  = {http://www.kcpc.usyd.edu.au/discovery/9.5.5-short/%
-                    9.5.5\_introsurfactants.html},
+  howpublished  = {http://www.kcpc.usyd.edu.au/discovery/9.5.5-short/9.5.5\_introsurfactants.html},
   year          = {2003},
 }
 @PhdThesis{Hansen05,
   author        = {Erik B. Hansen},
   title         = {Numerical Simulation of Droplet Dynamics in the Presence of
-                    an Electric Field},
+                   an Electric Field},
   school        = {Norwegian University of Science and Technology, Department
                    of Energy and Process Engineering},
   year          = 2005,
