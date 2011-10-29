@@ -8,3 +8,7 @@
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
 
+;;;
+;;; Load utility file
+;;;
+(load (merge-pathnames ".lisp-common" (user-homedir-pathname)))
