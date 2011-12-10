@@ -1,6 +1,18 @@
-[pager]
-pager = more
-ignore = version
+[ui]
+username = Karl Yngve Lervåg <karl.yngve@lervag.net>
+editor = vim
+ssh = ssh -C
+commitsubrepos = False
+
+[email]
+from = "Karl Yngve Lervåg <karl.yngve@lervag.net>"
+method = smtp
+
+[smtp]
+host = smtp.gmail.com
+port = 587
+username = karl.yngve@gmail.com
+tls = True
 
 [extensions]
 hgext.convert =
@@ -12,30 +24,40 @@ hgk =
 fetch =
 progress =
 rebase =
-transplant = 
+transplant =
+
+[pager]
+pager = more
+ignore = version
+
+[progress]
+delay = 1.0
 
 [hgk]
 path=~/scripts/bin/hgk
 
-[email]
-from = "Karl Yngve Lervåg <karl.yngve@lervag.net>"
-method = /usr/bin/sendmail
-charsets = iso-8859-1
-
-[ui]
-username = Karl Yngve Lervåg <karl.yngve@lervag.net>
-editor = vim
-ssh = ssh -C
-commitsubrepos = False
-
 [color]
-status.modified = magenta
-status.added    = green bold
-status.removed  = red bold
-status.deleted  = red bold black_background
-status.ignored  = black
-status.unknown  = 
+status.modified = cyan
+status.added    = green
+status.removed  = red
+status.deleted  = yellow bold underline
+status.unknown  = magenta bold underline
+status.ignored  = black bold
 status.clean    = black bold
+#status.modified = magenta
+#status.added    = green bold
+#status.removed  = red bold
+#status.deleted  = red bold black_background
+#status.ignored  = black
+diff.diffline = none
+diff.extended = cyan
+diff.file_a = red
+diff.file_b = green
+diff.hunk = yellow bold
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = white_background
 
 [merge-tools]
 threesome.executable = gvim
@@ -55,3 +77,4 @@ show = log --color=always --stat -r
 slog = log --template '{date|shortdate}: {desc|firstline}\n'
 glog = glog --template 'changeset:   {rev}:{node|short} {tags}\nsummary: {desc|firstline|fill68|tabindent|tabindent}\n\n'
 inout = summary --remote
+? = summary
