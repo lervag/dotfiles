@@ -33,8 +33,8 @@ eval `dircolors -b $HOME/.dircolors.ansi-dark`
 #{{{1 Define aliases
 # General aliases
 alias rm="rm -v"
-alias mv="mv -iv"
-alias cp="cp -iv"
+alias mv="mv -i"
+alias cp="cp -i"
 alias du="du -c"
 alias grep="grep -i"
 alias s='ls'
