@@ -10,6 +10,6 @@ push @generated_exts, "synctex.gz";
 push @generated_exts, "tex.latexmain";
 $latex = 'latex --src-specials %O %S';
 $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
-$succom='sleep 2; xdotool search --class okular set_window --name "Compile OK"';
-$failcom='sleep 2; xdotool search --class okular set_window --name "Compile FAILED"';
+$succom='sleep 3; xdotool search --class okular set_window --name "Compile OK"';
+$failcom='sleep 3; xdotool search --class okular set_window --name "Compile FAILED"';
 $compcom='xdotool search --class okular set_window --name "Compiling"';
