@@ -6,7 +6,7 @@
 if [ ! "$already_sourced" ]; then
   already_sourced=1
 else
-  return
+  return 0
 fi
 #{{{1 Set environmental variables
 # General
