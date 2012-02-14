@@ -51,4 +51,5 @@ AccelDetachTab=
 AccelCloseWindow=
 AccelCloseTab=
 AccelContents=
+BindingBackspace=TERMINAL_ERASE_BINDING_ASCII_DELETE
 
