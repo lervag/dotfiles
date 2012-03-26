@@ -83,6 +83,24 @@
              fully mobile, inertia or viscous.  Keywords: Modelling, drop
              collision, coalescence, drainage.},
 }
+@Article{Chiu11,
+  author  = {Pao-Hsiung Chiu and Yan-Ting Lin},
+  title   = {A conservative phase field method for solving incompressible
+             two-phase flows},
+  journal = {Journal of Computational Physics},
+  volume  = {230},
+  pages   = {185-204},
+  year    = 2011,
+  comment = {They develop a conservative phase-field method that combines the
+             advantages of the CahnHilliard and the AllanCahn equations.  Seems
+             like their method is just a reformulation of the conservative
+             level-set method that is more efficient since it is a one-step
+             method.  They show a lot of interesting test cases and
+             simulations, for instance two rising droplets coalescing,
+             comparisons with Olsson and Kreiss 2007, Zalesak's test problem,
+             dam breaking, Raleigh-Taylor instability.  In general very nice
+             results.},
+}
 @Article{Cristini01,
   title   = {An Adaptive Mesh Algorithm for Evolving Surfaces: Simulations of
              Drop Breakup and Coalescence},
@@ -191,6 +209,22 @@
              interpolant to be monotone on an interval.  Keywords: Cubic
              splines.}
 }
+@Article{Gada12,
+  author  = {Vinesh H. Gada and Atul Sharma},
+  title   = {Analytical and level-set method based numerical study on oil-water
+             smooth/wavy stratified-flow in an inclined plane-channel},
+  year    = {2012},
+  journal = {International Journal of Multiphase Flow},
+  volume  = {38},
+  doi     = {10.1016/j.ijmultiphaseflow.2011.08.015},
+  pages   = {99-117},
+  comment = {Presents results from studying oil-water stratified flows where
+             inlet velocity, inlet interface height and inclination angles are
+             varied.  Compares numerical results with fully developed
+             analytical results.  The use a finer grid for the evolution of the
+             interface than for the evolution of the flow.  Article is kind of
+             interesting, but more in a physical sence.},
+}
 @Article{Ghia82,
   author  = {U. Ghia and K. N. Ghia and C. T. Shin},
   title   = {High-Re Solutions for Incompressible Flow Using the Navier-Stokes
@@ -201,6 +235,35 @@
   volume  = {48},
   number  = {3},
   pages   = {387-411},
+}
+@Article{Gomez11,
+  author  = {Hector Gomez and Thomas J. R. Hughes},
+  title   = {Provable unconditionally stable, second-order time-accurate, mixed
+             variational methods for phase-field models},
+  year    = {2011},
+  journal = {Journal of Computational Physics},
+  volume  = {230},
+  pages   = {5310-5327},
+  doi     = {10.1016/j.jcp.2011.03.033},
+  comment = {Title says much.  Finite element method is employed.  Stability
+             and such are proved.  Examples are shown for the Cahn-Hilliard
+             equation.  It is the second order time-stepping algorithm that is
+             the really new stuff here.},
+}
+@Article{Gong12,
+  author  = {S. Gong and P. Cheng},
+  title   = {Numerical investigation of droplet motion and coalescence by an
+             improved lattice Boltzmann model for phase transitions and
+             multiphase flows},
+  year    = {2012},
+  journal = {Computers \& Fluids},
+  volume  = {53},
+  pages   = {93-104},
+  doi     = {10.1016/j.compfluid.2011.09.013},
+  comment = {Introduce a lattice boltzman method with a modified interparticle
+             interaction force term.  They show interesting results with
+             droplets resting on solid surfaces, for instance coalescence of
+             two dropets.},
 }
 @Article{Gottlieb01,
   author  = {S. Gottlieb and C. W. Shu and E. Tadmor},
@@ -312,6 +375,18 @@
              several different situations and surface mobilities.  Keywords:
              Drainage, emulsion stability, interfacial tension gradients,
              mathematical model, simulations, film thickness.},
+}
+@Article{Hassan12,
+  title   = {An algorithm for the finite difference approximation of
+             derivatives with arbitrary degree and order of accuracy}
+  author  = {H. Z. Hassan and A. A. Mohamad and G. E. Atteia},
+  journal = {Journal of Computational and Applied Mathematics},
+  year    = 2012,
+  volume  = {236},
+  pages   = {2622-2631},
+  comment = {Presents a new method for calculating finite difference
+             approximations.  Title says everything.  Seems to be only/mainly
+             for continuous functions.},
 }
 @Article{Herrmann08,
   title   = {A balanced force refined level set grid method for two-phase flows
