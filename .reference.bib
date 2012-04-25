@@ -64,11 +64,24 @@
   volume  = {49},
   pages   = {247-257},
   year    = {2011},
-  doi     = {doi:10.1016/j.compfluid.2011.06.004},
+  doi     = {10.1016/j.compfluid.2011.06.004},
   comment = {Solves the two-medium Euler equations for water and air with the
              level-set method and the Real Ghost Fluid Method (RGFM).  Uses
              adaptive moving meshes.  The article was not very interesting, but
              the part about the ghost fluid method might be interesting.},
+}
+@Article{Ceniceros11,
+  author  = {Hector D. Ceniceros and Jordan E. Fisher},
+  title   = {A fast, robust, and non-stiff Immersed Boundary Method},
+  journal = {Journal of Computational Physics},
+  volume  = {230},
+  pages   = {5133-5153},
+  year    = 2011,
+  doi     = {10.1016/j.jcp.2011.03.037},
+  comment = {Yet another improvement to the immersed boundary method.  Seems
+             like a relatively complex method - did not read the details.
+             Result seems pretty good.  Method should be much more efficient
+             than previous methods.},
 }
 @Article{Chesters91,
   author  = {A. K. Chesters},
@@ -100,6 +113,21 @@
              comparisons with Olsson and Kreiss 2007, Zalesak's test problem,
              dam breaking, Raleigh-Taylor instability.  In general very nice
              results.},
+}
+@Article{Cordero12,
+  title    = {Steffensen type methods for solving nonlinear equations},
+  author   = {Alicia Cordero and José L. Hueso and Eulalia Martínez and Juan R.
+              Torregrosa},
+  journal  = {Journal of Computational and Applied Mathematics},
+  volume   = 236,
+  pages    = {3058-3064},
+  year     = 2012,
+  doi      = {10.1016/j.cam.2010.08.043},
+  keywords = {steffensen's method, root solver, polynomials},
+  comment  = {The article presents new 4th and 6th order methods for calculating
+             the roots of nonlinear equations f(x).  The methods are derivative
+             free.  Proof of convergence orders.  Interesting article, and
+             absolutely interesting stuff to know about.},
 }
 @Article{Cristini01,
   title   = {An Adaptive Mesh Algorithm for Evolving Surfaces: Simulations of
@@ -378,7 +406,7 @@
 }
 @Article{Hassan12,
   title   = {An algorithm for the finite difference approximation of
-             derivatives with arbitrary degree and order of accuracy}
+             derivatives with arbitrary degree and order of accuracy},
   author  = {H. Z. Hassan and A. A. Mohamad and G. E. Atteia},
   journal = {Journal of Computational and Applied Mathematics},
   year    = 2012,
@@ -414,6 +442,18 @@
              scheme.  Should be possible to implement in a finite difference
              context.  Probably not very important for our work.  Keywords:
              Numerical method, compressible flow, high-order scheme.}
+}
+@Article{Huang11,
+  title   = {An improved penalty immersed boundary method for fluid-flexible
+             body interaction},
+  author  = {Wei-Xi Huang and Cheong Bong Chang and Hyung Jin Sung},
+  journal = {Journal of Computational Physics},
+  year    = 2011,
+  volume  = 230,
+  pages   = {5061-5079},
+  doi     = {10.1016/j.jcp.2011.03.027},
+  comment = {Presents a penalty IB method that makes it possible to couple
+             solid deformation and fluid flow.}
 }
 @Article{Jiang00,
   author  = {G.-S. Jiang and D. Peng},
@@ -481,7 +521,7 @@
   number   = {12},
   pages    = {4536 - 4558},
   year     = {2011},
-  doi      = {DOI: 10.1016/j.jcp.2011.02.030},
+  doi      = {10.1016/j.jcp.2011.02.030},
   keywords = {Free-surface flow},
   keywords = {Level set},
   keywords = {Mass conservation},
@@ -512,7 +552,7 @@
   volume   = {44},
   pages    = {111-129},
   year     = {2011},
-  doi      = {DOI: 10.1016/j.compfluid.2010.12.020},
+  doi      = {10.1016/j.compfluid.2010.12.020},
   keywords = {Level set, Re-initialization, Interface tracking, Interface
               sharpening},
   comment  = {They develop an accurate  level set method on  adaptive Cartesian
@@ -570,7 +610,7 @@
   volume  = {8},
   number  = {4},
   pages   = {735-757},
-  doi     = {doi: 10.4208/cicp.281009.120210a},
+  doi     = {10.4208/cicp.281009.120210a},
   comment = {Immersed boundary method, surfactants, contact lines.  Marker
              techniques (front tracking).  Seems like an OK article, and it
              might be more interesting when I work on contact lines myself.
@@ -630,7 +670,7 @@
   year    = 2011,
   volume  = 42,
   pages   = {26-36},
-  doi     = {doi:10.1016/j.compfluid.2010.10.017},
+  doi     = {10.1016/j.compfluid.2010.10.017},
   comment = {Droplet coalescence, level-set method, contact angle.  Shows
              several simulations of droplet coalescence on surfaces.  Refers to
              a sharp-interface level-set method developed by Suh and Son
@@ -807,65 +847,80 @@
   pages         = {12-49},
 }
 @Article{Pan05,
-  author        = {Yu Pan and Kazuhiko Suga},
-  title         = {Numerical simulation of binary liquid droplet collision},
-  year          = 2005,
-  journal       = {Physics of Fluids},
-  volume        = 17,
-  number        = 8,
-  comment       = {Presents a numerical investigation of binary droplet
-                   collisions with the Navier-Stokes equations and the
-                   level-set method.  Does not contain details about numerical
-                   methods at all.  Many impressive results of coalescence.
-                   Keywords: Drop-drop collisions, level-set method, two-phase
-                   flow, regimes for drop-drop collisions, binary droplet
-                   collisions,},
+  author  = {Yu Pan and Kazuhiko Suga},
+  title   = {Numerical simulation of binary liquid droplet collision},
+  year    = 2005,
+  journal = {Physics of Fluids},
+  volume  = 17,
+  number  = 8,
+  comment = {Presents a numerical investigation of binary droplet collisions
+             with the Navier-Stokes equations and the level-set method.  Does
+             not contain details about numerical methods at all.  Many
+             impressive results of coalescence.  Keywords: Drop-drop
+             collisions, level-set method, two-phase flow, regimes for
+             drop-drop collisions, binary droplet collisions,},
 }
 @Article{Pawar96,
-  author        = {Yashodhara Pawar and Kathleen J. Stebe},
-  title         = {Marangoni effects on drop deformation in an extensional
-                   flow: The role of surfactant physical chemistry. I.
-                   Insoluble surfactants.},
-  year          = {1996},
-  journal       = {Physics of Fluids},
-  volume        = {8},
-  number        = {7},
-  pages         = {1738-1751},
-  month         = {July},
+  author  = {Yashodhara Pawar and Kathleen J. Stebe},
+  title   = {Marangoni effects on drop deformation in an extensional flow: The
+             role of surfactant physical chemistry. I.  Insoluble
+             surfactants.},
+  year    = {1996},
+  journal = {Physics of Fluids},
+  volume  = {8},
+  number  = {7},
+  pages   = {1738-1751},
+  month   = {July},
 }
 @Article{Pego88,
-  author        = {R. L. Pego},
-  title         = {Front Migration in the nonlinear Cahn-Hilliard equation},
-  year          = {1988},
-  month         = {April},
-  journal       = {Proceedings of the Royal Society A},
-  volume        = {422},
-  pages         = {261-278},
-  doi           = {doi:10.1098/rspa.1989.0027},
-  comment       = {Seeks to give a systematic formal symptotic description of
-                   the solution of the Cahn-Hilliard equation in a regime
-                   corresponding to the later stages of phase separation.
-                   Matched asymptotic expansions.  Stefan problem.  Seems to be
-                   a very good and early reference for how to use the method of
-                   matched asymptotic expansions.},
+  author  = {R. L. Pego},
+  title   = {Front Migration in the nonlinear Cahn-Hilliard equation},
+  year    = {1988},
+  month   = {April},
+  journal = {Proceedings of the Royal Society A},
+  volume  = {422},
+  pages   = {261-278},
+  doi     = {10.1098/rspa.1989.0027},
+  comment = {Seeks to give a systematic formal symptotic description of the
+             solution of the Cahn-Hilliard equation in a regime corresponding
+             to the later stages of phase separation.  Matched asymptotic
+             expansions.  Stefan problem.  Seems to be a very good and early
+             reference for how to use the method of matched asymptotic
+             expansions.},
+}
+@Article{Pinelli10,
+  author  = {A. Pinelli and I. Z. Naqavi and U. Piomelli and J. Favier},
+  title   = {Immersed-boundary methods for generel finite-difference and
+             finite-volume Navier-Stokes solvers},
+  year    = {2010},
+  journal = {Journal of Computational Physics},
+  volume  = {229},
+  pages   = {9073-9091},
+  doi     = {10.1016/j.jcp.2010.08.021},
+  comment = {Presents an interpolation-spreading procedure in the conext
+             of immersed-boundary type methods.  Uses Lagrangian markers.  It
+             says the advantage is the ease and versatility of its
+             implementation.  The methods is inherently general, and should
+             work for all grid types.  Presents results from several test
+             cases, for instance a moving flat plate and flow around cylinder
+             and sphere.},
 }
 @Article{Raessi07,
-  title         = {Advecting normal vectors: A new method for calculating
-                   interface normals and curvatures when modeling two-phase
-                   flows},
-  author        = {M. Raessi and J. Mostaghimi and M. Bussmann},
-  journal       = {Journal of Computational Physics},
-  year          = {2007},
-  volume        = {226},
-  pages         = {774-797},
-  comment       = {Presents a method for calculating normal vectors and
-                   curvatures in two-phase flow.  Instead of calculating normal
-                   vectors: advects the normal vectors with the flow.
-                   Calculates curvature from normal vectors.  Gives an overview
-                   of errors in the normal vectors and curvatures calculated
-                   with different methods, e.g. level-set method, volume of
-                   fluid.  Does not mention the curvature issue.  Keywords:
-                   Curvature, two-phase flow, normal vector, level-set, VOF.},
+  title   = {Advecting normal vectors: A new method for calculating interface
+             normals and curvatures when modeling two-phase flows},
+  author  = {M. Raessi and J. Mostaghimi and M. Bussmann},
+  journal = {Journal of Computational Physics},
+  year    = {2007},
+  volume  = {226},
+  pages   = {774-797},
+  comment = {Presents a method for calculating normal vectors and curvatures in
+             two-phase flow.  Instead of calculating normal vectors: advects
+             the normal vectors with the flow.  Calculates curvature from
+             normal vectors.  Gives an overview of errors in the normal vectors
+             and curvatures calculated with different methods, e.g. level-set
+             method, volume of fluid.  Does not mention the curvature issue.
+             Keywords: Curvature, two-phase flow, normal vector, level-set,
+             VOF.},
 }
 @Article{Ristenpart09,
   title   = {Non-coalescence of oppositely charged drops},
@@ -962,7 +1017,7 @@
   journal = {Computers and Fluids},
   volume  = {42},
   pages   = {54-61},
-  doi     = {doi:10.1016/j.compfluid.2010.10.021},
+  doi     = {10.1016/j.compfluid.2010.10.021},
   comment = {Two-phase flow, phase field method, artificial compressibility,
              WENO scheme.  Three simple test cases for bubble coalescence.
              Nice article, well written.  Can be an OK reference.},
@@ -1242,7 +1297,7 @@
   volume   = {228},
   pages    = {6361-6375},
   year     = {2009},
-  doi      = {DOI: 10.1016/j.jcp.2009.05.043},
+  doi      = {10.1016/j.jcp.2009.05.043},
   keywords = {Contact line, contact angles, level set method, conservative
               method, two-phase flow},
   comment  = {Seems like a simple way  to model contact lines. Shows a couple
@@ -1257,7 +1312,7 @@
   volume   = {229},
   pages    = {2199-2219},
   year     = {2010},
-  doi      = {DOI: 10.1016/j.jcp.2009.11.030},
+  doi      = {10.1016/j.jcp.2009.11.030},
   keywords = {Level set method, delta function, consistent approximations,
               discretization, distance function},
   comment  = {Shows an improved delta function for the level-set method.},
@@ -1270,7 +1325,7 @@
   volume   = {23},
   number   = {4},
   year     = {2011},
-  doi      = {DOI: 10.1063/1.3580754},
+  doi      = {10.1063/1.3580754},
   keywords = {Theoretical, droplet collision, head-on collision},
   comment  = {A comprehensive research model of head-on droplet collisions with
               We = O(1-10) and Ca<<1.  Article is interesting, since it gives
