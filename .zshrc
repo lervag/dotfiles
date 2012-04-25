@@ -127,6 +127,8 @@ compinit
 colors
 
 #{{{1 Autocompletion styles
+# Set some commands to use other command completions
+compdef mosh=ssh
 
 # General settings
 zstyle ':completion:*' use-cache on
