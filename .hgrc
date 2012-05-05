@@ -60,11 +60,10 @@ diff.changed = white
 diff.trailingwhitespace = white_background
 
 [merge-tools]
-threesome.executable = gvim
-threesome.args = -f $base $local $other $output -c 'set co=177' \
-                 -c 'ThreesomeInit'
-threesome.premerge = keep
-threesome.priority = 1
+splice.executable = gvim
+splice.args = -f $base $local $other $output -c 'SpliceInit'
+splice.premerge = keep
+splice.priority = 1
 
 [diff]
 git = True
