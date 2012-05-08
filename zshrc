@@ -94,6 +94,7 @@ setopt clobber
 setopt complete_aliases
 setopt complete_in_word
 setopt extended_glob
+setopt glob_complete
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
