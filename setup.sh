@@ -1,65 +1,61 @@
-#!/bin/sh
+#!/bin/bash
+#
+# Setup system files
 #
 
-# Create backupdir
-bdir=old_dotfiles
-mkdir -p $bdir
+function link
+{
+  #
+  # Argument is only the filename of file to link relative to dotfiles
+  # directory
+  #
+  file=$1
+  dir=$(dirname $file)
+  target=$PWD/$file
+  link=~/.$file
 
-#
-# Simple dotfiles
-#
-files="bashrc \
-  cvsignore \
-  bashrc \
-  cvsignore \
-  gitconfig \
-  hgk \
-  hgrc \
-  inputrc \
-  irbrc \
-  latexmkrc \
-  mailrc \
-  sbclrc \
-  screenrc \
-  toprc \
-  xsessionrc \
-  zshenv \
-  zshrc \
-  dircolors.ansi-dark \
-  reference.bib \
-  tecplot.cfg \
-  tmux.conf \
-  clisprc.lisp"
+  #
+  # Check if argument file does not exist
+  #
+  if [ ! -e $file ]; then
+    echo "File does not exist: $file"
+    exit 1
+  fi
+
+  #
+  # Initial output
+  #
+  echo "Linking: ~/.$file"
+
+  #
+  # Create directory if needed
+  #
+  [ ! "$dir" = "." ] && [ ! -d "$dir" ] && mkdir -p $dir
+
+  #
+  # Check if file is already present
+  #
+  [ -L $link ] && remove_link $link
+  [ -e $link ] && safe_remove_file $link
+
+  #
+  # Create link
+  #
+  ln -s $target $link
+}
+function remove_link
+{
+  echo "  -- Removed old link"
+  rm $1
+}
+function safe_remove_file
+{
+  bfile=/tmp/$(basename $1)_$RANDOM
+  echo " -- Backup of existing file: $bfile"
+  mv $1 $bfile
+}
+
+files=$(find -type f ! -path "./.*" ! -name "setup.sh")
 for file in $files; do
-  rootfile=~/.$file
-  thisfile=$PWD/$file
-  if [ -L $rootfile ]; then
-    echo "Removing old symbolic link $rootfile"
-    rm $rootfile
-  elif [ -e $rootfile ]; then
-    echo "Moving old $rootfile to backupdir"
-    mv $rootfile $bdir/$file
-  fi
-
-  echo "Linking $file -> ~/.$file"
-  ln -s $thisfile $rootfile
+  link ${file:2}
 done
-
-#
-# ssh files
-#
-sshdir=~/.ssh
-sshconfig=~/.ssh/config
-if [ -d $sshdir ]; then
-  if [ -L $sshconfig ]; then
-    echo "Removing old symbolic link $sshconfig"
-    rm $sshconfig
-  elif [ -e $sshconfig ]; then
-    echo "Moving old $sshconfig to backupdir"
-    mv $sshconfig $backupdir
-  fi
-else
-  mkdir $sshdir
-fi
-echo "Linking ssh/config -> ~/.ssh/config"
-ln -s $PWD/ssh/config $sshdir/config
