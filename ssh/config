@@ -34,6 +34,10 @@ Host levich
 Host *.math.uci.edu
   User klervaag
 
+Host bsam
+  Hostname home.ps.uci.edu
+  User bsam
+
 Host *
   HashKnownHosts no
   #ForwardX11 yes
