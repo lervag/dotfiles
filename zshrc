@@ -9,6 +9,7 @@ else
   return 0
 fi
 #{{{1 Set environmental variables
+
 # General
 export HOSTNAME="`hostname -s`"
 export EDITOR="vim"
@@ -20,6 +21,10 @@ export HISTFILE="$HOME/.zsh_history"
 export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
 export TERM=rxvt
+export DOTFILES=$HOME/.dotfiles
+
+# zsh stuff
+fpath=($DOTFILES/zsh-completions $fpath)
 
 # Other
 export HGENCODING="utf8"
@@ -201,6 +206,9 @@ zstyle ':completion:*:users' ignored-patterns \
       saned shutdown speech-dispatcher squid sshd sync sys syslog usbmux   \
       uucp vcsa www-data xfs Debian-exim Debian-gdm festival statd
 
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+
 #{{{1 Set command prompt
 # Define colors
 blue="%{$fg[blue]%}"
@@ -279,6 +287,9 @@ bindkey -M vicmd v edit-command-line
 #{{{1 Load system-specific settings
 sysfile=~/system_files/bashrc.sh
 [ -f $sysfile ] && source $sysfile
+
+#{{{1 Load 3rd party plugins
+source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #{{{1 Modeline ----------------------------------------------------------------
 # vim: set foldmethod=marker ff=unix:
