@@ -20,6 +20,7 @@ export SAVEHIST=10000
 export HISTFILE="$HOME/.zsh_history"
 export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
+export LESS="-X"
 export TERM=rxvt
 export DOTFILES=$HOME/.dotfiles
 
