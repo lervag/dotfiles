@@ -25,6 +25,7 @@ export TERM=rxvt
 export DOTFILES=$HOME/.dotfiles
 
 # zsh stuff
+fpath=($DOTFILES/zsh-functions $fpath)
 fpath=($DOTFILES/zsh-completions $fpath)
 
 # Other
@@ -144,6 +145,7 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select=10
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-prompt \
@@ -158,10 +160,10 @@ zstyle ':completion:*' matcher-list '' '+m:{a-z-}={A-Z_}' \
                                     'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Change some formats
-zstyle ':completion:*:descriptions' format 'Completion: %B%d%b'
+zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:messages'     format '%d'
 zstyle ':completion:*:warnings'     format 'No matches for: %B%d%b'
-zstyle ':completion:*:corrections'  format '%Correction: B%d (errors: %e)%b'
+zstyle ':completion:*:corrections'  format '%d %B(errors: %e)%b'
 
 # Set tag order for subscripts
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
@@ -178,9 +180,6 @@ zstyle ':completion:*:*:evince:*' file-patterns \
 zstyle ':completion:*:processes' insert-ids single
 zstyle ':completion:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:processes' command 'ps -Hu lervag -o pid,user,cmd'
-
-# cd wil never select parent directory
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 # Options for tecplot
 zstyle ':completion:*:*:tecplot:*' file-sort time
