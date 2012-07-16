@@ -19,6 +19,20 @@
              complex geometries.  Contact lines are treated.  Phase-field for
              interphase treatment.  Very impressive article!},
 }
+@Article{Aland11,
+  author  = {S. Aland and A. Voigt},
+  title   = {Benchmark computations of diffuse interface models for
+             two-dimensional bubble dynamics},
+  journal = {International Journal for Numerical Methods in Fluids},
+  year    = {2011},
+  doi     = {10.1002/fld.2611},
+  comment = {Discusses density differences.  Does benchmark tests of three
+             different diffuse-interface two-phase flow models.  Investigates
+             convergence behaviour when epsilon gets smaller.  Get similar
+             results as mine own DDA results, in that the convergence rates are
+             not very consistent.  Interesting article, should absolutely use
+             as reference in my DDA article.},
+}
 @Article{Almgren99,
   author  = {Robert F. Almgren},
   title   = {Second-order phase field asymptotics for unequal conductivities},
@@ -38,7 +52,11 @@
   pages   = {041921:1-15},
   year    = {2005},
   doi     = {10.1103/PhysRevE.72.041921},
-  comment = {},
+  comment = {Paper is devoted to the analysis of the phase-field method as
+             a model for vesicle dynamics.  They show the asymptotic
+             convergence.  They do not show numerical convergence results.  The
+             convergence is only shown to be of leading order (that is,
+             O(eps)).},
 }
 @Article{Brackbill92,
   author  = {J. U. Brackbill and D. B. Kothe and C. Zemach},
@@ -253,6 +271,29 @@
   journal = {Mathematics of Computation},
   volume  = {239},
   pages   = {201-219},
+}
+@Article{Folch99,
+  author  = {R. Folch and J. Casademunt and A. Hern\´{a}ndez-Machado},
+  title   = {Phase-field model for Hele-Shaw flows with arbitrary viscosity
+             contrast. I. Theoretical approach},
+  year    = {1999},
+  journal = {Physical Review E},
+  volume  = {60},
+  number  = {2},
+  pages   = {1724-1733},
+  comment = {Introduce a phase-field model for Hele-Shaw flows with arbitrary
+             viscosity contrast.  They show that it yields the proper
+             sharp-interface limit, and argue that the model has two
+             independent small parameters, that is the epsilons for the
+             different terms have different meanings.  The further expand on
+             this by going to a thin-interface model.  That is, they use
+             matching conditions and expand the diffuse-interface model, and
+             take this back to a sharp-interface limit to derive
+             a thin-interface, which is an effective sharp-interface model
+             keeping the small parameters finite.  NOTE: This is kind of the
+             opposite of what we are doing in the 2nd order DDA work.  It seems
+             he is rather modifying the sharp-interface model based on
+             expansions of the diffuse-interface model.},
 }
 @Article{Fritsch80,
   author  = {F. N. Fritsch and R. E. Carlson},
