@@ -22,6 +22,7 @@ export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
 export LESS="-X"
 export DOTFILES=$HOME/.dotfiles
+export LANG=en_GB.utf-8
 
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
@@ -130,7 +131,7 @@ autoload -U zmv
 autoload -U zsh/terminfo
 autoload -U compinit
 autoload -U colors
-compinit
+compinit -i
 colors
 
 #{{{1 Autocompletion styles
@@ -216,7 +217,7 @@ yellow="%{$fg[yellow]%}"
 red="%{$fg[red]%}"
 white="%{$fg[white]%}"
 reset="%{$terminfo[sgr0]%}"
-terminfo_down_sc=$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]
+terminfo_down_sc="$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]"
 
 # Set PS1, PS2
 PS1_2="${white}[%(?.$white.$red)%? $yellow%3~${white}]$reset"
