@@ -21,7 +21,6 @@ export HISTFILE="$HOME/.zsh_history"
 export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
 export LESS="-X"
-export TERM=rxvt
 export DOTFILES=$HOME/.dotfiles
 
 # zsh stuff
@@ -217,12 +216,14 @@ yellow="%{$fg[yellow]%}"
 red="%{$fg[red]%}"
 white="%{$fg[white]%}"
 reset="%{$terminfo[sgr0]%}"
+terminfo_down_sc=$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]
 
-# Set PS1, PS2, RPS1 and RPS2
-PS1="$yellow%n$white@$green%m$reset%(!.#.$) "
-PS2="$yellow%n$white@$green%m$reset:$yellow%_$reset%(!.#.$) "
-RPS1="${white}[$yellow%~ %(?.$white.$red)%?${white}]$reset"
-RPS2="${white}[$yellow%~ %(?.$white.$red)%?${white}]$reset"
+# Set PS1, PS2
+PS1_2="${white}[%(?.$white.$red)%? $yellow%3~${white}]$reset"
+PS1_2="%{$terminfo_down_sc$PS1_2$terminfo[rc]%}"
+PS1="$PS1_2$yellow%n$white@$green%m$reset%(!.#.$) "
+PS2="$PS1_2$yellow%n$white@$green%m$reset:$yellow%_$reset%(!.#.$) "
+preexec () { print -rn -- $terminfo[el]; }
 
 # Update RPS1 and RPS2 when changing vi mode (not for term=rxvt)
 [[ ! $TERM = rxvt ]] && print -n '\e]12;#aaaaaa\a'
