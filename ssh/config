@@ -17,8 +17,8 @@ Host vsl169
   Hostname 129.241.250.169
 Host vsl184
   Hostname 129.241.250.184
-Host vsl*
-  ProxyCommand ssh -e none olve exec netcat -w 60 %h %p
+#Host vsl*
+  #ProxyCommand ssh -e none olve exec netcat -w 60 %h %p
 
 Host hudson
   Hostname 129.241.250.142
