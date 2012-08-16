@@ -210,23 +210,57 @@ zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
 
 #{{{1 Set command prompt
+
+#{{{2 Define helper functions
 # Define colors
-blue="%{$fg[blue]%}"
-green="%{$fg[green]%}"
-yellow="%{$fg[yellow]%}"
-red="%{$fg[red]%}"
-white="%{$fg[white]%}"
-reset="%{$terminfo[sgr0]%}"
-terminfo_down_sc="$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]"
+function gray    { echo "%{$fg[white]%}$1%{$terminfo[sgr0]%}" }
+function yellow  { echo "%{$fg[yellow]%}$1%{$terminfo[sgr0]%}" }
+function magenta { echo "%{$fg[yellow]%}$1%{$terminfo[sgr0]%}" }
+function blue    { echo "%{$fg[blue]%}$1%{$terminfo[sgr0]%}" }
+function green   { echo "%{$fg[green]%}$1%{$terminfo[sgr0]%}" }
+function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
+function red     { echo "%{$fg[red]%}$1%{$terminfo[sgr0]%}" }
 
-# Set PS1, PS2
-PS1_2="${white}[%(?.$white.$red)%? $yellow%3~${white}]$reset"
-PS1_2="%{$terminfo_down_sc$PS1_2$terminfo[rc]%}"
-PS1="$PS1_2$yellow%n$white@$green%m$reset%(!.#.$) "
-PS2="$PS1_2$yellow%n$white@$green%m$reset:$yellow%_$reset%(!.#.$) "
-preexec () { print -rn -- $terminfo[el]; }
+# Helper functions
+prompthost="$(green %n)$(gray @)$(green %m)"
+promptdir="$(gray in) $(cyan %4~)"
 
-# Update RPS1 and RPS2 when changing vi mode (not for term=rxvt)
+function cvs_dir {
+  while [ "$PWD" != "/" ]; do
+    [ -d CVS ] && return "cvs"
+    cd ..
+  done
+  return 1
+}
+
+function prompt {
+  if $(git branch >&/dev/null); then
+    rp="g"
+  else
+    rp="-"
+  fi
+  if $(hg root >&/dev/null); then
+    rp+="h"
+  else
+    rp+="-"
+  fi
+  if $(cvs_dir); then
+    rp+="c"
+  else
+    rp+="-"
+  fi
+  echo "$(magenta $rp)"
+}
+
+#{{{2 Set prompt
+precmd () {
+  print -rP "$prompthost $promptdir"
+  pr="$(prompt)"
+  PS1="$pr$(green '>') "
+  PS2="$pr$(green '|') $(magenta %_) $(green '>') "
+}
+
+#{{{2 Update cursor when changing vi mode
 [[ ! $TERM = rxvt ]] && print -n '\e]12;#aaaaaa\a'
 function zle-line-init zle-keymap-select {
   [[ $TERM = rxvt ]] && return
