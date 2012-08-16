@@ -211,53 +211,47 @@ zstyle ':completion:*:manuals.*'  insert-sections   true
 
 #{{{1 Set command prompt
 
-#{{{2 Define helper functions
-# Define colors
-function gray    { echo "%{$fg[white]%}$1%{$terminfo[sgr0]%}" }
-function yellow  { echo "%{$fg[yellow]%}$1%{$terminfo[sgr0]%}" }
-function magenta { echo "%{$fg[yellow]%}$1%{$terminfo[sgr0]%}" }
-function blue    { echo "%{$fg[blue]%}$1%{$terminfo[sgr0]%}" }
-function green   { echo "%{$fg[green]%}$1%{$terminfo[sgr0]%}" }
+#{{{2 Helper functions
+function gray    { echo "%{$fg[white]%}$*%{$terminfo[sgr0]%}" }
+function magenta { echo "%{$fg[yellow]%}$*%{$terminfo[sgr0]%}" }
+function blue    { echo "%{$fg[blue]%}$*%{$terminfo[sgr0]%}" }
 function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
-function red     { echo "%{$fg[red]%}$1%{$terminfo[sgr0]%}" }
 
-# Helper functions
-prompthost="$(green %n)$(gray @)$(green %m)"
-promptdir="$(gray in) $(cyan %4~)"
-
-function cvs_dir {
+function repo_dir {
   while [ "$PWD" != "/" ]; do
-    [ -d CVS ] && return "cvs"
+    [ -d "$1" ] && return "cvs"
     cd ..
   done
   return 1
 }
 
 function prompt {
-  if $(git branch >&/dev/null); then
+  if $(repo_dir ".git"); then
     rp="g"
   else
     rp="-"
   fi
-  if $(hg root >&/dev/null); then
+  if $(repo_dir ".hg"); then
     rp+="h"
   else
     rp+="-"
   fi
-  if $(cvs_dir); then
+  if $(repo_dir "CVS"); then
     rp+="c"
   else
     rp+="-"
   fi
-  echo "$(magenta $rp)"
+  echo "$rp"
 }
 
 #{{{2 Set prompt
+
 precmd () {
-  print -rP "$prompthost $promptdir"
-  pr="$(prompt)"
-  PS1="$pr$(green '>') "
-  PS2="$pr$(green '|') $(magenta %_) $(green '>') "
+  local l="%$(( $COLUMNS - 6 - ${#USERNAME} - ${#HOSTNAME} ))<...<"
+  local pr="$(gray $(prompt))"
+  print -rP "$(magenta %n)$(gray @)$(magenta %m) $(gray in) $(cyan $l%~)"
+  PS1="$pr$(magenta '>') "
+  PS2="$pr$(magenta '| %_ >') "
 }
 
 #{{{2 Update cursor when changing vi mode
