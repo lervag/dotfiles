@@ -25,9 +25,10 @@ fetch =
 progress =
 rebase =
 transplant =
+graphlog =
 
 [pager]
-pager = more
+pager = LESS='FSRX' less
 ignore = version
 
 [progress]
@@ -44,11 +45,6 @@ status.deleted  = yellow bold underline
 status.unknown  = magenta bold underline
 status.ignored  = black bold
 status.clean    = black bold
-#status.modified = magenta
-#status.added    = green bold
-#status.removed  = red bold
-#status.deleted  = red bold black_background
-#status.ignored  = black
 diff.diffline = none
 diff.extended = cyan
 diff.file_a = red
@@ -74,6 +70,5 @@ bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
 [alias]
 show = log --color=always --stat -r
 slog = log --template '{date|shortdate}: {desc|firstline}\n'
-glog = glog --template 'changeset:   {rev}:{node|short} {tags}\nsummary: {desc|firstline|fill68|tabindent|tabindent}\n\n'
 inout = summary --remote
 ? = summary
