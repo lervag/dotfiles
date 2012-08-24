@@ -1,6 +1,4 @@
 #compdef make
 
-compadd $(make help 2>/dev/null|grep "^  ")
-compadd $(cat makefile 2>/dev/null \
-  | grep -o "^\w*:" \
-  | sed "s/://")
+compadd $(make help 2>/dev/null | grep "^  " | sed "s/\\\\n//g")                
+compadd $(cat ?akefile 2>/dev/null | grep -o "^\w*:" | sed "s/://")             

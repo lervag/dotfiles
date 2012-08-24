@@ -272,7 +272,7 @@ zle -N zle-keymap-select
 # Standard or basic bindings
 bindkey -v
 bindkey ' '    magic-space
-bindkey "^R"   history-incremental-pattern-search-backward
+bindkey "^R"   history-incremental-search-backward
 bindkey "^U"   backward-kill-line
 bindkey "^K"   kill-line
 bindkey "^F"   vi-forward-char
