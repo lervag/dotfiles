@@ -43,7 +43,7 @@ alias rm="rm -v"
 alias mv="mv -i"
 alias cp="cp -i"
 alias du="du -c"
-alias grep="grep -i"
+alias grep="egrep --color=always -i"
 alias s='ls'
 alias l='ls'
 alias ls='ls -X --color=auto --group-directories-first'
@@ -79,6 +79,7 @@ alias -g .....='../../../..'
 # Utility functions
 evince() { command evince ${*:-*.pdf(om[1]N)} }
 okular() { command okular ${*:-*.pdf(om[1]N)} }
+highlight() { command egrep --color=always -i -e '^' -e $* }
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
