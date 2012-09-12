@@ -43,7 +43,7 @@ alias rm="rm -v"
 alias mv="mv -i"
 alias cp="cp -i"
 alias du="du -c"
-alias grep="egrep --color=always -i"
+alias grep="egrep -i"
 alias s='ls'
 alias l='ls'
 alias ls='ls -X --color=auto --group-directories-first'

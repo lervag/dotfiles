@@ -1,0 +1,169 @@
+;;;
+;;; A set of utility functions given by Graham in "On Lisp"
+;;;
+(defun flatten (x)
+  (labels ((rec (x acc)
+                (cond ((null x) acc)
+                      ((atom x) (cons x acc))
+                      (t (rec
+                           (car x)
+                           (rec (cdr x) acc))))))
+    (rec x nil)))
+
+(defun group (source n)
+  (if (zerop n) (error "zero length"))
+  (labels ((rec (source acc)
+             (let ((rest (nthcdr n source)))
+               (if (consp rest)
+                   (rec rest (cons (subseq source 0 n) acc))
+                   (nreverse (cons source acc))))))
+    (if source (rec source nil) nil)))
+
+
+(defun mkstr (&rest args)
+  (with-output-to-string (s)
+    (dolist (a args) (princ a s))))
+
+(defun symb (&rest args)
+  (values (intern (apply #'mkstr args))))
+
+;;;
+;;; Define some utility macros for writing macros (taken from Let over Lambda)
+;;;
+(defun g!-symbol-p (s)
+  (and (symbolp s)
+       (> (length (symbol-name s)) 2)
+       (string= (symbol-name s)
+                "G!"
+                :start1 0
+                :end1 2)))
+
+(defun o!-symbol-p (s)
+  (and (symbolp s)
+       (> (length (symbol-name s)) 2)
+       (string= (symbol-name s)
+                "O!"
+                :start1 0
+                :end1 2)))
+
+(defun o!-symbol-to-g!-symbol (s)
+  (symb "G!"
+        (subseq (symbol-name s) 2)))
+
+(defmacro defmacro/g! (name args &rest body)
+  (let ((syms (remove-duplicates
+                (remove-if-not #'g!-symbol-p
+                               (flatten body)))))
+    `(defmacro ,name ,args
+       (let ,(mapcar
+               (lambda (s)
+                 `(,s (gensym ,(subseq
+                                 (symbol-name s)
+                                 2))))
+               syms)
+         ,@body))))
+
+(defmacro defmacro! (name args &rest body)
+  (let* ((os (remove-if-not #'o!-symbol-p args))
+         (gs (mapcar #'o!-symbol-to-g!-symbol os)))
+    `(defmacro/g! ,name ,args
+       `(let ,(mapcar #'list (list ,@gs) (list ,@os))
+          ,(progn ,@body)))))
+
+;;;
+;;; dlambda
+;;;
+(defmacro! dlambda (&rest ds)
+  `(lambda (&rest ,g!args)
+     (case (car ,g!args)
+       ,@(mapcar
+           (lambda (d)
+             `(,(if (eq t (car d))
+                  t
+                  (list (car d)))
+               (apply (lambda ,@(cdr d))
+                      ,(if (eq t (car d))
+                         g!args
+                         `(cdr ,g!args)))))
+           ds))))
+
+;;;
+;;; alambda
+;;;
+(defmacro alambda (parms &body body)
+  `(labels ((self ,parms ,@body))
+     #'self))
+
+;;;
+;;; aif
+;;;
+(defmacro aif (test then &optional else)
+  `(let ((it ,test))
+     (if it ,then ,else)))
+
+;;;
+;;; Sharp backquote
+;;;
+(defun |#`-reader| (stream sub-char numarg)
+  (declare (ignore sub-char))
+  (unless numarg (setq numarg 1))
+  `(lambda ,(loop for i from 1 to numarg
+                  collect (symb 'a i))
+     ,(funcall
+        (get-macro-character #\`) stream nil)))
+(set-dispatch-macro-character #\# #\` #'|#`-reader|)
+
+;;;
+;;; alet (with extras)
+;;;
+(defmacro alet (letargs &rest body)
+  `(let ((this) ,@letargs)
+     (setq this ,@(last body))
+     ,@(butlast body)
+     (lambda (&rest params)
+       (apply this params))))
+
+(defmacro alet-fsm (&rest states)
+  `(macrolet ((state (s) `(setq this #',s)))
+     (labels (,@states) #',(caar states))))
+
+(defmacro! ichain-before (&rest body)
+  `(let ((,g!indir-env this))
+     (setq this
+       (lambda (&rest ,g!temp-args)
+         ,@body
+         (apply ,g!indir-env
+                ,g!temp-args)))))
+
+(defmacro! ichain-after (&rest body)
+  `(let ((,g!indir-env this))
+     (setq this
+       (lambda (&rest ,g!temp-args)
+         (prog1
+           (apply ,g!indir-env
+                  ,g!temp-args)
+           ,@body)))))
+
+(defmacro! ichain-intercept (&rest body)
+  `(let ((,g!indir-env this))
+     (setq this
+       (lambda (&rest ,g!temp-args)
+         (block ,g!intercept
+           (macrolet ((intercept (v)
+                       `(return-from ,',g!intercept ,v)))
+             (prog1
+               (apply ,g!indir-env
+                      ,g!temp-args)
+               ,@body)))))))
+
+(defmacro let-hotpatch (letargs &rest body)
+  `(let ((,g!this) ,@letargs)
+     (setq ,g!this ,@(last body))
+     ,@(butlast body)
+     (dlambda
+       (:hotpatch (closure)    (setq ,g!this closure))
+       (t         (&rest args) (apply ,g!this args)))))
+
+;
+; vim: ft=lisp
+;
