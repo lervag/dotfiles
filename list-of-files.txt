@@ -26,4 +26,5 @@ toprc
 xsessionrc
 zshenv
 zshrc
+conkyrc
 lisp-common
