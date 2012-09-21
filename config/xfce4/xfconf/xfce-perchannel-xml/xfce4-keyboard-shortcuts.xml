@@ -17,7 +17,7 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Control&gt;&lt;Alt&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Control&gt;&lt;Alt&gt;Delete" type="string" value="xfce4-session-logout"/>
-      <property name="&lt;Super&gt;x" type="string" value="xfce4-terminal"/>
+      <property name="&lt;Alt&gt;x" type="string" value="xfce4-terminal"/>
       <property name="&lt;Alt&gt;v" type="string" value="gvim"/>
       <property name="&lt;Alt&gt;j" type="string" value="gvim /home/lervag/phd/journal.txt"/>
       <property name="&lt;Alt&gt;n" type="string" value="gvim /home/lervag/documents/notes.txt"/>
