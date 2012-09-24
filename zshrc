@@ -60,6 +60,7 @@ alias n2e="ssh $NTNUSRV n2e"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] \
   && echo terminal || echo error)" "$(history|tail -n1| \
   sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias sudoapt='sudo aptitude update && sudo aptitude upgrade'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
@@ -90,7 +91,6 @@ ulimit -s unlimited # Set stack size limit
 watch=( notme )     # Notify all logins or logouts (that are not me)
 
 # Turn on/off some zsh options
-unsetopt bgnice
 setopt always_to_end
 setopt auto_cd
 setopt auto_list
