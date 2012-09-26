@@ -22,7 +22,9 @@ export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
 export LESS="-X"
 export DOTFILES=$HOME/.dotfiles
+export LC_ALL=en_GB.utf-8
 export LANG=en_GB.utf-8
+export LANGUAGE=en_GB.utf-8
 
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
@@ -253,6 +255,7 @@ precmd () {
   print -rP "$(magenta %n)$(gray @)$(magenta %m) $(gray in) $(cyan $l%~)"
   PS1="$pr$(magenta '>') "
   PS2="$pr$(magenta '| %_ >') "
+  print -Pn "\e]0;%m: %~\a"
 }
 
 #{{{2 Update cursor when changing vi mode
