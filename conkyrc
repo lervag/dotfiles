@@ -33,20 +33,24 @@ TEXT
 ${font Arial:size=18}${color Tan1}GNU${color Ivory}LINUX
 
 ${font Arial:bold:size=10}${color Tan1}SYSTEM ${color DarkSlateGray} ${hr 2}
-$font${color DimGray}$sysname $kernel $alignr $machine
+$font${color DimGray}\
+$sysname $kernel $alignr $machine
 Intel Pentium D $alignr${freq_g cpu0}Ghz
 Uptime $alignr${uptime}
 File System $alignr${fs_type}
 
 ${font Arial:bold:size=10}${color Tan1}PROCESSORS ${color DarkSlateGray}${hr 2}
-$font${color DimGray}CPU1  ${cpu cpu1}% ${alignr 188}${cpubar cpu1}
+$font${color DimGray}\
+CPU1  ${cpu cpu1}% ${alignr 188}${cpubar cpu1}
 CPU2  ${cpu cpu2}% ${alignr 188}${cpubar cpu2}
 CPU3  ${cpu cpu3}% ${alignr 188}${cpubar cpu3}
-CPU4  ${cpu cpu4}% ${alignr 188}${cpubar cpu4}
+CPU4  ${cpu cpu4}% ${alignr 188}${cpubar cpu4}\
+${if_empty ${cpu cpu5}}${else}
 CPU5  ${cpu cpu5}% ${alignr 188}${cpubar cpu5}
 CPU6  ${cpu cpu6}% ${alignr 188}${cpubar cpu6}
 CPU7  ${cpu cpu7}% ${alignr 188}${cpubar cpu7}
-CPU8  ${cpu cpu8}% ${alignr 188}${cpubar cpu8}
+CPU8  ${cpu cpu8}% ${alignr 188}${cpubar cpu8}\
+${endif}
 
 ${font Arial:bold:size=8}${color Tan1}Top processes${color DimGray}$font
 ${top name 1}${alignr}${top mem 1} %
@@ -55,7 +59,8 @@ ${top name 3}${alignr}${top mem 3} %
 ${top name 4}${alignr}${top mem 4} %
 
 ${font Arial:bold:size=10}${color Tan1}MEMORY ${color DarkSlateGray}${hr 2}
-$font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
+$font${color DimGray}\
+MEM $alignc $mem / $memmax $alignr $memperc%
 $membar
 
 ${font Arial:bold:size=8}${color Tan1}Top processes${color DimGray}$font
@@ -67,16 +72,12 @@ ${top_mem name 4}${alignr}${top_mem mem 4} %
 ${font Arial:bold:size=10}${color Tan1}HDD ${color DarkSlateGray}${hr 2}
 $font${color DimGray}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
 ${fs_bar /home}
-/disk $alignc ${fs_used /media/disk} / ${fs_size /media/disk} $alignr ${fs_free_perc /media/disk}%
-${fs_bar /media/disk}
-/disk-1 $alignc ${fs_used /media/disk-1} / ${fs_size /media/disk-1} $alignr ${fs_free_perc /media/disk-1}%
-${fs_bar /media/disk-1}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color DarkSlateGray}${hr 2}
 $font${color DimGray}IP on eth0 $alignr ${addr eth0}
 
-Down $alignr ${downspeed eth0} kb/s
-Up $alignr ${upspeed eth0} kb/s
+Down $alignr ${downspeedf eth0}kb/s
+Up $alignr ${upspeedf eth0}kb/s
 
 Downloaded: $alignr  ${totaldown eth0}
 Uploaded: $alignr  ${totalup eth0}
