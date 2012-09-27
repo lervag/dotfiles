@@ -88,7 +88,7 @@ Downloaded$alignr${totaldown eth0}
 Uploaded$alignr${totalup eth0}\
 ${endif}
 ${if_up wlan0}
-IP on wlan0$alignr${addr eth0}
+IP on wlan0$alignr${addr wlan0}
 
 Down$alignr${downspeedf wlan0}kb/s
 Up$alignr${upspeedf wlan0}kb/s
