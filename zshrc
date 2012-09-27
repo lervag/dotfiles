@@ -22,9 +22,9 @@ export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
 export LESS="-X"
 export DOTFILES=$HOME/.dotfiles
-export LC_ALL=en_GB.utf-8
-export LANG=en_GB.utf-8
-export LANGUAGE=en_GB.utf-8
+export LC_ALL=en_US.utf-8
+export LANG=en_US.utf-8
+export LANGUAGE=en_US.utf-8
 
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
@@ -63,6 +63,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] \
   && echo terminal || echo error)" "$(history|tail -n1| \
   sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias sudoapt='sudo aptitude update && sudo aptitude upgrade'
+alias arbtt-all='arbtt-stats --each-category'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
