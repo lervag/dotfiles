@@ -74,11 +74,19 @@ ${font Arial:bold:size=10}${color Tan1}HDD ${color DarkSlateGray}${hr 2}
 $font${color DimGray}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
 ${fs_bar /home}
 
-${font Arial:bold:size=10}${color Tan2}NETWORK ${color DarkSlateGray}${hr 2}
-$font${color DimGray}IP on eth0 $alignr ${addr eth0}
-
+${font Arial:bold:size=10}${color Tan2}NETWORK ${color DarkSlateGray}${hr 2}\
+$font${color DimGray}
+${if_up eth0}\
+IP on eth0 $alignr ${addr eth0}
 Down $alignr ${downspeedf eth0}kb/s
 Up $alignr ${upspeedf eth0}kb/s
-
 Downloaded: $alignr  ${totaldown eth0}
-Uploaded: $alignr  ${totalup eth0}
+Uploaded: $alignr  ${totalup eth0}\
+${endif}
+${if_up wlan0}
+IP on wlan0 $alignr ${addr eth0}
+Down $alignr ${downspeedf wlan0}kb/s
+Up $alignr ${upspeedf wlan0}kb/s
+Downloaded: $alignr  ${totaldown wlan0}
+Uploaded: $alignr  ${totalup wlan0}\
+${endif}
