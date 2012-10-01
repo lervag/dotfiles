@@ -42,7 +42,8 @@ File System $alignr${fs_type}
 ${font Arial:bold:size=10}${color Tan1}BATTERY \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
 Status$alignr$battery
-$battery_time
+${if_empty $battery_time}$else
+$batter_time$endif\
 $battery_bar
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK \
