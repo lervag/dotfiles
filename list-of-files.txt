@@ -23,6 +23,8 @@ terminfo/m/mostlike
 terminfo/mostlike.txt
 tmux.conf
 toprc
+xinit
+xsession
 xsessionrc
 zshenv
 zshrc
