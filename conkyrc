@@ -70,15 +70,15 @@ $endif
 
 ${font Arial:bold:size=10}${color Tan1}PROCESSORS \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
-CPU1  ${cpu cpu1}%${alignr 188}${cpubar cpu1}
-CPU2  ${cpu cpu2}%${alignr 188}${cpubar cpu2}
-CPU3  ${cpu cpu3}%${alignr 188}${cpubar cpu3}
-CPU4  ${cpu cpu4}%${alignr 188}${cpubar cpu4}\
+CPU1  ${cpu cpu1}%${alignr 183}${cpubar cpu1}
+CPU2  ${cpu cpu2}%${alignr 183}${cpubar cpu2}
+CPU3  ${cpu cpu3}%${alignr 183}${cpubar cpu3}
+CPU4  ${cpu cpu4}%${alignr 183}${cpubar cpu4}\
 ${if_empty ${cpu cpu5}}${else}
-CPU5  ${cpu cpu5}%${alignr 188}${cpubar cpu5}
-CPU6  ${cpu cpu6}%${alignr 188}${cpubar cpu6}
-CPU7  ${cpu cpu7}%${alignr 188}${cpubar cpu7}
-CPU8  ${cpu cpu8}%${alignr 188}${cpubar cpu8}\
+CPU5  ${cpu cpu5}%${alignr 183}${cpubar cpu5}
+CPU6  ${cpu cpu6}%${alignr 183}${cpubar cpu6}
+CPU7  ${cpu cpu7}%${alignr 183}${cpubar cpu7}
+CPU8  ${cpu cpu8}%${alignr 183}${cpubar cpu8}\
 $endif
 
 ${font Arial:bold:size=10}${color Tan1}MEMORY \
