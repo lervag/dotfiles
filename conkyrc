@@ -19,6 +19,7 @@ draw_graph_borders no
 default_color gray
 default_shade_color red
 default_outline_color green
+default_bar_size 250 7
 alignment top_right
 gap_x 10
 gap_y 10
@@ -70,16 +71,18 @@ $endif
 
 ${font Arial:bold:size=10}${color Tan1}PROCESSORS \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
-CPU1  ${cpu cpu1}%${alignr 183}${cpubar cpu1}
-CPU2  ${cpu cpu2}%${alignr 183}${cpubar cpu2}
-CPU3  ${cpu cpu3}%${alignr 183}${cpubar cpu3}
-CPU4  ${cpu cpu4}%${alignr 183}${cpubar cpu4}\
+CPU1  ${cpu cpu1}%$alignr${cpubar cpu1 7,180}
+CPU2  ${cpu cpu2}%$alignr${cpubar cpu2 7,180}
+CPU3  ${cpu cpu3}%$alignr${cpubar cpu3 7,180}
+CPU4  ${cpu cpu4}%$alignr${cpubar cpu4 7,180}\
 ${if_empty ${cpu cpu5}}${else}
-CPU5  ${cpu cpu5}%${alignr 183}${cpubar cpu5}
-CPU6  ${cpu cpu6}%${alignr 183}${cpubar cpu6}
-CPU7  ${cpu cpu7}%${alignr 183}${cpubar cpu7}
-CPU8  ${cpu cpu8}%${alignr 183}${cpubar cpu8}\
+CPU5  ${cpu cpu5}%$alignr${cpubar cpu5 7,180}
+CPU6  ${cpu cpu6}%$alignr${cpubar cpu6 7,180}
+CPU7  ${cpu cpu7}%$alignr${cpubar cpu7 7,180}
+CPU8  ${cpu cpu8}%$alignr${cpubar cpu8 7,180}\
 $endif
+Total cpu load$alignr${cpu cpu0}%
+${cpubar cpu0}
 
 ${font Arial:bold:size=10}${color Tan1}MEMORY \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
