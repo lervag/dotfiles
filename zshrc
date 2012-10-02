@@ -255,7 +255,7 @@ precmd () {
   local pr="$(gray $(prompt))"
   print -rP "$(magenta %n)$(gray @)$(magenta %m) $(gray in) $(cyan $l%~)"
   PS1="$pr$(magenta '>') "
-  PS2="$pr$(magenta '| %_ >') "
+  PS2="   $(magenta '| %_ >') "
   print -Pn "\e]0;%m: %~\a"
 }
 
