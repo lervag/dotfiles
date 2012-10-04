@@ -23,6 +23,7 @@ export PAGER='less'
 export LESS="-X"
 export DOTFILES=$HOME/.dotfiles
 export LC_ALL=en_US.utf-8
+export LC_NUMERIC=en_US.utf-8
 export LANG=en_US.utf-8
 export LANGUAGE=en_US.utf-8
 
