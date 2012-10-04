@@ -154,6 +154,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-prompt \
        '%SAt %p, %l: Hit TAB for more or character to insert.%s'
+zstyle ':completion:*:commands' rehash 1
 
 # Define completers
 zstyle ':completion:*' completer _complete _match _approximate
