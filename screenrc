@@ -22,9 +22,12 @@ altscreen on
 # If a window goes unresponsive, don't block the whole session waiting for it.
 nonblock on
 
+# Don't wrap by default
+defwrap off
+
 # The status line
 caption always
-caption string '%{kg}%H %{gk}:. %{G}%?%-w%?%{g}%n %t%{G}%?(%u)%?%?%+w%?%=%{b}.:%{kb} %Y-%m-%d %c'
+caption string '%?%F%{kg}%:%{kG}%?%H %{Gk} %?%-w%?%?%F%{g}%:%{w}%?%n %t%{G}%?%+w%?%=%?%F%{kb}%:%{kk}%? %Y-%m-%d %c '
 
 # New keybindings
 bindkey -k k5 prev
