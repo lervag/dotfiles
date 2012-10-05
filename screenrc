@@ -22,12 +22,6 @@ altscreen on
 # If a window goes unresponsive, don't block the whole session waiting for it.
 nonblock on
 
-# Set window title
-hardstatus on
-hardstatus string "screen (%H: %n %t)"
-backtick 1 5 5 true
-termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
-
 # The status line
 caption always
 caption string '%{kg}%H %{gk}:. %{G}%?%-w%?%{g}%n %t%{G}%?(%u)%?%?%+w%?%=%{b}.:%{kb} %Y-%m-%d %c'
