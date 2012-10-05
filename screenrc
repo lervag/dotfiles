@@ -12,21 +12,26 @@ startup_message off
 # Detach on hangup
 autodetach on
 
-# Number of lines in buffer
-defscrollback 2000
+# Number of lines in buffer and buffer scroll
+defscrollback 10000
+termcapinfo xterm* ti@:te@
 
-### The caption line - screen status bar!
-#
-#   %{= bb}%{+b w} 	colors
-#   %t			window name
-#   %= 			end of line
-#   %Y-%m-%d		year-month-date
-#   %c			clock
-#
+# Clear screen after text editing
+altscreen on
+
+# If a window goes unresponsive, don't block the whole session waiting for it.
+nonblock on
+
+# Set window title
+hardstatus on
+hardstatus string "screen (%H: %n %t)"
+backtick 1 5 5 true
+termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
+
+# The status line
 caption always
-caption string '%{= wk}[ %{k}%H %{k}][%= %{= wk}%?%-Lw%?%{r}(%{r}%n*%f%t%?(%u)%?%{r})%{k}%?%+Lw%?%?%= %{k}][%{b} %d/%m %{k}%c %{k}]'
+caption string '%{kg}%H %{gk}:. %{G}%?%-w%?%{g}%n %t%{G}%?(%u)%?%?%+w%?%=%{b}.:%{kb} %Y-%m-%d %c'
 
-### New keybindings
-# F5 and F6 to change screen windows
+# New keybindings
 bindkey -k k5 prev
 bindkey -k k6 next
