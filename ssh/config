@@ -17,12 +17,13 @@ Host vsl169
   Hostname 129.241.250.169
 Host vsl184
   Hostname 129.241.250.184
-Host olve-vsl142
-  Hostname 129.241.250.142
-Host olve-vsl143
-  Hostname 129.241.250.143
-Host olve-vsl*
+Host vsl*
   ProxyCommand ssh -e none olve exec netcat -w 60 %h %p
+
+Host trac
+  Hostname 129.241.250.142
+  ProxyCommand ssh -e none olve exec netcat -w 60 %h %p
+  LocalForward 8080 localhost:8000
 
 Host hudson
   Hostname 129.241.250.142
