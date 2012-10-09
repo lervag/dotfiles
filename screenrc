@@ -22,9 +22,6 @@ altscreen on
 # If a window goes unresponsive, don't block the whole session waiting for it.
 nonblock on
 
-# Don't wrap by default
-defwrap off
-
 # The status line
 caption always
 caption string '%?%F%{kg}%:%{kG}%?%H %{Gk} %?%-w%?%?%F%{g}%:%{w}%?%n %t%{G}%?%+w%?%=%?%F%{kb}%:%{kk}%? %Y-%m-%d %c '
