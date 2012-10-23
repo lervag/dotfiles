@@ -1,1 +1,1 @@
-#source ~/.zshrc
+export PATH=$PATH:/usr/local/bin
