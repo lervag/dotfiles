@@ -38,6 +38,7 @@ export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
+KEYBOARD_HACK=\'
 eval `dircolors -b $HOME/.dircolors.ansi-dark`
 
 #{{{1 Define aliases
