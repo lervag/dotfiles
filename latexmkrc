@@ -1,6 +1,8 @@
 $print_type = 'pdf';
 $pdf_mode = 1;
 $pdf_previewer = 'start okular --unique';
+push @generated_exts, "cb";
+push @generated_exts, "cb2";
 push @generated_exts, "spl";
 push @generated_exts, "nav";
 push @generated_exts, "snm";
