@@ -322,7 +322,6 @@ function rationalise-dot {
 }
 zle -N rationalise-dot
 bindkey . rationalise-dot
-bindkey -M isearch . self-insert
 
 #{{{1 Load system-specific settings
 sysfile=~/system_files/bashrc.sh
