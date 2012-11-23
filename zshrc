@@ -93,7 +93,6 @@ alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 #{{{1 Options
 umask 022           # Default file permissions
 ulimit -s unlimited # Set stack size limit
-watch=( notme )     # Notify all logins or logouts (that are not me)
 
 # Turn on/off some zsh options
 setopt always_to_end
@@ -154,6 +153,9 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-separator 'fREW'
+zstyle ':completion:*' file-sort modification reverse
+zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' list-prompt \
        '%SAt %p, %l: Hit TAB for more or character to insert.%s'
 zstyle ':completion:*:commands' rehash 1
