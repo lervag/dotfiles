@@ -1,13 +1,11 @@
 # zshrc --- Karl Yngve Lervåg
 # -----------------------------------------------------------------------------
 # Created 2011-06-19
-#
+
 # Check if already sourced
-if [ ! "$already_sourced" ]; then
-  already_sourced=1
-else
-  return 0
-fi
+[ "$already_sourced" ] && return 0
+already_sourced=1
+
 #{{{1 Set environmental variables
 
 # General
@@ -38,7 +36,7 @@ export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
-KEYBOARD_HACK=\'
+export KEYBOARD_HACK=\'
 eval `dircolors -b $HOME/.dircolors.ansi-dark`
 
 #{{{1 Define aliases
@@ -76,11 +74,6 @@ alias -s tex=gvim
 alias -s pdf=evince
 alias -s png=eog
 alias -s jpg=eog
-
-# Global aliases
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
 
 # Utility functions
 evince() { command evince ${*:-*.pdf(om[1]N)} }
@@ -153,11 +146,11 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-separator 'fREW'
-zstyle ':completion:*' file-sort modification reverse
+zstyle ':completion:*' list-separator ''
+zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' list-prompt \
-       '%SAt %p, %l: Hit TAB for more or character to insert.%s'
+       '%SAt %p, %l: Hit TAB for more or anything else to continue.%s'
 zstyle ':completion:*:commands' rehash 1
 
 # Define completers
@@ -176,14 +169,6 @@ zstyle ':completion:*:corrections'  format '%d %B(errors: %e)%b'
 
 # Set tag order for subscripts
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
-
-# Have pdf-files sorted by time for okular and evince
-zstyle ':completion:*:*:okular:*' file-sort time
-zstyle ':completion:*:*:okular:*' file-patterns \
-  '*.pdf:pdf-files:pdf\ files' '*(-/):directories'
-zstyle ':completion:*:*:evince:*' file-sort time
-zstyle ':completion:*:*:evince:*' file-patterns \
-  '*.pdf:pdf-files:pdf\ files' '*(-/):directories'
 
 # Options for kill and other programs that uses the processes tag
 zstyle ':completion:*:processes' insert-ids single
@@ -324,6 +309,21 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+# Type '...' to get '../..' with successive .'s adding /..
+function rationalise-dot {
+    local MATCH # keep the regex match from leaking to the environment
+    if [[ $LBUFFER =~ '(^|/| |      |'$'\n''|\||;|&)\.\.$' ]]; then
+      LBUFFER+=/
+      zle self-insert
+      zle self-insert
+    else
+      zle self-insert
+    fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
+bindkey -M isearch . self-insert
+
 #{{{1 Load system-specific settings
 sysfile=~/system_files/bashrc.sh
 [ -f $sysfile ] && source $sysfile
@@ -331,5 +331,5 @@ sysfile=~/system_files/bashrc.sh
 #{{{1 Load 3rd party plugins
 source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#{{{1 Modeline ----------------------------------------------------------------
+#{{{1 Modeline
 # vim: set foldmethod=marker ff=unix:
