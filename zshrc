@@ -59,11 +59,7 @@ alias e2n="ssh $NTNUSRV e2n"
 alias n2e="ssh $NTNUSRV n2e"
 [ ! "`which xpdf 2> /dev/null`" ] && [ "`which kpdf 2> /dev/null`" ] \
   && alias xpdf='kpdf'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] \
-  && echo terminal || echo error)" "$(history|tail -n1| \
-  sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias sudoapt='sudo aptitude update && sudo aptitude upgrade'
-alias arbtt-all="arbtt-stats --each-category"
 
 # Extension stuff
 alias -s gz='tar -xzvf'
