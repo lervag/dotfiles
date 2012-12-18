@@ -4,6 +4,9 @@ editor = vim
 ssh = ssh -C
 commitsubrepos = False
 
+[trusted]
+users = asmunder
+
 [email]
 from = "Karl Yngve Lervåg <karl.yngve@lervag.net>"
 method = smtp
