@@ -7,16 +7,6 @@ commitsubrepos = False
 [trusted]
 users = asmunder
 
-[email]
-from = "Karl Yngve Lervåg <karl.yngve@lervag.net>"
-method = smtp
-
-[smtp]
-host = smtp.gmail.com
-port = 587
-username = karl.yngve@gmail.com
-tls = True
-
 [extensions]
 hgext.convert =
 hgext.graphlog =
