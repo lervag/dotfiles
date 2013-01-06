@@ -60,6 +60,7 @@ alias n2e="ssh $NTNUSRV n2e"
 [ ! "`which xpdf 2> /dev/null`" ] && [ "`which kpdf 2> /dev/null`" ] \
   && alias xpdf='kpdf'
 alias sudoapt='sudo aptitude update && sudo aptitude upgrade'
+alias anki='anki -b documents/anki'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
