@@ -38,8 +38,6 @@ ${color DarkSlateGray}${hr 2}${color DimGray}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
 File System $alignr${fs_type}
-Selfspy $alignr${if_empty ${cmdline_to_pid selfspy}}\
-${color red}Inactive${else}${color green}Active$endif${color DimGray}
 Uptime $alignr${uptime}
 System load $alignr\
 ${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}${color DimGray}
