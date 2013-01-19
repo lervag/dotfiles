@@ -1,6 +1,7 @@
 $print_type = 'pdf';
 $pdf_mode = 1;
 $pdf_previewer = 'start okular --unique';
+$bibtex_use = 2;
 push @generated_exts, "cb";
 push @generated_exts, "cb2";
 push @generated_exts, "spl";
