@@ -68,12 +68,13 @@ alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
 alias -s txt=gvim
 alias -s tex=gvim
-alias -s pdf=evince
+alias -s pdf=mupdf
 alias -s png=eog
 alias -s jpg=eog
 
 # Utility functions
-evince() { command evince ${*:-*.pdf(om[1]N)} }
+mupdf() { command mupdf -r 95 ${*:-*.pdf(om[1]N)} }
+evince() { echo "Use mupdf" }
 okular() { command okular ${*:-*.pdf(om[1]N)} }
 highlight() { command egrep --color=always -i -e '^' -e $* }
 
