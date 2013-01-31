@@ -1,5 +1,5 @@
 # Screen setup
-# Karl Yngve Lervåg
+# Karl Yngve Lervåg - 2013
 
 # No annoying audible bell, please
 vbell on
@@ -13,8 +13,8 @@ startup_message off
 autodetach on
 
 # Number of lines in buffer and buffer scroll
-defscrollback 10000
-termcapinfo xterm* ti@:te@
+defscrollback 20000
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
 
 # Clear screen after text editing
 altscreen on
@@ -23,8 +23,7 @@ altscreen on
 nonblock on
 
 # The status line
-caption always
-caption string '%?%F%{kg}%:%{kw}%?%H %?%F%{Gk}%:%{wk}%? %?%-w%?%?%F%{g}%:%{b}%?%n %t%?%F%{G}%:%{w}%?%?%+w%?%=%?%F%{kb}%:%{kk}%? %Y-%m-%d %c '
+caption always '%?%F%{Kg}%:%{Kw}%?%H %?%F%{GK}%:%{wK}%? %-w%{+b i}%n %t%{-}%+w %=%?%F%{Kb}%:%{KK}%? %Y-%m-%d %c '
 
 # New keybindings
 bindkey -k k5 prev
