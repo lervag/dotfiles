@@ -48,7 +48,7 @@ alias du="du -c"
 alias grep="egrep -i"
 alias s='ls'
 alias l='ls'
-alias ls='ls -X --color=auto --group-directories-first'
+alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -ogh'
 alias lsa='ls -A'
 alias dato='date +"Uke %V, %A %d. %B, %Y -- %T"'
@@ -61,6 +61,7 @@ alias n2e="ssh $NTNUSRV n2e"
   && alias xpdf='kpdf'
 alias sudoapt='sudo aptitude update && sudo aptitude upgrade'
 alias anki='anki -b documents/anki'
+alias mupdf='mupdf -r 110'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
@@ -73,9 +74,7 @@ alias -s png=eog
 alias -s jpg=eog
 
 # Utility functions
-mupdf() { command mupdf -r 95 ${*:-*.pdf(om[1]N)} }
 evince() { echo "Use mupdf" }
-okular() { command okular ${*:-*.pdf(om[1]N)} }
 highlight() { command egrep --color=always -i -e '^' -e $* }
 
 # To get colors in man
