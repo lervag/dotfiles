@@ -89,8 +89,13 @@ $membar
 
 ${font Arial:bold:size=10}${color Tan1}TOP PROCESSES: CPU \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
-${top name 1}$alignr${top mem 1} %
-${top name 2}$alignr${top mem 2} %
+${top name 1}$alignr${top cpu 1} %
+${top name 2}$alignr${top cpu 2} %
+
+${font Arial:bold:size=10}${color Tan1}TOP PROCESSES: I/O \
+${color DarkSlateGray}${hr 2}${color DimGray}$font
+${top_io name 1}$alignr${top_io io_perc 1} %
+${top_io name 2}$alignr${top_io io_perc 2} %
 
 ${font Arial:bold:size=10}${color Tan1}TOP PROCESSES: MEMORY \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
