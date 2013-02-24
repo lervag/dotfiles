@@ -62,6 +62,7 @@ alias n2e="ssh $NTNUSRV n2e"
 alias sudoapt='sudo aptitude update && sudo aptitude upgrade'
 alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 110'
+alias ack='ack-grep'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
@@ -328,4 +329,4 @@ sysfile=~/system_files/bashrc.sh
 source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #{{{1 Modeline
-# vim: set foldmethod=marker ff=unix:
+# vim: set fdm=marker
