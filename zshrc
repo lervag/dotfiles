@@ -63,6 +63,7 @@ alias sudoapt='sudo aptitude update && sudo aptitude upgrade'
 alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 100'
 alias ack='ack-grep'
+alias cvsdiff='cvs -q diff -u|colordiff|more'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
