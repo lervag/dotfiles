@@ -208,6 +208,23 @@
              free.  Proof of convergence orders.  Interesting article, and
              absolutely interesting stuff to know about.},
 }
+@Article{Coyajee09,
+  title    = {Numerical simulation of drop impact on a liquid-liquid interface
+              with a multiple marker front-capturing method},
+  author   = {Emil Coyajee and Bendiks Jan Boersma},
+  journal  = {Journal of Computational Physics},
+  volume   = {228},
+  pages    = {4444-4467},
+  year     = {20=9},
+  doi      = {10.1016/j.jcp.2009.03.014},
+  keywords = {VOF, level-set, multiphase flow, drop impact},
+  comment  = {Seems to be among the first (or the first) to use several
+              level-set functions to describe different bodies in order to
+              prevent numerical coalescence.  They use CLSVOF and GFM.  Seems
+              to be relatively straightforward to use multiple LS functions.
+              They use height function to calculate curvature.  Well written
+              and good article.  Inspiring.},
+}
 @Article{Cristini01,
   title   = {An Adaptive Mesh Algorithm for Evolving Surfaces: Simulations of
              Drop Breakup and Coalescence},
@@ -389,6 +406,22 @@
              analytical results.  The use a finer grid for the evolution of the
              interface than for the evolution of the flow.  Article is kind of
              interesting, but more in a physical sence.},
+}
+@Article{Garzon12,
+  author  = {Maria Garzon and L. J. Gray and James Sethian},
+  title   = {Droplet and bubble pinch-off computations using level sets},
+  year    = {2012},
+  journal = {Journal of Computational and Applied Mathematics},
+  volume  = {236},
+  doi     = {10.1016/j.cam.2011.03.032},
+  pages   = {3034-3041},
+  comment = {Presents a mathematical model for bubble/droplet pinch-off that
+             use potential formulations, level-set method, and the
+             boundary-integral method.  It could be interesting to reproduce
+             the results with our code, but I need to find how to initialize
+             a pinch-off shape similar to the one that is used in this paper.
+             The paper references a different paper on how to initialize the
+             case, but I did not find any useful info there either.},
 }
 @Article{Ghia82,
   author  = {U. Ghia and K. N. Ghia and C. T. Shin},
@@ -2044,7 +2077,7 @@
   school    = {Norwegian University of Science and Technology, Department of
                Energy and Process Engineering},
   year      = {2005},
-  month     = {Nov},
+  month     = {November},
   type      = {Doctoral thesis},
   address   = {Trondheim},
   note      = {ISBN 82-471-7318-2},
@@ -2087,6 +2120,20 @@
   month     = {October},
   year      = {2009},
   note      = {ISBN 978-82-471-1864-1},
+}
+@PhdThesis{Walker12,
+  author    = {Claudio Walker},
+  title     = {Numerical {M}ethods for {T}wo--{P}hase {F}low with {C}ontact
+               {L}ines},
+  type      = {Doctoral thesis},
+  publisher = {Tapir Uttrykk},
+  school    = {Norwegian University of Science and Technology, Department of
+               Energy and Process Engineering},
+  address   = {Trondheim},
+  month     = {July},
+  year      = {2012},
+  isbn      = {978-82-471-3617-1},
+  note      = {ISBN 978-82-471-3617-1},
 }
 %
 % vim: ft=bib fdm=syntax
