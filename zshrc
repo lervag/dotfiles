@@ -64,6 +64,7 @@ alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 100'
 alias ack='ack-grep'
 alias cvsdiff='cvs -q diff -u|colordiff|more'
+alias matlab='matlab -nodesktop -nosplash'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
@@ -76,7 +77,6 @@ alias -s png=eog
 alias -s jpg=eog
 
 # Utility functions
-evince() { echo "Use mupdf" }
 highlight() { command egrep --color=always -i -e '^' -e $* }
 
 # To get colors in man
@@ -278,7 +278,7 @@ bindkey "^E"   expand-word
 
 # Change escape to normal mode
 bindkey -r    "\e"
-bindkey "jkj" "vi-cmd-mode"
+bindkey "jk"  "vi-cmd-mode"
 
 # Some more nice utility widgets
 bindkey "^X"  execute-named-cmd
