@@ -5,7 +5,7 @@ ssh = ssh -C
 commitsubrepos = False
 
 [trusted]
-users = asmunder
+users = asmunder,aursand
 
 [extensions]
 hgext.convert =
