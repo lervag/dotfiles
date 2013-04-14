@@ -65,6 +65,7 @@ alias mupdf='mupdf -r 100'
 alias ack='ack-grep'
 alias cvsdiff='cvs -q diff -u|colordiff|more'
 alias matlab='matlab -nodesktop -nosplash'
+alias tmux='TERM=screen-256color-bce tmux'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
