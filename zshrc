@@ -63,7 +63,6 @@ alias sudoapt='sudo aptitude update && sudo aptitude -y upgrade'
 alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 100'
 alias ack='ack-grep'
-alias cvsdiff='cvs -q diff -u|colordiff|more'
 alias matlab='matlab -nodesktop -nosplash'
 alias tmux='TERM=screen-256color-bce tmux'
 
@@ -79,6 +78,7 @@ alias -s jpg=eog
 
 # Utility functions
 highlight() { command egrep --color=always -i -e '^' -e $* }
+cvsdiff() { cvs -q diff -u $*|colordiff|more }
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
