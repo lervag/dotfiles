@@ -1,3 +1,4 @@
+ackrc
 bashrc
 clisprc.lisp
 config/Terminal/terminalrc
@@ -30,3 +31,4 @@ conkyrc
 lisp-common
 pam_environment
 cvsrc
+Xmodmap
