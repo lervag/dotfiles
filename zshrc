@@ -39,7 +39,7 @@ export PETSC_DIR=/home/petsc/petsc-current
 export KEYBOARD_HACK=\'
 eval `dircolors -b $HOME/.dircolors.ansi-dark`
 
-#{{{1 Define aliases
+#{{{1 Define aliases and utility functions
 # General aliases
 alias rm="rm -v"
 alias mv="mv -i"
@@ -79,6 +79,7 @@ alias -s jpg=eog
 # Utility functions
 highlight() { command egrep --color=always -i -e '^' -e $* }
 cvsdiff() { cvs -q diff -u $*|colordiff|more }
+chpwd() { emulate -L zsh; ls }
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
@@ -152,6 +153,7 @@ zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' list-prompt \
        '%SAt %p, %l: Hit TAB for more or anything else to continue.%s'
 zstyle ':completion:*:commands' rehash 1
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")'
 
 # Define completers
 zstyle ':completion:*' completer _complete _match _approximate
@@ -212,9 +214,10 @@ function blue    { echo "%{$fg[blue]%}$*%{$terminfo[sgr0]%}" }
 function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
 
 function repo_dir {
-  while [ "$PWD" != "/" ]; do
-    [ -d "$1" ] && return "cvs"
-    cd ..
+  path=$PWD
+  while [ "$path" != "" ]; do
+    [ -d "$path/$1" ] && return 0
+    path=${path%/*}
   done
   return 1
 }
@@ -268,6 +271,7 @@ zle -N zle-keymap-select
 bindkey -v
 bindkey ' '    magic-space
 bindkey "^R"   history-incremental-search-backward
+bindkey "^T"   history-incremental-search-forward
 bindkey "^U"   backward-kill-line
 bindkey "^K"   kill-line
 bindkey "^F"   vi-forward-char
@@ -287,13 +291,6 @@ bindkey "^W"  where-is
 bindkey "^_"  undo
 bindkey "\eq" push-line-or-edit
 bindkey "^H"  _complete_help
-
-# Add prediction (but not on as default)
-autoload -U predict-on
-zle -N predict-on
-zle -N predict-off
-bindkey '^Xp' predict-on
-bindkey '^X^P' predict-off
 
 # Special keys
 bindkey "\eOH"  beginning-of-line    # Home
