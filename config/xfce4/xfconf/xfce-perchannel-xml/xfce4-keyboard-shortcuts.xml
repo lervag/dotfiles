@@ -3,7 +3,6 @@
 <channel name="xfce4-keyboard-shortcuts" version="1.0">
   <property name="commands" type="empty">
     <property name="default" type="empty">
-      <property name="&lt;Alt&gt;F2" type="empty"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="empty"/>
       <property name="XF86Display" type="empty"/>
       <property name="&lt;Super&gt;p" type="empty"/>
@@ -24,7 +23,7 @@
       <property name="&lt;Alt&gt;c" type="string" value="/home/lervag/scripts/bin/showtime.sh"/>
       <property name="Print" type="string" value="xfce4-screenshooter"/>
       <property name="&lt;Alt&gt;g" type="string" value="google-chrome"/>
-      <property name="&lt;Alt&gt;a" type="string" value="anki"/>
+      <property name="&lt;Alt&gt;a" type="string" value="anki -b documents/anki"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
