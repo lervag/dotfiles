@@ -1,7 +1,7 @@
 [Configuration]
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
-MiscBordersDefault=False
+MiscBordersDefault=FALSE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
@@ -20,7 +20,7 @@ ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=100000
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=1.000000
-FontName=Inconsolata-dz for Powerline Medium 9
+FontName=Inconsolata-g Medium 9
 ColorCursor=#9393a1a1a1a1
 ColorForeground=#FDFDF6F6E3E3
 ColorBackground=#00002B2B3636
@@ -52,4 +52,5 @@ AccelCloseWindow=
 AccelCloseTab=
 AccelContents=
 BindingBackspace=TERMINAL_ERASE_BINDING_ASCII_DELETE
+MiscScrollAlternateScreen=TRUE
 
