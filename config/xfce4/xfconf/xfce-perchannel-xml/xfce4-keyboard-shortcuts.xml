@@ -11,7 +11,7 @@
       <property name="&lt;Control&gt;Escape" type="empty"/>
     </property>
     <property name="custom" type="empty">
-      <property name="&lt;Alt&gt;F2" type="string" value="xfrun4"/>
+      <property name="&lt;Alt&gt;F2" type="string" value="xfrun4 --disable-server"/>
       <property name="XF86Display" type="string" value="xrandr --auto"/>
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Control&gt;&lt;Alt&gt;l" type="string" value="xflock4"/>
