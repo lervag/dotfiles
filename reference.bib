@@ -315,11 +315,18 @@
   pages   = {89},
   year    = {1952},
 }
+@Article{Ervik13,
+  author  = {Åsmund Ervik and Karl Yngve Lervåg and Svend Tollak Munkejord},
+  title   = {A robust method for calculating interface curvature and normal
+             vectors using an extracted local level set},
+  journal = {Submitted to Journal of Computational Physics},
+  year    = {2013},
+}
 @Article{Fedkiw99,
   author  = {Ronald P. Fedkiw and Tariq Aslam and Barry Merriman and Stanley
              Osher},
   title   = {A non-oscillatory {E}ulerian approach to interfaces in
-             multimaterial flows (the Ghost Fluid Method)},
+             multimaterial flows (the {G}host {F}luid {M}ethod)},
   journal = {Journal of Computational Physics},
   volume  = {152},
   number  = {2},
@@ -571,6 +578,18 @@
   comment = {Important.  Outlines the major issues in multiphase flow
              research.  A good reference for motivation.  Keywords: Scientific
              issues for multiphase flows, general overview.},
+}
+@Article{Harlow65,
+  title   = {Numerical Calculation of Time Dependent Viscous Incompressible
+             Flow of Fluid with Free Surface},
+  author  = {Francis H. Harlow and J. Eddie Welch},
+  journal = {Physics of Fluids},
+  year    = {1965},
+  volume  = {8},
+  pages   = {2182-2189},
+  doi     = {10.1063/1.1761178},
+  comment = {The marker and cell (MAC) method is introduced.  Gives some good
+             derivations and explenations for how to do boundary conditions.},
 }
 @Article{Hartmann10,
   title   = {The constrained reinitialization equation for level-set methods},
@@ -905,6 +924,20 @@
              a sharp-interface level-set method developed by Suh and Son
              (2009) - might be worth a look.  Valides results with experimental
              data.},
+}
+@Article{Lervag13a,
+  author  = {Karl Yngve Lervåg and Bernhard müller and Svend Tollak Munkejord},
+  title   = {Calculation of the interface curvature and normal vector with the
+             level-set method},
+  journal = {Submitted to Computers \& Fluids},
+  year    = {2013},
+}
+@Article{Lervag13b,
+  author  = {Karl Yngve Lervåg and John Lowengrub},
+  title   = {Towards a second-order diffuse-domain approach for solving PDEs in
+             complex geometries},
+  journal = {Submitted to Communications in Math. Sciences},
+  year    = {2013},
 }
 @Article{LeVeque94,
   author  = {R. LeVeque and Z. Li},
@@ -1756,6 +1789,13 @@
   publisher = {Springer},
   year      = {2000},
 }
+@Book{Drikakis05,
+  author    = {D. Drikakis and W. Rider},
+  title     = {High-Resolution Methods for Incompressible and Low-Speed Flows},
+  isbn      = {3-540-22136-0},
+  publisher = {Springer},
+  year      = {2005},
+}
 @Book{Gidaspow94,
   author    = {Dimitri Gidaspow},
   title     = {Multiphase Flow and Fluidization},
@@ -1892,7 +1932,7 @@
   year      = {2002},
   ISBN      = {0-618-12078-5}
 }
-@Inproceedings{Lervaag11-a,
+@Inproceedings{Lervag11,
   author    = {Karl Yngve {Lerv\aa g}},
   title     = {Calculation of interface curvature with the level-set method},
   year      = {23-24 May 2011},
@@ -1900,6 +1940,14 @@
   isbn      = {978-82-519-2798-7},
   booktitle = {Sixth National Conference on Computational Mechanics MekIT'11
                (Trondheim, Norway)},
+}
+@Inproceedings{Lervag12,
+  author    = {Karl Yngve {Lerv\aa g} and \Aa smund Ervik},
+  title     = {Curvature calculations for the level-set method},
+  year      = {2012},
+  isbn      = {978-3642331336},
+  booktitle = {ENUMATH 2011 proceedings volume},
+  publisher = {Springer},
 }
 @Inproceedings{Meland07,
   author    = {Roar Meland and Inge R. Gran and Robert Olsen and Svend Tollak
@@ -2010,25 +2058,41 @@
   publisher = {Massachusetts Institute of Technology},
   year      = {2004},
 }
-@Misc{noteDDAderivations12,
-  author    = {Karl Yngve {Lerv\aa g}},
-  title     = {Diffuse Domain Approach --- Derivation of second-order order DDA
-               equations},
-  type      = {Note},
-  year      = {2012},
+@Misc{kcpc,
+  author       = {Unknown},
+  title        = {Introduction to Surfactants},
+  howpublished = {http://www.kcpc.usyd.edu.au/discovery/9.5.5-short/9.5.5\_introsurfactants.html},
+  year         = {2003},
 }
-@Misc{noteDDAnumdetails12,
-  author    = {Karl Yngve {Lerv\aa g}},
-  title     = {Diffuse Domain Approach --- Discretization, numerical
-               implementation, and verification},
-  type      = {Note},
-  year      = {2012},
+@Misc{Lervag11-plan,
+  author    = {Karl Yngve Lerv{\aa}g},
+  title     = {PhD Project Description},
+  type      = {Document},
+  url       = {http://folk.ntnu.no/lervag/files/project_description.pdf},
+  publisher = {Norwegian University of Science and Technology},
+  year      = {2011},
+  month     = {May},
 }
-@Misc{noteDDAresults12,
-  author    = {Karl Yngve {Lerv\aa g}},
-  title     = {Diffuse Domain Approach --- Simulation results},
-  type      = {Note},
+@Misc{letterBlanchette12,
+  author    = {Francois Blanchette and Terry P. Bigioni},
+  title     = {Partial coalescence of drops at liquid interfaces},
+  type      = {Letter},
   year      = {2012},
+  publisher = {Nature physics},
+  comment   = {A short and simple comparison of simulations and experiments
+               that investigate and find a critical Ohnesorge number for when
+               partial coalescence occurs (which also depends on the Bond
+               number).  Only for droplets resting on a liquid film.  Well
+               written and very nice.},
+}
+@Misc{Lundgaard05,
+  author    = {Lundgaard},
+  title     = {Compact Separation by Electrocoalescence},
+  type      = {Web page},
+  url       = {http://www.sintef.no/content/page1\_\_\_\_3326.aspx},
+  publisher = {SINTEF Energy Research},
+  year      = {2005},
+  month     = {January},
 }
 @Misc{memoTeigen07,
   author    = {Knut Erik Teigen},
@@ -2068,17 +2132,31 @@
   year      = {2010},
   publisher = {SINTEF Energy Research},
 }
-@Misc{letterBlanchette12,
-  author    = {Francois Blanchette and Terry P. Bigioni},
-  title     = {Partial coalescence of drops at liquid interfaces},
-  type      = {Letter},
+@Misc{Munkejord06,
+  author = {Svend Tollak Munkejord},
+  title  = {The lid-driven cavity test applied to the level-set code-to-be},
+  year   = {2006},
+  note   = {Can I reference this?!},
+}
+@Misc{noteDDAderivations12,
+  author    = {Karl Yngve {Lerv\aa g}},
+  title     = {Diffuse Domain Approach --- Derivation of second-order order DDA
+               equations},
+  type      = {Note},
   year      = {2012},
-  publisher = {Nature physics},
-  comment   = {A short and simple comparison of simulations and experiments
-               that investigate and find a critical Ohnesorge number for when
-               partial coalescence occurs (which also depends on the Bond
-               number).  Only for droplets resting on a liquid film.  Well
-               written and very nice.},
+}
+@Misc{noteDDAnumdetails12,
+  author    = {Karl Yngve {Lerv\aa g}},
+  title     = {Diffuse Domain Approach --- Discretization, numerical
+               implementation, and verification},
+  type      = {Note},
+  year      = {2012},
+}
+@Misc{noteDDAresults12,
+  author    = {Karl Yngve {Lerv\aa g}},
+  title     = {Diffuse Domain Approach --- Simulation results},
+  type      = {Note},
+  year      = {2012},
 }
 @Misc{reportGjennestad12,
   author    = {Magnus Aashammer Gjennestad},
@@ -2096,35 +2174,14 @@
                This should also be tested with respect to the curvature
                issue.},
 }
-@Misc{Munkejord06,
-  author = {Svend Tollak Munkejord},
-  title  = {The lid-driven cavity test applied to the level-set code-to-be},
-  year   = {2006},
-  note   = {Can I reference this?!},
-}
-@Misc{Lundgaard05,
-  author    = {Lundgaard},
-  title     = {Compact Separation by Electrocoalescence},
-  type      = {Web page},
-  url       = {http://www.sintef.no/content/page1\_\_\_\_3326.aspx},
-  publisher = {SINTEF Energy Research},
-  year      = {2005},
-  month     = {January},
-}
-@Misc{Lervag11-plan,
-  author    = {Karl Yngve Lerv{\aa}g},
-  title     = {PhD Project Description},
-  type      = {Document},
-  url       = {http://folk.ntnu.no/lervag/files/project_description.pdf},
-  publisher = {Norwegian University of Science and Technology},
-  year      = {2011},
-  month     = {May},
-}
-@Misc{kcpc,
-  author       = {Unknown},
-  title        = {Introduction to Surfactants},
-  howpublished = {http://www.kcpc.usyd.edu.au/discovery/9.5.5-short/9.5.5\_introsurfactants.html},
-  year         = {2003},
+@Misc{PETSc,
+  author = {Satish Balay and Jed Brown and Kris Buschelman and William D.
+            Gropp and Dinesh Kaushik and Matthew G. Knepley and Lois Curfman
+            McInnes and Barry F. Smith and Hong Zhang},
+  title  = {{PETSc} {W}eb page},
+  type   = {Web page},
+  url    = {http://www.mcs.anl.gov/petsc},
+  year   = {2013},
 }
 @PhdThesis{Hansen05,
   author    = {Erik B. Hansen},
