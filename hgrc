@@ -19,6 +19,7 @@ progress =
 rebase =
 transplant =
 graphlog =
+record =
 
 [pager]
 pager = LESS='FSRX' less
