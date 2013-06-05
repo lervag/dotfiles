@@ -13,6 +13,7 @@ push @generated_exts, "tdo";
 push @generated_exts, "nmo";
 push @generated_exts, "synctex.gz";
 push @generated_exts, "tex.latexmain";
+push @generated_exts, "run.xml";
 $latex = 'latex --src-specials %O %S';
 $pdflatex = 'pdflatex -interaction=nonstopmode --shell-escape %O %S';
 $compiling_cmd = "xdotool search --name \"%D\" set_window --name \"%D compiling...\"";
