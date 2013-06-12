@@ -20,10 +20,10 @@ export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
 export LESS="-X"
 export DOTFILES=$HOME/.dotfiles
-export LC_ALL=en_US.utf-8
-export LC_NUMERIC=en_US.utf-8
-export LANG=en_US.utf-8
-export LANGUAGE=en_US.utf-8
+export LC_ALL=en_US.UTF-8
+export LC_NUMERIC=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
@@ -37,6 +37,7 @@ export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
 export KEYBOARD_HACK=\'
+export CVS_RSH=ssh
 eval `dircolors -b $HOME/.dircolors.ansi-dark`
 
 #{{{1 Define aliases and utility functions
