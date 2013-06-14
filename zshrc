@@ -322,7 +322,7 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 
 #{{{1 Load system-specific settings
-sysfile=~/system_files/bashrc.sh
+sysfile=~/system-files/bashrc.sh
 [ -f $sysfile ] && source $sysfile
 
 #{{{1 Load 3rd party plugins
