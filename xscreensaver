@@ -1,0 +1,20 @@
+# XScreenSaver Preferences File
+
+timeout:	0:45:00
+cycle:		0:45:00
+lock:		True
+lockTimeout:	0:45:00
+passwdTimeout:	0:00:30
+verbose:	False
+timestamp:	True
+splash:		True
+splashDuration:	0:00:05
+fade:		False
+unfade:		False
+dpmsEnabled:	True
+dpmsQuickOff:	True
+dpmsStandby:	0:45:00
+dpmsSuspend:	0:45:00
+dpmsOff:	1:30:00
+mode:		blank
+selected:	-1
