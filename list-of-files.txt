@@ -33,3 +33,4 @@ lisp-common
 pam_environment
 cvsrc
 Xmodmap
+xscreensaver
