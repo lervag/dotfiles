@@ -34,3 +34,4 @@ pam_environment
 cvsrc
 Xmodmap
 xscreensaver
+config/powerline
