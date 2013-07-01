@@ -14,7 +14,7 @@ function link
   target=$PWD/$file
   link=~/.$file
 
-  if [ ! -e $file ]; then
+  if [ ! -e $file ] && [ ! -d $file ]; then
     echo "Error: File does not exist: $file"
     exit 1
   fi
