@@ -81,6 +81,13 @@ alias -s jpg=eog
 highlight() { command egrep --color=always -i -e '^' -e $* }
 cvsdiff() { cvs -q diff -u $*|colordiff|more }
 chpwd() { emulate -L zsh; ls }
+mount() {
+  if ["$1" = ""]; then
+    =findmnt -D
+  else
+    =mount $*
+  fi
+}
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
