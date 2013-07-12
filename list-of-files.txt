@@ -1,13 +1,12 @@
 ackrc
 bashrc
 clisprc.lisp
-config/Terminal/terminalrc
+config/xfce4/terminal
 config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 cvsignore
 dircolors.ansi-dark
-fonts/Inconsolata-dz-Powerline.otf
-fonts/Inconsolata-g.otf
+fonts
 gitconfig
 hgk
 hgrc
@@ -34,4 +33,3 @@ pam_environment
 cvsrc
 Xmodmap
 xscreensaver
-config/powerline
