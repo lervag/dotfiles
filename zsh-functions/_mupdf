@@ -1,0 +1,8 @@
+#compdef mupdf
+
+_arguments  \
+  '-b[set anti-aliasing quality in bits (0=off, 8=best)]:anti-aliasing:' \
+  '-p[password]:password:' \
+  '-r[resolution]:resolution:' \
+  ':pdf: _files -X "pdf files" -J "pdfs" -g "*.pdf"' \
+  ':page:'
