@@ -187,8 +187,8 @@ zstyle ':completion:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:processes' command 'ps -Hu lervag -o pid,user,cmd'
 
 # Options for tecplot
-zstyle ':completion:*:*:tecplot:*' file-sort time
-zstyle ':completion:*:*:tecplot:*' file-patterns \
+zstyle ':completion:*:*:tec360:*' file-sort time
+zstyle ':completion:*:*:tec360:*' file-patterns \
   '*.{lay,plt,tec}::data\ files' \
   '%p::other\ files'
 
