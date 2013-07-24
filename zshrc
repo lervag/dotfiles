@@ -27,7 +27,7 @@ export LANGUAGE=en_US.UTF-8
 
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
-fpath=($DOTFILES/zsh-completions $fpath)
+fpath=($DOTFILES/zsh-completions/src $fpath)
 
 # Other
 export HGENCODING="utf8"
@@ -60,7 +60,6 @@ alias e2n="ssh $NTNUSRV e2n"
 alias n2e="ssh $NTNUSRV n2e"
 [ ! "`which xpdf 2> /dev/null`" ] && [ "`which kpdf 2> /dev/null`" ] \
   && alias xpdf='kpdf'
-alias sudoapt='sudo aptitude update && sudo aptitude -y upgrade'
 alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 100'
 alias ack='ack-grep'
@@ -88,6 +87,7 @@ mount() {
     =mount $*
   fi
 }
+c() { python2 -c "from math import *; print $*" | tee >(xsel) }
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
@@ -119,6 +119,7 @@ setopt interactive_comments
 setopt list_rows_first
 setopt long_list_jobs
 setopt no_case_glob
+setopt no_nomatch
 setopt nohup
 setopt notify
 setopt pushd_ignore_dups
