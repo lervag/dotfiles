@@ -22,6 +22,7 @@ tecplot.cfg
 terminalrc
 terminfo/m/mostlike
 terminfo/mostlike.txt
+texmf
 tmux.conf
 toprc
 xsessionrc
