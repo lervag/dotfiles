@@ -1,29 +1,13 @@
 %
-% Malfil for en norsk NTNU-presentasjon i latex-beamer.
+% Bokmaal NTNU Beamer template
 %
-%     http://www.math.ntnu.no/~berland/ntnubeamer/
-% 
-% Gjør kun det som er språkavhengig, resten hentes fra
-% beamerthementnu.sty
-%
-% Håvard Berland 2005, <Havard.Berland@math.ntnu.no>
-%
-% $Id: beamerthementnubokmaal.sty 11 2005-06-13 09:23:15Z berland $
-%
-
 \mode<presentation>
 
-% Bildene deklareres bare her, da blir de kun fysisk inkludert en
-% gang i hver pdf-fil som genereres, selv om de brukes på hver side.
-
-% Logo nede til høyre på hver side:
-\pgfdeclareimage[height=10mm,interpolate=true]{skapendeunivlite}{gfx/bokmaal-logo}
-
-% Bakgrunnsbilde for forsida:
-\pgfdeclareimage[height=\paperheight,interpolate=true]{bakgrunnforside}{gfx/bakgrunn-forside-bokmaal}
+\pgfdeclareimage[width=1.001\paperwidth]%
+  {skapendeunivlite}{gfx/bokmaal-logo}
+\pgfdeclareimage[width=1.001\paperwidth]%
+  {bakgrunnforside}{gfx/bakgrunn-forside-bokmaal}
 
 \usetheme{ntnu}
 
-\mode
-<all>
-
+\mode<all>
