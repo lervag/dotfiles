@@ -1,29 +1,22 @@
 %
-% Malfil for NTNU-presentasjon i latex-beamer
+% Beamer theme for NTNU presentations
 %
-% Basert på Håvard Berland's mal fra 2005:
-%
-%     http://www.math.ntnu.no/~berland/ntnubeamer/
-%
-% Håvard Berland 2005, <Havard.Berland@math.ntnu.no>
-%
-% Karl Yngve Lervåg, 2013
+% Based on the theme by Håvard Berland, 2005.
 %
 \mode<presentation>
 \RequirePackage{helvet}
 \setbeamertemplate{navigation symbols}{}
 
 % Colors
-\definecolor{ntnublue}{rgb}{0.0547,0.172,0.555}
-\definecolor{pagenumbercolor}{rgb}{0.742,0.844,0.8945}
+\definecolor{ntnublue}{HTML}{214CA1}
+\setbeamercolor{subtitle}{fg=ntnublue}
 \setbeamercolor{normal text}{fg=black,bg=white}
-\setbeamercolor{pagenumber}{fg=pagenumbercolor}
 \setbeamercolor{alerted text}{fg=red}
 \setbeamercolor{example text}{fg=ntnublue!50!black}
 \setbeamercolor{structure}{fg=ntnublue}
 \setbeamercolor{background canvas}{parent=normal text}
 \setbeamercolor{background}{parent=background canvas}
-\setbeamercolor{footline}{fg=white}%,bg=red}
+\setbeamercolor{footline}{fg=white}
 
 % Lists
 \setbeamercolor*{itemize item}{fg=black}
@@ -46,7 +39,6 @@
 \setbeamerfont{institute}{size=\normalsize}
 \setbeamerfont{frametitle}{size=\LARGE,series=\bfseries}
 \setbeamerfont{footline}{size=\tiny}
-\setbeamerfont{pagenumber}{size=\footnotesize,series=\bfseries}
 
 % Size
 \setbeamersize{text margin left=1cm,text margin right=1em}
@@ -54,7 +46,7 @@
 %
 % Declare image for optimization
 % * Language specific images/logos are declared in the other files
-\pgfdeclareimage[width=1.001\paperwidth]{bakgrunn}{gfx/bakgrunn}
+\pgfdeclareimage[width=\paperwidth]{bakgrunn}{gfx/bakgrunn}
 
 % Define templates for the background canvas
 \defbeamertemplate*{background canvas}{ntnu theme titlepage}{%
@@ -73,11 +65,7 @@
     \end{frame}%
   }}
 \defbeamertemplate*{title page}{ntnu}[1][]{%
-  \vspace{0.31\paperheight}
-  \begin{beamercolorbox}[sep=3pt,left,leftskip=1.2cm,#1]{institute}
-    \usebeamerfont{institute}\insertinstitute
-  \end{beamercolorbox}
-  \vspace{0.08\paperheight}
+  \vspace{0.46\paperheight}
   \begin{beamercolorbox}[sep=3pt,left,leftskip=1.2cm,#1]{title}
     \usebeamerfont{title}\inserttitle\par%
     \ifx\insertsubtitle\@empty%
@@ -89,6 +77,7 @@
       }%
     \fi%
   \end{beamercolorbox}
+  \vspace{0.04\paperheight}
   \begin{beamercolorbox}[sep=3pt,left,leftskip=1.2cm,#1]{author}
     \usebeamerfont{author}\insertauthor
   \end{beamercolorbox}
