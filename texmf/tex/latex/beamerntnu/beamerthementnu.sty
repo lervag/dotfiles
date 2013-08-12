@@ -43,16 +43,12 @@
 % Size
 \setbeamersize{text margin left=1cm,text margin right=1em}
 
-%
-% Declare image for optimization
-% * Language specific images/logos are declared in the other files
-\pgfdeclareimage[width=\paperwidth]{bakgrunn}{gfx/bakgrunn}
-
 % Define templates for the background canvas
+\pgfdeclareimage[width=\paperwidth]{bg}{bg}
+\pgfdeclareimage[width=\paperwidth]{bg-title}{bg-title-en}
 \defbeamertemplate*{background canvas}{ntnu theme titlepage}{%
-  \pgfuseimage{bakgrunnforside}}
-\defbeamertemplate*{background canvas}{ntnu theme}{%
-  \pgfuseimage{bakgrunn}}
+  \pgfuseimage{bg-title}}
+\defbeamertemplate*{background canvas}{ntnu theme}{\pgfuseimage{bg}}
 
 %
 % Titlepage
