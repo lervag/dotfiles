@@ -51,14 +51,14 @@ $battery_bar
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
-${if_up eno1}${else}${if_up wlan0}${else}No network connection$endif$endif\
-${if_up eno1}\
-IP on eno1$alignr${addr eno1}
-Down$alignr${downspeedf eno1}kb/s
-Up$alignr${upspeedf eno1}kb/s\
+${if_up eth0}${else}${if_up wlan0}${else}No network connection$endif$endif\
+${if_up eth0}\
+IP on eth0$alignr${addr eth0}
+Down$alignr${downspeedf eth0}kb/s
+Up$alignr${upspeedf eth0}kb/s\
 $endif\
 ${if_up wlan0}\
-${if_up eno1}
+${if_up eth0}
 
 ${endif}\
 IP on wlan0$alignr${addr wlan0}
