@@ -1,0 +1,7 @@
+bind j next
+bind k prev
+bind C+f next10
+bind C+b prev10
+bind h gotoFirst
+bind l gotoLast
+bind o overview
