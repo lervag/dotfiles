@@ -335,6 +335,10 @@ sysfile=~/system-files/bashrc.sh
 
 #{{{1 Load 3rd party plugins
 source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 #{{{1 Modeline
 # vim: fdm=marker
