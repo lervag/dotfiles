@@ -112,7 +112,7 @@ fi
 }
 #{{{2 Zsh highlighting
 function load_zsh_highlighting {
-  [ ! "$SHELL" = "/usr/bin/zsh" ] && return
+  [ -z "$ZSH_NAME" ] && return
   source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
   ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
