@@ -332,6 +332,6 @@ bindkey . rationalise-dot
 #{{{1 Load system-specific settings
 sysfile=$DOTFILES/system-specifics.sh
 [ -f $sysfile ] && source $sysfile
+#}}}1
 
-#{{{1 Modeline
 # vim: fdm=marker

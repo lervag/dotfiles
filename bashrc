@@ -84,6 +84,6 @@ if [ -t 0 ] && [ -t 1 ]; then
   stty stop undef
   stty start undef
 fi
+#}}}1
 
-#{{{1 Modeline ----------------------------------------------------------------
 # vim: set foldmethod=marker ff=unix:

@@ -220,5 +220,6 @@ elif [[ $HOSTNAME = vsl174 ]]; then
 else
   alias ls='ls --color'
 fi
-#{{{1 Modeline
+#}}}1
+
 # vim: set foldmethod=marker ff=unix:
