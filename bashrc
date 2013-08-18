@@ -23,6 +23,7 @@ export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
 export PETSC_DIR=/home/petsc/petsc-current
 export HISTIGNORE="&:exit"
+export DOTFILES=$HOME/.dotfiles
 
 # Vi mode
 set -o vi
@@ -40,6 +41,8 @@ shopt -s extglob
 if [ -f /etc/bash_completion ]; then
   source /etc/bash_completion
 fi
+
+source $DOTFILES/auto_completions.sh
 
 umask 022           # Default file permissions
 ulimit -s unlimited # Set stack size limit
@@ -63,7 +66,7 @@ alias n2e="ssh $NTNUSRV n2e"
   && alias xpdf='kpdf'
 
 #{{{1 Load system settings
-sysfile=~/system_files/bashrc.sh
+sysfile=$DOTFILES/system-specifics.sh
 [ -f $sysfile ]   && . $sysfile
 
 #{{{1 Welcome message

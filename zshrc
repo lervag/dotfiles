@@ -330,15 +330,8 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 
 #{{{1 Load system-specific settings
-sysfile=~/system-files/bashrc.sh
+sysfile=$DOTFILES/system-specifics.sh
 [ -f $sysfile ] && source $sysfile
-
-#{{{1 Load 3rd party plugins
-source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
-ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 #{{{1 Modeline
 # vim: fdm=marker
