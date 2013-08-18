@@ -116,6 +116,7 @@ function load_zsh_highlighting {
   source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
   ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+  ZSH_HIGHLIGHT_STYLES[alias]='fg=green,underline'
 }
 #{{{2 Maple
 function load_maple {
