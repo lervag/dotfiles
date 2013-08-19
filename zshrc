@@ -65,6 +65,8 @@ alias mupdf='mupdf -r 100'
 alias ack='ack-grep'
 alias matlab='matlab -nodesktop -nosplash'
 alias tmux='TERM=screen-256color-bce tmux'
+alias minivim='vim -u ~/.vim/minivimrc'
+alias minigvim='gvim -u ~/.vim/minivimrc'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
