@@ -90,6 +90,7 @@ mount() {
   fi
 }
 c() { python2 -c "from math import *; print $*" | tee >(xsel) }
+h() { history -ri 1|grep $(date +%F)|cut --complement -c8-18|more }
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
