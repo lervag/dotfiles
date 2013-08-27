@@ -134,6 +134,10 @@
       <property name="&lt;Alt&gt;3" type="string" value="workspace_3_key"/>
       <property name="&lt;Alt&gt;4" type="string" value="workspace_4_key"/>
       <property name="&lt;Alt&gt;t" type="string" value="above_key"/>
+      <property name="&lt;Super&gt;a" type="string" value="tile_left_key"/>
+      <property name="&lt;Super&gt;w" type="string" value="tile_up_key"/>
+      <property name="&lt;Super&gt;s" type="string" value="tile_down_key"/>
+      <property name="&lt;Super&gt;d" type="string" value="tile_right_key"/>
     </property>
   </property>
   <property name="providers" type="array">
