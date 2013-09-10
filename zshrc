@@ -45,6 +45,7 @@ eval `dircolors -b $HOME/.dircolors.ansi-dark`
 alias rm="rm -v"
 alias mv="mv -i"
 alias cp="cp -i"
+alias gcp="rsync -P"
 alias du="du -c"
 alias grep="egrep -i"
 alias s='ls'
