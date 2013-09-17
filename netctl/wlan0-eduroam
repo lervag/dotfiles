@@ -1,0 +1,15 @@
+Description='eduroam'
+Interface=wlan0
+Connection=wireless
+Security=wpa-configsection
+IP=dhcp
+WPAConfigSection=(
+ 'ssid="eduroam"'
+ 'proto=RSN'
+ 'key_mgmt=WPA-EAP'
+ 'pairwise=CCMP'
+ 'auth_alg=OPEN'
+ 'eap=PEAP'
+ 'identity="lervag@ntnu.no"'
+ 'password="qwe!QWE2"'
+)
