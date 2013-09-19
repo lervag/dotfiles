@@ -196,14 +196,17 @@ zstyle ':completion:*:*:tec360:*' file-patterns \
   '*.{lay,plt,tec}::data\ files' \
   '%p::other\ files'
 
-# Define some hosts and ignore some users
-zstyle ':completion:*' users-hosts \
-      lervag@stud.ntnu.no lervag@olve.ivt.ntnu.no \
-      lervag@vsl142 lervag@vsl143 \
-      klervaag@pluripotent.math.uci.edu \
-      klervaag@levich.math.uci.edu \
-      klervaag@home.ps.uci.edu \
-      hg@bitbucket.org
+# Define hosts for completion
+hosts=(localhost)
+if [ -r ~/.ssh/known_hosts ]; then
+  hosts=("$hosts[@]"
+    ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}
+  )
+fi
+zstyle ':completion:*:hosts' hosts $hosts
+zstyle ':completion:*' users off
+
+# Ignore some users
 zstyle ':completion:*:users' ignored-patterns \
       adm amanda apache avahi avahi-autoipd backup beaglidx bin cacti      \
       canna cl-builder clamav couchdb daemon dbus distcache dovecot fax    \
