@@ -1,45 +1,31 @@
-Host bb
-  Compression yes
-  HostName bitbucket.org
-  User hg
-
 Host login
   HostName login.stud.ntnu.no
-
 Host olve
   HostName olve.ivt.ntnu.no
-
 Host vsl142
   Hostname 129.241.250.142
 Host vsl143
   Hostname 129.241.250.143
-Host vsl169
-  Hostname 129.241.250.169
-Host vsl184
-  Hostname 129.241.250.184
-Host vsl*
-  ProxyCommand ssh -q -e none olve exec netcat -w 60 %h %p
+Host ervik-laptop
+  Hostname 129.241.63.56
 
-Host trac
+Host *-olve
+  ProxyCommand ssh -q -e none olve exec netcat -w 60 $(echo %h|cut -d- -f1) %p
+
+Host vsl142_8000
   Hostname 129.241.250.142
   ProxyCommand ssh -q -e none olve exec netcat -w 60 %h %p
-  LocalForward 8080 localhost:8000
+  LocalForward 8000 localhost:8000
 
-Host hudson
+Host vsl142_8080
   Hostname 129.241.250.142
   ProxyCommand ssh -q -e none olve exec netcat -w 60 %h %p
   LocalForward 8080 localhost:8080
 
-Host lokalinfo
-  Hostname 129.241.250.142
-  ProxyCommand ssh -q -e none olve exec netcat -w 60 %h %p
-  LocalForward 8080 localhost:8000
-
-Host ervik-laptop
-  Hostname 129.241.63.56
-
-Host lervag-laptop
-  Hostname 129.241.63.57
+Host bb
+  Compression yes
+  HostName bitbucket.org
+  User hg
 
 Host *
   HashKnownHosts no
