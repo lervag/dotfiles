@@ -145,7 +145,7 @@ if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_gfortran
   load_compiler_intel     /opt/intel/composerxe
   #load_compiler_sunf90    /opt/oracle/solarisstudio12.3
-  #load_tecplot            /opt/tecplot/tec360
+  load_tecplot            /opt/tecplot/tec360
   #load_petsc              /home/petsc/petsc-current
   load_zsh_highlighting
 
