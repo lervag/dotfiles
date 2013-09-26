@@ -81,7 +81,7 @@ alias -s jpg=eog
 
 # Utility functions
 highlight() { command egrep --color=always -i -e '^' -e $* }
-cvsdiff() { cvs -q diff -u $*|colordiff|less }
+cvsdiff() { cvs -q diff -u $*|colordiff|more }
 chpwd() { emulate -L zsh; ls }
 mount() {
   if ["$1" = ""]; then
