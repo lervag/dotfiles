@@ -18,7 +18,7 @@ export SAVEHIST=10000
 export HISTFILE="$HOME/.zsh_history"
 export PATH=$PATH:$HOME/scripts/bin
 export PAGER='less'
-export LESS="-X"
+export LESS="-XeR"
 export DOTFILES=$HOME/.dotfiles
 export LC_ALL=en_US.UTF-8
 export LC_NUMERIC=en_US.UTF-8
@@ -80,9 +80,20 @@ alias -s png=eog
 alias -s jpg=eog
 
 # Utility functions
-highlight() { command egrep --color=always -i -e '^' -e $* }
-cvsdiff() { cvs -q diff -u $*|colordiff|more }
+c() { python2 -c "from math import *; print $*" | tee >(xsel) }
 chpwd() { emulate -L zsh; ls }
+cvs() {
+  if [ "$1" = "diff" ]; then
+    shift
+    =cvs -q diff -u $*|colordiff|less
+  elif [ "$1" = "stat" ]; then
+    =cvsutility
+  else
+    =cvs $*
+  fi
+}
+h() { history -ri 1|grep $(date +%F)|cut --complement -c8-18|more }
+highlight() { command egrep --color=always -i -e '^' -e $* }
 mount() {
   if ["$1" = ""]; then
     =findmnt -D
@@ -90,8 +101,6 @@ mount() {
     =mount $*
   fi
 }
-c() { python2 -c "from math import *; print $*" | tee >(xsel) }
-h() { history -ri 1|grep $(date +%F)|cut --complement -c8-18|more }
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
