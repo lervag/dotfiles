@@ -30,7 +30,7 @@ fpath=($DOTFILES/zsh-functions $fpath)
 fpath=($DOTFILES/zsh-completions/src $fpath)
 
 # Other
-export HGENCODING="utf8"
+export HGENCODING="utf-8"
 export NTNUSRV="login.stud.ntnu.no"
 export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:

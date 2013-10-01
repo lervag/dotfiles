@@ -3,6 +3,7 @@ username = Karl Yngve Lervåg <karl.yngve@lervag.net>
 editor = vim
 ssh = ssh -C
 commitsubrepos = False
+fallbackencoding = utf-8
 
 [trusted]
 users = asmunder,aursand,morteham
