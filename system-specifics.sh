@@ -143,7 +143,8 @@ function load_texlive {
 if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_gfortran
   load_compiler_intel     /opt/intel/composerxe
-  #load_compiler_sunf90    /opt/oracle/solarisstudio12.3
+  load_compiler_sunf90    /opt/oracle/solarisstudio12.3
+  load_compiler_pgf       /opt/pgi 2013
   load_tecplot            /opt/tecplot/tec360
   load_petsc              /opt/petsc/petsc-current
   load_zsh_highlighting
