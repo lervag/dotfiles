@@ -86,7 +86,7 @@ cvs() {
   if [ "$1" = "diff" ]; then
     shift
     =cvs -q diff -u $*|colordiff|less
-  elif [ "$1" = "stat" ]; then
+  elif [ "$1" = "st*" ]; then
     =cvsutility
   else
     =cvs $*
