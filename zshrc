@@ -82,6 +82,10 @@ alias -s jpg=eog
 # Utility functions
 c() { python2 -c "from math import *; print $*" | tee >(xsel) }
 chpwd() { emulate -L zsh; ls }
+cmdfu() {
+  curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ \
+    | openssl base64)/plaintext";
+}
 cvs() {
   if [ "$1" = "diff" ]; then
     shift
