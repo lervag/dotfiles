@@ -1,6 +1,6 @@
 background yes
 use_xft yes
-xftfont 123:size=8
+xftfont 123:size=9
 xftalpha 0.1
 update_interval 2.0
 total_run_times 0
@@ -37,7 +37,6 @@ ${font Arial:bold:size=10}${color Tan1}SYSTEM \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
-File System $alignr${fs_type}
 Uptime $alignr${uptime}
 System load $alignr\
 ${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}${color DimGray}
@@ -86,27 +85,6 @@ ${font Arial:bold:size=10}${color Tan1}MEMORY \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
 Usage$alignc$mem / $memmax$alignr$memperc%
 $membar
-
-${font Arial:bold:size=10}${color Tan1}TOP PROCESSES: CPU \
-${color DarkSlateGray}${hr 2}${color DimGray}$font
-${top name 1}$alignr${top cpu 1} %
-${top name 2}$alignr${top cpu 2} %
-${top name 3}$alignr${top cpu 3} %
-${top name 4}$alignr${top cpu 4} %
-
-${font Arial:bold:size=10}${color Tan1}TOP PROCESSES: I/O \
-${color DarkSlateGray}${hr 2}${color DimGray}$font
-${top_io name 1}$alignr${top_io io_perc 1} %
-${top_io name 2}$alignr${top_io io_perc 2} %
-${top_io name 3}$alignr${top_io io_perc 3} %
-${top_io name 4}$alignr${top_io io_perc 4} %
-
-${font Arial:bold:size=10}${color Tan1}TOP PROCESSES: MEMORY \
-${color DarkSlateGray}${hr 2}${color DimGray}$font
-${top_mem name 1}$alignr${top_mem mem 1} %
-${top_mem name 2}$alignr${top_mem mem 2} %
-${top_mem name 3}$alignr${top_mem mem 3} %
-${top_mem name 4}$alignr${top_mem mem 4} %
 
 ${font Arial:bold:size=10}${color Tan1}HDD \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
