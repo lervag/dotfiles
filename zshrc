@@ -96,7 +96,7 @@ cvs() {
     =cvs $*
   fi
 }
-h() { history -ri 1|grep $(date +%F)|cut --complement -c8-18|less }
+h()  { history -i $* 1|grep $(date +%F)|cut --complement -c8-18|less }
 highlight() { command egrep --color=always -i -e '^' -e $* }
 mount() {
   if ["$1" = ""]; then
