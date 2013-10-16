@@ -21,6 +21,7 @@ rebase =
 transplant =
 graphlog =
 record =
+bookmarks =
 
 [pager]
 pager = LESS='FSRX' less
