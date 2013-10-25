@@ -6,7 +6,7 @@ commitsubrepos = False
 fallbackencoding = utf-8
 
 [trusted]
-users = asmunder,aursand,morteham,geirsk
+users = asmunder,aursand,morteham,geirsk,halvorlu,magnugje
 
 [extensions]
 hgext.convert =
