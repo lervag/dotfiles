@@ -3,6 +3,3 @@ set editing-mode vi
 set keymap vi
 set show-all-if-ambiguous on
 set mark-symlinked-directories on
-
-#set show-all-if-unmodified on
-#set keymap vi-insert

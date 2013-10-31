@@ -69,6 +69,10 @@ alias tmux='TERM=screen-256color-bce tmux'
 alias minivim='vim -u ~/.vim/minivimrc'
 alias minigvim='gvim -u ~/.vim/minivimrc'
 
+# Global aliases
+alias -g M='| more'
+alias -g N='> /dev/null'
+
 # Extension stuff
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
@@ -296,8 +300,9 @@ fi
 
 #{{{1 Add some keybindings
 
-# Standard or basic bindings
 bindkey -v
+
+# Insert mode
 bindkey ' '    magic-space
 bindkey "^R"   history-incremental-search-backward
 bindkey "^T"   history-incremental-search-forward
@@ -309,19 +314,13 @@ bindkey "^A"   beginning-of-line
 bindkey "^W"   end-of-line
 bindkey "\E[Z" reverse-menu-complete
 bindkey "^E"   expand-word
-
-# Change escape to normal mode
 bindkey -r    "\e"
 bindkey "jk"  "vi-cmd-mode"
-
-# Some more nice utility widgets
 bindkey "^X"  execute-named-cmd
 bindkey "^W"  where-is
 bindkey "^_"  undo
 bindkey "\eq" push-line-or-edit
 bindkey "^H"  _complete_help
-
-# Special keys
 bindkey "\eOH"  beginning-of-line    # Home
 bindkey "\eOF"  end-of-line          # End
 bindkey "\e[5~" beginning-of-history # PageUp
@@ -329,6 +328,10 @@ bindkey "\e[6~" end-of-history       # PageDown
 bindkey "\e[2~" beginning-of-line    # Ins
 bindkey "\e[3~" delete-char          # Del
 bindkey "^?"    backward-delete-char # Backspace
+
+# Normal mode
+bindkey -a "k" up-line-or-search
+bindkey -a "j" down-line-or-search
 
 # Edit line with vim
 autoload edit-command-line
