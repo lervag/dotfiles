@@ -10,6 +10,6 @@ WPAConfigSection=(
  'pairwise=CCMP'
  'auth_alg=OPEN'
  'eap=PEAP'
- 'identity="lervag@ntnu.no"'
- 'password="qwe!QWE2"'
+ 'identity="user@ntnu.no"'
+ 'password="pass"'
 )
