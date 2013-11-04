@@ -1,5 +1,5 @@
 [Configuration]
-BackgroundDarkness=1
+BackgroundDarkness=1.000000
 BindingBackspace=TERMINAL_ERASE_BINDING_ASCII_DELETE
 ColorForeground=#FDFDF6F6E3E3
 ColorBackground=#00002B2B3636
@@ -27,4 +27,5 @@ ScrollingLines=100000
 ShortcutsNoMenukey=TRUE
 ShortcutsNoMnemonics=TRUE
 TitleMode=TERMINAL_TITLE_REPLACE
+ScrollingOnOutput=FALSE
 
