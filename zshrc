@@ -163,7 +163,7 @@ autoload -U colors
 compinit -i
 colors
 
-#{{{1 Autocompletion styles
+#{{{1 Completion styles
 # Set some commands to use other command completions
 compdef mosh=ssh
 
@@ -213,6 +213,10 @@ zstyle ':completion:*:*:tec360:*' file-patterns \
   '*.{lay,plt,tec}::data\ files' \
   '%p::other\ files'
 
+# Define users for completion
+users=(root $(ls $HOME/..))
+zstyle ':completion:*:users' users $users
+
 # Define hosts for completion
 hosts=(localhost)
 if [ -r ~/.ssh/known_hosts ]; then
@@ -221,19 +225,6 @@ if [ -r ~/.ssh/known_hosts ]; then
   )
 fi
 zstyle ':completion:*:hosts' hosts $hosts
-zstyle ':completion:*' users off
-
-# Ignore some users
-zstyle ':completion:*:users' ignored-patterns \
-      adm amanda apache avahi avahi-autoipd backup beaglidx bin cacti      \
-      canna cl-builder clamav couchdb daemon dbus distcache dovecot fax    \
-      ftp games gdm gkrellmd gnats gopher hacluster haldaemon halt hplip   \
-      hsqldb ident irc junkbust kernoops ldap libuuid list lp mail mailman \
-      mailnull man messagebus mldonkey mysql nagios named netdump news     \
-      nfsnobody nobody nscd ntp nut nx openvpn operator pcap postfix       \
-      postgres privoxy proxy pulse pvm quagga radvd rpc rpcuser rpm rtkit  \
-      saned shutdown speech-dispatcher squid sshd sync sys syslog usbmux   \
-      uucp vcsa www-data xfs Debian-exim Debian-gdm festival statd
 
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
