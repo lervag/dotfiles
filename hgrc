@@ -9,20 +9,16 @@ fallbackencoding = utf-8
 users = asmunder,aursand,morteham,geirsk,halvorlu,magnugje
 
 [extensions]
-hgext.convert =
-hgext.graphlog =
-hgext.extdiff =
 pager =
 color =
 hgk =
-fetch =
 progress =
 rebase =
 transplant =
-graphlog =
 record =
 bookmarks =
 shelve =
+histedit =
 
 [pager]
 pager = LESS='FSRX' less
@@ -66,6 +62,8 @@ bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
 
 [alias]
 show = log --color=always --stat -r
+glog = log -G
 slog = log --template '{date|shortdate}: {desc|firstline}\n'
 inout = summary --remote
 ? = summary
+blame = annotate --user -c
