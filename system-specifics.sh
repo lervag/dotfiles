@@ -149,53 +149,19 @@ if [[ $HOSTNAME = vsl136 ]]; then
   load_petsc              /opt/petsc/petsc-current
   load_zsh_highlighting
 
-#{{{1 lervag-laptop
-elif [[ $HOSTNAME = lervag-laptop ]]; then
-  load_compiler_gfortran
-  load_compiler_intel     /opt/intel/composerxe
-  load_compiler_sunf90    /opt/oracle/solarisstudio12.3
-  load_tecplot            /opt/tecplot/tec360
-  load_petsc              /home/petsc/petsc-current
-  load_zsh_highlighting
-
 #{{{1 lervag-vostro
 elif [[ $HOSTNAME = lervag-vostro ]]; then
   load_compiler_gfortran
   load_zsh_highlighting
-
-#{{{1 vsl229 and vsl230 (Old cluster spiderII machines)
-elif [[ $HOSTNAME = vsl22? || $HOSTNAME = vsl230 ]]; then
-  alias ls='ls --color'
-  load_compiler_pgf      /usr/local/linux/pgi 7.2
-  load_compiler_intel    /usr/local/linux/intel/fc_81_ia32
-  load_debugger_intel    /usr/local/linux/intel/db_73_ia32
-  load_spiderI           $HOME/koder/spiderI
-  load_spiderII          $HOME/koder/spiderII_$HOSTNAME
-  load_tecplot           /usr/local/linux/tecplot/tec360
-
-#{{{1 vsl184
-elif [[ $HOSTNAME = vsl184 ]]; then
-  load_compiler_gfortran
-  load_compiler_intel    /usr/local/linux/intel/fc_111/
-  load_compiler_pgf      /usr/local/pgi 2013
-  load_compiler_sunf90   /usr/local/sun/sunstudio12
-  load_plot_on_runtime   /usr/local/qwt
-  load_spiderI           $HOME/koder/spiderI
-  load_spiderII          $HOME/koder/spiderII_$HOSTNAME
-  load_petsc             /home/vsl184/tmp/petsc/petsc-current
-  load_tecplot           /usr/local/linux/tecplot/tec360
 
 #{{{1 vsl142 and vsl143
 elif [[ $HOSTNAME = vsl142 || $HOSTNAME = vsl143 ]]; then
   load_compiler_gfortran
   load_compiler_intel    /usr/local/linux/intel/fc_111
   load_compiler_pgf      /usr/local/pgi 2013
-  load_compiler_sunf90   /usr/local/sun/sunstudio12
-  load_plot_on_runtime   /usr/local/qwt
-  load_spiderI           $WORKDIR/koder/spiderI
-  load_spiderII          $WORKDIR/koder/spiderII
-  load_petsc             /home/vsl142/tmp/petsc/petsc-current
-  load_tecplot           /usr/local/tec360 mesa
+  #load_compiler_sunf90   /usr/local/sun/sunstudio12
+  #load_plot_on_runtime   /usr/local/qwt
+  #load_petsc             /home/vsl142/tmp/petsc/petsc-current
 
 #{{{1 vsl176
 elif [[ $HOSTNAME = vsl176 ]] || [[ $HOSTNAME = node* ]]; then
@@ -215,15 +181,6 @@ elif [[ $HOSTNAME = vsl176 ]] || [[ $HOSTNAME = node* ]]; then
   if [ -e $intelfile1 ]; then source $intelfile1 intel64; fi
   module add mvapich2/pgi pgi
   module add ofed/1.3.1/base
-
-#{{{1 vsl174 (sommerstudentpc Åsmund)
-elif [[ $HOSTNAME = vsl174 ]]; then
-  load_compiler_gfortran
-  load_compiler_intel  /usr/local/intel/composerxe-2011.4.191
-  load_compiler_sunf90 /usr/local/sun/solstudio12.2
-  load_compiler_pgf    /usr/local/pgi 2011
-  load_tecplot         /usr/local/tecplot/tec360
-  load_petsc           /home/petsc/petsc-current
 
 #{{{1 other
 else
