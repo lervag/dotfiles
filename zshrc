@@ -9,7 +9,7 @@ already_sourced=1
 #{{{1 Set environmental variables
 
 # General
-export HOSTNAME="`hostname -s`"
+export HOSTNAME=$HOST
 export EDITOR="vim"
 export XEDITOR="vim +%l %f"
 export OPSYS=$(uname)
