@@ -158,8 +158,8 @@ elif [[ $HOSTNAME = lervag-vostro ]]; then
 elif [[ $HOSTNAME = vsl142 || $HOSTNAME = vsl143 ]]; then
   load_compiler_gfortran
   load_compiler_intel    /usr/local/linux/intel/fc_2013_sp1
+  load_compiler_sunf90   /usr/local/linux/sun/solarisstudio12.3
   load_compiler_pgf      /usr/local/pgi 2013
-  #load_compiler_sunf90   /usr/local/sun/sunstudio12
   #load_plot_on_runtime   /usr/local/qwt
   #load_petsc             /home/vsl142/tmp/petsc/petsc-current
 
