@@ -19,6 +19,7 @@ record =
 bookmarks =
 shelve =
 histedit =
+hgext.convert =
 
 [pager]
 pager = LESS='FSRX' less
