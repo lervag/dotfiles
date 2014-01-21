@@ -68,3 +68,4 @@ slog = log --template '{date|shortdate}: {desc|firstline}\n'
 inout = summary --remote
 ? = summary
 blame = annotate --user -c
+tickets = !trac-ticket
