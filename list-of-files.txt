@@ -5,6 +5,7 @@ config/xfce4/terminal
 config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 cvsignore
+devilspie
 dircolors.ansi-dark
 fonts
 gitconfig

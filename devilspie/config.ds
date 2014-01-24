@@ -1,0 +1,18 @@
+(if
+  (is (application_name) "Vim")
+  (begin
+    (undecorate)))
+
+(if
+  (is (application_name) "Spotify Premium - Linux Preview")
+  (begin
+    (set_workspace 4)
+    (maximize)
+    (undecorate)))
+
+(if
+  (is (application_name) "wfica")
+  (begin
+    (set_workspace 4)
+    (maximize)
+    (undecorate)))
