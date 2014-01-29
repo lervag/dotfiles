@@ -6,13 +6,15 @@
 (if
   (is (application_name) "Spotify Premium - Linux Preview")
   (begin
+    (undecorate)
     (set_workspace 4)
-    (maximize)
-    (undecorate)))
+    (maximize)))
 
 (if
-  (is (application_name) "wfica")
+  (and
+    (is (application_name) "wfica")
+    (is (window_name)      "wfica"))
   (begin
-    (set_workspace 4)
+    (undecorate)
     (maximize)
-    (undecorate)))
+    (set_workspace 4)))
