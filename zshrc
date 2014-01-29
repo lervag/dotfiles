@@ -35,7 +35,6 @@ export NTNUSRV="login.stud.ntnu.no"
 export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
-export PETSC_DIR=/home/petsc/petsc-current
 export KEYBOARD_HACK=\'
 export CVS_RSH=ssh
 eval `dircolors -b $HOME/.dircolors.ansi-dark`
