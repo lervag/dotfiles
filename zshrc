@@ -51,7 +51,7 @@ alias grep="egrep -i"
 alias s='ls'
 alias l='ls'
 alias ls='ls --color=auto --group-directories-first'
-alias ll='ls -ogh'
+alias ll='ls -lh'
 alias lsa='ls -A'
 alias dato='date +"Uke %V, %A %d. %B, %Y -- %T"'
 alias ..='cd ..'
