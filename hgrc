@@ -6,7 +6,7 @@ commitsubrepos = False
 fallbackencoding = utf-8
 
 [trusted]
-users = asmunder,aursand,morteham,geirsk,halvorlu,magnugje
+users = asmunder,aursand,morteham,geirsk,halvorlu,magnugje,trac
 
 [extensions]
 pager =
