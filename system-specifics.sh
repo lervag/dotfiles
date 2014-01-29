@@ -75,10 +75,6 @@ function load_plot_on_runtime {
     echo "Error: Could not find qwt!"
   fi
 }
-#{{{2 PETSc
-function load_petsc {
-  export PETSC_DIR=$1
-}
 #{{{2 SpiderI
 function load_spiderI {
   export SPIDER=$1
@@ -146,7 +142,6 @@ if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_sunf90    /opt/oracle/solarisstudio12.3
   load_compiler_pgf       /opt/pgi 2013
   load_tecplot            /opt/tecplot/tec360
-  load_petsc              /opt/petsc/petsc-current
   load_zsh_highlighting
 
 #{{{1 lervag-vostro
@@ -161,7 +156,6 @@ elif [[ $HOSTNAME = vsl142 || $HOSTNAME = vsl143 ]]; then
   load_compiler_sunf90   /usr/local/linux/sun/solarisstudio12.3
   load_compiler_pgf      /usr/local/pgi 13.10
   #load_plot_on_runtime   /usr/local/qwt
-  load_petsc             /home/vsl142/tmp/petsc/petsc-current
   load_tecplot           /usr/local/linux/tecplot/tec360_2013
 
 #{{{1 vsl176
