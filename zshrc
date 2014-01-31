@@ -67,6 +67,7 @@ alias matlab='matlab -nodesktop -nosplash'
 alias tmux='TERM=screen-256color-bce tmux'
 alias minivim='vim -u ~/.vim/minivimrc'
 alias minigvim='gvim -u ~/.vim/minivimrc'
+alias make='make --no-print-directory'
 
 # Global aliases
 alias -g M='| more'
@@ -176,7 +177,6 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-separator ''
 zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' list-prompt \
@@ -212,21 +212,31 @@ zstyle ':completion:*:*:tec360:*' file-patterns \
   '*.{lay,plt,tec}::data\ files' \
   '%p::other\ files'
 
-# Define users for completion
-users=(root $(ls $HOME/..))
-zstyle ':completion:*:users' users $users
+# Options for manuals
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
 
-# Define hosts for completion
-hosts=(localhost)
+# Some control of make completion
+zstyle ':completion:*:*:make:*' list-rows-first
+zstyle ':completion:*:*:make:*:variables' hidden all
+zstyle ':completion:*:*:make:*:targets' ignored-patterns '*.o'
+
+# Define users and hosts for completion
+local _users _myhosts
+_users=(root $(ls $HOME/..))
+_myhosts=(localhost)
 if [ -r ~/.ssh/known_hosts ]; then
-  hosts=("$hosts[@]"
+  _myhosts=("$_myhosts[@]"
     ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}
   )
 fi
-zstyle ':completion:*:hosts' hosts $hosts
-
-zstyle ':completion:*:manuals'    separate-sections true
-zstyle ':completion:*:manuals.*'  insert-sections   true
+if [ -r ~/.ssh/config ]; then
+  _myhosts=("$_myhosts[@]"
+    ${${${${(@M)${(f)"$(<~/.ssh/config)"}:#Host *}#Host }:#*\**}:#*\?*}
+  )
+fi
+zstyle ':completion:*:*:*' users $_users
+zstyle ':completion:*:*:*' hosts $_myhosts
 
 #{{{1 Set command prompt
 

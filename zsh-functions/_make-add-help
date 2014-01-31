@@ -4,4 +4,4 @@ _tags targets
 _requested targets expl 'make targets' \
   compadd $(make help 2>/dev/null | grep "^  " | sed "s/\\\\n//g")
 
-_make
+_make "$@"
