@@ -1,7 +1,8 @@
 (if
   (is (application_name) "Vim")
   (begin
-    (undecorate)))
+    (undecorate)
+    (geometry (spawn_sync (str 'xwinposition ' (window_xid))))))
 
 (if
   (is (application_name) "Spotify Premium - Linux Preview")
@@ -13,7 +14,7 @@
 (if
   (and
     (is (application_name) "wfica")
-    (is (window_name)      "wfica"))
+    (is (window_name)      "Desktop (SSL/TLS Secured, 256 bit)"))
   (begin
     (undecorate)
     (maximize)
