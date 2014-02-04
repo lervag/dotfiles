@@ -14,7 +14,7 @@
 (if
   (and
     (is (application_name) "wfica")
-    (is (window_name)      "Desktop (SSL/TLS Secured, 256 bit)"))
+    (is (window_name)      "wfica"))
   (begin
     (undecorate)
     (maximize)
