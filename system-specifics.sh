@@ -140,7 +140,7 @@ if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_gfortran
   load_compiler_intel     /opt/intel/composerxe
   load_compiler_sunf90    /opt/oracle/solarisstudio12.3
-  load_compiler_pgf       /opt/pgi 2013
+  load_compiler_pgf       /opt/pgi 2014
   load_tecplot            /opt/tecplot/tec360
   load_zsh_highlighting
 
@@ -154,9 +154,9 @@ elif [[ $HOSTNAME = vsl142 || $HOSTNAME = vsl143 ]]; then
   load_compiler_gfortran
   load_compiler_intel    /usr/local/linux/intel/fc_2013_sp1
   load_compiler_sunf90   /usr/local/linux/sun/solarisstudio12.3
-  load_compiler_pgf      /usr/local/pgi 13.10
-  #load_plot_on_runtime   /usr/local/qwt
+  load_compiler_pgf      /usr/local/pgi 2014
   load_tecplot           /usr/local/linux/tecplot/tec360_2013
+  #load_plot_on_runtime   /usr/local/qwt
 
 #{{{1 vsl176
 elif [[ $HOSTNAME = vsl176 ]] || [[ $HOSTNAME = node* ]]; then
