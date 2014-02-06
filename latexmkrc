@@ -12,6 +12,9 @@ push @generated_exts, "snm";
 push @generated_exts, "tdo";
 push @generated_exts, "nmo";
 push @generated_exts, "brf";
+push @generated_exts, "nlg";
+push @generated_exts, "nlo";
+push @generated_exts, "nls";
 push @generated_exts, "synctex.gz";
 push @generated_exts, "tex.latexmain";
 push @generated_exts, "run.xml";
@@ -25,5 +28,10 @@ $success_cmd = "xdotool search --name \"%D\" " .
 $failure_cmd = "xdotool search --name \"%D\" " .
                "set_window --name \"%D FAILURE\"; " .
                "gvim --remote-expr 'latex#latexmk#errors()'";
+
+add_cus_dep('nlo', 'nls', 0, 'nlo2nls');
+sub nlo2nls {
+  system("makeindex $_[0].nlo -s nomencl.ist -o $_[0].nls -t $_[0].nlg" );
+}
 
 # vim: ft=perl
