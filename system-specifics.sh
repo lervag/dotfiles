@@ -183,4 +183,4 @@ else
 fi
 #}}}1
 
-# vim: set foldmethod=marker ff=unix:
+# vim: fdm=marker

@@ -86,4 +86,4 @@ if [ -t 0 ] && [ -t 1 ]; then
 fi
 #}}}1
 
-# vim: set foldmethod=marker ff=unix:
+# vim: fdm=marker
