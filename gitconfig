@@ -3,7 +3,7 @@
     email = karl.yngve+git@gmail.com
 
 [core]
-    pager = more
+    pager = less
     editor = vim
 
 [color]
