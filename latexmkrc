@@ -1,5 +1,6 @@
 $print_type = 'pdf';
 $pdf_mode = 1;
+$new_viewer_always = 1;
 $pdf_previewer = 'start mupdf -r 95';
 $pdf_update_method = 2;
 $pdf_update_signal = 'SIGHUP';
@@ -20,14 +21,10 @@ push @generated_exts, "tex.latexmain";
 push @generated_exts, "run.xml";
 $latex = 'latex --src-specials %O %S';
 $pdflatex = 'pdflatex -interaction=nonstopmode --shell-escape %O %S';
-$compiling_cmd = "xdotool search --name \"%D\" " .
-                 "set_window --name \"%D compiling...\"";
-$success_cmd = "xdotool search --name \"%D\" " .
-               "set_window --name \"%D OK\"; " .
-               "gvim --remote-expr 'latex#latexmk#errors()'";
-$failure_cmd = "xdotool search --name \"%D\" " .
-               "set_window --name \"%D FAILURE\"; " .
-               "gvim --remote-expr 'latex#latexmk#errors()'";
+$compiling_cmd
+             = "xdotool search --name %D set_window --name \"%D compiling...\"";
+$success_cmd = "xdotool search --name %D set_window --name \"%D OK\";";
+$failure_cmd = "xdotool search --name %D set_window --name \"%D FAILURE\";";
 
 add_cus_dep('nlo', 'nls', 0, 'nlo2nls');
 sub nlo2nls {
