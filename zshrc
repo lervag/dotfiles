@@ -353,8 +353,12 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 
 #{{{1 Load system-specific settings
-sysfile=$DOTFILES/system-specifics.sh
-[ -f $sysfile ] && source $sysfile
+sysfiles=($DOTFILES/system-specifics.sh
+  /etc/profile.d/cnf.sh)
+for file in $sysfiles[@]; do
+  [ -r $file ] && source $file
+done
+
 #}}}1
 
 # vim: fdm=marker
