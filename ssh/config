@@ -10,21 +10,21 @@ Host ervik-laptop
   Hostname 129.241.63.56
 
 Host *-olve
-  ProxyCommand ssh -q -e none olve exec netcat -w 60 $(echo %h|cut -d- -f1) %p
+  ProxyCommand ssh olve -W $(echo %h|cut -d- -f1):%p
 
 Host vsl136_vnc
   Hostname 129.241.250.136
-  ProxyCommand ssh -q -e none olve exec netcat -w 60 %h %p
+  ProxyCommand ssh olve -W %h:%p
   LocalForward 5900 localhost:5900
 
 Host vsl142_8000
   Hostname 129.241.250.142
-  ProxyCommand ssh -q -e none olve exec netcat -w 60 %h %p
+  ProxyCommand ssh olve -W %h:%p
   LocalForward 8000 localhost:8000
 
 Host vsl142_8080
   Hostname 129.241.250.142
-  ProxyCommand ssh -q -e none olve exec netcat -w 60 %h %p
+  ProxyCommand ssh olve -W %h:%p
   LocalForward 8080 localhost:8080
 
 Host bb
