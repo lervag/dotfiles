@@ -24,6 +24,7 @@ export LC_ALL=en_US.UTF-8
 export LC_NUMERIC=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+export PYTHONPATH=$HOME/scripts/lib
 
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
