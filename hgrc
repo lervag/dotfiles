@@ -20,6 +20,7 @@ bookmarks =
 shelve =
 histedit =
 hgext.convert =
+churn =
 
 [pager]
 pager = LESS='FSRX' less
