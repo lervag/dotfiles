@@ -22,6 +22,7 @@
     co = checkout
     stat = status
     st = status
+    g = grep --break --heading --line-number
 
 [merge]
     tool = splice
@@ -29,5 +30,9 @@
 [mergetool "splice"]
     cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
     trustExitCode = true
+
 [push]
-	default = simple
+     default = simple
+
+[grep]
+    extendedRegexp = true
