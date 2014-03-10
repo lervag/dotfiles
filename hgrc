@@ -24,7 +24,7 @@ churn =
 
 [pager]
 pager = LESS='FSRX' less
-attend = annotate, cat, diff, export, glog, log, qdiff, in, out
+attend = annotate, cat, diff, export, glog, log, qdiff, in, out, shelve
 
 [progress]
 delay = 1.0
