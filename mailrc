@@ -4,4 +4,4 @@ set smtp=smtp://smtp.gmail.com:587
 set smtp-auth=login
 set smtp-auth-user=karl.yngve@gmail.com
 set smtp-auth-password=hweqqpcscsnbgnxj
-set from="Karl Yngve Lervåg <karl.yngve@lervag.net>"                            
+set from="Karl Yngve Lervåg <karl.lervag@sintef.no>"
