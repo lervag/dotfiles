@@ -1,0 +1,27 @@
+pcm.!default {
+  type bluetooth
+    device 48:C1:AC:4A:67:1E
+    profile "auto"
+    bitpool "31"
+}
+
+pcm.btheadset {
+  type plug
+    slave {
+      pcm {
+        type bluetooth
+          device 48:C1:AC:4A:67:1E
+          #device 00:18:09:1C:B7:80
+          profile "auto"
+          bitpool "31"
+      }
+    }
+  hint {
+    show on
+      description "BT Headset"
+  }
+}
+
+ctl.btheadset {
+  type bluetooth
+}
