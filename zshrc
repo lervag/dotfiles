@@ -316,12 +316,12 @@ bindkey "^W"   end-of-line
 bindkey "\E[Z" reverse-menu-complete
 bindkey "^E"   expand-word
 bindkey -r    "\e"
-bindkey "jk"  "vi-cmd-mode"
-bindkey "^X"  execute-named-cmd
-bindkey "^W"  where-is
 bindkey "^_"  undo
+bindkey "jk"  "vi-cmd-mode"
+bindkey "^X^X"  execute-named-cmd
+bindkey "^X^W"  where-is
+bindkey "^X^H"  _complete_help
 bindkey "\eq" push-line-or-edit
-bindkey "^H"  _complete_help
 bindkey "\eOH"  beginning-of-line    # Home
 bindkey "\eOF"  end-of-line          # End
 bindkey "\e[5~" beginning-of-history # PageUp
