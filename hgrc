@@ -9,6 +9,7 @@ fallbackencoding = utf-8
 users = asmunder,aursand,morteham,geirsk,halvorlu,magnugje,trac
 
 [extensions]
+extdiff =
 pager =
 color =
 hgk =
