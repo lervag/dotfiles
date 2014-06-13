@@ -1,14 +1,9 @@
-Host login
-  HostName login.stud.ntnu.no
 Host olve
   HostName olve.ivt.ntnu.no
-Host vsl142
-  Hostname 129.241.250.142
-Host vsl143
-  Hostname 129.241.250.143
 Host ervik-laptop
   Hostname 129.241.63.56
-
+Host vsl*
+  Hostname %h.energy.sintef.no
 Host *-olve
   ProxyCommand ssh olve -W $(echo %h|cut -d- -f1):%p
 
