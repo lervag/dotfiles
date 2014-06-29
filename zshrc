@@ -40,6 +40,12 @@ export KEYBOARD_HACK=\'
 export CVS_RSH=ssh
 eval `dircolors -b $HOME/.dircolors.ansi-dark`
 
+# Ruby
+local ruby
+for ruby in $(ls -d ~/.gem/ruby/* 2>/dev/null); do
+  export PATH=$PATH:$ruby/bin
+done
+
 #{{{1 Define aliases and utility functions
 # General aliases
 alias rm="rm -v"
@@ -113,6 +119,16 @@ mount() {
 
 # To get colors in man
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
+
+# Enable fzf for fuzzy finder in shell
+if [ -d ~/.fzf ]; then
+  fzf() {
+    /usr/bin/ruby /home/lervag/.fzf/fzf "$@"
+  }
+  export -f fzf > /dev/null
+
+  [[ $- =~ i ]] && source /home/lervag/.fzf/fzf-completion.zsh
+fi
 
 #{{{1 Options
 umask 022           # Default file permissions
