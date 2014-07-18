@@ -70,6 +70,7 @@ ${font Arial:bold:size=10}${color Tan1}PROCESSORS \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
 CPU1  ${cpu cpu1}%$alignr${cpubar cpu1 7,180}
 CPU2  ${cpu cpu2}%$alignr${cpubar cpu2 7,180}
+${if_empty ${cpu cpu3}}${else}
 CPU3  ${cpu cpu3}%$alignr${cpubar cpu3 7,180}
 CPU4  ${cpu cpu4}%$alignr${cpubar cpu4 7,180}\
 ${if_empty ${cpu cpu5}}${else}
@@ -77,7 +78,7 @@ CPU5  ${cpu cpu5}%$alignr${cpubar cpu5 7,180}
 CPU6  ${cpu cpu6}%$alignr${cpubar cpu6 7,180}
 CPU7  ${cpu cpu7}%$alignr${cpubar cpu7 7,180}
 CPU8  ${cpu cpu8}%$alignr${cpubar cpu8 7,180}\
-$endif
+$endif$endif
 Total cpu load$alignr${cpu cpu0}%
 ${cpubar cpu0}
 
