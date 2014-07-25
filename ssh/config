@@ -4,7 +4,7 @@ Host ervik-laptop
   Hostname 129.241.63.56
 Host vsl136
   Hostname %h.sintef.no
-Host vsl*
+Host vsl???
   Hostname %h.energy.sintef.no
 Host *-olve
   ProxyCommand ssh olve -W $(echo %h|cut -d- -f1):%p
