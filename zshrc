@@ -123,11 +123,11 @@ alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 # Enable fzf for fuzzy finder in shell
 if [ -d ~/.fzf ]; then
   fzf() {
-    /usr/bin/ruby /home/lervag/.fzf/fzf "$@"
+    /usr/bin/ruby $HOME/.fzf/fzf "$@"
   }
   export -f fzf > /dev/null
 
-  [[ $- =~ i ]] && source /home/lervag/.fzf/fzf-completion.zsh
+  [[ $- =~ i ]] && source $HOME/.fzf/fzf-completion.zsh
 fi
 
 #{{{1 Options
