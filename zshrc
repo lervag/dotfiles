@@ -121,6 +121,7 @@ mount() {
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 
 # Enable fzf for fuzzy finder in shell
+export FZF_DEFAULT_OPTS="-x --reverse"
 if [ -d ~/.fzf ]; then
   fzf() {
     /usr/bin/ruby $HOME/.fzf/fzf "$@"
