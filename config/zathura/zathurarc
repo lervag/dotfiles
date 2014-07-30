@@ -1,7 +1,7 @@
 # Settings
 set guioptions ''
-set window-height 1280
-set window-width   768
+set window-height 1123
+set window-width   794
 set statusbar-v-padding 0
 set statusbar-h-padding 20
 set adjust-open width
