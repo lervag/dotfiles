@@ -177,9 +177,6 @@ elif [[ $HOSTNAME = vsl176 ]] || [[ $HOSTNAME = node* ]]; then
   module add mvapich2/pgi pgi
   module add ofed/1.3.1/base
 
-#{{{1 other
-else
-  alias ls='ls --color'
 fi
 #}}}1
 
