@@ -6,6 +6,10 @@
 [ "$already_sourced" ] && return 0
 already_sourced=1
 
+# PS4='+$(date "+%s.%N") %N:%i> '
+# exec 3>&2 2>/tmp/startlog.$$
+# setopt xtrace prompt_subst
+
 #{{{1 Set environmental variables
 
 # General
@@ -378,5 +382,8 @@ for file in $sysfiles[@]; do
 done
 
 #}}}1
+
+# unsetopt xtrace
+# exec 2>&3 3>&-
 
 # vim: fdm=marker
