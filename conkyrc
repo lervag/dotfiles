@@ -69,7 +69,7 @@ $endif
 ${font Arial:bold:size=10}${color Tan1}PROCESSORS \
 ${color DarkSlateGray}${hr 2}${color DimGray}$font
 CPU1  ${cpu cpu1}%$alignr${cpubar cpu1 7,180}
-CPU2  ${cpu cpu2}%$alignr${cpubar cpu2 7,180}
+CPU2  ${cpu cpu2}%$alignr${cpubar cpu2 7,180}\
 ${if_empty ${cpu cpu3}}${else}
 CPU3  ${cpu cpu3}%$alignr${cpubar cpu3 7,180}
 CPU4  ${cpu cpu4}%$alignr${cpubar cpu4 7,180}\
