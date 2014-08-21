@@ -1,2 +1,3 @@
 --sort-files
 --type-add=wiki=.wiki
+--ignore-case
