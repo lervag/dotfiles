@@ -92,6 +92,11 @@ function load_spiderII {
   alias spi2='cd $SPIDERII/source'
   alias spi3='cd $SPIDERII/samples'
 }
+#{{{2 Pencil code
+function load_pencil {
+  export PENCIL_HOME=$1
+  _sourceme_quiet=1; . $PENCIL_HOME/sourceme.sh; unset _sourceme_quiet
+}
 #{{{2 Tecplot settings
 function load_tecplot {
 tecplot=$1
@@ -142,6 +147,7 @@ if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_sunf90    /opt/oracle/solarisstudio12.3
   load_compiler_pgf       /opt/pgi 2014
   load_tecplot            /opt/tecplot/tec360
+  load_pencil             $HOME/codes/pencil-code
   load_zsh_highlighting
 
 #{{{1 lervag-vostro
