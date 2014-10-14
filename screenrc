@@ -19,7 +19,7 @@ startup_message off
 autodetach on
 
 # Number of lines in buffer and buffer scroll
-defscrollback 20000
+scrollback 20000
 termcapinfo xterm|xterms|xs|rxvt ti@:te@
 
 # Clear screen after text editing

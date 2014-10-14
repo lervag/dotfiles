@@ -21,7 +21,6 @@ export PATH=$PATH:$HOME/scripts/bin
 export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
 export BIBINPUTS=.:~/:
 export TEXMFHOME=$HOME/.texmf
-export PETSC_DIR=/home/petsc/petsc-current
 export HISTIGNORE="&:exit"
 export DOTFILES=$HOME/.dotfiles
 
