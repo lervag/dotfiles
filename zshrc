@@ -1,7 +1,3 @@
-# zshrc --- Karl Yngve Lervåg
-# -----------------------------------------------------------------------------
-# Created 2011-06-19
-
 # Check if already sourced
 [ "$already_sourced" ] && return 0
 already_sourced=1
@@ -12,36 +8,34 @@ already_sourced=1
 
 #{{{1 Set environmental variables
 
-# General
-export HOSTNAME=$HOST
-export EDITOR="vim"
-export XEDITOR="vim +%l %f"
-export OPSYS=$(uname)
-export HISTSIZE=200000
-export SAVEHIST=100000
-export HISTFILE="$HOME/.zsh_history"
-export PATH=$PATH:$HOME/scripts/bin
-export PAGER='less'
-export LESS="-XeR"
+export BIBINPUTS=.:~/:
+export CVS_RSH=ssh
 export DOTFILES=$HOME/.dotfiles
-export LC_ALL=en_US.UTF-8
-export LC_NUMERIC=en_US.UTF-8
+export EDITOR="vim"
+export HGENCODING="utf-8"
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=200000
+export HOSTNAME=$HOST
+export KEYBOARD_HACK=\'
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_NUMERIC=en_US.UTF-8
+export LESS="-XeR"
+export OPSYS=$(uname)
+export PAGER='less'
+export PATH=$PATH:$HOME/scripts/bin
 export PYTHONPATH=$HOME/scripts/lib
+export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
+export SAVEHIST=100000
+export TEXMFHOME=$HOME/.texmf
+export XEDITOR="vim +%l %f"
 
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
 fpath=($DOTFILES/zsh-completions/src $fpath)
 
 # Other
-export HGENCODING="utf-8"
-export NTNUSRV="login.stud.ntnu.no"
-export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
-export BIBINPUTS=.:~/:
-export TEXMFHOME=$HOME/.texmf
-export KEYBOARD_HACK=\'
-export CVS_RSH=ssh
 eval `dircolors -b $HOME/.dircolors.ansi-dark`
 
 # Ruby
@@ -55,22 +49,14 @@ done
 alias rm="rm -v"
 alias mv="mv -i"
 alias cp="cp -i"
-alias gcp="rsync -P"
 alias du="du -c"
 alias grep="egrep -i"
-alias s='ls'
 alias l='ls'
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lh'
-alias lsa='ls -A'
-alias dato='date +"Uke %V, %A %d. %B, %Y -- %T"'
 alias ..='cd ..'
 alias ...='cd ...'
 alias cd..='cd ..'
-alias e2n="ssh $NTNUSRV e2n"
-alias n2e="ssh $NTNUSRV n2e"
-[ ! "`which xpdf 2> /dev/null`" ] && [ "`which kpdf 2> /dev/null`" ] \
-  && alias xpdf='kpdf'
 alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 100'
 alias matlab='matlab -nodesktop -nosplash'
@@ -376,6 +362,7 @@ bindkey . rationalise-dot
 
 #{{{1 Load system-specific settings
 sysfiles=($DOTFILES/system-specifics.sh
+  /usr/bin/virtualenvwrapper_lazy.sh
   /etc/profile.d/cnf.sh)
 for file in $sysfiles[@]; do
   [ -r $file ] && source $file
