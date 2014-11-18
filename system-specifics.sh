@@ -157,6 +157,7 @@ elif [[ $HOSTNAME = vsl142 || $HOSTNAME = vsl143 ]]; then
   load_tecplot           /usr/local/linux/tecplot/tec360_2013
 
 elif [[ $HOSTNAME = vsl176 ]] || [[ $HOSTNAME = node* ]]; then
+  alias ls='ls --color'
   load_compiler_gfortran
 
   #
