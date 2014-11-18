@@ -163,12 +163,11 @@ elif [[ $HOSTNAME = vsl176 ]] || [[ $HOSTNAME = node* ]]; then
   #
   # Load modules for the clustervision cluster
   #
-  . /etc/profile.d/modules.sh
-  module purge
-  module add shared ofed/1.3.1/base mvapich2 pgi/10.6
-  module add torque maui cluster-tools
-  intelfile1=/usr/local/linux/intel/fc_111/bin/ifortvars.sh
-  if [ -e $intelfile1 ]; then source $intelfile1 intel64; fi
+  module load use.own
+  module load torque maui
+  module load gcc/gcc-4.8.3
+  module load mvapich2/gcc/2.0
+  module load petsc/mvapich2/gcc/3.5.1
 fi
 
 # vim: fdm=marker
