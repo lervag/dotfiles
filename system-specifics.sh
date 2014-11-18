@@ -140,7 +140,6 @@ function load_texlive {
 #}}}1
 
 # Next define the system specific settings based on HOSTNAME
-#{{{1 vsl136
 if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_gfortran
   load_compiler_intel     /opt/intel/composerxe
@@ -150,40 +149,25 @@ if [[ $HOSTNAME = vsl136 ]]; then
   load_pencil             $HOME/codes/pencil-code
   load_zsh_highlighting
 
-#{{{1 lervag-vostro
-elif [[ $HOSTNAME = lervag-vostro ]]; then
-  load_compiler_gfortran
-  load_zsh_highlighting
-
-#{{{1 vsl142 and vsl143
 elif [[ $HOSTNAME = vsl142 || $HOSTNAME = vsl143 ]]; then
   load_compiler_gfortran
   load_compiler_intel    /usr/local/linux/intel/fc_2013_sp1
   load_compiler_sunf90   /usr/local/linux/sun/solarisstudio12.3
   load_compiler_pgf      /usr/local/pgi 2014
   load_tecplot           /usr/local/linux/tecplot/tec360_2013
-  #load_plot_on_runtime   /usr/local/qwt
 
-#{{{1 vsl176
 elif [[ $HOSTNAME = vsl176 ]] || [[ $HOSTNAME = node* ]]; then
-  alias ls='ls --color'
   load_compiler_gfortran
-  load_spiderII          $HOME/koder/spiderII_vsl176
-  load_tecplot           /usr/local/linux/tecplot/tec360
 
   #
   # Load modules for the clustervision cluster
   #
   . /etc/profile.d/modules.sh
   module purge
-  module add shared ofed/1.3.1/base mvapich2 pgi
+  module add shared ofed/1.3.1/base mvapich2 pgi/10.6
   module add torque maui cluster-tools
   intelfile1=/usr/local/linux/intel/fc_111/bin/ifortvars.sh
   if [ -e $intelfile1 ]; then source $intelfile1 intel64; fi
-  module add mvapich2/pgi pgi
-  module add ofed/1.3.1/base
-
 fi
-#}}}1
 
 # vim: fdm=marker
