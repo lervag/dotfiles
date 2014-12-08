@@ -156,14 +156,14 @@ elif [[ $HOSTNAME = vsl142 || $HOSTNAME = vsl143 ]]; then
   load_compiler_pgf      /usr/local/pgi 2014
   load_tecplot           /usr/local/linux/tecplot/tec360_2013
 
-elif [[ $HOSTNAME = vsl176 ]] || [[ $HOSTNAME = node* ]]; then
+elif [[ $HOSTNAME = vsl176 ]]; then
   alias ls='ls --color'
   load_compiler_gfortran
 
   #
   # Load modules for the clustervision cluster
   #
-  module load use.own
+  module use -a ~/.privatemodules
   module load torque maui
   module load gcc/gcc-4.8.3
   module load mvapich2/gcc/2.0
