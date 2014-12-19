@@ -39,10 +39,12 @@ fpath=($DOTFILES/zsh-completions/src $fpath)
 eval `dircolors -b $HOME/.dircolors.ansi-dark`
 
 # Ruby
-local ruby
-for ruby in $(ls -d ~/.gem/ruby/* 2>/dev/null); do
-  export PATH=$PATH:$ruby/bin
-done
+if [ -d ~/.gem/ruby ]; then
+  local ruby
+  for ruby in $(ls -d ~/.gem/ruby/* 2>/dev/null); do
+    export PATH=$PATH:$ruby/bin
+  done
+fi
 
 #{{{1 Define aliases and utility functions
 # General aliases
