@@ -4,6 +4,7 @@ bash_profile
 clisprc.lisp
 config/xfce4/terminal
 config/zathura/zathurarc
+config/dunst/dunstrc
 cvsignore
 devilspie
 dircolors.ansi-dark

@@ -1,0 +1,41 @@
+[global]
+allow_markup = yes
+plain_text = no
+format = "<b>%s</b>\n%b"
+font = "Liberation Sans 12"
+sort = yes
+indicate_hidden = yes
+alignment = left
+word_wrap = yes
+bounce_freq = 0
+show_age_threshold = 60
+transparency = 0
+monitor = 0
+follow = keyboard
+sticky_history = yes
+separator_height = 0
+padding = 10
+horizontal_padding = 5
+geometry = "300x0-20+20"
+separator_color = auto
+browser = xdg-open
+
+[shortcuts]
+close = mod4+space
+history = mod1+mod4+space
+
+[urgency_low]
+background = "#333333"
+foreground = "#dddddd"
+timeout = 3
+
+[urgency_normal]
+background = "#444444"
+foreground = "#dddddd"
+timeout = 5
+
+[urgency_critical]
+background = "#994444"
+foreground = "#dddddd"
+timeout = 0
+
