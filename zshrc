@@ -66,6 +66,7 @@ alias tmux='TERM=screen-256color-bce tmux'
 alias minivim='vim -u ~/.vim/minivimrc'
 alias minigvim='gvim -u ~/.vim/minivimrc'
 alias make='make --no-print-directory'
+alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 
 # Global aliases
 alias -g M='| more'
@@ -108,9 +109,8 @@ mount() {
     =mount $*
   fi
 }
-
-# To get colors in man
-alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
+vman() {  vim -c "ManWrapper $*" }
+gman() { gvim -c "ManWrapper $*" }
 
 # Enable fzf for fuzzy finder in shell
 export FZF_DEFAULT_OPTS="-x --reverse"
