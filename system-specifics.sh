@@ -142,7 +142,6 @@ function load_texlive {
 # Next define the system specific settings based on HOSTNAME
 if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_gfortran
-  load_compiler_intel     /opt/intel/composerxe
   load_compiler_sunf90    /opt/oracle/solarisstudio12.3
   load_compiler_pgf       /opt/pgi 2014
   load_tecplot            /opt/tecplot/tec360
