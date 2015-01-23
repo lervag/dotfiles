@@ -67,10 +67,12 @@ alias minivim='vim -u ~/.vim/minivimrc'
 alias minigvim='gvim -u ~/.vim/minivimrc'
 alias make='make --no-print-directory'
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
+alias vmore='gvim -S ~/.vim/vimrc.more -'
 
 # Global aliases
 alias -g M='| more'
 alias -g N='> /dev/null'
+alias -g V='| gvim -S ~/.vim/vimrc.more -'
 
 # Extension stuff
 alias -s gz='tar -xzvf'
