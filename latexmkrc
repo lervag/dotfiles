@@ -23,10 +23,6 @@ push @generated_exts, "tex.latexmain";
 push @generated_exts, "run.xml";
 $latex = 'latex --src-specials %O %S';
 $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
-$compiling_cmd
-             = "xdotool search --name %D set_window --name \"%D compiling...\"";
-$success_cmd = "xdotool search --name %D set_window --name \"%D OK\";";
-$failure_cmd = "xdotool search --name %D set_window --name \"%D FAILURE\";";
 
 add_cus_dep('nlo', 'nls', 0, 'nlo2nls');
 sub nlo2nls {
