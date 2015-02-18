@@ -167,6 +167,10 @@ elif [[ $HOSTNAME = vsl176 ]]; then
   module load gcc/gcc-4.8.3
   module load mvapich2/gcc/2.0
   module load petsc/mvapich2/gcc/3.5.1
+
+elif [[ $HOSTNAME = yoga ]]; then
+  load_zsh_highlighting
+
 fi
 
 # vim: fdm=marker
