@@ -2,7 +2,7 @@ background yes
 use_xft yes
 xftfont 123:size=9
 xftalpha 0.1
-update_interval 1.0
+update_interval 2.0
 total_run_times 0
 own_window yes
 own_window_type desktop
@@ -34,14 +34,7 @@ color2 DarkSlateGray
 
 TEXT
 
-
-${font Droid Sans:bold:size=35}\
-${if_match ${desktop}==1}${color1}${endif}1${color}${offset 53}\
-${if_match ${desktop}==2}${color1}${endif}2${color}${offset 53}\
-${if_match ${desktop}==3}${color1}${endif}3${color}${offset 53}\
-${if_match ${desktop}==4}${color1}${endif}4$font
-
-
+${voffset 60}
 ${font Arial:bold:size=10}${color1}SYSTEM ${color2}${hr 2}${color}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
