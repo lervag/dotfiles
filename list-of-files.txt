@@ -30,7 +30,6 @@ toprc
 xsessionrc
 zshenv
 zshrc
-conkyrc
 lisp-common
 pam_environment
 cvsrc
