@@ -42,8 +42,8 @@ Uptime $alignr${uptime}
 System load $alignr\
 ${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}${color}
 Volume $alignr\
-${exec amixer get Master -M | grep Left | grep -oE "[[:digit:]]*%"}
-${execbar amixer get Master -M | grep Left | grep -oE "[[:digit:]]*%"}
+${exec amixer get Master | grep -oE "[[:digit:]]*%" | uniq}
+${execbar amixer get Master | grep -oE "[[:digit:]]*%" | uniq}
 
 ${font Arial:bold:size=10}${color1}BATTERY ${color2}${hr 2}${color}$font
 Status$alignr${battery BAT1}\
