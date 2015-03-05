@@ -1,0 +1,6 @@
+
+conky -c /home/lervag/.dotfiles/conky_workspaces &
+conky -c /home/lervag/.dotfiles/conky_system &
+dropbox &
+dunst &
+
