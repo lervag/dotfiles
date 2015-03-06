@@ -3,7 +3,7 @@ conky -c /home/lervag/.dotfiles/conky_workspaces &
 conky -c /home/lervag/.dotfiles/conky_system &
 dropbox &
 dunst &
-google-chrome &
+xfce4-power-manager &
 google-chrome https://wiki.archlinux.org/index.php/Openbox &
 google-chrome http://openbox.org/wiki/Help:Bindings &
 
