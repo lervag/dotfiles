@@ -11,6 +11,7 @@ devilspie
 dircolors.ansi-dark
 fonts
 gitconfig
+gmrunrc
 hgk
 hgrc
 inputrc

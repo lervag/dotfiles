@@ -12,7 +12,7 @@ show_age_threshold = 60
 transparency = 0
 monitor = 0
 follow = keyboard
-sticky_history = yes
+sticky_history = no
 separator_height = 0
 padding = 10
 horizontal_padding = 5
@@ -25,9 +25,9 @@ close = mod4+space
 history = mod1+mod4+space
 
 [urgency_low]
-background = "#333333"
+background = "#222222"
 foreground = "#dddddd"
-timeout = 3
+timeout = 1
 
 [urgency_normal]
 background = "#444444"
@@ -39,3 +39,4 @@ background = "#994444"
 foreground = "#dddddd"
 timeout = 0
 
+# vim: ft=cfg

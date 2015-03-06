@@ -1,0 +1,4 @@
+Terminal = xfce4-terminal
+TermExec = ${Terminal} -e
+AlwaysInTerm = ssh vi vim man
+
