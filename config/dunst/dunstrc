@@ -25,17 +25,17 @@ close = mod4+space
 history = mod1+mod4+space
 
 [urgency_low]
-background = "#222222"
+background = "#505050"
 foreground = "#dddddd"
-timeout = 1
+timeout = 3
 
 [urgency_normal]
-background = "#444444"
+background = "#755050"
 foreground = "#dddddd"
-timeout = 5
+timeout = 3
 
 [urgency_critical]
-background = "#994444"
+background = "#a05050"
 foreground = "#dddddd"
 timeout = 0
 
