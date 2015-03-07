@@ -385,10 +385,6 @@
       <decor>no</decor>
     </application>
 
-    <application class="Gvim">
-      <maximized>Vertical</maximized>
-    </application>
-
     <application class="Spotify">
       <maximized>true</maximized>
       <fullscreen>yes</fullscreen>
