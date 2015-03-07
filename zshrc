@@ -31,6 +31,11 @@ export SAVEHIST=100000
 export TEXMFHOME=$HOME/.texmf
 export XEDITOR="vim +%l %f"
 
+# For Python
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
 fpath=($DOTFILES/zsh-completions/src $fpath)
