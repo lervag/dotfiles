@@ -3,60 +3,9 @@
   xmlns="http://openbox.org/3.4/rc"
   xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <resistance>
-    <strength>10</strength>
-    <screen_edge_strength>20</screen_edge_strength>
-  </resistance>
-
-  <focus>
-    <focusNew>yes</focusNew>
-    <followMouse>no</followMouse>
-  </focus>
-
-<!--   <placement> -->
-<!--     <policy>Smart</policy> -->
-<!--     <center>yes</center> -->
-<!--   </placement> -->
-
   <theme>
     <name>Clearlooks</name>
     <keepBorder>no</keepBorder>
-    <font place="ActiveWindow">
-      <name>sans</name>
-      <size>8</size>
-      <weight>bold</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="InactiveWindow">
-      <name>sans</name>
-      <size>8</size>
-      <weight>bold</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="MenuHeader">
-      <name>sans</name>
-      <size>9</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="MenuItem">
-      <name>sans</name>
-      <size>9</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
-      <size>9</size>
-      <weight>bold</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
-      <size>9</size>
-      <weight>bold</weight>
-      <slant>normal</slant>
-    </font>
   </theme>
 
   <desktops>
@@ -123,36 +72,20 @@
     <keybind key="A-F4"> <action name="Close"/>             </keybind>
 
     <!-- Window moving/resizing -->
-    <keybind key="W-a">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <!-- <action name="MoveResizeTo"><width>50%</width></action> -->
-      <action name="MoveToEdge"><direction>west</direction></action>
-    </keybind>
-    <keybind key="W-d">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveToEdge"><direction>east</direction></action>
-    </keybind>
-    <keybind key="W-w">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeHorz"/>
-      <action name="MoveToEdge"><direction>north</direction></action>
-    </keybind>
-    <keybind key="W-s">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeHorz"/>
-      <action name="MoveToEdge"><direction>south</direction></action>
-    </keybind>
+    <keybind key="W-a"> <action name="MoveToEdge"><direction>west</direction></action> </keybind>
+    <keybind key="W-d"> <action name="MoveToEdge"><direction>east</direction></action> </keybind>
+    <keybind key="W-w"> <action name="MoveToEdge"><direction>north</direction></action> </keybind>
+    <keybind key="W-s"> <action name="MoveToEdge"><direction>south</direction></action> </keybind>
     <keybind key="W-q"> <action name="ResizeRelative"><right>-10</right></action> </keybind>
     <keybind key="W-e"> <action name="ResizeRelative"><right>10</right></action> </keybind>
     <keybind key="W-S-q"> <action name="ResizeRelative"><bottom>-10</bottom></action> </keybind>
     <keybind key="W-S-e"> <action name="ResizeRelative"><bottom>10</bottom></action> </keybind>
+    <keybind key="W-v"> <action name="ToggleMaximizeVert"/> </keybind>
+    <keybind key="W-h"> <action name="ToggleMaximizeHorz"/> </keybind>
 
     <!-- System shortcuts -->
     <keybind key="Print"> <action name="Execute"> <command>xfce4-screenshooter</command> </action> </keybind>
     <keybind key="C-A-l"> <action name="Execute"> <command>systemctl suspend</command> </action> </keybind>
-    <keybind key="A-space"> <action name="ShowMenu"><menu>client-menu</menu></action> </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>volume-control up</command>
@@ -207,7 +140,7 @@
     <keybind key="A-c"> <action name="Execute"> <command>showtime.sh</command> </action> </keybind>
     <keybind key="A-a"> <action name="Execute"> <command>anki -b documents/anki</command> </action> </keybind>
     <keybind key="A-g"> <action name="Execute"> <command>google-chrome</command> </action> </keybind>
-    <keybind key="A-F2"> <action name="Execute"> <command>gmrun</command> </action> </keybind>
+    <keybind key="A-F2"> <action name="Execute"> <command>xfce4-appfinder -c --disable-server</command> </action> </keybind>
     <keybind key="A-F12"> <action name="Execute"> <command>openbox --reconfigure</command> </action> </keybind>
   </keyboard>
 
@@ -514,6 +447,15 @@
     <application class="*">
       <decor>no</decor>
     </application>
-  </applications>
 
+    <application class="Gvim">
+      <maximized>Vertical</maximized>
+    </application>
+
+    <application class="Spotify">
+      <maximized>true</maximized>
+      <fullscreen>yes</fullscreen>
+      <desktop>4</desktop>
+    </application>
+  </applications>
 </openbox_config>
