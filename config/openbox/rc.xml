@@ -76,6 +76,12 @@
     <keybind key="W-d"> <action name="MoveToEdge"><direction>east</direction></action> </keybind>
     <keybind key="W-w"> <action name="MoveToEdge"><direction>north</direction></action> </keybind>
     <keybind key="W-s"> <action name="MoveToEdge"><direction>south</direction></action> </keybind>
+    <keybind key="W-c">
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+      </action>
+    </keybind>
     <keybind key="W-q"> <action name="ResizeRelative"><right>-10</right></action> </keybind>
     <keybind key="W-e"> <action name="ResizeRelative"><right>10</right></action> </keybind>
     <keybind key="W-S-q"> <action name="ResizeRelative"><bottom>-10</bottom></action> </keybind>
@@ -88,27 +94,27 @@
     <keybind key="C-A-l"> <action name="Execute"> <command>systemctl suspend</command> </action> </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>volume-control up</command>
+        <command>volume-control -n up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>volume-control down</command>
+        <command>volume-control -n down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>volume-control mute</command>
+        <command>volume-control -n mute</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>brightness-control up</command>
+        <command>brightness-control -n up</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>brightness-control down</command>
+        <command>brightness-control -n down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPlay">
