@@ -11,10 +11,9 @@ exec fluxbox \
   -log "/home/lervag/.fluxbox/log" &
 fbpid=$!
 
-sleep 1
+sleep 0.5
 
 {
-  fbsetroot -solid "#333333"
   conky -c /home/lervag/.dotfiles/conky_workspaces &
   conky -c /home/lervag/.dotfiles/conky_system &
 } &
