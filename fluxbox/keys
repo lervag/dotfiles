@@ -1,0 +1,109 @@
+#
+# System control
+#
+Mod1 F10              :CommandDialog
+Mod1 F11              :Restart
+Mod1 F12              :Reconfigure
+Control Mod1 Delete   :Exit
+Control Mod1 l        :Exec systemctl suspend
+121                   :Exec volume-control -n mute
+122                   :Exec volume-control -n down
+123                   :Exec volume-control -n up
+XF86MonBrightnessUp   :Exec brightness-control -n up
+XF86MonBrightnessDown :Exec brightness-control -n down
+XF86AudioPlay         :Exec playerctl play
+XF86AudioPause        :Exec playerctl pause
+XF86AudioNext         :Exec playerctl next
+XF86AudioPrev         :Exec playerctl previous
+Print                 :Exec xfce4-screenshooter
+Mod4 Esc              :RootMenu
+
+#
+# Control windows
+#
+Mod1 1         :Workspace 1
+Mod1 2         :Workspace 2
+Mod1 3         :Workspace 3
+Mod1 4         :Workspace 4
+Mod1 Control 1 :TakeToWorkspace 1
+Mod1 Control 2 :TakeToWorkspace 2
+Mod1 Control 3 :TakeToWorkspace 3
+Mod1 Control 4 :TakeToWorkspace 4
+Mod1 Shift 1   :SendToWorkspace 1
+Mod1 Shift 2   :SendToWorkspace 2
+Mod1 Shift 3   :SendToWorkspace 3
+Mod1 Shift 4   :SendToWorkspace 4
+Mod1 Tab       :NextGroup (workspace=[current])
+Mod1 Shift Tab :PrevGroup (workspace=[current])
+Mod1 F4 :Close
+Mod1 space :WindowMenu
+Mod4 f :Fullscreen
+Mod4 v :MaximizeVertical
+Mod4 h :MaximizeHorizontal
+Mod4 c :MoveTo 0 0 Center
+Mod4 a a :ArrangeWindowsVertical
+Mod4 a h :ArrangeWindowsHorizontal
+Mod4 t :ToggleCmd {RaiseLayer} {LowerLayer}
+
+Mod4 m  :KeyMode MoveMode
+MoveMode: None k       :MoveUp 20%
+MoveMode: None j       :MoveDown 20%
+MoveMode: None h       :MoveLeft 20%
+MoveMode: None l       :MoveRight 20%
+MoveMode: None Shift k :MoveUp 5%
+MoveMode: None Shift j :MoveDown 5%
+MoveMode: None Shift h :MoveLeft 5%
+MoveMode: None Shift l :MoveRight 5%
+MoveMode: None a :MoveTo 0 * Left
+MoveMode: None d :MoveTo 0 * Right
+MoveMode: None w :MoveTo * 0 Top
+MoveMode: None s :MoveTo * 0 Bottom
+
+Mod4 r :KeyMode ResizeMode
+ResizeMode: None k :ResizeVertical -20%
+ResizeMode: None j :ResizeVertical +20%
+ResizeMode: None h :ResizeHorizontal -20%
+ResizeMode: None l :ResizeHorizontal +20%
+ResizeMode: None Shift k :ResizeVertical -5%
+ResizeMode: None Shift j :ResizeVertical +5%
+ResizeMode: None Shift h :ResizeHorizontal -5%
+ResizeMode: None Shift l :ResizeHorizontal +5%
+ResizeMode: None a :MacroCmd {MoveTo  0%   0%} {ResizeTo  50% 100%} 
+ResizeMode: None d :MacroCmd {MoveTo 50%   0%} {ResizeTo  50% 100%}
+ResizeMode: None w :MacroCmd {MoveTo  0%   0%} {ResizeTo 100%  50%} 
+ResizeMode: None s :MacroCmd {MoveTo  0%  50%} {ResizeTo 100%  50%}
+
+#
+# Application shortcuts
+#
+Mod1 x :Exec xfce4-terminal
+Mod1 v :Exec gvim
+Mod1 j :Exec gvim +VimwikiMakeDiaryNote
+Mod1 n :Exec gvim +VimwikiIndex
+Mod1 c :Exec showtime.sh
+Mod1 a :Exec anki -b documents/anki
+Mod1 g :Exec google-chrome
+Mod1 F2 :Exec fbrun
+
+#
+# Mouse shortcuts
+#
+
+# Move and resize window
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+OnDesktop Mouse4 :NextWorkspace
+OnDesktop Mouse5 :PrevWorkspace
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+OnTitlebar Double Mouse1 :Shade
+OnTitlebar Mouse1 :MacroCmd {Focus} {Raise} {ActivateTab}
+OnTitlebar Mouse2 :StartTabbing
+OnTitlebar Mouse3 :WindowMenu
+OnTitlebar Move1 :StartMoving
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing BottomRight}
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+OnWindowBorder Move1 :StartMoving

@@ -9,6 +9,12 @@ config/openbox
 cvsignore
 devilspie
 dircolors.ansi-dark
+fluxbox/apps
+fluxbox/init
+fluxbox/keys
+fluxbox/menu
+fluxbox/startup
+fluxbox/windowmenu
 fonts
 gitconfig
 gmrunrc

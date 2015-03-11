@@ -1,0 +1,22 @@
+#!/bin/sh
+
+xcompmgr &
+dropbox &
+dunst &
+xfce4-power-manager &
+setxkbmap -layout no -variant nodeadkeys -model pc105 -option compose:caps
+
+exec fluxbox \
+  -no-slit -no-toolbar \
+  -log "/home/lervag/.fluxbox/log" &
+fbpid=$!
+
+sleep 1
+
+{
+  fbsetroot -solid "#333333"
+  conky -c /home/lervag/.dotfiles/conky_workspaces &
+  conky -c /home/lervag/.dotfiles/conky_system &
+} &
+
+wait $fbpid
