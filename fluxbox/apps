@@ -8,3 +8,7 @@
   [Layer]     {0}
   [Maximized] {yes}
 [end]
+
+[app] (zathura|mupdf)
+  [Maximized] {vert}
+[end]

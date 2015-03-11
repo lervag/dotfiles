@@ -16,7 +16,7 @@ XF86AudioPause        :Exec playerctl pause
 XF86AudioNext         :Exec playerctl next
 XF86AudioPrev         :Exec playerctl previous
 Print                 :Exec xfce4-screenshooter
-Mod4 Esc              :RootMenu
+Mod4 Escape           :RootMenu
 
 #
 # Control windows
