@@ -33,6 +33,11 @@
     <right>0</right>
   </margins>
 
+  <placement>
+    <policy>Smart</policy>
+    <center>no</center>
+  </placement>
+
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
 
@@ -388,7 +393,15 @@
 
   <applications>
     <application class="*">
+      <focus>yes</focus>
       <decor>no</decor>
+    </application>
+
+    <application class="Xfce4-appfinder">
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
     </application>
 
     <application class="Spotify">
