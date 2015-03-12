@@ -6,9 +6,9 @@ Mod1 F11              :Restart
 Mod1 F12              :Reconfigure
 Control Mod1 Delete   :Exit
 Control Mod1 l        :Exec systemctl suspend
-121                   :Exec volume-control -n mute
-122                   :Exec volume-control -n down
-123                   :Exec volume-control -n up
+XF86AudioRaiseVolume  :Exec volume-control -n up
+XF86AudioLowerVolume  :Exec volume-control -n down
+XF86AudioMute         :Exec volume-control -n mute
 XF86MonBrightnessUp   :Exec brightness-control -n up
 XF86MonBrightnessDown :Exec brightness-control -n down
 XF86AudioPlay         :Exec playerctl play
