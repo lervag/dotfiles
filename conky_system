@@ -1,6 +1,6 @@
 background yes
 use_xft yes
-xftfont 123:size=9
+xftfont Sans-10
 xftalpha 0.1
 update_interval 2.0
 total_run_times 0
@@ -45,9 +45,9 @@ Volume $alignr ${exec volume-control}
 Brightness $alignr ${exec brightness-control}%
 
 ${font Arial:bold:size=10}${color1}BATTERY ${color2}${hr 2}${color}$font
-Status $alignr ${exec battery-info -s} -- ${exec battery-info}
+Status $alignr ${exec battery-info}
 Remaining time $alignr ${execi 10 battery-info -r}
-${execbar battery-info}
+${execbar battery-info -p}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color2}${hr 2}${color}$font
 ${if_up wlp1s0}\
