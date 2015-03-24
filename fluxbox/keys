@@ -56,10 +56,10 @@ Mod4 a         :MacroCmd {MoveTo  0%   0%} {ResizeTo  50% 100%}
 Mod4 d         :MacroCmd {MoveTo 50%   0%} {ResizeTo  50% 100%}
 Mod4 w         :MacroCmd {MoveTo  0%   0%} {ResizeTo 100%  50%}
 Mod4 s         :MacroCmd {MoveTo  0%  50%} {ResizeTo 100%  50%}
-Mod4 k         :MoveUp 20%
-Mod4 j         :MoveDown 20%
-Mod4 h         :MoveLeft 20%
-Mod4 l         :MoveRight 20%
+Mod4 k         :MoveTo  * 0% Top
+Mod4 j         :MoveTo  * 0% Bottom
+Mod4 h         :MoveTo 0%  * Left
+Mod4 l         :MoveTo 0%  * Right
 Mod4 Shift k   :ResizeVertical -5%
 Mod4 Shift j   :ResizeVertical +5%
 Mod4 Shift h   :ResizeHorizontal -5%
