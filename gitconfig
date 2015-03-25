@@ -1,38 +1,38 @@
 [user]
-    name = Karl Yngve Lervåg
-    email = karl.yngve+git@gmail.com
+  name = Karl Yngve Lervåg
+  email = karl.yngve+git@gmail.com
 
 [core]
-    pager = less
-    editor = vim
+  pager = less
+  editor = vim
 
 [color]
-    ui = auto
-    branch = auto
-    diff = auto
-    interactive = auto
-    status = auto
+  ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
 
 [alias]
-    logr = log --reverse --name-status
-    pull = pull --ff-only
-    merge = merge --no-ff
-    up = merge --ff-only
-    ci = commit
-    co = checkout
-    stat = status
-    st = status
-    g = grep --break --heading --line-number
+  logr = log --reverse --name-status
+  pull = pull --ff-only
+  merge = merge --no-ff
+  up = merge --ff-only
+  ci = commit
+  co = checkout
+  stat = status
+  st = status
+  g = grep --break --heading --line-number
 
 [merge]
-    tool = splice
+  tool = splice
 
 [mergetool "splice"]
-    cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-    trustExitCode = true
+  cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+  trustExitCode = true
 
 [push]
-     default = simple
+  default = simple
 
 [grep]
-    extendedRegexp = true
+  extendedRegexp = true
