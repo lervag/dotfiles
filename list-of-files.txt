@@ -35,7 +35,9 @@ terminfo/mostlike.txt
 texmf
 tmux.conf
 toprc
+xinitrc
 xsessionrc
+Xresources
 zshenv
 zshrc
 lisp-common
