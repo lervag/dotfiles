@@ -35,6 +35,7 @@ terminfo/mostlike.txt
 texmf
 tmux.conf
 toprc
+vintrc.yaml
 xinitrc
 xsessionrc
 Xresources

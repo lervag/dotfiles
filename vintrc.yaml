@@ -1,0 +1,7 @@
+policies:
+  ProhibitMissingScriptEncoding:
+    enabled: false
+
+  ProhibitSetNoCompatible:
+    enabled: false
+
