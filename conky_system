@@ -9,7 +9,6 @@ own_window_type override
 own_window_transparent yes
 own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-double_buffer yes
 minimum_size 300 900
 maximum_width 300
 draw_shades no
@@ -22,7 +21,7 @@ default_outline_color green
 default_bar_size 300 7
 alignment top_right
 gap_x 10
-gap_y 10
+gap_y 50
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -34,7 +33,6 @@ color2 DarkSlateGray
 
 TEXT
 
-${voffset 60}
 ${font Arial:bold:size=10}${color1}SYSTEM ${color2}${hr 2}${color}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
@@ -84,3 +82,4 @@ ${fs_bar /home}
 ${font Arial:bold:size=10}${color1}DROPBOX ${color2}${hr 2}${color}$font
 ${execi 6 dropbox-cli status}
 
+# vim: ft=conkyrc
