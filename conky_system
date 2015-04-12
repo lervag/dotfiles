@@ -15,6 +15,7 @@ draw_shades no
 draw_outline no
 draw_borders no
 draw_graph_borders no
+double_buffer yes
 default_color DimGray
 default_shade_color red
 default_outline_color green
@@ -53,7 +54,14 @@ IP on WiFi$alignr${addr wlp1s0}
 Essid$alignr${wireless_essid wlp1s0}
 Down$alignr${downspeedf wlp1s0}kb/s
 Up$alignr${upspeedf wlp1s0}kb/s\
-${else}No network connection$endif
+${else}\
+${if_up wlan}\
+IP on WiFi$alignr${addr wlan}
+Essid$alignr${wireless_essid wlan}
+Down$alignr${downspeedf wlan}kb/s
+Up$alignr${upspeedf wlan}kb/s\
+${else}\
+No network connection$endif$endif
 
 ${font Arial:bold:size=10}${color1}PROCESSORS ${color2}${hr 2}${color}$font
 CPU1  ${cpu cpu1}%$alignr${cpubar cpu1 7,180}
