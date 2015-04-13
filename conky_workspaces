@@ -1,25 +1,30 @@
 background yes
-use_xft yes
-font Inconsolata:bold:size=56
-update_interval 0.1
-minimum_size 310 300
+double_buffer yes
+border_inner_margin 0
+border_outer_margin 0
 own_window yes
-own_window_type override
 own_window_transparent yes
+own_window_type override
 own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+update_interval 0.1
+total_run_times 0
+alignment bottom_right
+minimum_size 300
+maximum_width 300
+gap_x 10
+gap_y 10
+use_xft yes
+xftfont Dejavu:size=51
+xftalpha 1.0
 draw_outline yes
-double_buffer yes
-alignment top_right
-gap_x   0
-gap_y -10
 default_color DimGray
 color1 Tan1
 
 TEXT
-${if_match ${desktop}==1}${color1}${endif}•${color} \
-${if_match ${desktop}==2}${color1}${endif}•${color} \
-${if_match ${desktop}==3}${color1}${endif}•${color} \
-${if_match ${desktop}==4}${color1}${endif}•
-
+$alignc${if_match ${desktop}==1}${color1}${endif}⚫${color} \
+${if_match ${desktop}==2}${color1}${endif}⚫${color} \
+${if_match ${desktop}==3}${color1}${endif}⚫${color} \
+${if_match ${desktop}==4}${color1}${endif}⚫
+#
 # vim: ft=conkyrc

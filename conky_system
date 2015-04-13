@@ -1,28 +1,30 @@
 background yes
-use_xft yes
-xftfont Sans-10
-xftalpha 0.1
-update_interval 2.0
-total_run_times 0
+double_buffer yes
+border_inner_margin 0
+border_outer_margin 0
 own_window yes
-own_window_type override
 own_window_transparent yes
+own_window_type override
 own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+update_interval 2.0
+total_run_times 0
+alignment top_right
 minimum_size 300 900
 maximum_width 300
-draw_shades no
+gap_x 10
+gap_y 10
+use_xft yes
+xftfont Dejavu:size=10
+xftalpha 0.1
 draw_outline no
+draw_shades no
 draw_borders no
 draw_graph_borders no
-double_buffer yes
 default_color DimGray
 default_shade_color red
 default_outline_color green
 default_bar_size 300 7
-alignment top_right
-gap_x 10
-gap_y 50
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -33,7 +35,6 @@ color1 Tan1
 color2 DarkSlateGray
 
 TEXT
-
 ${font Arial:bold:size=10}${color1}SYSTEM ${color2}${hr 2}${color}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
@@ -89,5 +90,5 @@ ${fs_bar /home}
 
 ${font Arial:bold:size=10}${color1}DROPBOX ${color2}${hr 2}${color}$font
 ${execi 6 dropbox-cli status}
-
+#
 # vim: ft=conkyrc
