@@ -14,7 +14,8 @@ OnWindowBorder Move1 :StartMoving
 Mod1 F11              :Restart
 Mod1 F12              :Reconfigure
 Control Mod1 Delete   :Exit
-Control Mod1 l        :Exec systemctl suspend
+Control Mod1 s        :Exec systemctl suspend
+Control Mod1 l        :Exec xscreensaver-command -lock
 XF86AudioRaiseVolume  :Exec volume-control -n up
 XF86AudioLowerVolume  :Exec volume-control -n down
 XF86AudioMute         :Exec volume-control -n mute

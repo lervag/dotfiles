@@ -71,3 +71,45 @@ URxvt*color12:                S_base0
 URxvt*color13:                S_violet
 URxvt*color14:                S_base1
 URxvt*color15:                S_base3
+
+!
+! xscreensaver settings
+!
+xscreensaver.mode: blank
+xscreensaver.timeout: 0:15:00
+xscreensaver.lockTimeout: 0:00:00
+xscreensaver.passwdTimeout: 0:00:30
+xscreensaver.dpmsEnabled: False
+xscreensaver.dpmsQuickoff: True
+xscreensaver.dpmsStandby: 0:00:00
+xscreensaver.dpmsSuspend: 0:00:00
+xscreensaver.dpmsOff: 0:00:00
+xscreensaver.fade: True
+xscreensaver.unfade: True
+xscreensaver.fadeSeconds: 0:00:01
+xscreensaver.fadeTicks: 20
+xscreensaver.splash: False
+!xscreensaver.Dialog.background: S_base0
+!xscreensaver.Dialog.foreground: S_base03
+!xscreensaver.Dialog.Button.foreground: #000000
+!xscreensaver.Dialog.Button.background: #F5F5F5
+!xscreensaver.Dialog.text.foreground: #000000
+!xscreensaver.Dialog.text.background: #00FFFF
+!xscreensaver.passwd.thermometer.foreground: #4464AC
+!xscreensaver.passwd.thermometer.background: #FFFFFF
+!xscreensaver.Dialog.topShadowColor: #FFFFFF
+!xscreensaver.Dialog.bottomShadowColor: #CECECE
+!xscreensaver.Dialog.logo.width: 210
+!xscreensaver.Dialog.logo.height: 210
+!xscreensaver.Dialog.internalBorderWidth: 0
+!xscreensaver.Dialog.borderWidth: 0
+!xscreensaver.Dialog.shadowThickness: 0
+!xscreensaver.passwd.heading.label: XScreenSaver %s
+!xscreensaver.passwd.body.label: This screen is locked.
+!xscreensaver.passwd.unlock.label: OK
+!xscreensaver.passwd.login.label: New Login
+!xscreensaver.passwd.user.label: Username:
+!xscreensaver.passwd.thermometer.width: 8
+!xscreensaver.passwd.asterisks: True
+!xscreensaver.passwd.uname: True
+
