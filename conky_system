@@ -26,8 +26,6 @@ default_shade_color red
 default_outline_color green
 default_bar_size 300 7
 no_buffers yes
-uppercase no
-cpu_avg_samples 2
 net_avg_samples 2
 use_spacer right
 if_up_strictness address
@@ -44,48 +42,25 @@ ${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}${color}
 Volume $alignr ${exec volume-control}
 Brightness $alignr ${exec brightness-control}%
 
+${font Arial:bold:size=10}${color Tan2}NETWORK ${color2}${hr 2}${color}$font
+${if_up eth0}\
+Cable connected$alignr${addr eth0}\
+${else}${if_up wlan0}\
+WiFi connected: ${wireless_essid wlan0}$alignr${addr wlan0}\
+${else}${if_up wlp1s0}\
+Wifi connected: ${wireless_essid wlp1s0}$alignr${addr wlp1s0}\
+${else}\
+No network connection\
+${endif}${endif}${endif}
+
 ${font Arial:bold:size=10}${color1}BATTERY ${color2}${hr 2}${color}$font
 Status $alignr ${exec battery-info}
 Remaining time $alignr ${execi 10 battery-info -r}
 ${execbar battery-info -p}
 
-${font Arial:bold:size=10}${color Tan2}NETWORK ${color2}${hr 2}${color}$font
-${if_up wlp1s0}\
-IP on WiFi$alignr${addr wlp1s0}
-Essid$alignr${wireless_essid wlp1s0}
-Down$alignr${downspeedf wlp1s0}kb/s
-Up$alignr${upspeedf wlp1s0}kb/s\
-${else}\
-${if_up wlan}\
-IP on WiFi$alignr${addr wlan}
-Essid$alignr${wireless_essid wlan}
-Down$alignr${downspeedf wlan}kb/s
-Up$alignr${upspeedf wlan}kb/s\
-${else}\
-No network connection$endif$endif
-
-${font Arial:bold:size=10}${color1}PROCESSORS ${color2}${hr 2}${color}$font
-CPU1  ${cpu cpu1}%$alignr${cpubar cpu1 7,180}
-CPU2  ${cpu cpu2}%$alignr${cpubar cpu2 7,180}\
-${if_empty ${cpu cpu3}}${else}
-CPU3  ${cpu cpu3}%$alignr${cpubar cpu3 7,180}
-CPU4  ${cpu cpu4}%$alignr${cpubar cpu4 7,180}\
-${if_empty ${cpu cpu5}}${else}
-CPU5  ${cpu cpu5}%$alignr${cpubar cpu5 7,180}
-CPU6  ${cpu cpu6}%$alignr${cpubar cpu6 7,180}
-CPU7  ${cpu cpu7}%$alignr${cpubar cpu7 7,180}
-CPU8  ${cpu cpu8}%$alignr${cpubar cpu8 7,180}\
-$endif$endif
-Total cpu load$alignr${cpu cpu0}%
-${cpubar cpu0}
-
-${font Arial:bold:size=10}${color1}MEMORY ${color2}${hr 2}${color}$font
-Usage$alignc$mem / $memmax$alignr$memperc%
-$membar
-
-${font Arial:bold:size=10}${color1}HDD ${color2}${hr 2}${color}$font
+${font Arial:bold:size=10}${color1}FILESYSTEM ${color2}${hr 2}${color}$font
 /home$alignc${fs_used /home} / ${fs_size /home}\
-$alignr${fs_free_perc /home}%
+$alignr${fs_used_perc /home}%
 ${fs_bar /home}
 
 ${font Arial:bold:size=10}${color1}DROPBOX ${color2}${hr 2}${color}$font
