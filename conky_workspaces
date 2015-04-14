@@ -22,7 +22,7 @@ default_color DimGray
 color1 Tan1
 
 TEXT
-$alignc${if_match ${desktop}==1}${color1}${endif}⚫${color} \
+$alignr${if_match ${desktop}==1}${color1}${endif}⚫${color} \
 ${if_match ${desktop}==2}${color1}${endif}⚫${color} \
 ${if_match ${desktop}==3}${color1}${endif}⚫${color} \
 ${if_match ${desktop}==4}${color1}${endif}⚫
