@@ -85,9 +85,9 @@ alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
 alias -s txt=gvim
 alias -s tex=gvim
-alias -s pdf=mupdf
-alias -s png=eog
-alias -s jpg=eog
+alias -s pdf=zathura
+alias -s png=feh
+alias -s jpg=feh
 
 # Utility functions
 c() { python2 -c "from math import *; print $*" | tee >(xsel) }
