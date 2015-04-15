@@ -42,7 +42,6 @@ vintrc.yaml
 xinitrc
 Xmodmap
 Xresources
-xscreensaver
 xsessionrc
 zshenv
 zshrc
