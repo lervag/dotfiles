@@ -2,11 +2,10 @@
 set guioptions ''
 set statusbar-v-padding 0
 set statusbar-h-padding 20
-set adjust-open width
 set window-title-basename true
 set incremental-search true
 set synctex true
-set font "Inconsolata-g Medium 9"
+set font "Inconsolata-g Medium 12"
 
 # Colors
 set inputbar-bg "#fdf6e3"
