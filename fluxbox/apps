@@ -10,6 +10,6 @@
 [end]
 
 [app] (zathura|mupdf)
-  [Dimensions] {1100}
+  [Dimensions] {1100 1200}
   [Maximized] {vert}
 [end]
