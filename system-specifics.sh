@@ -148,7 +148,9 @@ if [[ $HOSTNAME = vsl136 ]]; then
   load_pencil             $HOME/codes/pencil-code
   load_zsh_highlighting
 
-elif [[ $HOSTNAME = vsl142 || $HOSTNAME = vsl143 ]]; then
+elif [[ $HOSTNAME = vsl142 || \
+        $HOSTNAME = vsl143 || \
+        $HOSTNAME = vsl144 ]]; then
   load_compiler_gfortran
   load_compiler_intel    /usr/local/linux/intel/fc_2013_sp1
   load_compiler_sunf90   /usr/local/linux/sun/solarisstudio12.3
