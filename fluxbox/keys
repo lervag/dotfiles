@@ -48,7 +48,7 @@ Mod1 Tab       :NextGroup (workspace=[current])
 Mod1 Shift Tab :PrevGroup (workspace=[current])
 Mod1 F4        :Close
 Mod1 space     :WindowMenu
-Mod4 t         :ToggleCmd {RaiseLayer} {LowerLayer}
+Mod4 t         :ToggleCmd {SetLayer Top} {SetLayer Normal}
 Mod4 f         :Fullscreen
 Mod4 v         :MaximizeVertical
 Mod4 Shift v   :ArrangeWindowsVertical
