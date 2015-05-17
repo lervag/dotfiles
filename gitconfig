@@ -24,6 +24,7 @@
   stat = status
   st = status
   g = grep --break --heading --line-number
+  ctags = !.git/hooks/ctags
 
 [merge]
   tool = splice
@@ -37,3 +38,6 @@
 
 [grep]
   extendedRegexp = true
+
+[init]
+  templatedir = ~/.git_template
