@@ -19,6 +19,7 @@ fluxbox/windowmenu
 fonts
 gitconfig
 gmrunrc
+gnupg/gpg.conf
 hgk
 hgrc
 inputrc
