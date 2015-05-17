@@ -38,6 +38,3 @@
 
 [grep]
   extendedRegexp = true
-
-[init]
-  templatedir = ~/.git_template
