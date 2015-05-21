@@ -18,7 +18,6 @@ fluxbox/startup
 fluxbox/windowmenu
 fonts
 gitconfig
-git_template
 gmrunrc
 gnupg/gpg.conf
 hgk
