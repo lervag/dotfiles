@@ -24,7 +24,6 @@
   stat = status
   st = status
   g = grep --break --heading --line-number
-  ctags = !.git/hooks/ctags
 
 [merge]
   tool = splice
