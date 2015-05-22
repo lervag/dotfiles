@@ -148,6 +148,9 @@ if [[ $HOSTNAME = vsl136 ]]; then
   load_pencil             $HOME/codes/pencil-code
   load_zsh_highlighting
 
+  # Load pFUnit
+  export PFUNIT=/opt/pfunit
+
 elif [[ $HOSTNAME = vsl142 || \
         $HOSTNAME = vsl143 || \
         $HOSTNAME = vsl144 ]]; then
