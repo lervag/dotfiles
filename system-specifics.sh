@@ -80,7 +80,7 @@ function load_zsh_highlighting {
 # Next define the system specific settings based on HOSTNAME
 if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_gfortran
-  load_compiler_pgf       /opt/pgi 2016
+  load_compiler_pgf       /opt/pgi 2015
   load_tecplot            /opt/tecplot/tec360
   load_pencil             $HOME/codes/pencil-code
   load_zsh_highlighting
