@@ -10,5 +10,5 @@
 [end]
 
 [app] (zathura|mupdf)
-  [Dimensions] {960 1280}
+  [Dimensions] {800 900}
 [end]
