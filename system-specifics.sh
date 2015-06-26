@@ -106,7 +106,7 @@ elif [[ $HOSTNAME = vsl176 ]]; then
   module load torque maui
   module load gcc/5.1.0
   module load mvapich2/2.1
-  module load petsc/mvapich2/gcc/3.5.3
+  module load petsc/mvapich2/gcc/3.5.4
 
 elif [[ $HOSTNAME = yoga ]]; then
   load_zsh_highlighting
