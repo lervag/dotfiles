@@ -73,6 +73,7 @@ alias minigvim='gvim -u ~/.vim/minivimrc'
 alias make='make --no-print-directory'
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 alias vmore='gvim -S ~/.vim/vimrc.more -'
+alias sudo='sudo '
 
 # Global aliases
 alias -g M='| more'
@@ -183,6 +184,8 @@ colors
 #{{{1 Completion styles
 # Set some commands to use other command completions
 compdef mosh=ssh
+compdef vman=man
+compdef gman=man
 
 # General settings
 zstyle ':completion:*' use-cache on
