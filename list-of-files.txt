@@ -2,7 +2,6 @@ ackrc
 bash_profile
 bashrc
 clisprc.lisp
-cvimrc
 config/dunst/dunstrc
 config/openbox
 config/xfce4/terminal

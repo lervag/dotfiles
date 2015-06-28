@@ -1,24 +1,26 @@
 " Options
-set autoupdategist
- 
+set localconfig
+
 " Variable options
+let configpath = '/home/lervag/.dotfiles/cvimrc'
 let scrollstep = 200
 let searchalias g = "google"
 let blacklists = ["http://feedly.com/*","https://feedly.com/*","https://mail.google.com/*","https://inbox.google.com/*","https://todoist.com/app*"]
- 
+
 " Mappings
-map <Leader>x :restore<space>
-map gb :buffer<Space>
-map X :execute gTx<CR>
+map <leader>x :restore<space>
+map gb :buffer<space>
+map X :execute gTx<cr>
 map u lastClosedTab
 map a goToInput
 unmap gR
 map R reloadTabUncached
- 
+
 site '*://play.spotify.com/*' {
  call :pintab
 }
- 
+
 site 'https://play.google.com/music/*' {
  call :pintab
 }
+
