@@ -3,10 +3,6 @@
   [Layer]    {2}
 [end]
 
-[app] (class=Google-chrome)
-  [Maximized] {yes}
-[end]
-
 [app] (name=spotify)
   [Workspace] {4}
   [Layer]     {0}
