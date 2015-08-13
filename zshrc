@@ -118,8 +118,8 @@ mount() {
     =mount $*
   fi
 }
-vman() {  vim -c "ManWrapper $*" }
-gman() { gvim -c "ManWrapper $*" }
+m()  {  vim -c "ManWrapper $*" }
+mg() { gvim -c "ManWrapper $*" }
 
 # Enable fzf for fuzzy finder in shell
 export FZF_DEFAULT_OPTS="-x --reverse"
@@ -185,8 +185,8 @@ colors
 #{{{1 Completion styles
 # Set some commands to use other command completions
 compdef mosh=ssh
-compdef vman=man
-compdef gman=man
+compdef m=man
+compdef mg=man
 
 # General settings
 zstyle ':completion:*' use-cache on
