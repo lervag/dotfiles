@@ -12,3 +12,11 @@
 [app] (zathura|mupdf)
   [Dimensions] {800 900}
 [end]
+
+[app] (Wfica)
+  [Maximized] {yes}
+[end]
+
+[app] (Google-chrome.*)
+  [Maximized] {yes}
+[end]
