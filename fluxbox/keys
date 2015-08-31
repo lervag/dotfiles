@@ -5,7 +5,7 @@ OnDesktop Mouse1     :HideMenus
 OnDesktop Mouse2     :WorkspaceMenu
 OnDesktop Mouse3     :RootMenu
 OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
-OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestEdge}
 OnWindowBorder Move1 :StartMoving
 
 #
@@ -48,7 +48,7 @@ Mod1 Tab       :NextGroup (workspace=[current])
 Mod1 Shift Tab :PrevGroup (workspace=[current])
 Mod1 F4        :Close
 Mod1 space     :WindowMenu
-Mod4 t         :ToggleCmd {SetLayer Normal} {SetLayer Top}
+Mod4 t         :MacroCmd {SetLayer Top} {ToggleCmd {SetLayer Top} {SetLayer Normal}}
 Mod4 f         :Fullscreen
 Mod4 v         :MaximizeVertical
 Mod4 Shift v   :ArrangeWindowsVertical
