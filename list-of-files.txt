@@ -28,7 +28,8 @@ latexmkrc
 lisp-common
 mailrc
 pam_environment
-reference.bib
+references.bib
+references-mine.bib
 sbclrc
 screenrc
 ssh/config
