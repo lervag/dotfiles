@@ -71,4 +71,3 @@ inout = summary --remote
 ? = summary
 blame = annotate --user -c
 tickets = !trac-ticket
-pull = pull --rebase
