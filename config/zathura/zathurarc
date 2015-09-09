@@ -41,4 +41,11 @@ map [fullscreen] <C-u> scroll half-up
 map [fullscreen] <C-o> jumplist backward
 map [fullscreen] <C-i> jumplist forward
 
+# Swap j,k with J,K
+map j navigate next
+map k navigate previous
+map J scroll down
+map K scroll up
+
+# Other
 map [index] q toggle_index
