@@ -26,14 +26,10 @@
   g = grep --break --heading --line-number
 
 [merge]
-  tool = mytool
+  tool = fugitive
 
-[mergetool "splice"]
-  cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-  trustExitCode = true
-
-[mergetool "mytool"]
-  cmd = vim +GitMerge -d $LOCAL $MERGED $REMOTE
+[mergetool "fugitive"]
+  cmd = gvim $MERGED -c "Gdiff" -c "DiffMode"
 
 [push]
   default = simple
