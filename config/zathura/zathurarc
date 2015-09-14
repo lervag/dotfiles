@@ -6,6 +6,7 @@ set window-title-basename true
 set incremental-search true
 set synctex true
 set font "Inconsolata-g Medium 12"
+set selection-notification false
 
 # Colors
 set inputbar-bg "#fdf6e3"
