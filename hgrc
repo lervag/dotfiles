@@ -52,10 +52,9 @@ diff.changed = white
 diff.trailingwhitespace = white_background
 
 [merge-tools]
-splice.executable = gvim
-splice.args = -f $base $local $other $output -c 'SpliceInit'
-splice.premerge = keep
-splice.priority = 1
+vim.executable = xvim
+vim.args = -f -d $local $output $other +DiffMode
+vim.priority = 1
 
 [diff]
 git = True

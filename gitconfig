@@ -26,10 +26,15 @@
   g = grep --break --heading --line-number
 
 [merge]
-  tool = fugitive
+  tool = mydiff
+  conflictStyle = diff3
 
-[mergetool "fugitive"]
-  cmd = gvim $MERGED -c "Gdiff" -c "DiffMode"
+[mergetool]
+  keepBackup = false
+  prompt = false
+
+[mergetool "mydiff"]
+  cmd = xvim -f -d $LOCAL $MERGED $REMOTE -c "DiffMode"
 
 [push]
   default = simple
