@@ -53,7 +53,7 @@ diff.trailingwhitespace = white_background
 
 [merge-tools]
 vim.executable = xvim
-vim.args = -f -d $local $output $other +DiffMode
+vim.args = -f -d $local $output $other +MergeMode
 vim.priority = 1
 
 [diff]

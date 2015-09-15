@@ -34,7 +34,7 @@
   prompt = false
 
 [mergetool "mydiff"]
-  cmd = xvim -f -d $LOCAL $MERGED $REMOTE -c "DiffMode"
+  cmd = xvim -f -d $LOCAL $MERGED $REMOTE -c "MergeMode"
 
 [push]
   default = simple
