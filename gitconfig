@@ -16,12 +16,8 @@
 
 [alias]
   logr = log --reverse --name-status
-  pull = pull --ff-only
-  merge = merge --no-ff
-  up = merge --ff-only
   ci = commit
   co = checkout
-  stat = status
   st = status
   g = grep --break --heading --line-number
 
