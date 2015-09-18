@@ -5,7 +5,6 @@
 
 [app] (name=spotify)
   [Workspace] {4}
-  [Layer]     {0}
   [Maximized] {yes}
 [end]
 
