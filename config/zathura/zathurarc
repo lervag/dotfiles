@@ -29,24 +29,26 @@ set notification-error-fg "#657b83"
 set notification-warning-bg "#fdf6e3"
 set notification-warning-fg "#657b83"
 
-# Why are these only defined for normal mode by default?
-map [fullscreen] a adjust_window best-fit
-map [fullscreen] s adjust_window width
-map [fullscreen] f follow
-map [fullscreen] d toggle_page_mode 2
-map [fullscreen] <Tab> toggle_index
-map [fullscreen] j scroll down
-map [fullscreen] k scroll up
-map [fullscreen] <C-d> scroll half-down
-map [fullscreen] <C-u> scroll half-up
-map [fullscreen] <C-o> jumplist backward
-map [fullscreen] <C-i> jumplist forward
-
 # Swap j,k with J,K
 map j navigate next
 map k navigate previous
 map J scroll down
 map K scroll up
+
+# Define mappings for fullscreen
+map [fullscreen] a adjust_window best-fit
+map [fullscreen] s adjust_window width
+map [fullscreen] f follow
+map [fullscreen] d toggle_page_mode 2
+map [fullscreen] <Tab> toggle_index
+map [fullscreen] j navigate next
+map [fullscreen] k navigate previous
+map [fullscreen] J scroll down
+map [fullscreen] K scroll up
+map [fullscreen] <C-d> scroll half-down
+map [fullscreen] <C-u> scroll half-up
+map [fullscreen] <C-o> jumplist backward
+map [fullscreen] <C-i> jumplist forward
 
 # Other
 map [index] q toggle_index
