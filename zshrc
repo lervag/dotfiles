@@ -108,8 +108,8 @@ cvs() {
     =cvs $*
   fi
 }
-h()  { history -i $* 1|grep $(date +%F)     |cut --complement -c1-12|less }
-h2() { history -i $* 1|grep $(date -d y +%F)|cut --complement -c1-12|less }
+h()  { history -n -i $* 1|grep $(date +%F)     |less }
+h2() { history -n -i $* 1|grep $(date -d y +%F)|less }
 highlight() { command egrep --color=always -i -e '^' -e $* }
 mount() {
   if ["$1" = ""]; then
