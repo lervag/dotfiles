@@ -374,11 +374,7 @@ done
 
 # Welcome message for login shells
 if [[ $SHLVL -eq 1 ]] ; then
-   echo
-   print -P "$(gray Welcome to:) $(blue %m)"
-   print -P "$(gray Running:) $(blue `uname -srm`) $(gray on) $(blue %l)"
    ls-sessions
-   echo
 fi
 
 # unsetopt xtrace
