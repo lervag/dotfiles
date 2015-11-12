@@ -1,0 +1,38 @@
+# Screen setup for vsl176
+# Karl Yngve Lervåg - 2015
+
+defshell -bash
+
+# No annoying audible bell, please
+vbell on
+vbell_msg "Hey - something's ringing on %t (%n)"
+activity "Hey - something's moving in %t(%n)"
+
+# Start with screen number 1
+bind c screen 1
+bind  screen 1
+bind 0 select 10
+screen 1
+
+# Don't display the copyright page
+startup_message off
+
+# Detach on hangup
+autodetach on
+
+# Number of lines in buffer and buffer scroll
+scrollback 20000
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+# Clear screen after text editing
+altscreen on
+
+# If a window goes unresponsive, don't block the whole session waiting for it.
+nonblock on
+
+# The status line
+caption always '%?%F%{Kg}%:%{Kw}%?%H %?%F%{GK}%:%{wK}%? %-w%{+b g}%n %t%{-}%+w %=%?%F%{Kb}%:%{KK}%? %Y-%m-%d %c '
+
+# New keybindings
+bindkey -k k5 prev
+bindkey -k k6 next

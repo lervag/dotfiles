@@ -98,8 +98,10 @@ elif [[ $HOSTNAME = vsl142 || \
 
 elif [[ $HOSTNAME = vsl176 ]]; then
   alias ls='ls --color'
-  export SCREENDIR=/home/vsl175/a/lervag/.screen
   load_compiler_gfortran
+
+  export SCREENDIR=/home/vsl175/a/lervag/.screen
+  export SCREENRC=/home/vsl175/a/lervag/.dotfiles/screenrc_vsl176
 
   #
   # Load modules for the clustervision cluster
