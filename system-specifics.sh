@@ -100,9 +100,6 @@ elif [[ $HOSTNAME = vsl176 ]]; then
   alias ls='ls --color'
   load_compiler_gfortran
 
-  export SCREENDIR=/home/vsl175/a/lervag/.screen
-  export SCREENRC=/home/vsl175/a/lervag/.dotfiles/screenrc_vsl176
-
   #
   # Load modules for the clustervision cluster
   #
@@ -110,6 +107,10 @@ elif [[ $HOSTNAME = vsl176 ]]; then
   module load gcc/5.1.0
   module load mvapich2/2.1
   module load petsc/mvapich2/gcc/3.6.2
+
+  export SCREENDIR=/home/vsl175/a/lervag/.screen
+  export SCREENRC=/home/vsl175/a/lervag/.dotfiles/screenrc_vsl176
+  screen -ls |grep -v "No Sockets|^\s*$"
 
 elif [[ $HOSTNAME = yoga ]]; then
   load_zsh_highlighting
