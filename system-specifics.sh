@@ -98,6 +98,7 @@ elif [[ $HOSTNAME = vsl142 || \
 
 elif [[ $HOSTNAME = vsl176 ]]; then
   alias ls='ls --color'
+  export SCREENDIR=/home/vsl175/a/lervag/.screen
   load_compiler_gfortran
 
   #

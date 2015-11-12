@@ -374,7 +374,7 @@ done
 
 # Welcome message for login shells
 if [[ $SHLVL -eq 1 ]] ; then
-   ls-sessions
+  ls-sessions
 fi
 
 # unsetopt xtrace
