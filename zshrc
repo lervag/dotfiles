@@ -364,8 +364,7 @@ bindkey . rationalise-dot
 
 #{{{1 Load system-specific settings
 sysfiles=($DOTFILES/system-specifics.sh
-  /usr/bin/virtualenvwrapper_lazy.sh
-  /etc/profile.d/cnf.sh)
+  /usr/bin/virtualenvwrapper_lazy.sh)
 for file in $sysfiles[@]; do
   [ -r $file ] && source $file
 done
