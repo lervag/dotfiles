@@ -29,7 +29,7 @@ altscreen on
 nonblock on
 
 # The status line
-caption always '%{k} %-w%{+b w}%n %t%{-}%+w %= %{w} [%S] '
+caption always '%{k} %-w%{+b w}%n %t%{-}%+w'
 
 # New keybindings
 bindkey -k k5 prev
