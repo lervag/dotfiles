@@ -29,7 +29,7 @@ altscreen on
 nonblock on
 
 # The status line
-caption always '%?%F%{Kg}%:%{Kw}%?%H %?%F%{GK}%:%{wK}%? %-w%{+b g}%n %t%{-}%+w %=%?%F%{Kb}%:%{KK}%? %Y-%m-%d %c '
+caption always '%{k} %-w%{+b w}%n %t%{-}%+w %= %{w} [%S] '
 
 # New keybindings
 bindkey -k k5 prev
