@@ -5,7 +5,7 @@ set localconfig
 let configpath = '/home/lervag/.dotfiles/cvimrc'
 let scrollstep = 200
 let searchalias g = "google"
-let blacklists = ["http://feedly.com/*","https://feedly.com/*","https://mail.google.com/*","https://inbox.google.com/*","https://todoist.com/app*"]
+let blacklists = ["http://feedly.com/*","https://feedly.com/*","https://mail.google.com/*","https://inbox.google.com/*","https://plus.google.com/*"]
 
 " Mappings
 map <leader>x :restore<space>
