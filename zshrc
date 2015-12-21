@@ -92,7 +92,7 @@ alias -s png=feh
 alias -s jpg=feh
 
 # Utility functions
-c() { python2 -c "from math import *; print $*" | tee >(xsel) }
+c() { print - $(( $* )) }
 chpwd() { emulate -L zsh; ls }
 cmdfu() {
   curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ \
