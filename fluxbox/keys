@@ -49,7 +49,8 @@ Mod1 Shift Tab :PrevGroup (workspace=[current])
 Mod1 F4        :Close
 Mod1 space     :WindowMenu
 Mod4 t         :MacroCmd {SetLayer Top} {ToggleCmd {SetLayer Top} {SetLayer Normal}}
-Mod4 f         :Fullscreen
+Mod4 f         :Maximize
+Mod4 Shift f   :Fullscreen
 Mod4 v         :MaximizeVertical
 Mod4 Shift v   :ArrangeWindowsVertical
 Mod4 c         :MoveTo 0 0 Center
