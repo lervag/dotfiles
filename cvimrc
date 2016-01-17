@@ -1,13 +1,17 @@
-" Options
+let configpath = '/home/lervag/.dotfiles/cvimrc'
 set localconfig
 
-" Variable options
-let configpath = '/home/lervag/.dotfiles/cvimrc'
 let scrollstep = 200
 let searchalias g = "google"
-let blacklists = ["*://feedly.com/*","https://mail.google.com/*","https://inbox.google.com/*","https://plus.google.com/*"]
 
-" Mappings
+let blacklists = [
+      \ "https://feedly.com/*",
+      \ "https://mail.google.com/*",
+      \ "https://inbox.google.com/*",
+      \ "https://plus.google.com/*",
+      \ "https://github.com/*"
+      \]
+
 map <leader>x :restore<space>
 map gb :buffer<space>
 map X :execute gTx<cr>
