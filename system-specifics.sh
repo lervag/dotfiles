@@ -54,8 +54,10 @@ function load_plot_on_runtime {
   fi
 }
 function load_pencil {
-  export PENCIL_HOME=$1
-  _sourceme_quiet=1; . $PENCIL_HOME/sourceme.sh; unset _sourceme_quiet
+  if [ -d "$1" ]; then
+    export PENCIL_HOME=$1
+    _sourceme_quiet=1; . $PENCIL_HOME/sourceme.sh; unset _sourceme_quiet
+  fi
 }
 function load_tecplot {
 tecplot=$1
