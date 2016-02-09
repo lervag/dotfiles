@@ -47,3 +47,4 @@ Xresources
 xsessionrc
 zshenv
 zshrc
+ctags
