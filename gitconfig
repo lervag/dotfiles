@@ -21,6 +21,9 @@
   st = status
   g = grep --break --heading --line-number
 
+[diff]
+  algorithm = patience
+
 [merge]
   tool = mydiff
   conflictStyle = diff3
