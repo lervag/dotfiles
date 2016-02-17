@@ -118,8 +118,28 @@ mount() {
     =mount $*
   fi
 }
+
 m()  {  vim -c "ManWrapper $*" }
 mg() { gvim -c "ManWrapper $*" }
+
+function nman {
+    if [[ -z $* ]]; then
+        echo "What manual page do you want?"
+        return
+    fi
+    local tmp=$IFS
+    IFS=$'\n' out=($(command man -w $* 2>&1))
+    local code=$?
+    IFS=$tmp
+    if [[ ${#out[@]} > 1 ]]; then
+        echo "Too many manpages"
+        return
+    elif [[ $code != 0 ]]; then
+        echo "No manual entry for $*"
+        return
+    fi
+    vim -c "Nman $*"
+}
 
 #{{{1 Options
 umask 022           # Default file permissions
@@ -176,6 +196,7 @@ colors
 compdef mosh=ssh
 compdef m=man
 compdef mg=man
+compdef nman=man
 
 # General settings
 zstyle ':completion:*' use-cache on
