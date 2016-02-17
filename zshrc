@@ -119,9 +119,6 @@ mount() {
   fi
 }
 
-m()  {  vim -c "ManWrapper $*" }
-mg() { gvim -c "ManWrapper $*" }
-
 function nman {
     if [[ -z $* ]]; then
         echo "What manual page do you want?"
