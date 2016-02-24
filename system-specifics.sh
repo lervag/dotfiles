@@ -94,7 +94,7 @@ elif [[ $HOSTNAME = vsl142 || \
         $HOSTNAME = vsl143 || \
         $HOSTNAME = vsl144 ]]; then
   load_compiler_gfortran
-  load_compiler_intel    /usr/local/linux/intel/2015
+  load_compiler_intel    /usr/local/linux/intel/2016
   load_compiler_pgf      /usr/local/pgi 2016
   load_tecplot           /usr/local/linux/tecplot/tec360_2013
 
