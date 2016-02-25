@@ -82,7 +82,7 @@ function load_zsh_highlighting {
 # Next define the system specific settings based on HOSTNAME
 if [[ $HOSTNAME = vsl136 ]]; then
   load_compiler_gfortran
-  load_compiler_pgf       /opt/pgi 2015
+  load_compiler_pgf       /opt/pgi 2016
   load_tecplot            /opt/tecplot/tec360
   load_pencil             $HOME/codes/pencil-code
   load_zsh_highlighting
@@ -90,11 +90,14 @@ if [[ $HOSTNAME = vsl136 ]]; then
   # Load pFUnit
   export PFUNIT=/opt/pfunit
 
-elif [[ $HOSTNAME = vsl142 || \
-        $HOSTNAME = vsl143 || \
-        $HOSTNAME = vsl144 ]]; then
+elif [[ $HOSTNAME = vsl142 ]]; then
   load_compiler_gfortran
   load_compiler_intel    /usr/local/linux/intel/2016
+  load_compiler_pgf      /usr/local/pgi 2016
+  load_tecplot           /usr/local/linux/tecplot/tec360_2013
+
+elif [[ $HOSTNAME = vsl143 || $HOSTNAME = vsl144 ]]; then
+  load_compiler_gfortran
   load_compiler_pgf      /usr/local/pgi 2016
   load_tecplot           /usr/local/linux/tecplot/tec360_2013
 
