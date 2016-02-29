@@ -29,14 +29,6 @@ function load_compiler_pgf {
     echo "Error! Could not find: $PGI"
   fi
 }
-function load_compiler_intel {
-  scriptpath=$1/bin/compilervars.sh
-  if [ -e $scriptpath ]; then
-    source $scriptpath intel64 2>/dev/null
-  else
-    echo "Error! Could not find '$scriptpath'"
-  fi
-}
 function load_compiler_gfortran {
   export G95_FPU_INVALID=T
   export G95_FPU_OVERFLOW=T
@@ -92,9 +84,11 @@ if [[ $HOSTNAME = vsl136 ]]; then
 
 elif [[ $HOSTNAME = vsl142 ]]; then
   load_compiler_gfortran
-  load_compiler_intel    /usr/local/linux/intel/2016
   load_compiler_pgf      /usr/local/pgi 2016
   load_tecplot           /usr/local/linux/tecplot/tec360_2013
+
+  # Load intel compiler
+  source /usr/local/linux/intel/load_intel_compiler.sh
 
 elif [[ $HOSTNAME = vsl143 || $HOSTNAME = vsl144 ]]; then
   load_compiler_gfortran
