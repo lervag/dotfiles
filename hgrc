@@ -22,6 +22,7 @@ shelve =
 histedit =
 hgext.convert =
 churn =
+strip =
 
 [pager]
 pager = LESS='FSRX' less
