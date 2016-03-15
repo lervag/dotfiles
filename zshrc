@@ -119,25 +119,6 @@ mount() {
   fi
 }
 
-function nman {
-    if [[ -z $* ]]; then
-        echo "What manual page do you want?"
-        return
-    fi
-    local tmp=$IFS
-    IFS=$'\n' out=($(command man -w $* 2>&1))
-    local code=$?
-    IFS=$tmp
-    if [[ ${#out[@]} > 1 ]]; then
-        echo "Too many manpages"
-        return
-    elif [[ $code != 0 ]]; then
-        echo "No manual entry for $*"
-        return
-    fi
-    vim -c "Nman $*"
-}
-
 #{{{1 Options
 umask 022           # Default file permissions
 ulimit -s unlimited # Set stack size limit
@@ -193,7 +174,6 @@ colors
 compdef mosh=ssh
 compdef m=man
 compdef mg=man
-compdef nman=man
 
 # General settings
 zstyle ':completion:*' use-cache on
@@ -382,6 +362,7 @@ bindkey . rationalise-dot
 
 #{{{1 Load system-specific settings
 sysfiles=($DOTFILES/system-specifics.sh
+  $HOME/.vim/bundle/neoman.vim/scripts/vim.zsh
   /usr/bin/virtualenvwrapper_lazy.sh)
 for file in $sysfiles[@]; do
   [ -r $file ] && source $file
