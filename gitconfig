@@ -15,11 +15,10 @@
   status = auto
 
 [alias]
-  logr = log --reverse --name-status
   ci = commit
   co = checkout
   st = status
-  g = grep --break --heading --line-number
+  lg = log --all --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
 
 [diff]
   algorithm = patience
