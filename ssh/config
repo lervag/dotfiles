@@ -1,7 +1,5 @@
 Host olve
   HostName olve.ivt.ntnu.no
-Host ervik-laptop
-  Hostname 129.241.63.56
 Host vsl136
   Hostname %h.sintef.no
 Host vsl???
@@ -24,10 +22,8 @@ Host vsl142_8080
   ProxyCommand ssh olve -W %h:%p
   LocalForward 8080 localhost:8080
 
-Host bb
-  Compression yes
-  HostName bitbucket.org
-  User hg
-
 Host *
-  HashKnownHosts no
+  ControlMaster auto
+  ControlPath ~/.ssh/sockets/%r@%h-%p
+  ControlPersist 600
+
