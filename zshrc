@@ -179,9 +179,7 @@ colors
 
 #{{{1 Completion styles
 # Set some commands to use other command completions
-compdef mosh=ssh
-compdef m=man
-compdef mg=man
+compdef nman=man
 
 # General settings
 zstyle ':completion:*' use-cache on
