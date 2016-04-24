@@ -75,6 +75,7 @@ alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 alias vmore='gvim -S ~/.vim/vimrc.more -'
 alias sudo='sudo '
 alias xx='atool -x'
+alias info='info --vi-keys'
 
 # Global aliases
 alias -g M='| more'
