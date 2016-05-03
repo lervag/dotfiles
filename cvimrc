@@ -6,6 +6,7 @@ let searchalias g = "google"
 
 let blacklists = [
       \ "*://feedly.com/*",
+      \ "*://maconomy.sintef.no/*",
       \ "https://mail.google.com/*",
       \ "https://inbox.google.com/*",
       \ "https://plus.google.com/*"
