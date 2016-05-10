@@ -78,3 +78,4 @@ Mod1 c  :Exec showtime.sh
 Mod1 a  :Exec anki -b documents/anki
 Mod1 g  :Exec google-chrome
 Mod1 F2 :Exec fbrun
+Mod1 o  :Exec citrix-start.py
