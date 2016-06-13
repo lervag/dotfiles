@@ -16,7 +16,6 @@ fluxbox/keys
 fluxbox/menu
 fluxbox/startup
 fluxbox/windowmenu
-fonts
 gitconfig
 gtkrc-2.0.mine
 gmrunrc
@@ -42,10 +41,9 @@ texmf
 tmux.conf
 toprc
 vintrc.yaml
-xinitrc
+xprofile
 Xmodmap
 Xresources
-xsessionrc
 zshenv
 zshrc
 ctags
