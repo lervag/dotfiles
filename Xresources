@@ -53,7 +53,7 @@ Xft.lcdfilter: lcddefault
 !
 xterm*background:    S_base03
 xterm*foreground:    S_base0
-xterm*faceName:      xft:Inconsolata-g:pixelsize=16
+xterm*faceName:      xft:Inconsolata-g:pixelsize=14
 xterm*dynamicColors: true
 xterm*utf8:          2
 xterm*eightBitInput: true
@@ -67,7 +67,7 @@ URxvt.saveLines:         65535
 URxvt.intensityStyles:   false
 URxvt.internalBorder:    0
 URxvt.allow_bold:        true
-URxvt*font:              xft:Inconsolata-g:pixelsize=16
+URxvt*font:              xft:Inconsolata-g:pixelsize=14
 URxvt*letterSpace:       -2
 URxvt.scrollBar:         false
 URxvt.perl-ext-common:   default,matcher
@@ -84,38 +84,6 @@ URxvt*foreground:        S_base0
 URxvt*fading:            20
 URxvt*fadeColor:         S_base03
 URxvt*cursorColor:       S_base1
-
-!
-! xscreensaver settings
-!
-xscreensaver.mode:                          blank
-xscreensaver.timeout:                       0:15:00
-xscreensaver.lock:                          True
-xscreensaver.lockTimeout:                   0:15:00
-xscreensaver.passwdTimeout:                 0:00:30
-xscreensaver.dpmsEnabled:                   False
-xscreensaver.fade:                          False
-xscreensaver.splash:                        False
-xscreensaver.Dialog.headingFont:            *-*-bold-r-*-*-*-140-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:             *-*-medium-r-*-*-*-140-*-*-*-*-*
-xscreensaver.Dialog.labelFont:              *-*-medium-r-*-*-*-140-*-*-*-*-*
-xscreensaver.Dialog.passwdFont:             *-*-medium-r-*-*-*-140-*-*-*-*-*
-xscreensaver.Dialog.background:             S_base03
-xscreensaver.Dialog.foreground:             S_base3
-xscreensaver.Dialog.topShadowColor:         S_base03
-xscreensaver.Dialog.bottomShadowColor:      S_base03
-xscreensaver.Dialog.Button.foreground:      S_base2
-xscreensaver.Dialog.Button.background:      S_base1
-xscreensaver.Dialog.text.foreground:        S_base03
-xscreensaver.Dialog.text.background:        S_base3
-xscreensaver.Dialog.internalBorderWidth:    0
-xscreensaver.Dialog.borderWidth:            0
-xscreensaver.passwd.thermometer.foreground: S_yellow
-xscreensaver.passwd.thermometer.background: S_base3
-xscreensaver.passwd.thermometer.width:      12
-xscreensaver.passwd.heading.label:          Screen is locked
-xscreensaver.passwd.body.label:
-xscreensaver.passwd.uname:                  False
 
 !
 ! Load local settings
