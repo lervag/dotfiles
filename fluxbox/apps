@@ -8,6 +8,6 @@
   [Maximized] {vert}
 [end]
 
-[app] (class=google-chrome.*)
+[app] (name=google-chrome.*)
   [Maximized] {yes}
 [end]
