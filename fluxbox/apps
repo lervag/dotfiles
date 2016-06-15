@@ -8,6 +8,6 @@
   [Maximized] {vert}
 [end]
 
-[app] (name=google-chrome.*)
+[app] (name=google-chrome.*) (role!=pop-up)
   [Maximized] {yes}
 [end]
