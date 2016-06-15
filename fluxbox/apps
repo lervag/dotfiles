@@ -1,17 +1,13 @@
 [app] (name=fbrun)
-  [Position] (WINCENTER) {0 0}
+  [Position] (CENTER) {0 0}
   [Layer]    {2}
 [end]
 
-[app] (name=spotify)
-  [Workspace] {4}
-  [Maximized] {yes}
+[app] (name=zathura|mupdf)
+  [Dimensions] {1080 1920}
+  [Maximized] {vert}
 [end]
 
-[app] (zathura|mupdf)
-  [Dimensions] {800 900}
-[end]
-
-[app] (Google-chrome.*)
+[app] (class=google-chrome.*)
   [Maximized] {yes}
 [end]
