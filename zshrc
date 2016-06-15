@@ -115,13 +115,8 @@ mount() {
     =mount $*
   fi
 }
-vimpipe() {
-  local args=()
-  for a in "$@"; do
-    args+=( -c "$a" )
-  done
-  ( (vim - -esbnN "${args[@]}" -c 'w!/dev/fd/3|q!' >/dev/null 2>&1) 3>&1)
-}
+vimpipe() { vim - -es '+1' "+$*" '+%print' '+:qa!' | tail -n +2 }
+vimpipen() { vim - -es '+1' "+normal $*" '+%print' '+:qa!' | tail -n +2 }
 
 #{{{1 Options
 umask 022           # Default file permissions
