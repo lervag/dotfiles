@@ -2,10 +2,6 @@
 [ "$already_sourced" ] && return 0
 already_sourced=1
 
-# PS4='+$(date "+%s.%N") %N:%i> '
-# exec 3>&2 2>/tmp/startlog.$$
-# setopt xtrace prompt_subst
-
 #{{{1 Set environmental variables
 
 export BIBINPUTS=.:~/:
@@ -382,8 +378,5 @@ done
 if [[ $SHLVL -eq 1 ]] ; then
   ls-sessions
 fi
-
-# unsetopt xtrace
-# exec 2>&3 3>&-
 
 # vim: fdm=marker
