@@ -41,7 +41,7 @@
 !
 ! Font settings
 !
-Xft.autohint:  false
+Xft.autohint:  true
 Xft.antialias: true
 Xft.hinting:   true
 Xft.hintstyle: hintslight
@@ -53,7 +53,7 @@ Xft.lcdfilter: lcddefault
 !
 xterm*background:    S_base03
 xterm*foreground:    S_base0
-xterm*faceName:      xft:DejaVu Sans Mono:pixelsize=16
+xterm*faceName:      xft:Inconsolata-14,xft:DejaVu Sans Mono:pixelsize=14
 xterm*dynamicColors: true
 xterm*utf8:          2
 xterm*eightBitInput: true
@@ -67,8 +67,8 @@ URxvt.saveLines:         65535
 URxvt.intensityStyles:   false
 URxvt.internalBorder:    0
 URxvt.allow_bold:        true
-URxvt*font:              xft:DejaVu Sans Mono:pixelsize=16
-URxvt*letterSpace:       -2
+URxvt*font:              xft:Inconsolata-12,xft:DejaVu Sans Mono:pixelsize=14
+URxvt*letterSpace:       -1
 URxvt.scrollBar:         false
 URxvt.perl-ext-common:   default,matcher
 URxvt.url-launcher:      /usr/bin/google-chrome-beta
