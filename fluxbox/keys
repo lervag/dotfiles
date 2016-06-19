@@ -73,7 +73,7 @@ Mod4 Shift l   :ResizeHorizontal +5%
 Mod1 x  :Exec urxvt
 Mod1 v  :Exec gvim
 Mod1 j  :Exec gvim +'call vimwiki#diary#make_note()'
-Mod1 n  :Exec gvim +'e ~/documents/wiki/index.wiki'
+Mod1 n  :Exec gvim +'call vimwiki#page#goto_index()'
 Mod1 c  :Exec showtime.sh
 Mod1 a  :Exec anki -b documents/anki
 Mod1 g  :Exec google-chrome
