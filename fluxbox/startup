@@ -4,7 +4,7 @@ xcompmgr &
 dropbox &
 dunst &
 xfce4-power-manager &
-setxkbmap -layout no -variant nodeadkeys -model pc105 -option compose:caps
+set-keyboard.sh
 
 exec fluxbox \
   -no-slit -no-toolbar \
