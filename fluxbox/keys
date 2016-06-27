@@ -79,3 +79,4 @@ Mod1 a  :Exec anki -b documents/anki
 Mod1 g  :Exec google-chrome
 Mod1 F2 :Exec fbrun
 Mod1 o  :Exec citrix-start.py
+Mod1 k  :Exec show-us-keys.sh

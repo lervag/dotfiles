@@ -43,6 +43,7 @@ System load $alignr\
 ${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}${color}
 Volume $alignr ${exec volume-control}
 Brightness $alignr ${exec brightness-control}%
+Keymap     $alignr ${exec xkb-switch}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color2}${hr 2}${color}$font
 ${template0 eth0}${else}\
