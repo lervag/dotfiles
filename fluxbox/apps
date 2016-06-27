@@ -11,3 +11,7 @@
 [app] (name=google-chrome.*) (role!=pop-up)
   [Maximized] {yes}
 [end]
+
+[app] (feh)
+  [Position] (CENTER) {0% -25%}
+[end]
