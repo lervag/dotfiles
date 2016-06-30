@@ -109,7 +109,7 @@ h()  { history -n -i $* 1|grep $(date +%F)     |less }
 h2() { history -n -i $* 1|grep $(date -d y +%F)|less }
 highlight() { command egrep --color=always -i -e '^' -e $* }
 mount() {
-  if ["$1" = ""]; then
+  if [ "$1" = "" ]; then
     =findmnt -D
   else
     =mount $*
