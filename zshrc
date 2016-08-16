@@ -31,6 +31,7 @@ export XEDITOR="vim +%l %f"
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export PYTHONDONTWRITEBYTECODE=1
 
 # zsh stuff
 fpath=($DOTFILES/zsh-functions $fpath)
