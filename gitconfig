@@ -6,6 +6,7 @@
   pager = less
   editor = vim
   excludesfile = ~/.dotfiles/gitignore
+  quotepath = off
 
 [color]
   ui = auto
