@@ -310,8 +310,8 @@ bindkey -v
 
 # Insert mode
 bindkey ' '    magic-space
-bindkey "^R"   history-incremental-search-backward
-bindkey "^T"   history-incremental-search-forward
+bindkey "^R"   history-incremental-pattern-search-backward
+bindkey "^T"   history-incremental-pattern-search-forward
 bindkey "^U"   backward-kill-line
 bindkey "^K"   kill-line
 bindkey "^F"   vi-forward-char
