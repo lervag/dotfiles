@@ -13,7 +13,6 @@ push @generated_exts, "nlg";
 push @generated_exts, "nlo";
 push @generated_exts, "nls";
 push @generated_exts, "synctex.gz";
-push @generated_exts, "tex.latexmain";
 push @generated_exts, "run.xml";
 $latex = 'latex --src-specials %O %S';
 $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
