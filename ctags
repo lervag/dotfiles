@@ -4,4 +4,5 @@
 
 --langdef=bib
 --langmap=bib:.bib
---regex-bib=/^@[A-Za-z]+\{([^,]*)/\1/b,bib/
+--regex-bib=/@(article|book|booklet|inbook|incollection|inproceedings|manual|masterthesis|misc|phdthesis|proceedings|techreport|unpublished)\{([^,]+),/\2/e,BibTeX-Entries/i
+--regex-bib=/[[:space:]]*author[[:space:]]*=[[:space:]]*("([^"]+)"|\{([^\}]+)\})[[:space:]]*,?[[:space:]]*$/\2\3/a,BibTeX-Authors/i
