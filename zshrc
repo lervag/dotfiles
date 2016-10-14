@@ -247,7 +247,7 @@ zstyle ':completion:*:*:*' hosts $_myhosts
 #{{{1 Set command prompt
 
 #{{{2 Helper functions
-function gray    { echo "%{$fg[white]%}$*%{$terminfo[sgr0]%}" }
+function gray    { echo "%{$fg[gray]%}$*%{$terminfo[sgr0]%}" }
 function magenta { echo "%{$fg[yellow]%}$*%{$terminfo[sgr0]%}" }
 function blue    { echo "%{$fg[blue]%}$*%{$terminfo[sgr0]%}" }
 function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
