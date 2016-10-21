@@ -1,5 +1,8 @@
 Host olve
   HostName olve.ivt.ntnu.no
+Host unity
+  User kler
+  Hostname %h.sintef.no
 Host vsl136
   Hostname %h.sintef.no
 Host vsl???
