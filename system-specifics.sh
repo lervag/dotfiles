@@ -118,8 +118,22 @@ elif [[ $HOSTNAME = vsl176 ]]; then
     source /etc/profile.d/modules.sh
   fi
 
+elif [[ $HOSTNAME = "unity.sintef.no" ]]; then
+
+  #
+  # Load modules for the clustervision cluster
+  #
+  export FPATH=${(j/:/)fpath}
+  if [[ $- == *i* ]]; then
+    module load gcc
+    module load intelcomp
+    module switch rocks-openmpi openmpi/intel
+    module load petsc
+    module load python
+    module load anaconda3
+  fi
+
 elif [[ $HOSTNAME = yoga ]]; then
   load_zsh_highlighting
 
 fi
-
