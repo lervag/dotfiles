@@ -9,7 +9,8 @@ let blacklists = [
       \ "*://maconomy.sintef.no/*",
       \ "https://mail.google.com/*",
       \ "https://inbox.google.com/*",
-      \ "https://plus.google.com/*"
+      \ "https://plus.google.com/*",
+      \ "https://*.code.sintef.no/*"
       \]
 
 map <leader>x :restore<space>
