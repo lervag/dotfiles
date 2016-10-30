@@ -169,6 +169,11 @@ autoload -U colors
 compinit -i
 colors
 
+# Complete for sintefpy
+autoload -U bashcompinit
+bashcompinit
+eval "$(_SPY_COMPLETE=source spy)"
+
 #{{{1 Completion styles
 # Set some commands to use other command completions
 compdef nman=man
