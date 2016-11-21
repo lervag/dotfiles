@@ -59,9 +59,10 @@ alias ...='cd ../..'
 alias cd..='cd ..'
 alias make='make --no-print-directory'
 
-# Load system settings
-sysfile=$DOTFILES/system-specifics.sh
-[ -f $sysfile ] && . $sysfile
+# Load common functions and local settings
+funcs=$DOTFILES/common-functions.sh
+[ -f $funcs ] && . $funcs
+[ -f $HOME/.bashrc.local ] && . $HOME/.bashrc.local
 
 # Set command prompt and remove CTRL-s and CTRL-q possibility
 if [ -t 0 ] && [ -t 1 ]; then

@@ -1,4 +1,6 @@
-# System specific settings
+#
+# This is a list of common initialization functions
+#
 
 # Define utility functions
 function load_compiler_pgf {
@@ -71,69 +73,3 @@ function load_zsh_highlighting {
   ZSH_HIGHLIGHT_STYLES[alias]='fg=green,underline'
 }
 
-# Next define the system specific settings based on HOSTNAME
-if [[ $HOSTNAME = vsl136 ]]; then
-  load_compiler_gfortran
-  load_compiler_pgf       /opt/pgi 2016
-  load_tecplot            /opt/tecplot/tec360
-  load_pencil             $HOME/codes/pencil-code
-  load_zsh_highlighting
-
-  # Load pFUnit
-  export PFUNIT=/opt/pfunit
-
-elif [[ $HOSTNAME = vsl142 ]]; then
-  load_compiler_gfortran
-  load_compiler_pgf      /usr/local/pgi 2016
-  load_tecplot           /usr/local/linux/tecplot/tec360_2013
-
-  # Load intel compiler
-  source /usr/local/linux/intel/load_intel_compiler.sh
-
-elif [[ $HOSTNAME = vsl143 || $HOSTNAME = vsl144 ]]; then
-  load_compiler_gfortran
-  load_compiler_pgf      /usr/local/pgi 2016
-  load_tecplot           /usr/local/linux/tecplot/tec360_2013
-
-elif [[ $HOSTNAME = vsl176 ]]; then
-  alias ls='ls --color'
-  load_compiler_gfortran
-
-  if shopt -q login_shell; then
-    #
-    # Load modules for the clustervision cluster
-    #
-    module load torque
-    module load maui
-    module load gcc/5.1.0
-    module load mvapich2/2.1
-    module load petsc/mvapich2/gcc/current
-
-    #
-    # Use local screen socket dir and list active screens
-    #
-    export SCREENDIR=/home/vsl175/a/lervag/.screen
-    screen -ls |grep -v "No Sockets|^\s*$"
-  else
-    source /etc/profile.d/modules.sh
-  fi
-
-elif [[ $HOSTNAME = "unity.sintef.no" ]]; then
-
-  #
-  # Load modules for the clustervision cluster
-  #
-  export FPATH=${(j/:/)fpath}
-  if [[ $- == *i* ]]; then
-    module load gcc
-    module load intelcomp
-    module switch rocks-openmpi openmpi/intel
-    module load petsc
-    module load python
-    module load anaconda3
-  fi
-
-elif [[ $HOSTNAME = yoga ]]; then
-  load_zsh_highlighting
-
-fi

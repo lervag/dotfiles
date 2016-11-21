@@ -360,10 +360,13 @@ bindkey . rationalise-dot
 
 #{{{1 Load system-specific settings
 
-sysfiles=($DOTFILES/system-specifics.sh
+sysfiles=(
+  $DOTFILES/common-functions.sh
+  $HOME/.zshrc.local
   $HOME/.vim/bundle/neoman.vim/scripts/vim.zsh
-  $HOME/.dotfiles/zsh-functions/pip.zsh
-  /usr/bin/virtualenvwrapper_lazy.sh)
+  $DOTFILES/zsh-functions/pip.zsh
+  /usr/bin/virtualenvwrapper_lazy.sh
+  )
 for file in $sysfiles[@]; do
   [ -r $file ] && source $file
 done
