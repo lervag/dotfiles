@@ -12,6 +12,7 @@ checkout = git clone 'git@github.com:lervag/vimtex' 'vimtex'
 
 [.vim/bundle/wiki]
 checkout = git clone 'git@github.com:lervag/wiki' 'wiki'
+skip = lazy
 
 [.vim/bundle/file-line]
 checkout = git clone 'git@github.com:lervag/file-line' 'file-line'
