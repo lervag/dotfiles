@@ -47,3 +47,4 @@ Xresources
 zshenv
 zshrc
 ctags
+mrconfig

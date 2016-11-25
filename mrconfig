@@ -1,0 +1,17 @@
+[scripts]
+checkout = git clone 'git@github.com:lervag/scripts.git' 'scripts'
+
+[.dotfiles]
+checkout = git clone 'git@github.com:lervag/dotfiles.git' '.dotfiles'
+
+[.vim]
+checkout = git clone 'git@github.com:lervag/dotvim.git' '.vim'
+
+[.vim/bundle/vimtex]
+checkout = git clone 'git@github.com:lervag/vimtex' 'vimtex'
+
+[.vim/bundle/wiki]
+checkout = git clone 'git@github.com:lervag/wiki' 'wiki'
+
+[.vim/bundle/file-line]
+checkout = git clone 'git@github.com:lervag/file-line' 'file-line'
