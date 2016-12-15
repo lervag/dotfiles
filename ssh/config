@@ -3,6 +3,9 @@ Host olve
 Host unity
   User kler
   Hostname %h.sintef.no
+Host stepstone
+  User kler
+  Hostname %h.sintef.no
 Host vsl136
   Hostname %h.sintef.no
 Host vsl???
