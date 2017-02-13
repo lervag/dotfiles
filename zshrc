@@ -33,13 +33,6 @@ export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PYTHONDONTWRITEBYTECODE=1
 
-# zsh stuff
-fpath=($DOTFILES/zsh-functions $fpath)
-fpath=($DOTFILES/zsh-completions/src $fpath)
-
-# Other
-eval `dircolors -b $HOME/.dircolors.ansi-dark`
-
 # Ruby
 if [ -d ~/.gem/ruby ]; then
   local ruby
@@ -48,7 +41,11 @@ if [ -d ~/.gem/ruby ]; then
   done
 fi
 
-#{{{1 Define aliases and utility functions
+# Other
+eval `dircolors -b $HOME/.dircolors.ansi-dark`
+
+#{{{1 Aliases
+
 # General aliases
 alias rm="rm -v"
 alias mv="mv -i"
@@ -63,23 +60,13 @@ alias ...='cd ...'
 alias cd..='cd ..'
 alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 100'
-alias matlab='matlab -nodesktop -nosplash'
 alias tmux='TERM=screen-256color-bce tmux'
-alias minivim='vim -u ~/.vim/minivimrc'
-alias minigvim='gvim -u ~/.vim/minivimrc'
 alias make='make --no-print-directory'
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
-alias vmore='gvim -S ~/.vim/vimrc.more -'
-alias sudo='sudo '
 alias xx='atool -x'
 alias info='info --vi-keys'
 
-# Global aliases
-alias -g M='| more'
-alias -g N='> /dev/null'
-alias -g V='| gvim -S ~/.vim/vimrc.more -'
-
-# Extension stuff
+# Extension based commands
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
@@ -89,13 +76,17 @@ alias -s pdf=zathura
 alias -s png=feh
 alias -s jpg=feh
 
-# Utility functions
-c() { print - $(( $* )) }
-chpwd() { emulate -L zsh; ls }
+# {{{1 Utility functions
+
+c() {
+  print - $(( $* ))
+}
+
 cmdfu() {
   curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ \
     | openssl base64)/plaintext";
 }
+
 cvs() {
   if [ "$1" = "diff" ]; then
     shift
@@ -106,9 +97,11 @@ cvs() {
     =cvs $*
   fi
 }
-h()  { history -n -i $* 1|grep $(date +%F)     |less }
-h2() { history -n -i $* 1|grep $(date -d y +%F)|less }
-highlight() { command egrep --color=always -i -e '^' -e $* }
+
+h() {
+  history -n -i $* 1 | grep $(date +%F) | less
+}
+
 mount() {
   if [ "$1" = "" ]; then
     =findmnt -D
@@ -116,12 +109,22 @@ mount() {
     =mount $*
   fi
 }
-vimpipe() { vim - -es '+1' "+$*" '+%print' '+:qa!' | tail -n +2 }
-vimpipen() { vim - -es '+1' "+normal $*" '+%print' '+:qa!' | tail -n +2 }
+
+vimpipe() {
+  vim - -es '+1' "+$*" '+%print' '+:qa!' | tail -n +2
+}
 
 #{{{1 Options
-umask 022           # Default file permissions
-ulimit -s unlimited # Set stack size limit
+
+# Load some custom zsh functions, e.g. for completion
+fpath=($DOTFILES/zsh-functions $fpath)
+fpath=($DOTFILES/zsh-completions/src $fpath)
+
+# Set default file permissions
+umask 022
+
+# Set stack size limit
+ulimit -s unlimited
 
 # Turn on/off some zsh options
 setopt always_to_end
@@ -161,15 +164,22 @@ zmodload zsh/stat
 zmodload zsh/mathfunc
 zmodload zsh/complist
 
+# Load completion modules
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+  compinit -i
+else
+  compinit -C
+fi
+
 # Add plugins and stuff
 autoload -U zmv
 autoload -U zsh/terminfo
-autoload -U compinit
 autoload -U colors
-compinit -i
 colors
 
 #{{{1 Completion styles
+
 # Set some commands to use other command completions
 compdef nman=man
 
