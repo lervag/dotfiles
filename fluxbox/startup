@@ -6,6 +6,9 @@ dunst &
 xfce4-power-manager &
 set-keyboard.sh
 
+# Source environment variables
+source /home/lervag/.dotfiles/profile
+
 exec fluxbox \
   -no-slit -no-toolbar \
   -log "/home/lervag/.fluxbox/log" &

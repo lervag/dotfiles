@@ -2,24 +2,12 @@
 [ "$already_sourced" ] && return 0
 already_sourced=1
 
+source $HOME/.dotfiles/profile
+
 # Set environmental variables
-export BIBINPUTS=.:~/:
-export DOTFILES=$HOME/.dotfiles
-export EDITOR="vim"
-export HGENCODING="utf-8"
 export HISTFILESIZE=200000
 export HISTIGNORE="&:exit"
 export HISTSIZE=200000
-export HOSTNAME="`hostname -s`"
-export LESS="-XeR"
-export NTNUSRV="login.stud.ntnu.no"
-export OPSYS=$(uname)
-export PAGER='less'
-export PATH=$PATH:$HOME/scripts/bin
-export PYTHONPATH=$HOME/scripts/lib
-export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
-export TEXMFHOME=$HOME/.texmf
-export XEDITOR="vim +%l %f"
 
 # Enable vi mode
 set -o vi

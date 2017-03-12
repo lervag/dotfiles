@@ -4,34 +4,11 @@ already_sourced=1
 
 #{{{1 Set environmental variables
 
-export BIBINPUTS=.:~/:
-export CVS_RSH=ssh
-export DOTFILES=$HOME/.dotfiles
-export EDITOR="vim"
-export HGENCODING="utf-8"
+source $HOME/.dotfiles/profile
+
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=200000
-export HOSTNAME=$HOST
 export KEYBOARD_HACK=\'
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LC_NUMERIC=en_US.UTF-8
-export LESS="-XeR"
-export OPSYS=$(uname)
-export PAGER='less'
-export PATH=$PATH:$HOME/scripts/bin
-export PYTHONPATH=$HOME/scripts/lib
-export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
-export SAVEHIST=100000
-export TEXMFHOME=$HOME/.texmf
-export XEDITOR="vim +%l %f"
-
-# For Python
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-export PYTHONDONTWRITEBYTECODE=1
 
 # Ruby
 if [ -d ~/.gem/ruby ]; then
