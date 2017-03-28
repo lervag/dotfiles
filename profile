@@ -1,6 +1,3 @@
-[ -n "$PROFILE_SOURCED" ] && return 0
-
-export PROFILE_SOURCED=1
 export BIBINPUTS=.:~/:
 export CVS_RSH=ssh
 export DOTFILES=$HOME/.dotfiles
