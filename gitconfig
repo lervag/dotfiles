@@ -15,6 +15,11 @@
   interactive = auto
   status = auto
 
+[color "status"]
+  added = green
+  changed = yellow bold
+  untracked = red bold
+
 [alias]
   ci = commit
   co = checkout
