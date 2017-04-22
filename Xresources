@@ -1,6 +1,4 @@
-!
 ! Colors (solarized dark)
-!
 #define S_yellow  #b58900
 #define S_orange  #cb4b16
 #define S_red     #dc322f
@@ -18,9 +16,7 @@
 #define S_base2   #eee8d5
 #define S_base3   #fdf6e3
 
-!
 ! General terminal colors
-!
 *color0:  S_base02
 *color1:  S_red
 *color2:  S_green
@@ -38,9 +34,7 @@
 *color14: S_base1
 *color15: S_base3
 
-!
 ! Font settings
-!
 Xft.autohint:  true
 Xft.antialias: true
 Xft.hinting:   true
@@ -48,9 +42,7 @@ Xft.hintstyle: hintslight
 Xft.rgba:      rgb
 Xft.lcdfilter: lcddefault
 
-!
 ! xterm settings
-!
 xterm*background:    S_base03
 xterm*foreground:    S_base0
 xterm*faceName:      xft:Inconsolata-14,xft:DejaVu Sans Mono:pixelsize=14
@@ -59,9 +51,7 @@ xterm*utf8:          2
 xterm*eightBitInput: true
 xterm*saveLines:     512
 
-!
 ! urxvt settings
-!
 URxvt.termName:          xterm
 URxvt.saveLines:         65535
 URxvt.intensityStyles:   false
@@ -85,9 +75,7 @@ URxvt*fading:            20
 URxvt*fadeColor:         S_base03
 URxvt*cursorColor:       S_base1
 
-!
 ! xscreensaver settings
-!
 xscreensaver.mode:                          blank
 xscreensaver.timeout:                       0:15:00
 xscreensaver.lock:                          True
@@ -117,7 +105,5 @@ xscreensaver.passwd.heading.label:          Screen is locked
 xscreensaver.passwd.body.label:
 xscreensaver.passwd.uname:                  False
 
-!
 ! Load local settings
-!
 #include ".Xlocal"

@@ -71,9 +71,9 @@ Mod4 Shift l   :ResizeHorizontal +5%
 # Application shortcuts
 #
 Mod1 x  :Exec urxvt
-Mod1 v  :Exec gvim
-Mod1 j  :Exec gvim +'call wiki#journal#make_note()'
-Mod1 n  :Exec gvim +'call wiki#goto_index()'
+Mod1 v  :Exec urxvt -e nvim
+Mod1 j  :Exec urxvt -e nvim +'call wiki#journal#make_note()'
+Mod1 n  :Exec urxvt -e nvim +'call wiki#goto_index()'
 Mod1 c  :Exec showtime.sh
 Mod1 a  :Exec anki -b ~/documents/anki
 Mod1 g  :Exec google-chrome
