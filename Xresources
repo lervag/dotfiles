@@ -45,7 +45,7 @@ Xft.lcdfilter: lcddefault
 ! xterm settings
 xterm*background:    S_base03
 xterm*foreground:    S_base0
-xterm*faceName:      xft:Inconsolata-14,xft:DejaVu Sans Mono:pixelsize=14
+xterm*faceName:      xft:Inconsolata\\-g for Powerline:pixelsize=14,xft:Iosevka:style=light:pixelsize=16
 xterm*dynamicColors: true
 xterm*utf8:          2
 xterm*eightBitInput: true
@@ -57,8 +57,8 @@ URxvt.saveLines:         65535
 URxvt.intensityStyles:   false
 URxvt.internalBorder:    0
 URxvt.allow_bold:        true
-URxvt*font:              xft:Inconsolata-12,xft:DejaVu Sans Mono:pixelsize=14
-URxvt*letterSpace:       -1
+URxvt*font:              xft:Inconsolata\\-g for Powerline:pixelsize=14,xft:Iosevka:style=light:pixelsize=16
+URxvt*letterSpace:       -2
 URxvt.scrollBar:         false
 URxvt.perl-ext-common:   default,matcher
 URxvt.url-launcher:      /usr/bin/google-chrome-beta
