@@ -1,0 +1,14 @@
+session_name: vimtex
+start_directory: ~/.vim/bundle/vimtex/
+windows:
+- window_name: dev
+  focus: true
+  layout: main-vertical
+  panes:
+    - focus: true
+      shell_command:
+      - sleep 0.5; clear
+      - nvim
+    - shell_command:
+      - sleep 0.5; clear
+      - cd test/issues

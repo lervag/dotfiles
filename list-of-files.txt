@@ -48,3 +48,4 @@ zshenv
 zshrc
 ctags
 mrconfig
+tmuxp
