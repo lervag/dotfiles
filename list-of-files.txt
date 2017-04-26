@@ -48,4 +48,5 @@ zshenv
 zshrc
 ctags
 mrconfig
-tmuxp
+tmuxp/vimtex.yaml
+tmuxp/vsl.yaml
