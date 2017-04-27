@@ -21,4 +21,6 @@ export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PYTHONDONTWRITEBYTECODE=1
 
+stty -ixon
+
 # vim: ft=sh
