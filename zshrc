@@ -39,9 +39,14 @@ alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 100'
 alias tmux='TERM=screen-256color-bce tmux'
 alias make='make --no-print-directory'
-alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 alias xx='atool -x'
 alias info='info --vi-keys'
+
+if command -v nvim >/dev/null 2>&1; then
+  export MANPAGER="nvim +'set ft=man' -"
+else
+  alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
+fi
 
 # Extension based commands
 alias -s gz='tar -xzvf'
