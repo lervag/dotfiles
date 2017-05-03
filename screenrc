@@ -34,3 +34,6 @@ caption always '%{k} %-w%{+b w}%n %t%{-}%+w'
 # New keybindings
 bindkey -k k5 prev
 bindkey -k k6 next
+
+# Reduce ESC delay
+maptimeout 10
