@@ -1,10 +1,6 @@
 session_name: journal
 windows:
 - window_name: journal
-  focus: true
   layout: even-horizontal
   panes:
     - nvim +'call wiki#journal#make_note()'
-- window_name: other
-  panes:
-    - blank
