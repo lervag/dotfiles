@@ -24,6 +24,7 @@
   ci = commit
   co = checkout
   st = status
+  slog = log --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
   lg = log --all -n 10 --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
 
 [diff]
