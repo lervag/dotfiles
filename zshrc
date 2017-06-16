@@ -84,6 +84,10 @@ h() {
   history -n -i $* 1 | grep $(date +%F) | less
 }
 
+h2() {
+  history -n -i $* 1 | grep $(date +%F -d yesterday) | less
+}
+
 mount() {
   if [ "$1" = "" ]; then
     =findmnt -D
