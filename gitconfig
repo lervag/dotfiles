@@ -3,7 +3,7 @@
   email = karl.yngve+git@gmail.com
 
 [core]
-  pager = less -XFR
+  pager = diff-so-fancy | less --tabs=4 -RFX
   editor = vim
   excludesfile = ~/.dotfiles/gitignore
   quotepath = off
@@ -24,11 +24,15 @@
   ci = commit
   co = checkout
   st = status
-  slog = log --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
-  lg = log --all -n 10 --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
+  lg  = log       --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
+  lga = log --all --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
 
 [diff]
   algorithm = patience
+  indentHeuristic = true
+
+[diff-so-fancy]
+  markEmptyLines = false
 
 [merge]
   tool = mydiff
