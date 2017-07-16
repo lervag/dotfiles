@@ -4,14 +4,16 @@
 [end]
 
 [app] (name=zathura|mupdf)
-  [Dimensions] {1080 1920}
   [Maximized] {vert}
 [end]
 
 [app] (name=google-chrome.*) (role!=pop-up)
   [Maximized] {yes}
+  [Workspace] {0}
+  [Jump] {yes}
 [end]
 
-[app] (name!=gimp)
-  [Position]	(WINCENTER)	{0 0}
+[app] (name=urxvt)
+  [Position] (Top) {0 0}
+  [Maximized] {vert}
 [end]
