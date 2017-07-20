@@ -27,6 +27,9 @@
   lg  = log       --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
   lga = log --all --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
 
+[commit]
+  verbose = true
+
 [diff]
   algorithm = patience
   indentHeuristic = true
