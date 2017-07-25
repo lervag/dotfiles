@@ -11,4 +11,4 @@ windows:
       - nvim +"call VimuxOpenRunner()"
     - shell_command:
       - cd test/issues
-      - sleep 0.5 && clear
+      - sleep 0.5 && clear; ls -ghtd *(om[1,10])
