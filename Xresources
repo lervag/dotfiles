@@ -74,6 +74,8 @@ URxvt*foreground:        S_base0
 URxvt*fading:            20
 URxvt*fadeColor:         S_base03
 URxvt*cursorColor:       S_base1
+URxvt.iso14755:          false
+URxvt.iso14755_52:       false
 
 ! xscreensaver settings
 xscreensaver.mode:                          blank
