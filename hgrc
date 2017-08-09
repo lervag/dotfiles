@@ -26,7 +26,7 @@ strip =
 
 [pager]
 pager = LESS='FSRX' less
-attend = annotate, cat, diff, export, glog, log, qdiff, in, out, shelve
+attend = annotate, cat, diff, export, lg, log, qdiff, in, out, shelve
 
 [progress]
 delay = 1.0
@@ -51,6 +51,15 @@ diff.deleted = red
 diff.inserted = green
 diff.changed = white
 diff.trailingwhitespace = white_background
+desc.here = bold blue_background
+log.branch = cyan 
+log.node = blue
+log.summary = white
+log.date = green
+log.description = white
+log.tag = blue
+log.bookmark = green
+log.activebookmark = green bold underline
 
 [merge-tools]
 vim.executable = xvim
@@ -66,8 +75,7 @@ bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
 
 [alias]
 show = log --color=always --stat -r
-glog = log -G
-slog = log --template '{date|shortdate}: {desc|firstline}\n'
+lg = log -G --style compact
 inout = summary --remote
 ? = summary
 blame = annotate --user -c
