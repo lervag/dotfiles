@@ -3,8 +3,8 @@
   email = karl.yngve+git@gmail.com
 
 [core]
-  pager = diff-so-fancy | less --tabs=4 -RFX
-  editor = vim
+  ; pager = diff-so-fancy | less --tabs=4 -RFX
+  ; editor = vim
   excludesfile = ~/.dotfiles/gitignore
   quotepath = off
 
@@ -53,3 +53,12 @@
 
 [grep]
   extendedRegexp = true
+
+[include]
+  path = .gitconfig-local
+
+[includeIf "gitdir:~/sintef/"]
+  path = .gitconfig-work
+
+[includeIf "gitdir:~/.vim/"]
+  path = .gitconfig-personal
