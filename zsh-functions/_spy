@@ -1,0 +1,210 @@
+#compdef spy
+
+local -a subcmds
+subcmds=( \
+  'etc:Perform ETC actions' \
+  'project:Fetch and print project data' \
+  'search:Search for project by name/number/manager/etc' \
+  'tasks:Print task list for given project' \
+  'timesheet:Perform timesheet actions' \
+  )
+
+_arguments \
+  '(-h --help)'{-h,--help}'[show help]' \
+  '*:: :->subcmds' && return 0
+
+if (( CURRENT == 1 )); then
+  _describe -t commands 'spy commands' subcmds
+  return
+fi
+
+case "$words[1]" in
+  etc)
+    _arguments \
+      '(-h --help)'{-h,--help}'[show help]' \
+      '*:: :->subcmds' && return 0
+
+    local -a subcmds_etc
+    subcmds_etc=( \
+      'show:Show the ETC table' \
+      'submit:Submit ETC entries' \
+      )
+
+    if (( CURRENT == 1 )); then
+      _describe -t commands 'spy commands / etc' subcmds_etc
+      return
+    fi
+
+    case "$words[1]" in
+      show)
+        _arguments \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+      show)
+        _arguments \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+    esac;;
+
+  proj*)
+    _arguments \
+      '(-h --help)'{-h,--help}'[show help]' \
+      '*:: :->subcmds' && return 0
+
+    local -a subcmds_project
+    subcmds_project=( \
+      'get-data:Fetch project data and save to file' \
+      'info:Show information about project' \
+      'print:Print project data from file FILENAME' \
+      'print-costs:Print a detailed list of direct costs from...' \
+      )
+
+    if (( CURRENT == 1 )); then
+      _describe -t commands 'spy commands / project' subcmds_project
+      return
+    fi
+
+    case "$words[1]" in
+      get-data)
+        _arguments \
+          '(-p --project-number)'{-p,--project-number}'[The project number to get data for]' \
+          '(-s --start)'{-s,--start}'[Start date, inclusive (def: Jan 1st)]' \
+          '(-e --end)'{-e,--end}'[End date, inclusive (def: today)]' \
+          '(--src)--src[Set which source to use (def: maconomy)]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+      info)
+        _arguments \
+          '(-p --project-number)'{-p,--project-number}'[The project number to get information about]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+      print)
+        _arguments \
+          '(-p --project-number)'{-p,--project-number}'[The project number to get information about]' \
+          '(-s --start)'{-s,--start}'[Start date, inclusive (def: Jan 1st)]' \
+          '(-e --end)'{-e,--end}'[End date, inclusive (def: today)]' \
+          '(--src)--src[Set which source to use (def: maconomy)]' \
+          '(-r --row)'{-r,--row}'[Set row content (def: task)]' \
+          '(-c --column)'{-c,--column}'[Columnate by time periods]' \
+          '(-v --value)'{-v,--value}'[Specify type of value (def: billing)]' \
+          '(-g --group-by)'{-g,--group-by}'[Group results by tasks or employees]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+      print-costs)
+        _arguments \
+          '(-p --project-number)'{-p,--project-number}'[The project number to get information about]' \
+          '(-s --start)'{-s,--start}'[Start date, inclusive (def: Jan 1st)]' \
+          '(-e --end)'{-e,--end}'[End date, inclusive (def: today)]' \
+          '(--src)--src[Set which source to use (def: maconomy)]' \
+          '(-v --value)'{-v,--value}'[Specify type of value (def: billing)]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+    esac;;
+
+  search)
+    _arguments \
+      '(-p --project-number)'{-p,--project-number}'[Search by number]' \
+      '(-n --project-name)'{-n,--project-name}'[Search by name]' \
+      '(-m --project-manager)'{-m,--project-manager}'[Search by manager]' \
+      '(-v --verbose)'{-v,--verbose}'[Show full info]' \
+      '(-f)-f[Excel/CSV file for output]' \
+      '(--user)--user[Username]' \
+      '(--passwd)--passwd[Password]' \
+      '(-h --help)'{-h,--help}'[show help]';;
+
+  tasks)
+    _arguments \
+      '(-p --project-number)'{-p,--project-number}'[Get tasks for project #]' \
+      '(-f)-f[Excel/CSV file for output]' \
+      '(--user)--user[Username]' \
+      '(--passwd)--passwd[Password]' \
+      '(-h --help)'{-h,--help}'[show help]';;
+
+  ts|timesheet)
+    _arguments \
+      '(-h --help)'{-h,--help}'[show help]' \
+      '*:: :->subcmds' && return 0
+
+    local -a subcmds_timesheet
+    subcmds_timesheet=( \
+      'get-data:Download timesheet data and save to file' \
+      'move:Move hours from one project/task to another...' \
+      'print:Print timesheet for a single week' \
+      'submit:Submit hours from a .csv file' \
+      'summary:Print timesheet summaries' \
+      )
+
+    if (( CURRENT == 1 )); then
+      _describe -t commands 'spy commands / timesheet' subcmds_timesheet
+      return
+    fi
+
+    case "$words[1]" in
+      get-data)
+        _arguments \
+          '(-s --start)'{-s,--start}'[Start date, inclusive (def: first day of last month)]' \
+          '(-e --end)'{-e,--end}'[End date, inclusive (def: last day of last month)]' \
+          '(--emplno)--emplno[Download hours for given employee (def: you)]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+      print)
+        _arguments \
+          '(-d --date)'{-d,--date}'[Show timesheet for week containing date (def: today)]' \
+          '(--emplno)--emplno[Download hours for given employee (def: you)]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+      move)
+        _arguments \
+          '(-s --start)'{-s,--start}'[Start date, inclusive (def: Jan 1st)]' \
+          '(-e --end)'{-e,--end}'[End date, inclusive (def: today)]' \
+          '(-l --limit)'{-l,--limit}'[Maxmimum number of hours to move (def: large)]' \
+          '(-fp --from-project)'{-fp,--from-project}'[Move from this project (def: all)]' \
+          '(-ft --from-task)'{-ft,--from-task}'[Move from this task (def: all)]' \
+          '(-tp --to-project)'{-tp,--to-project}'[Move to this project (def: same)]' \
+          '(-tt --to-task)'{-tt,--to-task}'[Move to this task]' \
+          '(--emplno)--emplno[Download hours for given employee (def: you)]' \
+          '(--yes)--yes[Don''t ask for confirmation]' \
+          '(--no-block)--no-block[Assume that no tasks are blocked (CAREFUL)]' \
+          '(--dry-run)--dry-run[Don''t actually move any hours]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+      submit)
+        _arguments \
+          '(-p --project-number)'{-p,--project-number}'[The project number to get data for]' \
+          '(-s --start)'{-s,--start}'[Start date, inclusive (def: Jan 1st)]' \
+          '(-e --end)'{-e,--end}'[End date, inclusive (def: today)]' \
+          '(--src)--src[Set which source to use (def: maconomy)]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+      summ*)
+        _arguments \
+          '(-p --project-number)'{-p,--project-number}'[The project number to get data for]' \
+          '(-s --start)'{-s,--start}'[Start date, inclusive (def: Jan 1st)]' \
+          '(-e --end)'{-e,--end}'[End date, inclusive (def: today)]' \
+          '(--src)--src[Set which source to use (def: maconomy)]' \
+          '(-f)-f[Excel/CSV file for output]' \
+          '(--user)--user[Username]' \
+          '(--passwd)--passwd[Password]' \
+          '(-h --help)'{-h,--help}'[show help]';;
+    esac;;
+esac
