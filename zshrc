@@ -318,6 +318,7 @@ bindkey "^K"   kill-line
 bindkey "^F"   vi-forward-char
 bindkey "^B"   vi-backward-char
 bindkey "^A"   beginning-of-line
+bindkey "^O"   accept-line-and-down-history
 bindkey "^W"   end-of-line
 bindkey "\E[Z" reverse-menu-complete
 bindkey "^E"   expand-word
@@ -358,6 +359,11 @@ function rationalise-dot {
 }
 zle -N rationalise-dot
 bindkey . rationalise-dot
+
+# Paste from clipboard
+paste-from-clipboard () { LBUFFER=$LBUFFER$(xsel -o -p </dev/null); }
+zle -N paste-from-clipboard
+bindkey "^Y" paste-from-clipboard
 
 #{{{1 Load system-specific settings
 
