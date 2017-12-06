@@ -3,4 +3,4 @@ windows:
 - window_name: journal
   layout: even-horizontal
   panes:
-    - nvim +'call wiki#journal#make_note()'
+    - nvim +WikiJournal
