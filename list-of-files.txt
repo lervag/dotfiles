@@ -51,3 +51,4 @@ mrconfig
 tmuxp/vimtex.yaml
 tmuxp/vsl.yaml
 tmuxp/journal.yaml
+sintef.json
