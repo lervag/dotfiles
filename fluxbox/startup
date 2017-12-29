@@ -16,6 +16,10 @@ fbpid=$!
 
 sleep 0.5
 
+# Source local init file, if any
+local=/home/lervag/.fluxbox.startup.local
+[ -f "$local" ] && source "$local"
+
 {
   conky -c /home/lervag/.dotfiles/conky_workspaces &
   conky -c /home/lervag/.dotfiles/conky_system &
