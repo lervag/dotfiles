@@ -134,7 +134,6 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
-setopt hist_verify
 setopt interactive_comments
 setopt list_rows_first
 setopt long_list_jobs
