@@ -46,9 +46,7 @@ alias make='make --no-print-directory'
 alias xx='atool -x'
 alias info='info --vi-keys'
 
-if command -v nvim >/dev/null 2>&1; then
-  export MANPAGER="nvim +'set ft=man' -"
-else
+if ! command -v nvim >/dev/null 2>&1; then
   alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 fi
 
