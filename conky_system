@@ -62,6 +62,9 @@ $alignr${fs_used_perc /home}%
 ${fs_bar /home}
 
 ${font Arial:bold:size=10}${color1}DROPBOX ${color2}${hr 2}${color}$font
-${execi 6 dropbox-cli status}
+${execi 3 dropbox-cli status}
+
+${font Arial:bold:size=10}${color1}INSYNC ${color2}${hr 2}${color}$font
+${execi 3 insync-status}
 #
 # vim: ft=conkyrc
