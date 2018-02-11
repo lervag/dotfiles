@@ -1,0 +1,94 @@
+#compdef insync insync-headless
+
+if [[ $CURRENT == 2 ]]
+then
+   _values 'commands' \
+      'accept_all_new_shares[Accept  all  new   shares   file  to  given  account]' \
+      'accept_share[Accept shared file to given account]' \
+      'add_account[Add account to Insync]' \
+      'force_sync[Force sync item]' \
+      'get_account_information[Show information for connected acounts]' \
+      'get_actions_required[Show required actions]' \
+      'get_domain_link[Get domain link for file]' \
+      'get_errors[Show error messages]' \
+      'get_file_status[Get syncing status of file]' \
+      'get_link[Get link for file, anyone can access]' \
+      'get_new_shares[Show new shares]' \
+      'get_proxy[Show proxy configuration]' \
+      'get_recent_changes[20 most recent changes]' \
+      'get_root_drive_files[Get selective sync information for root Drive files and folders of account]' \
+      'get_status[Show syncing status]' \
+      'get_sync_progress[Show progress of files being downloaded/uploaded]' \
+      'manage_ignore_list[Manage ignore list of account through a curses interface]' \
+      'manage_selective_sync[Manage selective sync settings of account]' \
+      'move_folder[Move folder to a new path]' \
+      'open_in_gdrive[Open selected file in Google Drive web interface]' \
+      'pause_syncing[Pause syncing]' \
+      'quit[Quit]' \
+      'reject_all_new_shares[Reject  all  new   shares   to  given  account]' \
+      'reject_share[Reject shared file to given account]' \
+      'remove_account[Remove account from Insync]' \
+      'remove_from_insync[Remove linked file/folder from Insync]' \
+      'resume_syncing[Resume syncing]' \
+      'retry_errors[Retry all errors]' \
+      'set_autostart[Set autostart preference (yes/no)]' \
+      'set_export_option[Download Google Docs files as docs or links]' \
+      'set_proxy[Set proxy config]' \
+      'set_selective_sync[Set selective sync preference (yes/no) of file for given email]' \
+      'share[Share selected file using Insync web interface]' \
+      'start[Start Insync]'
+   return
+fi
+
+# we are completing the second or a subsequent argument.
+
+local insync='insync'
+
+which $insync > /dev/null || insync='insync-headless'
+which $insync > /dev/null || insync='insync-portable'
+
+if ! which $insync > /dev/null
+then
+   # Provide some kind of (possibly useless) default.
+   _path_files
+   return
+fi
+
+__insync_get_all_emails ()
+{
+   local -a accounts
+   accounts=( $( $insync get_account_information 2> /dev/null | grep -E -o "\<[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+\>" ) )
+   (( 0 < $#accounts )) && _values "accounts" $accounts
+}
+
+if (( 2 < $CURRENT ))
+then
+   case $words[2] in
+      'get_root_drive_files'  ) [[ $CURRENT == 3 ]] && __insync_get_all_emails ;;
+      'remove_account'        ) [[ $CURRENT == 3 ]] && __insync_get_all_emails ;;
+      'manage_ignore_list'    ) [[ $CURRENT == 3 ]] && __insync_get_all_emails ;;
+      'manage_selective_sync' ) [[ $CURRENT == 3 ]] && __insync_get_all_emails ;;
+      'accept_all_new_shares' ) [[ $CURRENT == 3 ]] && __insync_get_all_emails ;;
+      'reject_all_new_shares' ) [[ $CURRENT == 3 ]] && __insync_get_all_emails ;;
+      'accept_share'          ) [[ $CURRENT == 4 ]] && __insync_get_all_emails ;;
+      'reject_share'          ) [[ $CURRENT == 4 ]] && __insync_get_all_emails ;;
+      'add_account'           ) [[ $CURRENT == 4 ]] && _path_files -/ ;;
+      'force_sync'            ) [[ $CURRENT == 3 ]] && _path_files -/ ;;
+      'get_file_status'       ) [[ $CURRENT == 3 ]] && _path_files -f ;;
+      'get_link'              ) [[ $CURRENT == 3 ]] && _path_files -f ;;
+      'open_in_gdrive'        ) [[ $CURRENT == 3 ]] && _path_files -f ;;
+      'share'                 ) [[ $CURRENT == 3 ]] && _path_files -f ;;
+      'remove_from_insync'    ) [[ $CURRENT == 3 ]] && _path_files ;;
+      'get_domain_link'       ) [[ $CURRENT == 3 ]] && _path_files ;;
+      'set_autostart'         ) [[ $CURRENT == 3 ]] && _values "autostart" "yes" "no" ;;
+
+      'set_selective_sync'    ) [[ $CURRENT == 3 ]] && __insync_get_all_emails
+                                [[ $CURRENT == 5 ]] && _values "selective sync" "yes" "no" ;;
+
+      'move_folder'           ) [[ $CURRENT == 3 ]] && _path_files -/
+                                [[ $CURRENT == 4 ]] && _path_files -/ ;;
+
+      'set_export_option'     ) [[ $CURRENT == 3 ]] && __insync_get_all_emails
+                                [[ $CURRENT == 4 ]] && _values "document export format" "office" "link" ;;
+   esac
+fi
