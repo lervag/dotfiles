@@ -74,10 +74,10 @@ then
       'reject_share'          ) [[ $CURRENT == 4 ]] && __insync_get_all_emails ;;
       'add_account'           ) [[ $CURRENT == 4 ]] && _path_files -/ ;;
       'force_sync'            ) [[ $CURRENT == 3 ]] && _path_files -/ ;;
-      'get_file_status'       ) [[ $CURRENT == 3 ]] && _path_files -f ;;
-      'get_link'              ) [[ $CURRENT == 3 ]] && _path_files -f ;;
-      'open_in_gdrive'        ) [[ $CURRENT == 3 ]] && _path_files -f ;;
-      'share'                 ) [[ $CURRENT == 3 ]] && _path_files -f ;;
+      'get_file_status'       ) [[ $CURRENT == 3 ]] && _path_files ;;
+      'get_link'              ) [[ $CURRENT == 3 ]] && _path_files -W ~/gdrive -P ~/gdrive/ ;;
+      'open_in_gdrive'        ) [[ $CURRENT == 3 ]] && _path_files ;;
+      'share'                 ) [[ $CURRENT == 3 ]] && _path_files ;;
       'remove_from_insync'    ) [[ $CURRENT == 3 ]] && _path_files ;;
       'get_domain_link'       ) [[ $CURRENT == 3 ]] && _path_files ;;
       'set_autostart'         ) [[ $CURRENT == 3 ]] && _values "autostart" "yes" "no" ;;
