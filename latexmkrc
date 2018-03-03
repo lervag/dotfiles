@@ -23,4 +23,7 @@ sub nlo2nls {
   system("makeindex $_[0].nlo -s nomencl.ist -o $_[0].nls -t $_[0].nlg" );
 }
 
+add_cus_dep('pytxcode', 'tex', 0, 'pythontex');
+sub pythontex { return system("pythontex \"$_[0]\""); }
+
 # vim: ft=perl
