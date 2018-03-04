@@ -74,6 +74,7 @@ Mod1 x  :Exec urxvt
 Mod1 v  :Exec urxvt -e nvim
 Mod1 j  :Exec urxvt -e tmuxp load -y journal
 Mod1 n  :Exec urxvt -e nvim +WikiIndex
+Mod1 e  :Exec edit_and_paste_clipboard.sh
 Mod1 p  :Exec urxvt -e bpython
 Mod1 c  :Exec showtime.sh
 Mod1 a  :Exec anki -b ~/documents/anki
