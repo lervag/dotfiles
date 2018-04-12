@@ -59,7 +59,7 @@ URxvt.internalBorder:    0
 URxvt.allow_bold:        true
 URxvt.font:              xft:Inconsolata\\-g for Powerline:pixelsize=14, \
                          xft:Iosevka:style=light:pixelsize=16
-URxvt*letterSpace:       0
+URxvt*letterSpace:       -1
 URxvt.scrollBar:         false
 URxvt.perl-ext-common:   default,matcher,resize-font
 URxvt.url-launcher:      /usr/bin/google-chrome-beta
