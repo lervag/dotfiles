@@ -17,6 +17,10 @@ checkout = git clone 'git@github.com:lervag/vimtex' 'vimtex'
 checkout = git clone 'git@github.com:lervag/wiki' 'wiki'
 skip = lazy
 
+[.vim/bundle/vim-foam]
+checkout = git clone 'git@github.com:lervag/vim-foam' 'foam'
+skip = lazy
+
 [.vim/bundle/vim-sintef]
 checkout = git clone 'git@github.com:lervag/vim-sintef' 'sintef'
 skip = lazy
