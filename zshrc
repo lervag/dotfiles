@@ -153,13 +153,14 @@ zmodload zsh/stat
 zmodload zsh/mathfunc
 zmodload zsh/complist
 
+# Flush cached completion configuration once every day
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  rm -f ~/.zcompdump
+fi
+
 # Load completion modules
 autoload -Uz compinit
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-  compinit -i
-else
-  compinit -C
-fi
+compinit -i
 
 # Add plugins and stuff
 autoload -U zmv
