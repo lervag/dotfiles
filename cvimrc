@@ -1,4 +1,8 @@
 set localconfig
+set numerichints
+set typelinkhints
+
+let barposition = "bottom"
 let configpath = '/home/lervag/.dotfiles/cvimrc'
 let scrollstep = 200
 let fullpagescrollpercent = 90
