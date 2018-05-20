@@ -45,7 +45,7 @@ alias tmux='TERM=screen-256color-bce tmux'
 alias make='make --no-print-directory'
 alias xx='atool -x'
 alias info='info --vi-keys'
-alias cat='/home/lervag/scripts/bin/color-less'
+alias cat='color-less'
 
 if ! command -v nvim >/dev/null 2>&1; then
   alias man="TERMINFO=~/.terminfo/ LESS=c TERM=mostlike PAGER=less man"
