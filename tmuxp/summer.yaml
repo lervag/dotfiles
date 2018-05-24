@@ -1,15 +1,10 @@
-session_name: vsl-servers
+session_name: sjp-admin
 windows:
   - window_name: synced
     options_after:
       synchronize-panes: on
     panes:
       - focus: true
-        shell_command: ssh bruckner.sintef.no
-      - shell_command: ssh allegri.sintef.no
-  - window_name: bruckner
-    panes:
-      - shell_command: ssh bruckner.sintef.no
-  - window_name: allegri
-    panes:
-      - shell_command: ssh allegri.sintef.no
+        shell_command: ssh sjp-martinm.sintef.no
+      - shell_command: ssh sjp-sebastianj.sintef.no
+      - shell_command: ssh sjp-martinlu.sintef.no
