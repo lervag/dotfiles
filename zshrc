@@ -155,7 +155,7 @@ zmodload zsh/complist
 
 # Flush cached completion configuration once every day
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  rm -f ~/.zcompdump
+  rm -f ~/.zcompdump >/dev/null
 fi
 
 # Load completion modules
