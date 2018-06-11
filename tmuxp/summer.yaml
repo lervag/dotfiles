@@ -8,3 +8,4 @@ windows:
         shell_command: ssh sjp-martinm.sintef.no
       - shell_command: ssh sjp-sebastianj.sintef.no
       - shell_command: ssh sjp-martinlu.sintef.no
+      - shell_command: ssh sjp-erify.sintef.no
