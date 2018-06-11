@@ -1,6 +1,7 @@
 session_name: sjp-admin
 windows:
   - window_name: synced
+    layout: tiled
     options_after:
       synchronize-panes: on
     panes:
