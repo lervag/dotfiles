@@ -6,6 +6,7 @@ config/dunst/dunstrc
 config/openbox
 config/xfce4/terminal
 config/zathura/zathurarc
+config/feh
 cvsignore
 cvsrc
 devilspie
