@@ -1,6 +1,8 @@
-$print_type = 'pdf';
 $pdf_mode = 1;
-$bibtex_use = 2;
+$bibtex_use = 1.5;
+$latex = 'latex --src-specials %O %S';
+$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
+
 push @generated_exts, "cb";
 push @generated_exts, "cb2";
 push @generated_exts, "spl";
@@ -15,8 +17,6 @@ push @generated_exts, "nls";
 push @generated_exts, "auxlock";
 push @generated_exts, "synctex.gz";
 push @generated_exts, "run.xml";
-$latex = 'latex --src-specials %O %S';
-$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
 
 add_cus_dep('nlo', 'nls', 0, 'nlo2nls');
 sub nlo2nls {
