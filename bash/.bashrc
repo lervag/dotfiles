@@ -2,7 +2,7 @@
 [ "$already_sourced" ] && return 0
 already_sourced=1
 
-source $HOME/.dotfiles/profile
+source $HOME/.profile
 
 # Set environmental variables
 export HISTFILESIZE=200000
@@ -26,7 +26,7 @@ if [ -f /etc/bash_completion ]; then
   source /etc/bash_completion
 fi
 
-source $DOTFILES/auto_completions.sh
+source $DOTFILES/bash/auto_completions.sh
 
 umask 022           # Default file permissions
 ulimit -s unlimited # Set unlimited stack size
@@ -48,7 +48,7 @@ alias cd..='cd ..'
 alias make='make --no-print-directory'
 
 # Load common functions and local settings
-funcs=$DOTFILES/common-functions.sh
+funcs=$DOTFILES/bash/common-functions.sh
 [ -f $funcs ] && . $funcs
 [ -f $HOME/.bashrc.local ] && . $HOME/.bashrc.local
 

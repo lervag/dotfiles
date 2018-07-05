@@ -5,7 +5,7 @@
 [core]
   ; pager = diff-so-fancy | less --tabs=4 -RFX
   ; editor = vim
-  excludesfile = ~/.dotfiles/gitignore
+  excludesfile = ~/.gitignore
   quotepath = off
 
 [color]

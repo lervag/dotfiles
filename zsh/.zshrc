@@ -4,7 +4,7 @@ already_sourced=1
 
 #{{{1 Set environmental variables
 
-source $HOME/.dotfiles/profile
+source $HOME/.profile
 
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=200000
@@ -101,8 +101,8 @@ vimpipe() {
 #{{{1 Options
 
 # Load some custom zsh functions, e.g. for completion
-fpath=($DOTFILES/zsh-functions $fpath)
-fpath=($DOTFILES/zsh-completions/src $fpath)
+fpath=($DOTFILES/zsh/zsh-functions $fpath)
+fpath=($DOTFILES/zsh/zsh-completions/src $fpath)
 
 # Set default file permissions
 umask 022
@@ -362,10 +362,10 @@ bindkey "^Y" paste-from-clipboard
 #{{{1 Load system-specific settings
 
 sysfiles=(
-  $DOTFILES/common-functions.sh
+  $DOTFILES/bash/common-functions.sh
   $HOME/.zshrc.local
   $HOME/.vim/bundle/neoman.vim/scripts/vim.zsh
-  $DOTFILES/zsh-functions/pip.zsh
+  $DOTFILES/zsh/zsh-functions/pip.zsh
   /usr/bin/virtualenvwrapper_lazy.sh
   )
 for file in $sysfiles[@]; do
