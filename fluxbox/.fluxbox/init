@@ -1,5 +1,5 @@
 session.configVersion:  13
-session.styleFile: ~/.dotfiles/fluxbox/style
+session.styleFile: ~/.fluxbox/style
 session.screen0.defaultDeco: NONE
 session.screen0.showwindowposition: True
 session.screen0.toolbar.visible: False

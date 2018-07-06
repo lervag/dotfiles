@@ -7,7 +7,7 @@ xfce4-power-manager &
 set-keyboard.sh
 
 # Source environment variables
-source /home/lervag/.dotfiles/profile
+source /home/lervag/.profile
 
 exec fluxbox \
   -no-slit -no-toolbar \
@@ -21,8 +21,8 @@ local=/home/lervag/.fluxbox.startup.local
 [ -f "$local" ] && source "$local"
 
 {
-  conky -c /home/lervag/.dotfiles/conky_workspaces &
-  conky -c /home/lervag/.dotfiles/conky_system &
+  conky -c /home/lervag/.dotfiles/conky/conky_workspaces &
+  conky -c /home/lervag/.dotfiles/conky/conky_system &
 } &
 
 wait $fbpid
