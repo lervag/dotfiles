@@ -49,6 +49,7 @@ ${font Arial:bold:size=10}${color Tan2}NETWORK ${color2}${hr 2}${color}$font
 ${template0 eth0}${else}\
 ${template1 wlan0}\
 ${template1 wlp1s0}\
+${template1 wlp2s0}\
 Not connected${endif}${endif}${endif}
 
 ${font Arial:bold:size=10}${color1}BATTERY ${color2}${hr 2}${color}$font

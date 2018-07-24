@@ -3,7 +3,7 @@ set numerichints
 set typelinkhints
 
 let barposition = "bottom"
-let configpath = '/home/lervag/.dotfiles/cvimrc'
+let configpath = '/home/lervag/.cvimrc'
 let scrollstep = 200
 let fullpagescrollpercent = 90
 let searchalias g = "google"
