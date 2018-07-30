@@ -1,40 +1,42 @@
-background yes
-double_buffer yes
-border_inner_margin 0
-border_outer_margin 0
-own_window yes
-own_window_transparent yes
-own_window_type override
-own_window_argb_visual yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-update_interval 2.0
-total_run_times 0
-alignment top_right
-minimum_size 300 900
-maximum_width 300
-gap_x 10
-gap_y 10
-use_xft yes
-xftfont Dejavu:size=10
-xftalpha 0.1
-draw_outline no
-draw_shades no
-draw_borders no
-draw_graph_borders no
-default_color DimGray
-default_shade_color red
-default_outline_color green
-default_bar_size 300 7
-no_buffers yes
-net_avg_samples 2
-use_spacer right
-if_up_strictness address
-color1 Tan1
-color2 DarkSlateGray
-template0 ${if_up \1}Connected (\1)${alignr}${addr \1}
-template1 ${template0 \1}\nEssid: ${wireless_essid \1}${else}
+conky.config = {
+  background = true,
+  double_buffer = true,
+  border_inner_margin = 0,
+  border_outer_margin = 0,
+  own_window = true,
+  own_window_transparent = true,
+  own_window_type = 'override',
+  own_window_argb_visual = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  update_interval = 2.0,
+  total_run_times = 0,
+  alignment = 'top_right',
+  minimum_width = 300, minimum_height = 900,
+  maximum_width = 300,
+  gap_x = 10,
+  gap_y = 10,
+  use_xft = true,
+  font = 'Dejavu:size=10',
+  xftalpha = 0.1,
+  draw_outline = false,
+  draw_shades = false,
+  draw_borders = false,
+  draw_graph_borders = false,
+  default_color = 'DimGray',
+  default_shade_color = 'red',
+  default_outline_color = 'green',
+  default_bar_width = 300, default_bar_height = 7,
+  no_buffers = true,
+  net_avg_samples = 2,
+  use_spacer = 'right',
+  if_up_strictness = 'address',
+  color1 = 'Tan1',
+  color2 = 'DarkSlateGray',
+  template0 = [[${if_up \1}Connected (\1)${alignr}${addr \1}]],
+  template1 = [[${template0 \1}\nEssid: ${wireless_essid \1}${else}]],
+};
 
-TEXT
+conky.text = [[
 ${font Arial:bold:size=10}${color1}SYSTEM ${color2}${hr 2}${color}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
@@ -67,5 +69,6 @@ ${execi 3 dropbox-cli status}
 
 ${font Arial:bold:size=10}${color1}INSYNC ${color2}${hr 2}${color}$font
 ${execi 3 insync-status}
-#
-# vim: ft=conkyrc
+]];
+
+-- vim: ft=lua
