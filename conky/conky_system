@@ -32,27 +32,21 @@ conky.config = {
   if_up_strictness = 'address',
   color1 = 'Tan1',
   color2 = 'DarkSlateGray',
-  template0 = [[${if_up \1}Connected (\1)${alignr}${addr \1}]],
-  template1 = [[${template0 \1}\nEssid: ${wireless_essid \1}${else}]],
 };
 
 conky.text = [[
 ${font Arial:bold:size=10}${color1}SYSTEM ${color2}${hr 2}${color}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
-Uptime $alignr${uptime}
+Uptime $alignr$uptime
 System load $alignr\
-${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}${color}
+${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}$color
 Volume $alignr ${exec volume-control}
 Brightness $alignr ${exec brightness-control}%
 Keymap     $alignr ${exec xkb-switch}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color2}${hr 2}${color}$font
-${template0 eth0}${else}\
-${template1 wlan0}\
-${template1 wlp1s0}\
-${template1 wlp2s0}\
-Not connected${endif}${endif}${endif}
+${execpi 12 nettverk-status}
 
 ${font Arial:bold:size=10}${color1}BATTERY ${color2}${hr 2}${color}$font
 Status $alignr ${exec battery-info}
