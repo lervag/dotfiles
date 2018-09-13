@@ -1,6 +1,7 @@
 $pdf_mode = 1;
 $bibtex_use = 1.5;
 $latex = 'latex --src-specials %O %S';
+$show_time = 1;
 $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
 
 push @generated_exts, "cb";
