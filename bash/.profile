@@ -20,6 +20,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PYTHONDONTWRITEBYTECODE=1
+export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
 
 stty -ixon
 
