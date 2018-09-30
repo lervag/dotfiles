@@ -10,6 +10,7 @@ export LC_ALL=en_US.UTF-8
 export LC_NUMERIC=en_US.UTF-8
 export LESS="-eFRX"
 export PAGER='less'
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/scripts/bin
 export PYTHONPATH=$HOME/scripts/lib
 export RUBYLIB=$RUBYLIB:$HOME/scripts/lib
