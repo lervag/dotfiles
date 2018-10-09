@@ -11,7 +11,8 @@ conky.config = {
   update_interval = 1.0,
   total_run_times = 0,
   alignment = 'top_right',
-  minimum_width = 300, minimum_height = 900,
+  minimum_width = 300,
+  minimum_height = 900,
   maximum_width = 300,
   gap_x = 10,
   gap_y = 10,
@@ -25,7 +26,8 @@ conky.config = {
   default_color = 'DimGray',
   default_shade_color = 'red',
   default_outline_color = 'green',
-  default_bar_width = 300, default_bar_height = 7,
+  default_bar_width = 300,
+  default_bar_height = 7,
   no_buffers = true,
   net_avg_samples = 2,
   use_spacer = 'right',
@@ -42,16 +44,20 @@ Uptime $alignr$uptime
 System load $alignr\
 ${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}$color
 Volume $alignr ${exec volume-control}
+${if_empty "${exec light}"}\
 Brightness $alignr ${exec brightness-control}%
+${endif}\
 Keymap     $alignr ${exec xkb-switch}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color2}${hr 2}${color}$font
 ${execpi 12 nettverk-status}
+${if_empty ${battery}}${else}\
 
 ${font Arial:bold:size=10}${color1}BATTERY ${color2}${hr 2}${color}$font
 Status $alignr ${exec battery-info}
 Remaining time $alignr ${execi 10 battery-info -r}
 ${execbar battery-info -p}
+${endif}\
 
 ${font Arial:bold:size=10}${color1}FILESYSTEM ${color2}${hr 2}${color}$font
 /home$alignc${fs_used /home} / ${fs_size /home}\
