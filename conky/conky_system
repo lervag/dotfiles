@@ -44,7 +44,7 @@ Uptime $alignr$uptime
 System load $alignr\
 ${if_match "${loadavg 1}">="1.00"}${color red}$endif${loadavg 1}$color
 Volume $alignr ${exec volume-control}
-${if_empty "${exec light}"}\
+${if_empty "${exec light}"}${else}\
 Brightness $alignr ${exec brightness-control}%
 ${endif}\
 Keymap     $alignr ${exec xkb-switch}
