@@ -54,9 +54,9 @@ ${execpi 12 nettverk-status}
 ${if_existing /sys/class/power_supply/BAT0}\
 
 ${font Arial:bold:size=10}${color1}BATTERY ${color2}${hr 2}${color}$font
-Status $alignr ${exec battery-info}
+Status $alignr ${execi 10 battery-info}
 Remaining time $alignr ${execi 10 battery-info -r}
-${execbar battery-info -p}
+${execibar 10 battery-info -p}
 ${endif}\
 
 ${font Arial:bold:size=10}${color1}FILESYSTEM ${color2}${hr 2}${color}$font
