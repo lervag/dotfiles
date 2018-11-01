@@ -69,8 +69,8 @@ vim.priority = 1
 [diff]
 git = True
 
-[hostfingerprints]
-bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
+[hostsecurity]
+bitbucket.org:fingerprints=sha256:32:12:90:9a:70:64:82:1c:5b:52:cc:c3:0a:d0:79:db:e1:a8:62:1b:9a:9a:4c:f4:72:40:1c:a7:3a:d3:0a:8c
 
 [alias]
 show = log --color=always --stat -r
