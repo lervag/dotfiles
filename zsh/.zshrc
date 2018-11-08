@@ -64,27 +64,8 @@ alias -s jpg=feh
 
 # {{{1 Utility functions
 
-c() {
-  print - $(( $* ))
-}
-
-cvs() {
-  if [ "$1" = "diff" ]; then
-    shift
-    =cvs -q diff -u $*|colordiff|less
-  elif [[ "$1" = st* ]]; then
-    =cvsutility
-  else
-    =cvs $*
-  fi
-}
-
 h() {
   history -n -i $* 1 | grep $(date +%F) | less
-}
-
-h2() {
-  history -n -i $* 1 | grep $(date +%F -d yesterday) | less
 }
 
 mount() {
@@ -93,10 +74,6 @@ mount() {
   else
     =mount $*
   fi
-}
-
-vimpipe() {
-  vim - -es '+1' "+$*" '+%print' '+:qa!' | tail -n +2
 }
 
 #{{{1 Options
