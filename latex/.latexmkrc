@@ -17,6 +17,8 @@ push @generated_exts, "nlo";
 push @generated_exts, "nls";
 push @generated_exts, "auxlock";
 push @generated_exts, "synctex.gz";
+push @generated_exts, "synctex(busy)";
+push @generated_exts, "pgf-plot.*";
 push @generated_exts, "run.xml";
 
 add_cus_dep('nlo', 'nls', 0, 'nlo2nls');
