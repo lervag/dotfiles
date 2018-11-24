@@ -77,7 +77,7 @@ Mod1 j  :Exec urxvt -e tmuxp load -y journal
 Mod1 n  :Exec urxvt -e nvim +WikiIndex
 Mod1 e  :Exec _fb_paste_from_clipboard_edit_first.sh
 Mod1 y  :Exec _fb_paste_from_clipboard.sh
-Mod1 p  :Exec urxvt -e bpython
+Mod1 p  :Exec urxvt -e bpython -i ~/.bpythonrc.py
 Mod1 c  :Exec showtime.sh
 Mod1 a  :Exec anki -b ~/documents/anki
 Mod1 g  :Exec google-chrome
