@@ -46,6 +46,8 @@ alias tmux='TERM=screen-256color-bce tmux'
 alias make='make --no-print-directory'
 alias xx='atool -x'
 alias info='info --vi-keys'
+alias diff='diff -W $(( $(tput cols) - 2 ))'
+alias sdiff='sdiff -w $(( $(tput cols) - 2 ))'
 
 if ! command -v nvim >/dev/null 2>&1; then
   alias man="TERMINFO=~/.terminfo/ LESS=c TERM=mostlike PAGER=less man"
