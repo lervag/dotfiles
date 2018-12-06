@@ -8,6 +8,7 @@ set synctex true
 set font "Inconsolata-g Medium 12"
 set selection-notification false
 set smooth-scroll true
+set sandbox none
 
 # Colors
 set inputbar-bg "#fdf6e3"
