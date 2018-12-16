@@ -45,7 +45,6 @@ alias mupdf='mupdf -r 100'
 alias tmux='TERM=screen-256color-bce tmux'
 alias make='make --no-print-directory'
 alias xx='atool -x'
-alias info='info --vi-keys'
 alias diff='diff -W $(( $(tput cols) - 2 ))'
 alias sdiff='sdiff -w $(( $(tput cols) - 2 ))'
 
@@ -64,6 +63,10 @@ alias -s png=feh
 alias -s jpg=feh
 
 # {{{1 Utility functions
+
+info() {
+  nvim -c "Info "$@"" -c "wincmd o"
+}
 
 h() {
   history -n -i $* 1 | grep $(date +%F) | less
