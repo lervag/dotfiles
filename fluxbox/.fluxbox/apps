@@ -17,11 +17,6 @@
   [Position] (Top) {0 0}
 [end]
 
-[app] (name=anki) (title=Anki.*)
-  [Position] (Top) {0 0}
-[end]
-
-[app] (name=anki) (title=Browser.*)
-  [Position] (Left) {0 0}
-  [Maximized] {vert}
+[app] (name=anki)
+  [Position] (Center) {0 0}
 [end]
