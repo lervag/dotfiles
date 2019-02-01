@@ -30,34 +30,34 @@ add_cus_dep('pytxcode', 'tex', 0, 'pythontex');
 sub pythontex { return system("pythontex \"$_[0]\""); }
 
 # Add support for pythontex
-$clean_ext .= " pythontex-files-%R/*";
-push @generated_exts, 'pytxcode';
-$pythontex = 'pythontex %O %S';
-foreach my $cmd ('latex', 'lualatex', 'pdflatex', 'xelatex' ) {
-  ${$cmd} = "internal latex_python %R %Y $cmd %O %S";
-}
-sub latex_python {
-  # Run *latex, then set pythontex rule if needed.
-  # Arguments: Root name, directory for aux files (with terminator),
-  #            latex program to run, arguments for latex.
+# $clean_ext .= " pythontex-files-%R/*";
+# push @generated_exts, 'pytxcode';
+# $pythontex = 'pythontex %O %S';
+# foreach my $cmd ('latex', 'lualatex', 'pdflatex', 'xelatex' ) {
+#   ${$cmd} = "internal latex_python %R %Y $cmd %O %S";
+# }
+# sub latex_python {
+#   # Run *latex, then set pythontex rule if needed.
+#   # Arguments: Root name, directory for aux files (with terminator),
+#   #            latex program to run, arguments for latex.
 
-  my $root = shift;
-  my $dir_string = shift;
-  my $pytx_code = "$dir_string$root.pytxcode";
-  my $result_dir = $dir_string."pythontex-files-$root";
-  my $pytx_out_file = "$result_dir/$root.pytxmcr";
-  my $pytx_rule_name = "pythontex $root";
-  my $ret = system @_;
-  if ( test_gen_file( $pytx_code ) ) {
-    print "=== Pythontex being used\n";
-    if (! rdb_rule_exists( $pytx_rule_name ) ) {
-      print "=== Creating rule '$pytx_rule_name'\n";
-      rdb_create_rule( $pytx_rule_name, 'external', $pythontex, '', 1,
-        $pytx_code, $pytx_out_file, $root, 1 );
-      system "echo No file \"$pytx_out_file\". >> \"$dir_string$root.log\"";
-    }
-  }
-  return $ret;
-}
+#   my $root = shift;
+#   my $dir_string = shift;
+#   my $pytx_code = "$dir_string$root.pytxcode";
+#   my $result_dir = $dir_string."pythontex-files-$root";
+#   my $pytx_out_file = "$result_dir/$root.pytxmcr";
+#   my $pytx_rule_name = "pythontex $root";
+#   my $ret = system @_;
+#   if ( test_gen_file( $pytx_code ) ) {
+#     print "=== Pythontex being used\n";
+#     if (! rdb_rule_exists( $pytx_rule_name ) ) {
+#       print "=== Creating rule '$pytx_rule_name'\n";
+#       rdb_create_rule( $pytx_rule_name, 'external', $pythontex, '', 1,
+#         $pytx_code, $pytx_out_file, $root, 1 );
+#       system "echo No file \"$pytx_out_file\". >> \"$dir_string$root.log\"";
+#     }
+#   }
+#   return $ret;
+# }
 
 # vim: ft=perl
