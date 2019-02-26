@@ -1,3 +1,4 @@
+import numpy as np
 from sympy import *
 
 x, y, z, t = symbols('x y z t')
