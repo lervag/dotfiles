@@ -1,3 +1,4 @@
 .pytest_cache
 .tags
 tags
+.omnipytent*
