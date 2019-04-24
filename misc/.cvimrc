@@ -30,6 +30,7 @@ map a goToInput
 unmap gR
 map R reloadTabUncached
 map ci :call get_ip<cr>
+map <C-e> <C-6>
 
 site '*://play.spotify.com/*' {
   call :pintab
