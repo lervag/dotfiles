@@ -23,9 +23,10 @@ __projects() {
   local -a subcmds_project
   subcmds_project=( \
     'get-data:Fetch project data and save to file' \
+    'get-invoices:Get invoices from project and save to file' \
     'info:Show information about project' \
     'print:Print project data from file FILENAME' \
-    'print-costs:Print a detailed list of direct costs from...' \
+    'tasks:Print time tasks in project' \
     )
 
   if (( CURRENT == 1 )); then
@@ -53,10 +54,12 @@ __projects() {
       opts=( $opts $opts_three );;
     print)
       opts=( $opts $opts_three \
-        '(-r --row)'{-r,--row}'[Set row content (default: task)]:row content:(task employee)' \
-        '(-c --column)'{-c,--column}'[Columnate by time periods]:columnate by:(week month year)' \
+        '(-r --row)'{-r,--row}'[Set row content (default: task)]:row content:(week month year task employee none)' \
+        '(-c --column)'{-c,--column}'[Columnate by time periods]:columnate by:(week month year task employee)' \
         $opts_value \
-        '(-g --group-by)'{-g,--group-by}'[Group results by tasks or employees]:group by:(task employee)' \
+        '(-t --type)'{-t,--type}'[Specify which costs to include]:include:(all hours direct)' \
+        '(-g --group-by)'{-g,--group-by}'[Group results by tasks or employees]:group by:(week month year task employee)' \
+        '(-u --unit)'{-u,--unit}'[Unit for billing/cost]:unit:(kNOK NOK)' \
         $arg_input );;
     print-*)
       opts=( $opts $opts_three $opts_value $arg_input );;
@@ -176,6 +179,7 @@ _spy() {
     )
 
   subcmds=( \
+    'credentials:Set credentials' \
     'etc:Perform ETC actions' \
     'project:Fetch and print project data' \
     'search:Search for project by name/number/manager/etc' \
