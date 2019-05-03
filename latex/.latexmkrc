@@ -4,6 +4,10 @@ $latex = 'latex --src-specials %O %S';
 $show_time = 1;
 $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
 
+# This ensures buffer flushing, which makes output better in vimtex
+STDOUT->autoflush;
+STDERR->autoflush;
+
 push @generated_exts, "cb";
 push @generated_exts, "cb2";
 push @generated_exts, "spl";
