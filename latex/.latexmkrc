@@ -2,7 +2,7 @@ $pdf_mode = 1;
 $bibtex_use = 1.5;
 $latex = 'latex --src-specials %O %S';
 $show_time = 1;
-$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
+set_tex_cmds('-synctex=1 -interaction=nonstopmode --shell-escape %O %S');
 
 # This ensures buffer flushing, which makes output better in vimtex
 STDOUT->autoflush;
