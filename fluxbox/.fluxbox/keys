@@ -80,7 +80,7 @@ Mod1 y  :Exec _fb_paste_from_clipboard.sh
 Mod1 p  :Exec urxvt -e bpython -i ~/.bpythonrc.py
 Mod1 c  :Exec showtime.sh
 Mod1 a  :Exec anki -b ~/documents/anki
-Mod1 g  :Exec google-chrome
+Mod1 g  :Exec firefox
 Mod1 F2 :Exec fbrun
 Mod1 o  :Exec sintef-citrix.py
 Mod1 k  :Exec show-us-keys.sh
