@@ -50,7 +50,7 @@
   prompt = false
 
 [mergetool "mydiff"]
-  cmd = $EDITOR -f -d $LOCAL $MERGED $REMOTE -c "MergeMode"
+  cmd = $EDITOR -f "$LOCAL" "$MERGED" "$REMOTE" +MergeMode
 
 [push]
   default = simple

@@ -62,7 +62,7 @@ log.activebookmark = green bold underline
 
 [merge-tools]
 vim.executable = $EDITOR
-vim.args = -f -d $local $output $other +MergeMode
+vim.args = -f "$local" "$output" "$other" +MergeMode
 vim.premerge = keep-merge3
 vim.priority = 1
 
