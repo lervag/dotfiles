@@ -52,6 +52,7 @@ Mod4 t         :MacroCmd {SetLayer Top} {ToggleCmd {SetLayer Top} {SetLayer Norm
 Mod4 f         :Maximize
 Mod4 Shift f   :Fullscreen
 Mod4 v         :MaximizeVertical
+Mod4 Shift d   :MaximizeHorizontal
 Mod4 Shift v   :ArrangeWindowsVertical
 Mod4 c         :MoveTo 0 0 Center
 Mod4 a         :MacroCmd {MoveTo  0%   0%} {ResizeTo  50% 100%}

@@ -13,6 +13,12 @@
   [Jump] {yes}
 [end]
 
+[app] (name=Navigator) (role!=pop-up)
+  [Maximized] {yes}
+  [Workspace] {0}
+  [Jump] {yes}
+[end]
+
 [app] (name=urxvt)
   [Position] (Top) {0 0}
 [end]
