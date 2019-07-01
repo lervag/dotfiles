@@ -23,6 +23,12 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PYTHONDONTWRITEBYTECODE=1
 export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
 
+if command -v fd >/dev/null; then
+  export FZF_DEFAULT_COMMAND='fd -L --type f'
+  export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
+export FZF_DEFAULT_OPTS='--reverse --height 90%'
+
 stty -ixon
 
 # vim: ft=sh

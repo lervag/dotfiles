@@ -51,6 +51,7 @@ alias make='make --no-print-directory'
 funcs=$DOTFILES/bash/common-functions.sh
 [ -f $funcs ] && . $funcs
 [ -f $HOME/.bashrc.local ] && . $HOME/.bashrc.local
+[ -f $HOME/.fzf.bash ] && source ~/.fzf.bash
 
 # Set command prompt and remove CTRL-s and CTRL-q possibility
 if [ -t 0 ] && [ -t 1 ]; then

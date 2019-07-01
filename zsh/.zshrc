@@ -335,7 +335,9 @@ sysfiles=(
   $HOME/.vim/bundle/neoman.vim/scripts/vim.zsh
   $DOTFILES/zsh/zsh-functions/pip.zsh
   /usr/bin/virtualenvwrapper_lazy.sh
+  $HOME/.fzf.zsh
   )
+
 for file in $sysfiles[@]; do
   [ -r $file ] && source $file
 done
