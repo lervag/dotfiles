@@ -336,6 +336,7 @@ sysfiles=(
   $DOTFILES/zsh/zsh-functions/pip.zsh
   /usr/bin/virtualenvwrapper_lazy.sh
   $HOME/.fzf.zsh
+  $DOTFILES/zsh/fzf.zsh
   )
 
 for file in $sysfiles[@]; do

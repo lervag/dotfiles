@@ -59,6 +59,7 @@ if command -v fd >/dev/null; then
   export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --reverse --height 90%"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:wrap"
 
 stty -ixon
 
