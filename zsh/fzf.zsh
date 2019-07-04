@@ -18,5 +18,6 @@ fzf-history-widget() {
       zle vi-fetch-history -n $num
     fi
   fi
+  zle reset-prompt
   zle accept-line
 }
