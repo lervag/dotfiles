@@ -11,6 +11,7 @@ OnWindowBorder Move1 :StartMoving
 #
 # System control
 #
+Mod1 F10              :CommandDialog
 Mod1 F11              :Reconfigure
 Mod1 F12              :Restart
 Control Mod1 Delete   :Exit

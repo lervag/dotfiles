@@ -62,7 +62,7 @@ URxvt.font:              xft:Inconsolata\\-g for Powerline:pixelsize=14, \
 URxvt*letterSpace:       0
 URxvt.scrollBar:         false
 URxvt.perl-ext-common:   default,matcher,resize-font
-URxvt.url-launcher:      /usr/bin/google-chrome-beta
+URxvt.url-launcher:      /usr/bin/firefox
 URxvt.matcher.button:    1
 URxvt.pointerBlank:      true
 URxvt*scrollTtyOutput:   false
