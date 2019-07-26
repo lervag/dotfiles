@@ -55,7 +55,7 @@ _gen_fzf_default_opts() {
 _gen_fzf_default_opts
 
 if command -v fd >/dev/null; then
-  export FZF_DEFAULT_COMMAND='fd -L --type f'
+  export FZF_DEFAULT_COMMAND='fd -I -L --type f'
 fi
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --reverse --height 90%"
 
