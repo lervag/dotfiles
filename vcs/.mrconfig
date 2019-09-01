@@ -31,3 +31,11 @@ skip = lazy
 
 [.vim/bundle/file-line]
 checkout = git clone 'git@github.com:lervag/file-line' 'file-line'
+
+[code/apy]
+checkout = git clone 'git@github.com:lervag/apy' 'apy'
+skip = lazy
+
+[codes/apy]
+checkout = git clone 'git@github.com:lervag/apy' 'apy'
+skip = lazy
