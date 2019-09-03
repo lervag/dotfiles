@@ -83,6 +83,7 @@ mount() {
 #{{{1 Options
 
 # Load some custom zsh functions, e.g. for completion
+fpath=($HOME/.local/zsh-functions $fpath)
 fpath=($DOTFILES/zsh/zsh-functions $fpath)
 fpath=($DOTFILES/zsh/zsh-completions/src $fpath)
 
