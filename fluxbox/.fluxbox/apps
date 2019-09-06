@@ -25,3 +25,7 @@
 [app] (name=anki)
   [Position] (Center) {0 0}
 [end]
+
+[app] (name=feh)
+  [Position] (Center) {0 0}
+[end]

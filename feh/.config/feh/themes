@@ -1,1 +1,1 @@
-feh -dFZ --scale-down
+feh -dZ --scale-down -B checks
