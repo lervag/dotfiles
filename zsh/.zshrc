@@ -1,6 +1,9 @@
-# Check if already sourced
 [ "$already_sourced" ] && return 0
 already_sourced=1
+
+# For profiling:
+# zmodload zsh/zprof # first
+# zprof > "$HOME/prof_$(date +%H_%M_%S).log" # put on last line
 
 #{{{1 Set environmental variables
 
@@ -42,7 +45,6 @@ alias ....='cd ../../..'
 alias cd..='cd ..'
 alias anki='anki -b documents/anki'
 alias mupdf='mupdf -r 100'
-alias tmux='TERM=screen-256color-bce tmux'
 alias make='make --no-print-directory'
 alias xx='atool -x'
 alias diff='diff -W $(( $(tput cols) - 2 ))'
@@ -332,9 +334,6 @@ bindkey "^Y" paste-from-clipboard
 sysfiles=(
   $DOTFILES/bash/common-functions.sh
   $HOME/.zshrc.local
-  $HOME/.vim/bundle/neoman.vim/scripts/vim.zsh
-  $DOTFILES/zsh/zsh-functions/pip.zsh
-  /usr/bin/virtualenvwrapper_lazy.sh
   $HOME/.fzf.zsh
   $DOTFILES/zsh/fzf.zsh
   )
