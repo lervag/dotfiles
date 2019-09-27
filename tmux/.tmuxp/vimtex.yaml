@@ -7,8 +7,6 @@ windows:
   panes:
     - focus: true
       shell_command:
-      - sleep 0.6 && clear
-      - nvim +"call VimuxOpenRunner()"
+      - sleep 0.5; nvim +"call VimuxOpenRunner()"
     - shell_command:
-      - cd test/issues
-      - sleep 0.5 && clear; ls -ghtd *(om[1,10])
+      - sleep 0.5; cd test/issues && clear && ls -ghtd *(om[1,10])
