@@ -2,4 +2,4 @@ session_name: journal
 windows:
 - window_name: journal
   panes:
-    - nvim +WikiJournal
+    -  sleep 0.1 && nvim +WikiJournal
