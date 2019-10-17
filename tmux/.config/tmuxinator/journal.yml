@@ -1,0 +1,8 @@
+name: journal
+root: ~/
+tmux_command: TERM=screen-256color-bce tmux
+
+windows:
+  - journal:
+      panes:
+        - nvim +WikiJournal
