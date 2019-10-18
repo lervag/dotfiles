@@ -1,0 +1,17 @@
+name: apy
+root: ~/code/apy
+tmux_command: TERM=screen-256color-bce tmux
+
+on_project_first_start:
+  - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
+  - xdotool key --window $(xdotool getactivewindow) "super+c"
+
+on_project_exit:
+  - xdotool windowsize --usehints $(xdotool getactivewindow) 82 100%
+
+windows:
+  - dev:
+      layout: even-horizontal
+      panes:
+        - nvim +"call VimuxOpenRunner()"
+        -
