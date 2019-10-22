@@ -2,7 +2,7 @@ name: apy
 root: ~/code/apy
 tmux_command: TERM=screen-256color-bce tmux
 
-on_project_first_start:
+on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
   - xdotool key --window $(xdotool getactivewindow) "super+c"
 
