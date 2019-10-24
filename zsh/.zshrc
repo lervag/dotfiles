@@ -124,7 +124,6 @@ setopt nohup
 setopt notify
 setopt pushd_ignore_dups
 setopt pushd_to_home
-setopt share_history
 
 # Behave more like bash
 setopt magic_equal_subst
