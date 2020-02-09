@@ -29,3 +29,7 @@
 [app] (name=feh)
   [Position] (Center) {0 0}
 [end]
+
+[app] (name=display)
+  [Position] (Center) {0 0}
+[end]
