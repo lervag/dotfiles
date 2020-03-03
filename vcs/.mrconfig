@@ -1,5 +1,5 @@
 [DEFAULT]
-jobs = 3
+jobs = 4
 
 [scripts]
 checkout = git clone 'git@github.com:lervag/scripts.git' 'scripts'
@@ -38,4 +38,8 @@ skip = lazy
 
 [codes/apy]
 checkout = git clone 'git@github.com:lervag/apy' 'apy'
+skip = lazy
+
+[.password-store]
+checkout = git clone 'git@github.com:lervag/pass' '.password-store'
 skip = lazy
