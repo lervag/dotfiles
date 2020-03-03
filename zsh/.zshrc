@@ -290,32 +290,33 @@ fi
 bindkey -v
 
 # Insert mode
-bindkey ' '    magic-space
-bindkey "^R"   history-incremental-pattern-search-backward
-bindkey "^T"   history-incremental-pattern-search-forward
-bindkey "^U"   backward-kill-line
-bindkey "^K"   kill-line
-bindkey "^F"   vi-forward-char
-bindkey "^B"   vi-backward-char
-bindkey "^A"   beginning-of-line
-bindkey "^O"   accept-line-and-down-history
-bindkey "^W"   end-of-line
-bindkey "\E[Z" reverse-menu-complete
-bindkey "^E"   expand-word
-bindkey -r    "\e"
-bindkey "^_"  undo
-bindkey "jk"  "vi-cmd-mode"
+bindkey ' '     magic-space
+bindkey "^R"    history-incremental-pattern-search-backward
+bindkey "^T"    history-incremental-pattern-search-forward
+bindkey "^U"    backward-kill-line
+bindkey "^K"    kill-line
+bindkey "^F"    vi-forward-char
+bindkey "^B"    vi-backward-char
+bindkey "^A"    beginning-of-line
+bindkey "^O"    accept-line-and-down-history
+bindkey "^P"    accept-and-hold
+bindkey "^W"    end-of-line
+bindkey "\E[Z"  reverse-menu-complete # Shift+Tab
+bindkey "^E"    expand-word
+bindkey -r      "\e"
+bindkey "^_"    undo
+bindkey "jk"    vi-cmd-mode
+bindkey "^?"    backward-delete-char # Backspace
 bindkey "^X^X"  execute-named-cmd
 bindkey "^X^W"  where-is
 bindkey "^X^H"  _complete_help
-bindkey "\eq" push-line-or-edit
+bindkey "\eq"   push-line-or-edit
 bindkey "\eOH"  beginning-of-line    # Home
 bindkey "\eOF"  end-of-line          # End
 bindkey "\e[5~" beginning-of-history # PageUp
 bindkey "\e[6~" end-of-history       # PageDown
 bindkey "\e[2~" beginning-of-line    # Ins
 bindkey "\e[3~" delete-char          # Del
-bindkey "^?"    backward-delete-char # Backspace
 
 # Normal mode
 bindkey -a "k" up-line-or-search
