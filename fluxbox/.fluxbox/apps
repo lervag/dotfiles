@@ -13,9 +13,14 @@
   [Jump] {yes}
 [end]
 
-[app] (name=Navigator) (role!=pop-up)
+[app] (class=Zotero) (role!=pop-up)
+  [Workspace] {2}
+  [Jump] {no}
+[end]
+
+[app] (class=firefox) (role!=pop-up)
   [Workspace] {0}
-  [Jump] {yes}
+  [Jump] {no}
 [end]
 
 [app] (name=urxvt)

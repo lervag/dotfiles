@@ -5,9 +5,7 @@ set statusbar-h-padding 20
 set window-title-basename true
 set incremental-search false
 set synctex true
-set font "Inconsolata-g Medium 12"
 set selection-notification false
-set smooth-scroll true
 set sandbox none
 set vertical-center true
 

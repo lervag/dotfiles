@@ -84,10 +84,12 @@ mount() {
   fi
 }
 
-zotopen() {
+z() {
   pdf=$(fd -t f -e pdf . ~/.local/zotero | fzf -m -d '/' --with-nth=-1)
-  echo "Opening file: $pdf"
-  [ -f "$pdf" ] && zathura $pdf &
+  if [ -f "$pdf" ]; then
+    echo ${pdf#*zotero/storage/}
+    zathura $pdf &
+  fi
 }
 
 
