@@ -84,6 +84,13 @@ mount() {
   fi
 }
 
+zotopen() {
+  pdf=$(fd -t f -e pdf . ~/.local/zotero | fzf -m -d '/' --with-nth=-1)
+  echo "Opening file: $pdf"
+  [ -f "$pdf" ] && zathura $pdf &
+}
+
+
 #{{{1 Options
 
 # Load some custom zsh functions, e.g. for completion
