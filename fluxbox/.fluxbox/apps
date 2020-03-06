@@ -38,3 +38,7 @@
 [app] (name=display)
   [Position] (Center) {0 0}
 [end]
+
+[app] (title=Microsoft Teams Notification)
+  [FocusNewWindow] {no}
+[end]
