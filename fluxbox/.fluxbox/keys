@@ -78,7 +78,7 @@ Mod1 v  :Exec urxvt -e nvim
 Mod1 j  :Exec urxvt -e tmuxinator start journal
 Mod1 n  :Exec urxvt -e nvim +WikiIndex
 Mod1 e  :Exec _fb_paste_from_clipboard_edit_first.sh
-Mod1 r  :Exec _fb_paste_from_clipboard_rich_edit_first.sh
+Mod1 r  :Exec _fb_paste_from_clipboard_edit_first_rich.sh
 Mod1 y  :Exec _fb_paste_from_clipboard.sh
 Mod1 p  :Exec urxvt -e bpython -i ~/.bpythonrc.py
 Mod1 c  :Exec showtime.sh
