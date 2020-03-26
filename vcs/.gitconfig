@@ -35,7 +35,7 @@
   verbose = true
 
 [diff]
-  algorithm = patience
+  algorithm = histogram
   indentHeuristic = true
 
 [diff-so-fancy]
