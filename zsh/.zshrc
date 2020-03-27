@@ -147,7 +147,7 @@ zmodload zsh/complist
 autoload -Uz compinit
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
   compinit
-  touch .zcompdump
+  touch ~/.zcompdump
 else
   compinit -C
 fi
