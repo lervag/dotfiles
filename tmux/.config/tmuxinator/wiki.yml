@@ -1,6 +1,6 @@
 name: wiki-dev
 root: ~/.vim/bundle/wiki.vim
-tmux_command: TERM=screen-256color-bce tmux
+tmux_command: TERM=xterm-256color tmux
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
