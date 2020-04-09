@@ -1,3 +1,4 @@
+export TERM='xterm-256color'
 export BIBINPUTS=.:~/:
 export CVS_RSH=ssh
 export DOTFILES=$HOME/.dotfiles
