@@ -48,7 +48,7 @@ Mod1 Shift 4   :SendToWorkspace 4
 Mod1 Tab       :NextGroup (workspace=[current])
 Mod1 Shift Tab :PrevGroup (workspace=[current])
 Mod1 F4        :Close
-Mod1 space     :WindowMenu
+Mod4 space     :WindowMenu
 Mod4 t         :MacroCmd {SetLayer Top} {ToggleCmd {SetLayer Top} {SetLayer Normal}}
 Mod4 f         :Maximize
 Mod4 Shift f   :Fullscreen
