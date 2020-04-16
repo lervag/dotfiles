@@ -21,8 +21,8 @@ sticky_history = false
 browser = xdg-open
 
 [shortcuts]
-close = mod4+space
-history = mod1+mod4+space
+close = mod4+n
+history = mod1+mod4+n
 
 [urgency_low]
 background = "#111111"
