@@ -6,33 +6,55 @@ window:
   decorations: none
   dimensions:
     columns: 82
-    lines: 48
+    lines: 51
 
 scrolling:
   history: 100000
   multiplier: 3
 
 font:
-  normal:
-    family: Inconsolata-g for Powerline
-    style: Regular
-  bold:
-    family: Inconsolata-g for Powerline
-  italic:
-    family: Inconsolata-g for Powerline
-    style: Italized
-  size: 7.5
-  offset:
-    x: -1
-    y: -3
+  size: 8
   # normal:
-  #   family: Fira Code Retina Light
+  #   family: Iosevka
   #   style: Regular
   # bold:
-  #   family: Fira Code Bold
+  #   family: Iosevka
   # italic:
-  #   family: Fira Code Italic
-  # bold_italic_font Fira Code Bold Italic
+  #   family: Iosevka
+  #   style: Oblique
+  # bold_italic:
+  #   family: Iosevka
+  #   style: Bold Oblique
+  # offset:
+  #   x: 0
+  #   y: 0
+  # glyph_offset:
+  #   x: 0
+  #   y: -2
+  # normal:
+  #   family: Inconsolata-g for Powerline
+  #   style: Regular
+  # bold:
+  #   family: Inconsolata-g for Powerline
+  # italic:
+  #   family: Inconsolata-g for Powerline
+  #   style: Italized
+  # offset:
+  #   x: -1
+  #   y: -3
+  normal:
+    family: FiraCode Nerd Font Mono
+    style: Regular
+  # bold:
+  #   family: Fira Code Bold
+  italic:
+    family: FiraCode Nerd Font
+    style: Regular
+  # bold_italic:
+  #   family: Fira Code Bold Italic
+  # offset:
+  #   x: 0
+  #   y: 0
 
 selection:
   save_to_clipboard: true
