@@ -274,7 +274,11 @@ function prompt {
 precmd () {
   local l="%$(( $COLUMNS - 6 - ${#USERNAME} - ${#HOSTNAME} ))<...<"
   local pr="$(gray $(prompt))"
-  print -rP "$(magenta %n)$(gray @)$(magenta %m) $(gray in) $(cyan $l%~)"
+  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+    local venv=$(echo -e " ($(blue $(basename $VIRTUAL_ENV)))")
+  fi
+
+  print -rP "$(magenta %n)$(gray @)$(magenta %m)$venv$(gray :) $(cyan $l%~)"
   PS1="$pr$(magenta '>') "
   PS2="   $(magenta '| %_ >') "
   print -Pn "\e]0;%m: %~\a"
@@ -352,6 +356,9 @@ sysfiles=(
 for file in $sysfiles[@]; do
   [ -r $file ] && source $file
 done
+
+# Load direnv (if possible)
+command -v direnv &>/dev/null && eval "$(direnv hook zsh)"
 
 #}}}1
 
