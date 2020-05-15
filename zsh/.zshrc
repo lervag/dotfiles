@@ -14,7 +14,7 @@ export HISTSIZE=200000
 export KEYBOARD_HACK=\'
 
 if command -v nvim &>/dev/null; then
-  export MANPAGER="nvim -c 'set ft=man' -"
+  export MANPAGER="nvim +Man!"
 fi
 
 # Ruby
