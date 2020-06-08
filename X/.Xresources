@@ -80,11 +80,10 @@ URxvt.iso14755_52:       false
 
 ! xscreensaver settings
 xscreensaver.mode:                          blank
-xscreensaver.timeout:                       0:15:00
+xscreensaver.dpmsEnabled:                   False
+xscreensaver.timeout:                       0:30:00
 xscreensaver.lock:                          True
 xscreensaver.lockTimeout:                   0:15:00
-xscreensaver.passwdTimeout:                 0:00:30
-xscreensaver.dpmsEnabled:                   False
 xscreensaver.fade:                          False
 xscreensaver.splash:                        False
 xscreensaver.Dialog.headingFont:            *-courier-bold-r-*-*-*-140-*-*-*-*-*
