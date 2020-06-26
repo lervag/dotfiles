@@ -37,9 +37,6 @@
   algorithm = histogram
   indentHeuristic = true
 
-[diff-so-fancy]
-  markEmptyLines = false
-
 [merge]
   tool = mydiff
   conflictStyle = diff3
