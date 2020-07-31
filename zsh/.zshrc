@@ -216,6 +216,9 @@ zstyle ':completion:*:*:make:*' list-rows-first
 zstyle ':completion:*:*:make:*:variables' hidden all
 zstyle ':completion:*:*:make:*:targets' ignored-patterns '*.o'
 
+# Don't complete unavailable commands.
+zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
+
 # Define users and hosts for completion
 local _users _myhosts
 _users=(root $(ls $HOME/..))
