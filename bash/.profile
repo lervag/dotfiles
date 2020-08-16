@@ -24,6 +24,9 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PYTHONDONTWRITEBYTECODE=1
 export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
 
+GPG_TTY=$(tty)
+export GPG_TTY
+
 _gen_fzf_default_opts() {
   local base03="234"
   local base02="235"
