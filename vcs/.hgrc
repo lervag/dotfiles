@@ -4,9 +4,6 @@ ssh = ssh -C
 commitsubrepos = False
 fallbackencoding = utf-8
 
-[trusted]
-users = asmunder,aursand,morteham,geirsk,halvorlu,magnugje,trac,andreag,pedera,svendm,owil
-
 [extensions]
 extdiff =
 pager =
@@ -51,7 +48,7 @@ diff.inserted = green
 diff.changed = white
 diff.trailingwhitespace = white_background
 desc.here = bold blue_background
-log.branch = cyan 
+log.branch = cyan
 log.node = blue
 log.summary = white
 log.date = green
@@ -79,3 +76,5 @@ inout = summary --remote
 ? = summary
 blame = annotate --user -c
 tickets = !trac-ticket
+
+%include ~/.hgrc.local
