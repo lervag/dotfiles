@@ -24,6 +24,7 @@ __projects() {
   subcmds_project=( \
     'get-data:Fetch project data and save to file' \
     'get-invoices:Get invoices from project and save to file' \
+    'get-budget:Get project budget' \
     'info:Show information about project' \
     'print:Print project data from file FILENAME' \
     'tasks:Print time tasks in project' \
@@ -50,8 +51,10 @@ __projects() {
     )
 
   case "$words[1]" in
-    get*)
+    get-data)
       opts=( $opts $opts_three );;
+    get-*)
+      opts=( $opts );;
     print)
       opts=( $opts $opts_three \
         '(-r --row)'{-r,--row}'[Set row content (default: task)]:row content:(week month year task employee none)' \
