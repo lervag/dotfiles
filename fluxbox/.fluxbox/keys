@@ -68,7 +68,7 @@ Mod4 Mod1 k    :Move  0 -5
 Mod4 Mod1 j    :Move  0 +5
 Mod4 Mod1 h    :Move -5  0
 Mod4 Mod1 l    :Move +5  0
-+od4 Shift k   :ResizeVertical -5%
+Mod4 Shift k   :ResizeVertical -5%
 Mod4 Shift j   :ResizeVertical +5%
 Mod4 Shift h   :ResizeHorizontal -5%
 Mod4 Shift l   :ResizeHorizontal +5%
