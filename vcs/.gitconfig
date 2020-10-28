@@ -3,7 +3,11 @@
   email = karl.yngve+git@gmail.com
 
 [core]
-  pager = delta --theme='Solarized (dark)'
+  pager = delta --theme='Solarized (dark)' \
+    --file-style='bold yellow' \
+    --file-decoration-style='bold yellow ul' \
+    --hunk-header-style='bold blue' \
+    --hunk-header-decoration-style=omit
   excludesfile = ~/.gitignore
   quotepath = off
 

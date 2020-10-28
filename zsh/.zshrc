@@ -277,8 +277,9 @@ function prompt {
 precmd () {
   local l="%$(( $COLUMNS - 6 - ${#USERNAME} - ${#HOSTNAME} ))<...<"
   local pr="$(gray $(prompt))"
-  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+  if [[ -n "$VIRTUAL_ENV" ]]; then
     local venv=$(echo -e " ($(blue $(basename $VIRTUAL_ENV)))")
+    venv="${venv/-*-/-}"
   fi
 
   print -rP "$(magenta %n)$(gray @)$(magenta %m)$venv$(gray :) $(cyan $l%~)"
