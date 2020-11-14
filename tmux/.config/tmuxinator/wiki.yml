@@ -5,7 +5,6 @@ tmux_command: TERM=xterm-256color tmux
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
   - xdotool key --window $(xdotool getactivewindow) "super+c"
-  - sleep 0.1
 
 on_project_exit:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 82 100%
@@ -15,6 +14,7 @@ windows:
       layout: even-horizontal
       panes:
         - editor:
+          - sleep 0.1
           - clear
           - nvim +"call VimuxOpenRunner()"
         - tests:
