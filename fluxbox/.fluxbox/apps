@@ -24,7 +24,7 @@
 [end]
 
 [app] (name=urxvt)
-  [Position] (Top) {0 0}
+  [Position] (Center) {0 0}
 [end]
 
 [app] (name=anki)

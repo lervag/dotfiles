@@ -1,7 +1,7 @@
 #!/bin/bash
 
 xcompmgr &
-dropbox &
+dropbox-cli start &
 set-keyboard.sh
 
 # Source environment variables
