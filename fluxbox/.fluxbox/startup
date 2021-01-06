@@ -2,6 +2,8 @@
 
 xcompmgr &
 dropbox-cli start &
+dunst &>/tmp/dunst.log &
+
 set-keyboard.sh
 
 # Source environment variables

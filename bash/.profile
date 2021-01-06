@@ -23,6 +23,7 @@ export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PYTHONDONTWRITEBYTECODE=1
 export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
+export PERL_DESTRUCT_LEVEL=2
 
 GPG_TTY=$(tty)
 export GPG_TTY

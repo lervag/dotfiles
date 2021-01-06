@@ -41,7 +41,7 @@ ${font Arial:bold:size=10}${color1}SYSTEM ${color2}${hr 2}${color}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
 Processor temperature $alignr\
-${if_match "${hwmon 0 temp 1}">="60"}${color red}$endif${hwmon 0 temp 1}°C$color
+${if_match "${hwmon 1 temp 1}">="60"}${color red}$endif${hwmon 1 temp 1}°C$color
 Uptime $alignr$uptime
 System load $alignr\
 ${if_match "${loadavg 1}">="4.00"}${color red}$endif${loadavg 1}$color

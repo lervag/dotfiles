@@ -5,3 +5,4 @@ session.screen0.showwindowposition: True
 session.screen0.toolbar.visible: False
 session.screen0.workspaceNames: 1,2,3,4
 session.screen0.workspacewarping: False
+session.screen0.allowRemoteActions: true
