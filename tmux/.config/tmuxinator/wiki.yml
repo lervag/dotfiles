@@ -18,5 +18,5 @@ windows:
           - clear
           - nvim +"call VimuxOpenRunner()"
         - tests:
-          - cd test/tests
+          - cd test
           - clear
