@@ -4,7 +4,9 @@
 [end]
 
 [app] (name=.*zathura|mupdf)
+  [Dimensions] {1024 1200}
   [Maximized] {vert}
+  [Position] (Center) {0 0}
 [end]
 
 [app] (name=google-chrome.*) (role!=pop-up)
