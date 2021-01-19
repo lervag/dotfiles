@@ -24,6 +24,7 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PYTHONDONTWRITEBYTECODE=1
 export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
 export PERL_DESTRUCT_LEVEL=2
+export NVIM_LOG_FILE="$HOME/.cache/nvim/log"
 
 GPG_TTY=$(tty)
 export GPG_TTY
@@ -62,7 +63,9 @@ _gen_fzf_default_opts
 if command -v fd >/dev/null; then
   export FZF_DEFAULT_COMMAND="fd -I -L -E tags --type f"
 fi
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --reverse --height 90% --info=inline"
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --height 90% --reverse --info=inline"
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --exact --tiebreak=end"
+export FZF_DEFAULT_OPTS
 
 stty -ixon
 
