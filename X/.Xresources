@@ -35,7 +35,7 @@
 *color15: S_base3
 
 ! Font settings
-Xft.autohint:  true
+Xft.autohint:  false
 Xft.antialias: true
 Xft.hinting:   true
 Xft.hintstyle: hintslight

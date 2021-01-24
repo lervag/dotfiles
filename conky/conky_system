@@ -11,13 +11,14 @@ conky.config = {
   update_interval = 1.0,
   total_run_times = 0,
   alignment = 'top_right',
-  minimum_width = 300,
+  minimum_width = 350,
   minimum_height = 900,
-  maximum_width = 300,
+  maximum_width = 350,
   gap_x = 10,
   gap_y = 10,
   use_xft = true,
-  font = 'Dejavu:size=10',
+  font = 'JuliaMono:size=11',
+  font1 = 'JuliaMono:bold:size=11',
   xftalpha = 0.1,
   draw_outline = false,
   draw_shades = false,
@@ -26,7 +27,7 @@ conky.config = {
   default_color = 'DimGray',
   default_shade_color = 'red',
   default_outline_color = 'green',
-  default_bar_width = 300,
+  default_bar_width = 350,
   default_bar_height = 7,
   no_buffers = true,
   net_avg_samples = 2,
@@ -37,7 +38,7 @@ conky.config = {
 };
 
 conky.text = [[
-${font Arial:bold:size=10}${color1}SYSTEM ${color2}${hr 2}${color}$font
+$font1${color1}SYSTEM ${color2}${hr 2}${color}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
 Processor temperature $alignr\
@@ -51,23 +52,25 @@ Brightness $alignr ${exec brightness-control}%
 ${endif}\
 Keymap     $alignr ${exec xkb-switch}
 
-${font Arial:bold:size=10}${color Tan2}NETWORK ${color2}${hr 2}${color}$font
+$font1${color Tan2}NETWORK ${color2}${hr 2}${color}$font
 ${execpi 12 nettverk-status}
 ${if_existing /sys/class/power_supply/BAT0}\
 
-${font Arial:bold:size=10}${color1}BATTERY ${color2}${hr 2}${color}$font
+$font1${color1}BATTERY ${color2}${hr 2}${color}$font
 Status $alignr ${execi 10 battery-info}
 Remaining time $alignr ${execi 10 battery-info -r}
 ${execibar 10 battery-info -p}
 ${endif}\
 
-${font Arial:bold:size=10}${color1}FILESYSTEM ${color2}${hr 2}${color}$font
+$font1${color1}FILESYSTEM ${color2}${hr 2}${color}$font
 /home$alignc${fs_used /home} / ${fs_size /home}\
 $alignr${fs_used_perc /home}%
 ${fs_bar /home}
 
-${font Arial:bold:size=10}${color1}DROPBOX ${color2}${hr 2}${color}$font
+$font1${color1}DROPBOX ${color2}${hr 2}${color}$font
 ${execi 3 dropbox-cli status}
+
+$font1${color1}WORKSPACE ${color2}${hr 2}${color}$font
 ]];
 
 -- vim: ft=lua

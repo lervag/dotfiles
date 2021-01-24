@@ -8,26 +8,26 @@ conky.config = {
   own_window_type = 'override',
   own_window_argb_visual = true,
   own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
-  update_interval = 0.5,
+  update_interval = 0.1,
   total_run_times = 0,
-  alignment = 'bottom_right',
-  minimum_width = 400,
-  maximum_width = 400,
+  alignment = 'top_right',
+  minimum_width = 350,
+  maximum_width = 350,
   gap_x = 10,
-  gap_y = 10,
+  gap_y = 480,
   use_xft = true,
-  font = 'Dejavu:size=51',
+  font = 'JuliaMono:bold:size=35',
   xftalpha = 1.0,
-  draw_outline = true,
   default_color = 'DimGray',
   color1 = 'Tan1',
 };
 
 conky.text = [[
-$alignr${if_match ${desktop}==1}${color1}${endif}⚫${color} \
-${if_match ${desktop}==2}${color1}${endif}⚫${color} \
-${if_match ${desktop}==3}${color1}${endif}⚫${color} \
-${if_match ${desktop}==4}${color1}${endif}⚫
+$alignr\
+${if_match ${desktop}==1}${color1}${endif}1${color} \
+${if_match ${desktop}==2}${color1}${endif}2${color} \
+${if_match ${desktop}==3}${color1}${endif}3${color} \
+${if_match ${desktop}==4}${color1}${endif}4
 ]];
 
 -- vim: ft=lua
