@@ -19,6 +19,7 @@ conky.config = {
   use_xft = true,
   font = 'JuliaMono:size=11',
   font1 = 'JuliaMono:bold:size=11',
+  font2 = 'JuliaMono:bold:size=25',
   xftalpha = 0.1,
   draw_outline = false,
   draw_shades = false,
@@ -38,6 +39,13 @@ conky.config = {
 };
 
 conky.text = [[
+$font1${color1}WORKSPACE ${color2}${hr 2}${color}$font
+$font2$alignr\
+${if_match ${desktop}==1}${color1}${endif}⚫${color} \
+${if_match ${desktop}==2}${color1}${endif}⚫${color} \
+${if_match ${desktop}==3}${color1}${endif}⚫${color} \
+${if_match ${desktop}==4}${color1}${endif}⚫$font
+
 $font1${color1}SYSTEM ${color2}${hr 2}${color}$font
 $sysname $kernel $alignr$machine
 Processor speed $alignr${freq_g cpu0} Ghz
@@ -50,10 +58,14 @@ Volume $alignr ${exec volume-control}
 ${if_empty "${exec light}"}${else}\
 Brightness $alignr ${exec brightness-control}%
 ${endif}\
-Keymap     $alignr ${exec xkb-switch}
 
 $font1${color Tan2}NETWORK ${color2}${hr 2}${color}$font
 ${execpi 12 nettverk-status}
+
+$font1${color1}FILESYSTEM ${color2}${hr 2}${color}$font
+/home$alignc${fs_used /home} / ${fs_size /home}\
+$alignr${fs_used_perc /home}%
+${fs_bar /home}
 ${if_existing /sys/class/power_supply/BAT0}\
 
 $font1${color1}BATTERY ${color2}${hr 2}${color}$font
@@ -62,15 +74,8 @@ Remaining time $alignr ${execi 10 battery-info -r}
 ${execibar 10 battery-info -p}
 ${endif}\
 
-$font1${color1}FILESYSTEM ${color2}${hr 2}${color}$font
-/home$alignc${fs_used /home} / ${fs_size /home}\
-$alignr${fs_used_perc /home}%
-${fs_bar /home}
-
 $font1${color1}DROPBOX ${color2}${hr 2}${color}$font
 ${execi 3 dropbox-cli status}
-
-$font1${color1}WORKSPACE ${color2}${hr 2}${color}$font
 ]];
 
 -- vim: ft=lua
