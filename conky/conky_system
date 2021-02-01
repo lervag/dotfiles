@@ -47,7 +47,7 @@ ${if_match ${desktop}==3}${color1}${endif}⚫${color} \
 ${if_match ${desktop}==4}${color1}${endif}⚫$font
 
 $font1${color1}SYSTEM ${color2}${hr 2}${color}$font
-$sysname $kernel $alignr$machine
+Kernel $alignr$kernel
 Processor speed $alignr${freq_g cpu0} Ghz
 Processor temperature $alignr\
 ${if_match "${hwmon 1 temp 1}">="60"}${color red}$endif${hwmon 1 temp 1}°C$color
