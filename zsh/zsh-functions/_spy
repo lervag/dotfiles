@@ -1,89 +1,67 @@
 #compdef spy
 
-__etc() {
-  _arguments $opts_help '*:: :->subcmds' && return 0
-
-  local -a subcmds_etc
-  subcmds_etc=( \
-    'show:Show the ETC table' \
-    'submit:Submit ETC entries' \
-    )
-
-  if (( CURRENT == 1 )); then
-    _describe -t commands 'spy commands / etc' subcmds_etc
-    return
-  fi
-
-  _arguments $opts_common
-}
-
 __projects() {
   _arguments $opts_help '*:: :->subcmds' && return 0
 
   local -a subcmds_project
   subcmds_project=( \
-    'get-data:Fetch project data and save to file' \
-    'get-invoices:Get invoices from project and save to file' \
     'get-budget:Get project budget' \
+    'get-data:Get project data' \
+    'get-invoices:Get project invoices' \
     'info:Show information about project' \
-    'print:Print project data from file FILENAME' \
+    'print:Print project economic data' \
+    'search:Search for project by name/number/manager/etc' \
     'tasks:Print time tasks in project' \
     )
 
   if (( CURRENT == 1 )); then
-    _describe -t commands 'spy commands / project' subcmds_project
+    _describe -t commands 'spy project / commands' subcmds_project
     return
   fi
 
-  local arg_input
-  local -a opts_three opts_value
-  arg_input='::csv/xlsx input file:_files -g "*.(csv|xls*)"'
-  opts=( \
-    '(-p --project-number)'{-p,--project-number}'[The project number to work with]:project number:' \
-    )
-  opts_three=( \
-    '(-s --start)'{-s,--start}'[Start date (default: Jan 1st)]:date:' \
-    '(-e --end)'{-e,--end}'[End date (default: today)]:date:' \
-    '--src[Set which source to use (default: maconomy)]:source:(analytix maconomy)' \
-    )
-  opts_value=( \
-    '(-v --value)'{-v,--value}'[Specify type of value (default: billing)]:value type:(billing cost hours)' \
-    )
-
   case "$words[1]" in
     get-data)
-      opts=( $opts $opts_three );;
+      opts=( \
+        '(-p --project-number)'{-p,--project-number}'[The project number to work with]:project number:' \
+        '(-s --start)'{-s,--start}'[Start date (default: Jan 1st)]:date:' \
+        '(-e --end)'{-e,--end}'[End date (default: today)]:date:' \
+        );;
     get-*)
-      opts=( $opts );;
-    print)
-      opts=( $opts $opts_three \
+      opts=( \
+        '(-p --project-number)'{-p,--project-number}'[The project number to work with]:project number:' \
+        );;
+    info)
+      opts=( \
+        '(-p --project-number)'{-p,--project-number}'[The project number to work with]:project number:' \
+        );;
+    prin*)
+      opts=( \
+        '::csv/xlsx input file:_files -g "*.(csv|xls*)"' \
+        '(-p --project-number)'{-p,--project-number}'[The project number to work with]:project number:' \
+        '(-s --start)'{-s,--start}'[Start date (default: Jan 1st)]:date:' \
+        '(-e --end)'{-e,--end}'[End date (default: today)]:date:' \
         '(-r --row)'{-r,--row}'[Set row content (default: task)]:row content:(week month year task employee none)' \
         '(-c --column)'{-c,--column}'[Columnate by time periods]:columnate by:(week month year task employee)' \
-        $opts_value \
+        '(-v --value)'{-v,--value}'[Specify type of value (default: billing)]:value type:(billing cost hours)' \
         '(-t --type)'{-t,--type}'[Specify which costs to include]:include:(all hours direct)' \
         '(-g --group-by)'{-g,--group-by}'[Group results by tasks or employees]:group by:(week month year task employee)' \
         '(-u --unit)'{-u,--unit}'[Unit for billing/cost]:unit:(kNOK NOK)' \
-        $arg_input );;
-    print-*)
-      opts=( $opts $opts_three $opts_value $arg_input );;
+        );;
+    search)
+      opts=( \
+        '(-p --project-number)'{-p,--project-number}'[Search by (part of) project number]:project number:' \
+        '(-n --project-name)'{-n,--project-name}'[Search by (part of) project name]:project name:' \
+        '(-m --project-manager)'{-m,--project-manager}'[Search by (part of) project manager]:project manager:' \
+        '(-v --verbose)'{-v,--verbose}'[Show all tasks]' \
+        );;
+    tasks)
+      opts=( \
+        '(-p --project-number)'{-p,--project-number}'[The project number to work with]:project number:' \
+        '(-v --verbose)'{-v,--verbose}'[Show all tasks]' \
+        );;
   esac
 
   _arguments $opts $opts_common
-}
-
-__search() {
-  _arguments \
-    '(-p --project-number)'{-p,--project-number}'[Search by project number]:project number:' \
-    '(-n --project-name)'{-n,--project-name}'[Search by project name]:project name:' \
-    '(-m --project-manager)'{-m,--project-manager}'[Search by name of project manager]:project manager:' \
-    '(-v --verbose)'{-v,--verbose}'[Show full info]' \
-    $opts_common
-}
-
-__tasks() {
-  _arguments \
-    '(-p --project-number)'{-p,--project-number}'[Get tasks for given project number]:project number:' \
-    $opts_common
 }
 
 __timesheet() {
@@ -92,117 +70,69 @@ __timesheet() {
   local -a subcmds_timesheet
   subcmds_timesheet=( \
     'get-data:Download timesheet data and save to file' \
-    'move:Move hours from one project/task to another...' \
-    'print:Print timesheet for a single week' \
-    'submit:Submit hours from a .csv file' \
-    'summary:Print timesheet summaries' \
+    'print:Print collection of timeseets' \
+    'show:Print timesheet for a single week' \
     )
 
   if (( CURRENT == 1 )); then
-    _describe -t commands 'spy commands / timesheet' subcmds_timesheet
+    _describe -t commands 'spy timesheets / commands' subcmds_timesheet
     return
   fi
 
-  local opt_emplno arg_csv
-  arg_csv='::csv input file:_files -g "*.csv"'
-  opt_emplno='--emplno[Download hours for given employee (def: you)]:employee number:'
-
   case "$words[1]" in
-    get-data)
+    get*)
       opts=( \
-        '(-s --start)'{-s,--start}'[Start date (default: first day of last month)]:date:' \
-        '(-e --end)'{-e,--end}'[End date (default: last day of last month)]:date:' \
-        $opt_emplno \
-        $opts_common \
-        );;
-    print)
-      opts=( \
-        '(-d --date)'{-d,--date}'[Show timesheet for week containing date (default: today)]:date:' \
-        $opt_emplno \
-        $opts_common \
-        );;
-    move)
-      opts=( \
-        '(-s --start)'{-s,--start}'[Start date (default: Jan 1st)]:date:' \
+        '(-s --start)'{-s,--start}'[Start date (default: Jan 1)]:date:' \
         '(-e --end)'{-e,--end}'[End date (default: today)]:date:' \
-        '(-l --limit)'{-l,--limit}'[Maxmimum number of hours to move (default: large)]:number:' \
-        '(-fp --from-project)'{-fp,--from-project}'[Move from this project (default: all)]:project number:' \
-        '(-ft --from-task)'{-ft,--from-task}'[Move from this task (default: all)]:task number:' \
-        '(-tp --to-project)'{-tp,--to-project}'[Move to this project (default: same)]:project number:' \
-        '(-tt --to-task)'{-tt,--to-task}'[Move to this task]:task number:' \
-        $opt_emplno
-        '--yes[Don''t ask for confirmation]' \
-        '--no-block[Assume that no tasks are blocked (CAREFUL)]' \
-        '--dry-run[Don''t actually move any hours]' \
-        $opts_common \
         );;
-    submit)
+    pr*)
       opts=( \
-        $arg_csv \
-        '--dont-close[Don''t submit the timesheets after adding the hours]' \
-        '--dont-keep[Don''t keep any new lines that were added to the timesheet]' \
-        $opt_emplno \
-        $opts_common_three \
-        );;
-    summ*)
-      opts=( \
-        $arg_csv \
+        '::csv input file:_files -g "*.csv"' \
         '(-s --start)'{-s,--start}'[Start date (default: first day of last month)]:date:' \
         '(-e --end)'{-e,--end}'[End date (default: last day of last month)]:date:' \
         '(-t --total)'{-t,--total}'[Show total sums]' \
         '(-w --weekly)'{-w,--weekly}'[Show weekly sums]' \
         '(-m --monthly)'{-m,--monthly}'[Show monthly sums]' \
         '(-v --verbose)'{-v,--verbose}'[Show more details]' \
-        $opt_emplno \
-        $opts_common \
+        );;
+    sh*)
+      opts=( \
+        '(-d --date)'{-d,--date}'[Show timesheet for week containing date (default: today)]:date:' \
         );;
   esac
 
-  _arguments $opts
+  _arguments $opts $opts_common
 }
 
 _spy() {
   zstyle ":completion:*:*:spy:*" sort false
 
-  local -a opts opts_help opts_common opts_common_three subcmds
+  local -a opts opts_help opts_common subcmds
 
   opts_help=( \
     '(-h --help)'{-h,--help}'[show help]' \
     )
 
-  opts_common_three=( \
-    '(--user)--user[Username]:username:' \
-    '(--passwd)--passwd[Password]:passwd:' \
-    $opts_help \
-    )
-
   opts_common=( \
+    $opts_help \
     '(-f)-f[Excel/CSV file for output]:filename:' \
-    $opts_common_three \
-    )
-
-  subcmds=( \
-    'credentials:Set credentials' \
-    'etc:Perform ETC actions' \
-    'project:Fetch and print project data' \
-    'search:Search for project by name/number/manager/etc' \
-    'tasks:Print task list for given project' \
-    'timesheet:Perform timesheet actions' \
     )
 
   _arguments $opts_help '*:: :->subcmds' && return 0
 
+  subcmds=( \
+    'project:Fetch and print project data' \
+    'timesheet:Perform timesheet actions' \
+    )
+
   if (( CURRENT == 1 )); then
-    _describe -t commands 'spy commands' subcmds
+    _describe -t commands 'spy / commands' subcmds
     return
   fi
 
   case "$words[1]" in
-    etc)          __etc;;
-    proj*)        __projects;;
-    search)       __search;;
-    tasks)        __tasks;;
-    ts|timesheet) __timesheet;;
+    pro*) __projects;;
+    tim*) __timesheet;;
   esac
 }
 
