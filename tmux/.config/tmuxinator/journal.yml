@@ -6,3 +6,6 @@ windows:
   - journal:
       panes:
         - nvim +WikiJournal
+  - spotify:
+      panes:
+        - tmux movew -s 2 -t 9; ncspot

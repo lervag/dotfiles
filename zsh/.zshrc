@@ -67,6 +67,10 @@ alias -s jpg=feh
 
 # {{{1 Utility functions
 
+take() {
+  mkdir -p $@ && cd ${@:$#}
+}
+
 info() {
   nvim -c "Info "$@"" -c "wincmd o"
 }
