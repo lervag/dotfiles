@@ -72,10 +72,7 @@ $font1${color1}BATTERY ${color2}${hr 2}${color}$font
 Status $alignr ${execi 10 battery-info}
 Remaining time $alignr ${execi 10 battery-info -r}
 ${execibar 10 battery-info -p}
-${endif}\
-
-$font1${color1}DROPBOX ${color2}${hr 2}${color}$font
-${execi 3 dropbox-cli status}
+${endif}
 ]];
 
 -- vim: ft=lua
