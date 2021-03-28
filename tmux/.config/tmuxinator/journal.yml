@@ -3,9 +3,4 @@ root: ~/
 tmux_command: TERM=xterm-256color tmux
 
 windows:
-  - journal:
-      panes:
-        - nvim +WikiJournal
-  - spotify:
-      panes:
-        - tmux movew -s 2 -t 9; ncspot
+  - journal: nvim +WikiJournal
