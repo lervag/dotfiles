@@ -88,5 +88,5 @@ Mod1 c  :Exec showtime.sh
 Mod1 a  :Exec anki -b ~/documents/anki
 Mod1 g  :Exec firefox
 Mod1 F2 :Exec dmenu_run_history -p "program:"
-Mod1 F3 :Exec passmenu --typepass
+Mod1 F3 :Exec passmenu --typepass --hitreturn
 Mod1 k  :Exec ocrmyscreen
