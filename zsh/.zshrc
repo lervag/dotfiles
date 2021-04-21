@@ -242,68 +242,25 @@ zstyle ':completion:*:*:*' hosts $_myhosts
 
 #{{{1 Set command prompt
 
-#{{{2 Helper functions
 function gray    { echo "%{$fg[gray]%}$*%{$terminfo[sgr0]%}" }
 function magenta { echo "%{$fg[yellow]%}$*%{$terminfo[sgr0]%}" }
-function blue    { echo "%{$fg[blue]%}$*%{$terminfo[sgr0]%}" }
 function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
+function green   { echo "%{$fg[green]%}$*%{$terminfo[sgr0]%}" }
+PS1="$(magenta %n)$(gray @)$(magenta %m)$(gray :) $(cyan $l%~)$(green '❯') "
 
-function repo_dir {
-  path=$PWD
-  while [ "$path" != "" ]; do
-    [ -d "$path/$1" ] && return 0
-    path=${path%/*}
-  done
-  return 1
-}
-
-function prompt {
-  if $(repo_dir ".git"); then
-    rp="g"
-  else
-    rp="-"
-  fi
-  if $(repo_dir ".hg"); then
-    rp+="h"
-  else
-    rp+="-"
-  fi
-  if $(repo_dir "CVS"); then
-    rp+="c"
-  else
-    rp+="-"
-  fi
-  echo "$rp"
-}
-
-#{{{2 Set prompt
-
-precmd () {
-  local l="%$(( $COLUMNS - 6 - ${#USERNAME} - ${#HOSTNAME} ))<...<"
-  local pr="$(gray $(prompt))"
-  if [[ -n "$VIRTUAL_ENV" ]]; then
-    local venv=$(echo -e " ($(blue $(basename $VIRTUAL_ENV)))")
-    venv="${venv/-*-/-}"
-  fi
-
-  print -rP "$(magenta %n)$(gray @)$(magenta %m)$venv$(gray :) $(cyan $l%~)"
-  PS1="$pr$(magenta '>') "
-  PS2="   $(magenta '| %_ >') "
-  print -Pn "\e]0;%m: %~\a"
-}
-
-#{{{2 Update cursor when changing vi mode
+# Update cursor when changing vi mode
 if [[ ! "$TERM" =~ 'linux' ]]; then
   function zle-line-init zle-keymap-select {
     case $KEYMAP in
       (vicmd)      print -n '\e]12;#aa2222\a';;
       (viins|main) print -n '\e]12;#aaaaaa\a';;
     esac
-    zle reset-prompt
   }
   zle -N zle-line-init
   zle -N zle-keymap-select
 fi
+
+eval "$(starship init zsh)"
 
 #{{{1 Add some keybindings
 

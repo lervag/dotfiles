@@ -1,0 +1,25 @@
+add_newline = false
+
+[battery]
+format = "[$symbol$percentage]($style) "
+discharging_symbol = "⚡️"
+charging_symbol = "🔌"
+unknown_symbol = "🔌"
+full_symbol = ""
+empty_symbol = "⚡️"
+
+[[battery.display]]
+threshold = 15
+style = "bold red"
+
+[character]
+vicmd_symbol = "[▪](bold yellow)"
+error_symbol = "[✖](bold red)"
+
+[hostname]
+ssh_only = false
+format =  "@[$hostname]($style): "
+
+[username]
+show_always = true
+format =  "[$user]($style)"
