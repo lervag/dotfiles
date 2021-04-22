@@ -1,4 +1,4 @@
-add_newline = false
+# add_newline = false
 
 [battery]
 format = "[$symbol$percentage]($style) "
@@ -10,16 +10,20 @@ empty_symbol = "⚡️"
 
 [[battery.display]]
 threshold = 15
-style = "bold red"
 
 [character]
-vicmd_symbol = "[▪](bold yellow)"
+success_symbol = "[❯](bold fg:#e0dac9)"
+vicmd_symbol = "[▪](bold fg:#b58900)"
 error_symbol = "[✖](bold red)"
+
+[directory]
+style = "bold fg:#e0dac9"
 
 [hostname]
 ssh_only = false
 format =  "@[$hostname]($style): "
+style = "fg:#e0dac9"
 
 [username]
 show_always = true
-format =  "[$user]($style)"
+format = "[$user](fg:#e0dac9)"

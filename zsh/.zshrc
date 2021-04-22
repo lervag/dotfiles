@@ -252,8 +252,8 @@ PS1="$(magenta %n)$(gray @)$(magenta %m)$(gray :) $(cyan $l%~)$(green '❯') "
 if [[ ! "$TERM" =~ 'linux' ]]; then
   function zle-line-init zle-keymap-select {
     case $KEYMAP in
-      (vicmd)      print -n '\e]12;#aa2222\a';;
-      (viins|main) print -n '\e]12;#aaaaaa\a';;
+      (vicmd)      print -n '\e]12;#b58900\a';;
+      (viins|main) print -n '\e]12;#cccccc\a';;
     esac
   }
   zle -N zle-line-init
