@@ -240,31 +240,33 @@ fi
 zstyle ':completion:*:*:*' users $_users
 zstyle ':completion:*:*:*' hosts $_myhosts
 
-#{{{1 Set command prompt
+#{{{1 Set up vi mode and cursor
 
-function gray    { echo "%{$fg[gray]%}$*%{$terminfo[sgr0]%}" }
-function magenta { echo "%{$fg[yellow]%}$*%{$terminfo[sgr0]%}" }
-function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
-function green   { echo "%{$fg[green]%}$*%{$terminfo[sgr0]%}" }
-PS1="$(magenta %n)$(gray @)$(magenta %m)$(gray :) $(cyan $l%~)$(green '❯') "
+bindkey -v
+
+export KEYTIMEOUT=15
+insertmode () {
+  print -n '\e]12;#cccccc\a'
+  print -n '\e[6 q'
+}
+normalmode () {
+  print -n '\e]12;#b58900\a'
+  print -n '\e[2 q'
+}
 
 # Update cursor when changing vi mode
 if [[ ! "$TERM" =~ 'linux' ]]; then
   function zle-line-init zle-keymap-select {
     case $KEYMAP in
-      (vicmd)      print -n '\e]12;#b58900\a';;
-      (viins|main) print -n '\e]12;#cccccc\a';;
+      (vicmd)      normalmode;;
+      (viins|main) insertmode;;
     esac
   }
   zle -N zle-line-init
   zle -N zle-keymap-select
 fi
 
-eval "$(starship init zsh)"
-
 #{{{1 Add some keybindings
-
-bindkey -v
 
 # Insert mode
 bindkey ' '     magic-space
@@ -308,6 +310,16 @@ bindkey -M vicmd v edit-command-line
 paste-from-clipboard () { LBUFFER=$LBUFFER$(xsel -o -p </dev/null); }
 zle -N paste-from-clipboard
 bindkey "^Y" paste-from-clipboard
+
+#{{{1 Set command prompt
+
+function gray    { echo "%{$fg[gray]%}$*%{$terminfo[sgr0]%}" }
+function magenta { echo "%{$fg[yellow]%}$*%{$terminfo[sgr0]%}" }
+function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
+function green   { echo "%{$fg[green]%}$*%{$terminfo[sgr0]%}" }
+PS1="$(magenta %n)$(gray @)$(magenta %m)$(gray :) $(cyan $l%~)$(green '❯') "
+
+eval "$(starship init zsh)"
 
 #{{{1 Load system-specific settings
 
