@@ -23,7 +23,6 @@ export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PYTHONDONTWRITEBYTECODE=1
 export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
-export PERL_DESTRUCT_LEVEL=2
 export NVIM_LOG_FILE="$HOME/.cache/nvim/log"
 
 GPG_TTY=$(tty)
