@@ -2,6 +2,9 @@
   name = Karl Yngve Lervåg
   email = karl.yngve+git@gmail.com
 
+[init]
+  defaultBranch = 'main'
+
 [core]
   pager = delta --theme='Solarized (dark)' \
     --file-style='bold yellow' \
