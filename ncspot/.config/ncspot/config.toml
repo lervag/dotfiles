@@ -1,0 +1,35 @@
+[general]
+use_nerdfont = true
+notify = true
+gapless = true
+volnorm = true
+volnorm_pregain = -3
+
+[saved_state]
+volume = 100
+
+[keybindings]
+"p" = "playpause"
+"1" = "focus queue"
+"2" = "focus library"
+"3" = "focus search"
+"R" = "reload"
+
+[theme]
+background = "#282828"
+primary = "#fbf1c7"
+secondary = "#584945"
+title = "#d65d0e"
+playing = "#98971a"
+playing_selected = "#689d6a"
+playing_bg = "#282828"
+highlight = "#fbf1c7"
+highlight_bg = "#928374"
+error = "#fbf1c7"
+error_bg = "#cc241d"
+statusbar = "#1d2021"
+statusbar_progress = "#b8bb26"
+statusbar_bg = "#98971a"
+cmdline = "#fbf1c7"
+cmdline_bg = "#1d2021"
+search_match = "#fb4934"
