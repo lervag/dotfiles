@@ -21,9 +21,6 @@ export SAVEHIST=200000
 export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
 export TERM='xterm-256color'
 export TEXMFHOME=$HOME/.texmf
-export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-export WORKON_HOME=$HOME/.virtualenvs
 export XEDITOR="vim +%l %f"
 
 GPG_TTY=$(tty)
