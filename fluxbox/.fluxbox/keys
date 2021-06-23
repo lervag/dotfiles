@@ -26,7 +26,6 @@ XF86AudioPlay         :Exec playerctl play
 XF86AudioPause        :Exec playerctl pause
 XF86AudioNext         :Exec playerctl next
 XF86AudioPrev         :Exec playerctl previous
-Print                 :Exec sleep 0.2 && scrot --select --freeze '%Y-%m-%d_%H:%M_screenshot.png'
 Mod1 Escape           :ClientMenu
 Mod4 Escape           :RootMenu
 
@@ -90,3 +89,4 @@ Mod1 g  :Exec firefox
 Mod1 F2 :Exec dmenu_run_history -p "program:"
 Mod1 F3 :Exec passmenu --typepass --hitreturn
 Mod1 k  :Exec ocrmyscreen
+Print   :Exec flameshot gui -p ~
