@@ -3,7 +3,7 @@
   email = karl.yngve+git@gmail.com
 
 [init]
-  defaultBranch = 'main'
+  defaultBranch = main
 
 [core]
   pager = delta --theme='Solarized (dark)' \
