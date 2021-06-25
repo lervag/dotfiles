@@ -13,26 +13,26 @@ checkout = git clone 'git@github.com:lervag/dotvim.git' '.vim'
 [.config/nvim]
 checkout = git clone 'git@github.com:lervag/dotnvim.git' '.config/nvim'
 
-[.vim/bundle/vimtex]
+[.local/plugged/vimtex]
 checkout = git clone 'git@github.com:lervag/vimtex' 'vimtex'
 
-[.vim/bundle/wiki.vim]
+[.local/plugged/wiki.vim]
 checkout = git clone 'git@github.com:lervag/wiki.vim' 'wiki.vim'
 skip = lazy
 
-[.vim/bundle/wiki-ft.vim]
+[.local/plugged/wiki-ft.vim]
 checkout = git clone 'git@github.com:lervag/wiki-ft.vim' 'wiki-ft.vim'
 skip = lazy
 
-[.vim/bundle/vim-foam]
+[.local/plugged/vim-foam]
 checkout = git clone 'git@github.com:lervag/vim-foam' 'foam'
 skip = lazy
 
-[.vim/bundle/vim-sintef]
+[.local/plugged/vim-sintef]
 checkout = git clone 'git@github.com:lervag/vim-sintef' 'sintef'
 skip = lazy
 
-[.vim/bundle/file-line]
+[.local/plugged/file-line]
 checkout = git clone 'git@github.com:lervag/file-line' 'file-line'
 
 [code/apy]
