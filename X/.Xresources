@@ -78,34 +78,5 @@ URxvt*cursorColor:       S_base1
 URxvt.iso14755:          false
 URxvt.iso14755_52:       false
 
-! xscreensaver settings
-xscreensaver.mode:                          blank
-xscreensaver.dpmsEnabled:                   False
-xscreensaver.timeout:                       0:30:00
-xscreensaver.lock:                          True
-xscreensaver.lockTimeout:                   0:15:00
-xscreensaver.fade:                          False
-xscreensaver.splash:                        False
-xscreensaver.Dialog.headingFont:            *-courier-bold-r-*-*-*-140-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:             *-courier-medium-r-*-*-*-140-*-*-*-*-*
-xscreensaver.Dialog.labelFont:              *-courier-medium-r-*-*-*-140-*-*-*-*-*
-xscreensaver.Dialog.passwdFont:             *-courier-medium-r-*-*-*-120-*-*-*-*-*
-xscreensaver.Dialog.background:             S_base03
-xscreensaver.Dialog.foreground:             S_base3
-xscreensaver.Dialog.topShadowColor:         S_base03
-xscreensaver.Dialog.bottomShadowColor:      S_base03
-xscreensaver.Dialog.Button.foreground:      S_base2
-xscreensaver.Dialog.Button.background:      S_base1
-xscreensaver.Dialog.text.foreground:        S_base03
-xscreensaver.Dialog.text.background:        S_base3
-xscreensaver.Dialog.internalBorderWidth:    0
-xscreensaver.Dialog.borderWidth:            0
-xscreensaver.passwd.thermometer.foreground: S_yellow
-xscreensaver.passwd.thermometer.background: S_base3
-xscreensaver.passwd.thermometer.width:      12
-xscreensaver.passwd.heading.label:          Screen is locked
-xscreensaver.passwd.body.label:
-xscreensaver.passwd.uname:                  False
-
 ! Load local settings
 #include ".Xlocal"

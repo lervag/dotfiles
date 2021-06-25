@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-[[ -f ~/.Xresources ]] && xrdb -I$HOME -merge ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -I"$HOME" -merge ~/.Xresources
 
 # Start screensaver after some time
-( ( sleep 10 && /usr/bin/xscreensaver -no-splash -display :0.0 ) & )
+( ( sleep 9 \
+  && /usr/bin/xscreensaver -display :0.0 &> ~/.cache/xscreensaver.log ) & )
 
 exec startfluxbox
