@@ -56,7 +56,7 @@ System load $alignr\
 ${if_match "${loadavg 1}">="4.00"}${color red}$endif${loadavg 1}$color
 Volume $alignr ${exec volume-control}
 ${if_empty "${exec light}"}${else}\
-Brightness $alignr ${exec brightness-control}%
+Brightness $alignr ${exec brightness-control}
 ${endif}\
 
 $font1${color Tan2}NETWORK ${color2}${hr 2}${color}$font
