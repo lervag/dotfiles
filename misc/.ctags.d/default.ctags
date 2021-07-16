@@ -16,6 +16,6 @@
 --regex-bib=/^@misc\{([^,]*)/\1/M,misc/i
 --regex-bib=/^@phdthesis\{([^,]*)/\1/t,phdthesis/i
 --regex-bib=/^@proceedings\{([^,]*)/\1/p,proceedings/i
+--regex-bib=/^@string\{([^ "#%')(,=}{]+)/\1/s,string/i
 --regex-bib=/^@techreport\{([^,]*)/\1/r,techreport/i
 --regex-bib=/^@unpublished\{([^,]*)/\1/u,unpublished/i
-
