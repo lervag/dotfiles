@@ -1,0 +1,6 @@
+name: friendship
+root: ~/sintef/prosjekt/friendship/paper-literature-study
+tmux_command: TERM=xterm-256color tmux
+
+windows:
+  - paper: nvim main.tex
