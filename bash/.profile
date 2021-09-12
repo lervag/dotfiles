@@ -61,7 +61,7 @@ if command -v fd >/dev/null; then
   export FZF_DEFAULT_COMMAND="fd -I -L -E tags --type f"
 fi
 FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --height 90% --reverse --info=inline"
-FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --exact --tiebreak=end"
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --exact --tiebreak=length,end"
 export FZF_DEFAULT_OPTS
 
 stty -ixon
