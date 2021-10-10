@@ -34,9 +34,6 @@ skip = lazy
 checkout = git clone 'git@github.com:lervag/vim-sintef' 'sintef'
 skip = lazy
 
-[.local/plugged/file-line]
-checkout = git clone 'git@github.com:lervag/file-line' 'file-line'
-
 [code/apy]
 checkout = git clone 'git@github.com:lervag/apy' 'apy'
 skip = lazy
