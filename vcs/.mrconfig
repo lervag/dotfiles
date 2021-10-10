@@ -12,9 +12,11 @@ checkout = git clone 'git@github.com:lervag/dotvim.git' '.vim'
 
 [.config/nvim]
 checkout = git clone 'git@github.com:lervag/dotnvim.git' '.config/nvim'
+skip = lazy
 
 [.local/plugged/vimtex]
 checkout = git clone 'git@github.com:lervag/vimtex' 'vimtex'
+skip = lazy
 
 [.local/plugged/wiki.vim]
 checkout = git clone 'git@github.com:lervag/wiki.vim' 'wiki.vim'
