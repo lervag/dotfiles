@@ -13,10 +13,6 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=200000
 export KEYBOARD_HACK=\'
 
-if command -v nvim &>/dev/null; then
-  export MANPAGER="nvim +Man!"
-fi
-
 # Ruby
 if [ -d ~/.gem/ruby ]; then
   local ruby
@@ -51,7 +47,9 @@ alias xx='atool -x'
 alias diff='diff -W $(( $(tput cols) - 2 ))'
 alias sdiff='sdiff -w $(( $(tput cols) - 2 ))'
 
-if ! command -v nvim >/dev/null 2>&1; then
+if command -v nvim &>/dev/null; then
+  export MANPAGER="nvim +Man!"
+else
   alias man="TERMINFO=~/.terminfo/ LESS=c TERM=mostlike PAGER=less man"
 fi
 
@@ -313,13 +311,15 @@ bindkey "^Y" paste-from-clipboard
 
 #{{{1 Set command prompt
 
-function gray    { echo "%{$fg[gray]%}$*%{$terminfo[sgr0]%}" }
-function magenta { echo "%{$fg[yellow]%}$*%{$terminfo[sgr0]%}" }
-function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
-function green   { echo "%{$fg[green]%}$*%{$terminfo[sgr0]%}" }
-PS1="$(magenta %n)$(gray @)$(magenta %m)$(gray :) $(cyan $l%~)$(green '❯') "
-
-eval "$(starship init zsh)"
+if command -v starship >/dev/null; then
+  eval "$(starship init zsh)"
+else
+  function gray    { echo "%{$fg[gray]%}$*%{$terminfo[sgr0]%}" }
+  function magenta { echo "%{$fg[yellow]%}$*%{$terminfo[sgr0]%}" }
+  function cyan    { echo "%{$fg[cyan]%}$*%{$terminfo[sgr0]%}" }
+  function green   { echo "%{$fg[green]%}$*%{$terminfo[sgr0]%}" }
+  PS1="$(magenta %n)$(gray @)$(magenta %m)$(gray :) $(cyan $l%~)$(green '❯') "
+fi
 
 #{{{1 Load system-specific settings
 
