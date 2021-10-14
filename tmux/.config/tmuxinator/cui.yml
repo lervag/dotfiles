@@ -20,6 +20,6 @@ windows:
         - editor:
           - sleep 0.1
           - clear
-          - nvim +"call VimuxOpenRunner()" test.py
+          - nvim +"call VimuxOpenRunner()" case2*py
         - tests:
           - poetry shell
