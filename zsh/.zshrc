@@ -294,6 +294,8 @@ bindkey "\e[5~" beginning-of-history # PageUp
 bindkey "\e[6~" end-of-history       # PageDown
 bindkey "\e[2~" beginning-of-line    # Ins
 bindkey "\e[3~" delete-char          # Del
+bindkey "\e."   insert-last-word     # Alt+.
+bindkey "\e,"   copy-prev-shell-word # Alt+,
 
 # Normal mode
 bindkey -a "k" up-line-or-search
