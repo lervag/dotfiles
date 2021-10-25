@@ -3,9 +3,9 @@
 
 mode:          blank
 dpmsEnabled:   False
-timeout:       0:30:00
+timeout:       1:00:00
 lock:          False
-lockTimeout:   0:15:00
+lockTimeout:   1:00:00
 fade:          True
 unfade:        False
 fadeSeconds:   0:00:01
