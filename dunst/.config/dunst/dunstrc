@@ -19,6 +19,7 @@ show_age_threshold = 60
 word_wrap = true
 sticky_history = false
 browser = xdg-open
+corner_radius = 8
 
 [shortcuts]
 close = mod4+n
