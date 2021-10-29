@@ -90,3 +90,5 @@ Mod1 F2 :Exec dmenu_run_history -p "program:"
 Mod1 F3 :Exec passmenu --typepass --hitreturn
 Mod1 k  :Exec ocrmyscreen
 Print   :Exec flameshot gui -p ~
+Mod4 n       :Exec dunstctl close
+Mod4 Mod1 n  :Exec dunstctl history-pop

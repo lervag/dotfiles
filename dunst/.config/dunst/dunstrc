@@ -8,22 +8,21 @@ notification_height = 0
 separator_height = 0
 padding = 10
 horizontal_padding = 5
-separator_color = auto
-sort = true
+frame_width = 2
+frame_color = "#aaaaaa"
+separator_color = "#aaaaaa"
+sort = yes
 idle_threshold = 120
 font = "Iosevka Term SS09 12"
 markup = full
 format = "<b>%s</b>\n%b"
 alignment = left
-show_age_threshold = 60
 word_wrap = true
 sticky_history = false
 browser = xdg-open
 corner_radius = 8
-
-[shortcuts]
-close = mod4+n
-history = mod1+mod4+n
+max_icon_size = 64
+icon_path = /usr/share/icons/gnome/32x32/status/:/usr/share/icons/gnome/32x32/devices/
 
 [urgency_low]
 background = "#111111"
