@@ -1,10 +1,25 @@
 set theme dark
 
+set configversion 2.0
+
 blacklistadd https://mail.google.com
 blacklistadd https://outlook.office.com
 blacklistadd https://feedly.com
 
 unbind <c-e>
+unbind <c-f>
+
 bind --mode=browser <c-e> tab #
+
+bind /     fillcmdline find
+bind <c-f> fillcmdline find
+bind ?     fillcmdline find -?
+
+bind n findnext 1
+bind N findnext -1
+
+bind ,r source
+
+bind yt tabduplicate
 
 " vim: set filetype=tridactyl
