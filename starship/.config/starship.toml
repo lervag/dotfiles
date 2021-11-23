@@ -27,3 +27,12 @@ style = "fg:#e0dac9"
 [username]
 show_always = true
 format = "[$user](fg:#e0dac9)"
+
+[git_status]
+disabled = true
+
+[python]
+format = '(in [$virtualenv]($style))'
+
+[package]
+disabled = true
