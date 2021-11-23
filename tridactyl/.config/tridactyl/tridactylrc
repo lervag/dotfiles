@@ -1,0 +1,10 @@
+set theme dark
+
+blacklistadd https://mail.google.com
+blacklistadd https://outlook.office.com
+blacklistadd https://feedly.com
+
+unbind <c-e>
+bind --mode=browser <c-e> tab #
+
+" vim: set filetype=tridactyl

@@ -9,6 +9,11 @@
   [Position] (Center) {0 0}
 [end]
 
+[app] (name=sioyek)
+  [Dimensions] {1200 100%}
+  [Maximized] {no}
+[end]
+
 [app] (name=google-chrome.*) (role!=pop-up)
   [Maximized] {yes}
   [Workspace] {0}
