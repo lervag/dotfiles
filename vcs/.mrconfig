@@ -7,9 +7,6 @@ checkout = git clone 'git@github.com:lervag/scripts.git' 'scripts'
 [.dotfiles]
 checkout = git clone 'git@github.com:lervag/dotfiles.git' '.dotfiles'
 
-[.vim]
-checkout = git clone 'git@github.com:lervag/dotvim.git' '.vim'
-
 [.config/nvim]
 checkout = git clone 'git@github.com:lervag/dotnvim.git' '.config/nvim'
 skip = lazy
@@ -24,10 +21,6 @@ skip = lazy
 
 [.local/plugged/wiki-ft.vim]
 checkout = git clone 'git@github.com:lervag/wiki-ft.vim' 'wiki-ft.vim'
-skip = lazy
-
-[.local/plugged/vim-foam]
-checkout = git clone 'git@github.com:lervag/vim-foam' 'foam'
 skip = lazy
 
 [.local/plugged/vim-sintef]
