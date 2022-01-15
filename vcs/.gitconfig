@@ -65,6 +65,9 @@
 [grep]
   extendedRegexp = true
 
+[rerere]
+  enabled = true
+
 [include]
   path = .gitconfig-local
 
