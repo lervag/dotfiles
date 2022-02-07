@@ -26,6 +26,7 @@ XF86AudioPlay         :Exec playerctl play
 XF86AudioPause        :Exec playerctl pause
 XF86AudioNext         :Exec playerctl next
 XF86AudioPrev         :Exec playerctl previous
+XF86Display           :Exec connect-screen
 Mod1 Escape           :ClientMenu
 Mod4 Escape           :RootMenu
 
