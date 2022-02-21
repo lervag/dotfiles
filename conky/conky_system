@@ -72,7 +72,7 @@ $font1${color1}FILESYSTEM ${color2}${hr 2}${color}$font
 /home$alignc${fs_used /home} / ${fs_size /home}\
 $alignr${fs_used_perc /home}%
 ${fs_bar /home}
-${execpi 2 syncthing-status.py}
+${execpi 4 syncthing-status.py}
 ]];
 
 -- vim: ft=lua
