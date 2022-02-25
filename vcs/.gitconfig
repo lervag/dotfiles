@@ -6,13 +6,16 @@
   defaultBranch = main
 
 [core]
-  pager = delta --theme='Solarized (dark)' \
-    --file-style='bold yellow' \
-    --file-decoration-style='bold yellow ul' \
-    --hunk-header-style='bold blue' \
-    --hunk-header-decoration-style=omit
+  pager = delta
   excludesfile = ~/.gitignore
   quotepath = off
+
+[delta]
+  file-style = bold yellow
+  file-decoration-style = bold yellow ul
+  hunk-header-style = bold blue
+  hunk-header-decoration-style = omit
+  syntax-theme = Solarized (dark)
 
 [color]
   ui = auto
@@ -44,6 +47,7 @@
 [diff]
   algorithm = histogram
   indentHeuristic = true
+  colorMoved = default
 
 [merge]
   tool = mydiff
