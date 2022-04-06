@@ -22,9 +22,7 @@ export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
 export TERM='xterm-256color'
 export TEXMFHOME=$HOME/.texmf
 export XEDITOR="vim +%l %f"
-
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$(tty)
 
 _gen_fzf_default_opts() {
   local base03="234"
@@ -65,5 +63,7 @@ FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --exact --tiebreak=length,end"
 export FZF_DEFAULT_OPTS
 
 stty -ixon
+
+[ -r "$HOME/.profile.local" ] && source "$HOME/.profile.local"
 
 # vim: ft=sh
