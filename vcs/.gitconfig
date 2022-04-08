@@ -75,7 +75,7 @@
 [include]
   path = .gitconfig-local
 
-[includeIf "gitdir:~/sintef/"]
+[includeIf "gitdir:~/sikt/"]
   path = .gitconfig-work
 
 [includeIf "gitdir:~/.vim/"]
