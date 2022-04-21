@@ -1,5 +1,0 @@
-session_name: journal
-windows:
-- window_name: journal
-  panes:
-    -  sleep 0.1 && nvim +WikiJournal

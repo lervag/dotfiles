@@ -1,9 +1,0 @@
-session_name: vsl-servers
-windows:
-  - window_name: synced
-    options_after:
-      synchronize-panes: on
-    panes:
-      - focus: true
-        shell_command: ssh vsl142
-      - shell_command: ssh vsl143
