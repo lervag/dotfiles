@@ -1,7 +1,7 @@
 export BIBINPUTS=.:~/:
 export CVS_RSH=ssh
 export DOTFILES=$HOME/.dotfiles
-export EDITOR="vim"
+export EDITOR="nvim"
 export GOPATH="$HOME/.cache/go"
 export HGENCODING="utf-8"
 export HOSTNAME=$HOST
