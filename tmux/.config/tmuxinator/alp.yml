@@ -14,20 +14,14 @@ windows:
       layout: even-horizontal
       panes:
         - editor:
-          - nvim Readme.md
-  - backend:
-      layout: even-horizontal
+          - nvim Readme.md +"call personal#git#fugitive_toggle()" +"wincmd L"
+  - servers:
       panes:
-        - server:
-          - ALP_SERVER_CONFIGFILE=.user/config.utv.properties java -jar ./packages/alp-server/target/alp-server-1.0-SNAPSHOT-jar-with-dependencies.jar
-        - dbalp:
-          - docker-compose -f infrastructure/localdev/postgres.yaml up
-  - frontend:
-      layout: even-horizontal
-      panes:
-        - server:
+        - frontend:
           - cd packages/frontend
           - yarn start
         - mock:
-          - cd ~/sikt/alp/packages/frontend
+          - cd packages/frontend
           - ALP_USERID=nin:00000000003 yarn start-mock-oauth2-server
+        - dbalp:
+          - docker-compose -f infrastructure/localdev/postgres.yaml up
