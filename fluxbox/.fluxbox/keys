@@ -1,6 +1,4 @@
-#
 # Mouse shortcuts
-#
 OnDesktop Mouse1     :HideMenus
 OnDesktop Mouse2     :WorkspaceMenu
 OnDesktop Mouse3     :RootMenu
@@ -8,15 +6,8 @@ OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
 OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestEdge}
 OnWindowBorder Move1 :StartMoving
 
-#
 # System control
-#
-Mod1 F10              :CommandDialog
-Mod1 F11              :Reconfigure
-Mod1 F12              :Restart
 Control Mod1 Delete   :Exit
-Control Mod1 s        :Exec systemctl suspend
-Control Mod1 l        :Exec xscreensaver-command -lock
 XF86AudioRaiseVolume  :Exec volume-control -n up
 XF86AudioLowerVolume  :Exec volume-control -n down
 XF86AudioMute         :Exec volume-control -n mute
@@ -27,27 +18,30 @@ XF86AudioPause        :Exec playerctl pause
 XF86AudioNext         :Exec playerctl next
 XF86AudioPrev         :Exec playerctl previous
 XF86Display           :Exec connect-screen
-Mod1 Escape           :ClientMenu
-Mod4 Escape           :RootMenu
+Mod4 F10              :CommandDialog
+Mod4 F11              :Reconfigure
+Mod4 F12              :Restart
+Mod4 Control s        :Exec systemctl suspend
+Mod4 Control l        :Exec xscreensaver-command -lock
+Mod4 Escape           :ClientMenu
+Mod4 Control Escape   :RootMenu
 
-#
 # Control windows
-#
-Mod1 1         :Workspace 1
-Mod1 2         :Workspace 2
-Mod1 3         :Workspace 3
-Mod1 4         :Workspace 4
-Mod1 Control 1 :TakeToWorkspace 1
-Mod1 Control 2 :TakeToWorkspace 2
-Mod1 Control 3 :TakeToWorkspace 3
-Mod1 Control 4 :TakeToWorkspace 4
-Mod1 Shift 1   :SendToWorkspace 1
-Mod1 Shift 2   :SendToWorkspace 2
-Mod1 Shift 3   :SendToWorkspace 3
-Mod1 Shift 4   :SendToWorkspace 4
 Mod1 Tab       :NextGroup (workspace=[current])
 Mod1 Shift Tab :PrevGroup (workspace=[current])
 Mod1 F4        :Close
+Mod4 1         :Workspace 1
+Mod4 2         :Workspace 2
+Mod4 3         :Workspace 3
+Mod4 4         :Workspace 4
+Mod4 Control 1 :TakeToWorkspace 1
+Mod4 Control 2 :TakeToWorkspace 2
+Mod4 Control 3 :TakeToWorkspace 3
+Mod4 Control 4 :TakeToWorkspace 4
+Mod4 Shift 1   :SendToWorkspace 1
+Mod4 Shift 2   :SendToWorkspace 2
+Mod4 Shift 3   :SendToWorkspace 3
+Mod4 Shift 4   :SendToWorkspace 4
 Mod4 space     :WindowMenu
 Mod4 t         :MacroCmd {SetLayer Top} {ToggleCmd {SetLayer Top} {SetLayer Normal}}
 Mod4 f         :Maximize
@@ -73,23 +67,21 @@ Mod4 Shift j   :ResizeVertical +5%
 Mod4 Shift h   :ResizeHorizontal -5%
 Mod4 Shift l   :ResizeHorizontal +5%
 
-#
 # Application shortcuts
-#
-Mod1 x  :Exec urxvt
-Mod1 v  :Exec urxvt -e nvim
-Mod1 j  :Exec urxvt -e tmuxinator start journal
-Mod1 n  :Exec urxvt -e nvim +WikiIndex
-Mod1 e  :Exec _fluxbox_paste.sh -e
-Mod1 r  :Exec _fluxbox_paste.sh -er
-Mod1 y  :Exec _fluxbox_paste.sh
-Mod1 p  :Exec urxvt -e ipython
-Mod1 c  :Exec showtime.sh
-Mod1 a  :Exec anki -b ~/documents/anki
-Mod1 g  :Exec firefox
-Mod1 F2 :Exec dmenu_run_history -p "program:"
-Mod1 F3 :Exec passmenu --typepass --hitreturn
-Mod1 k  :Exec ocrmyscreen
-Print   :Exec flameshot gui
+Print        :Exec flameshot gui
+Mod1 x       :Exec urxvt
+Mod1 v       :Exec urxvt -e nvim
+Mod1 j       :Exec urxvt -e tmuxinator start journal
+Mod1 n       :Exec urxvt -e nvim +WikiIndex
+Mod1 e       :Exec _fluxbox_paste.sh -e
+Mod1 r       :Exec _fluxbox_paste.sh -er
+Mod1 y       :Exec _fluxbox_paste.sh
+Mod1 p       :Exec urxvt -e ipython
+Mod1 c       :Exec showtime.sh
+Mod1 a       :Exec anki -b ~/documents/anki
+Mod1 g       :Exec firefox
+Mod1 F2      :Exec dmenu_run_history -p "program:"
+Mod1 F3      :Exec passmenu --typepass --hitreturn
+Mod1 k       :Exec ocrmyscreen
 Mod4 n       :Exec dunstctl close
 Mod4 Mod1 n  :Exec dunstctl history-pop
