@@ -7,7 +7,6 @@ OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestEdge}
 OnWindowBorder Move1 :StartMoving
 
 # System control
-Control Mod1 Delete   :Exit
 XF86AudioRaiseVolume  :Exec volume-control -n up
 XF86AudioLowerVolume  :Exec volume-control -n down
 XF86AudioMute         :Exec volume-control -n mute
@@ -23,6 +22,7 @@ Mod4 F11              :Reconfigure
 Mod4 F12              :Restart
 Mod4 Control s        :Exec systemctl suspend
 Mod4 Control l        :Exec xscreensaver-command -lock
+Mod4 Control Delete   :Exit
 Mod4 Escape           :ClientMenu
 Mod4 Control Escape   :RootMenu
 
@@ -30,18 +30,18 @@ Mod4 Control Escape   :RootMenu
 Mod1 Tab       :NextGroup (workspace=[current])
 Mod1 Shift Tab :PrevGroup (workspace=[current])
 Mod1 F4        :Close
-Mod4 1         :Workspace 1
-Mod4 2         :Workspace 2
-Mod4 3         :Workspace 3
-Mod4 4         :Workspace 4
-Mod4 Control 1 :TakeToWorkspace 1
-Mod4 Control 2 :TakeToWorkspace 2
-Mod4 Control 3 :TakeToWorkspace 3
-Mod4 Control 4 :TakeToWorkspace 4
-Mod4 Shift 1   :SendToWorkspace 1
-Mod4 Shift 2   :SendToWorkspace 2
-Mod4 Shift 3   :SendToWorkspace 3
-Mod4 Shift 4   :SendToWorkspace 4
+Mod1 1         :Workspace 1
+Mod1 2         :Workspace 2
+Mod1 3         :Workspace 3
+Mod1 4         :Workspace 4
+Mod1 Control 1 :TakeToWorkspace 1
+Mod1 Control 2 :TakeToWorkspace 2
+Mod1 Control 3 :TakeToWorkspace 3
+Mod1 Control 4 :TakeToWorkspace 4
+Mod1 Shift 1   :SendToWorkspace 1
+Mod1 Shift 2   :SendToWorkspace 2
+Mod1 Shift 3   :SendToWorkspace 3
+Mod1 Shift 4   :SendToWorkspace 4
 Mod4 space     :WindowMenu
 Mod4 t         :MacroCmd {SetLayer Top} {ToggleCmd {SetLayer Top} {SetLayer Normal}}
 Mod4 f         :Maximize
