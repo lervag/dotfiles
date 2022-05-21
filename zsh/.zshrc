@@ -328,8 +328,9 @@ fi
 sysfiles=(
   $DOTFILES/bash/common-functions.sh
   $HOME/.zshrc.local
-  $HOME/.fzf.zsh
-  $DOTFILES/zsh/fzf.zsh
+  "/usr/share/fzf/key-bindings.zsh"
+  "/usr/share/fzf/completion.zsh"
+  $HOME/.dotfiles/fzf/fzf-history-widget.zsh
   )
 
 for file in $sysfiles[@]; do
