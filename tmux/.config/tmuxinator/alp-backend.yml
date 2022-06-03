@@ -10,8 +10,14 @@ on_project_exit:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 82 100%
 
 windows:
-  - dev:
+  - frontend:
       layout: even-horizontal
       panes:
-        - editor:
-          - nvim Readme.md +"call personal#git#fugitive_toggle()" +"wincmd L"
+        - frontend:
+          - cd packages/frontend
+          - yarn start
+        - mock:
+          - cd packages/frontend
+          - ALP_USERID=nin:00000000000 yarn start-mock-oauth2-server
+  - backend:
+    - docker-compose -f infrastructure/localdev/postgres.yaml up
