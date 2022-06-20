@@ -14,3 +14,12 @@ stow bash zsh tmux ...
 # Or all at once
 for f in *(/); stow $f
 ```
+
+```sh
+# One at a time
+stow bash zsh tmux ...
+
+# Or all at once
+for f in *(/); stow $f
+```
+
