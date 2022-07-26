@@ -52,6 +52,7 @@
 [merge]
   tool = mydiff
   conflictStyle = diff3
+  log = true
 
 [mergetool]
   keepBackup = false
@@ -71,6 +72,9 @@
 
 [rerere]
   enabled = true
+
+[fetch]
+  prune = true
 
 [include]
   path = .gitconfig-local
