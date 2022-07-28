@@ -78,7 +78,6 @@ Mod1 r       :Exec _fluxbox_paste.sh -er
 Mod1 y       :Exec _fluxbox_paste.sh
 Mod1 p       :Exec urxvt -e ipython
 Mod1 c       :Exec showtime.sh
-Mod1 a       :Exec anki -b ~/documents/anki
 Mod1 g       :Exec firefox
 Mod1 F2      :Exec dmenu_run_history -p "program:"
 Mod1 F3      :Exec passmenu --typepass --hitreturn
