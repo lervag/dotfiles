@@ -14,4 +14,4 @@ windows:
       layout: even-horizontal
       panes:
         - editor:
-          - nvim Readme.md +"call personal#git#fugitive_toggle()" +"wincmd L"
+          - nvim +"Telescope oldfiles"
