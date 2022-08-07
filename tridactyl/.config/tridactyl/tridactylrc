@@ -21,5 +21,6 @@ bind N findnext -1
 bind ,r source
 
 bind yt tabduplicate
+bind <c-y> tabdetach
 
 " vim: set filetype=tridactyl
