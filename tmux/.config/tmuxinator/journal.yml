@@ -1,6 +1,5 @@
 name: journal
 root: ~/
-tmux_command: TERM=xterm-256color tmux
 
 windows:
   - journal: nvim +WikiJournal

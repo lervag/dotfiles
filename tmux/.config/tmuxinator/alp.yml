@@ -1,6 +1,5 @@
 name: alp
 root: ~/sikt/alp
-tmux_command: TERM=xterm-256color tmux
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
@@ -15,3 +14,14 @@ windows:
       panes:
         - editor:
           - nvim +"Telescope oldfiles"
+  - frontend:
+      layout: even-horizontal
+      panes:
+        - frontend:
+          - cd packages/frontend
+          - yarn start
+        - mock:
+          - cd packages/frontend
+          - ALP_USERID=nin:00000000000 yarn start-mock-oauth2-server
+  - backend:
+    - docker-compose -f infrastructure/localdev/postgres.yaml up

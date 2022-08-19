@@ -1,5 +1,5 @@
-name: apy
-root: ~/code/apy
+name: lists-dev
+root: ~/.local/plugged/lists.vim/
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
@@ -17,4 +17,5 @@ windows:
           - clear
           - nvim +"call VimuxOpenRunner()"
         - tests:
+          - cd test
           - clear

@@ -1,6 +1,5 @@
 name: wiki-dev
 root: ~/.local/plugged/wiki.vim
-tmux_command: TERM=xterm-256color tmux
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
