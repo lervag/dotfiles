@@ -49,6 +49,12 @@
   indentHeuristic = true
   colorMoved = default
 
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
 [merge]
   tool = mydiff
   conflictStyle = diff3
