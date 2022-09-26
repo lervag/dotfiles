@@ -5,6 +5,7 @@ set configversion 2.0
 blacklistadd https://mail.google.com
 blacklistadd https://outlook.office.com
 blacklistadd https://feedly.com
+blacklistadd https://unit.atlassian.net
 
 unbind <c-e>
 unbind <c-f>
