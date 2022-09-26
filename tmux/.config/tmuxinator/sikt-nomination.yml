@@ -13,5 +13,5 @@ windows:
       layout: even-horizontal
       panes:
         - editor:
-          - nvim +"Telescope oldfiles"
+          - nvim +"Telescope git_files"
         - shell:
