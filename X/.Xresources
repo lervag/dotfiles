@@ -52,7 +52,7 @@ xterm*eightBitInput: true
 xterm*saveLines:     512
 
 ! urxvt settings
-URxvt.termName:          xterm
+URxvt.termName:          rxvt-256color
 URxvt.saveLines:         65535
 URxvt.intensityStyles:   false
 URxvt.internalBorder:    0
@@ -61,8 +61,7 @@ URxvt.font:              xft:Inconsolata\\-g for Powerline:pixelsize=14, \
                          xft:Iosevka:style=light:pixelsize=16
 URxvt*letterSpace:       0
 URxvt.scrollBar:         false
-URxvt.perl-ext-common:   default,matcher,resize-font
-URxvt.perl-ext-common:   -confirm-paste
+URxvt.perl-ext-common:   default,matcher,resize-font,-confirm-paste
 URxvt.url-launcher:      /usr/bin/firefox
 URxvt.matcher.button:    1
 URxvt.pointerBlank:      true
