@@ -66,6 +66,7 @@
 
 [mergetool "mydiff"]
   cmd = $EDITOR -f -d "$LOCAL" "$MERGED" "$REMOTE" +MergeMode
+  trustExitCode = true
 
 [push]
   default = simple
