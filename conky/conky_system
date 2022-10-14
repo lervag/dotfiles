@@ -60,19 +60,19 @@ Brightness $alignr ${exec brightness-control}
 ${endif}\
 
 $font1${color Tan2}NETWORK ${color2}${hr 2}${color}$font
-${execpi 12 nettverk-status}
+${execpi 12 status-network}
 ${if_existing /sys/class/power_supply/BAT0}\
 
 $font1${color1}BATTERY ${color2}${hr 2}${color}$font
-Status $alignr ${execi 10 battery-info}
-Remaining time $alignr ${execi 10 battery-info -r}
-${execibar 10 battery-info -p}
+Status $alignr ${execi 10 status-battery}
+Remaining time $alignr ${execi 10 status-battery -r}
+${execibar 10 status-battery -p}
 ${endif}
 $font1${color1}FILESYSTEM ${color2}${hr 2}${color}$font
 /home$alignc${fs_used /home} / ${fs_size /home}\
 $alignr${fs_used_perc /home}%
 ${fs_bar /home}
-${execpi 4 syncthing-status.py}
+${execpi 4 status-syncthing.py}
 ]];
 
 -- vim: ft=lua
