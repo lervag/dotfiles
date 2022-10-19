@@ -1,6 +1,4 @@
-;;;
 ;;; The following lines added by ql:add-to-init-file:
-;;;
 #-quicklisp
 (let ((quicklisp-init (merge-pathnames ".quicklisp/setup.lisp"
                                        (user-homedir-pathname))))
@@ -23,4 +21,4 @@
 ;;;
 ;;; Load utility file
 ;;;
-(load (merge-pathnames ".lisp-common" (user-homedir-pathname)))
+; (load (merge-pathnames ".lisp-common" (user-homedir-pathname)))
