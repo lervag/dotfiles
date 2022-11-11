@@ -27,14 +27,6 @@ skip = lazy
 checkout = git clone 'git@github.com:lervag/vim-sintef' 'sintef'
 skip = lazy
 
-[code/apy]
-checkout = git clone 'git@github.com:lervag/apy' 'apy'
-skip = lazy
-
-[codes/apy]
-checkout = git clone 'git@github.com:lervag/apy' 'apy'
-skip = lazy
-
 [.password-store]
 checkout = git clone 'git@github.com:lervag/pass' '.password-store'
 skip = lazy
