@@ -1,5 +1,7 @@
-.pytest_cache
-.tags
 tags
+.tags
+.pytest_cache
 .omnipytent*
 .envrc
+.tool-versions
+.luarc.json
