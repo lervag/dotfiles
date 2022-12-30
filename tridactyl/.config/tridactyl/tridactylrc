@@ -8,12 +8,10 @@ blacklistadd https://feedly.com
 blacklistadd https://unit.atlassian.net
 
 unbind <c-e>
-unbind <c-f>
 
 bind --mode=browser <c-e> tab #
 
 bind /     fillcmdline find
-bind <c-f> fillcmdline find
 bind ?     fillcmdline find -?
 
 bind n findnext 1
