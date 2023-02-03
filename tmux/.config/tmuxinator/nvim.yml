@@ -15,6 +15,6 @@ windows:
         - editor:
           - sleep 0.1
           - clear
-          - nvim +"call VimuxOpenRunner()" init.lua
+          - nvim +"VimuxOpenRunner" init.lua
         - tests:
           - clear
