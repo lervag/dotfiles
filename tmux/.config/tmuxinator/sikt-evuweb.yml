@@ -1,5 +1,5 @@
 name: evuweb
-root: ~/sikt/opptak
+root: ~/sikt/opptak/evuweb
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
@@ -10,14 +10,14 @@ on_project_exit:
 
 windows:
   - backend:
-      root: ~/sikt/opptak/evu3-ws
+      root: ~/sikt/opptak/evuweb/backend/
       layout: even-horizontal
       panes:
         - editor:
           - nvim README.md
         - shell:
   - frontend:
-      root: ~/sikt/opptak/evu3-web
+      root: ~/sikt/opptak/evuweb/frontend/
       layout: even-horizontal
       panes:
         - editor:
