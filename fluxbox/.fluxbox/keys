@@ -76,7 +76,6 @@ Mod1 j       :Exec urxvt -e tmuxinator start journal
 Mod1 e       :Exec _fluxbox_paste.sh -e
 Mod1 r       :Exec _fluxbox_paste.sh -er
 Mod1 y       :Exec _fluxbox_paste.sh
-Mod1 p       :Exec urxvt -e ipython
 Mod1 c       :Exec showtime.sh
 Mod1 g       :Exec firefox
 Mod1 F2      :Exec dmenu_run_history -p "program:"
