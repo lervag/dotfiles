@@ -80,12 +80,14 @@ URxvt.iso14755_52:       false
 
 ! Add keysyms for special keycodes
 ! See: https://unix.stackexchange.com/questions/631241/mapping-otherwise-conflicting-or-unmappable-keys-in-terminal-vim
-URxvt*keysym.C-Tab:          \033[9;5u
 URxvt*keysym.ISO_Left_Tab:   \033[9;2u
+URxvt*keysym.C-Tab:          \033[9;5u
 URxvt*keysym.C-ISO_Left_Tab: \033[9;6u
+URxvt*keysym.S-Return:       \033[13;2u
 URxvt*keysym.C-Return:       \033[13;5u
 URxvt*keysym.C-S-Return:     \033[13;6u
 URxvt.keysym.S-space:        \033[32;2u
+URxvt*keysym.C-space:        \033[32;5u
 URxvt*keysym.C-S-space:      \033[32;6u
 URxvt*keysym.C-i:            \033[105;5u
 URxvt*keysym.C-0:            \033[48;5u

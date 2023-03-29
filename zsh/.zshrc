@@ -266,6 +266,7 @@ fi
 #{{{1 Add some keybindings
 
 # Insert mode
+bindkey -r      "\e"
 bindkey ' '     magic-space
 bindkey "^R"    history-incremental-pattern-search-backward
 bindkey "^T"    history-incremental-pattern-search-forward
@@ -277,9 +278,7 @@ bindkey "^A"    beginning-of-line
 bindkey "^O"    accept-line-and-down-history
 bindkey "^P"    accept-and-hold
 bindkey "^W"    end-of-line
-bindkey "\E[Z"  reverse-menu-complete # Shift+Tab
 bindkey "^E"    expand-word
-bindkey -r      "\e"
 bindkey "^_"    undo
 bindkey "jk"    vi-cmd-mode
 bindkey "^?"    backward-delete-char # Backspace
@@ -299,6 +298,18 @@ bindkey "\e,"   copy-prev-shell-word # Alt+,
 # Normal mode
 bindkey -a "k" up-line-or-search
 bindkey -a "j" down-line-or-search
+
+# Handle some special keys
+# See also .Xresources for urxvt keysyms
+bindkey "\e[32;2u" magic-space
+bindkey "\e[32;5u" magic-space
+bindkey "\e[32;6u" magic-space
+bindkey "\e[9;2u" reverse-menu-complete
+bindkey "\e[9;5u" fzf-completion
+bindkey "\e[9;6u" reverse-menu-complete
+bindkey "\e[13;2u" accept-line
+bindkey "\e[13;5u" accept-line
+bindkey "\e[13;6u" accept-line
 
 # Edit line with vim
 autoload edit-command-line

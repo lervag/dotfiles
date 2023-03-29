@@ -6,3 +6,16 @@ set editing-mode vi
 set keymap vi
 set show-all-if-ambiguous on
 set mark-symlinked-directories on
+
+# Handle some special keys (this is not good enough yet, but perhaps better
+# than nothing?)
+# See also .Xresources for urxvt keysyms
+"\e[32;2u": " "
+"\e[32;5u": " "
+"\e[32;6u": " "
+"\e[9;2u": "\t"
+"\e[9;5u": "\t"
+"\e[9;6u": "\t"
+"\e[13;2u": accept-line
+"\e[13;5u": accept-line
+"\e[13;6u": accept-line
