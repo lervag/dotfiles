@@ -1,5 +1,5 @@
 # Documentation:
-#   https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
+# * https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
 
 set visible-stats on
 set editing-mode vi
@@ -7,9 +7,9 @@ set keymap vi
 set show-all-if-ambiguous on
 set mark-symlinked-directories on
 
-# Handle some special keys (this is not good enough yet, but perhaps better
-# than nothing?)
-# See also .Xresources for urxvt keysyms
+# Handle some special keycodes
+# See also ~/.Xresources
+# Note: This is not good enough yet, but perhaps better than nothing?
 "\e[32;2u": " "
 "\e[32;5u": " "
 "\e[32;6u": " "

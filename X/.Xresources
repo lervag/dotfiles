@@ -80,6 +80,9 @@ URxvt.iso14755_52:       false
 
 ! Add keysyms for special keycodes
 ! See: https://unix.stackexchange.com/questions/631241/mapping-otherwise-conflicting-or-unmappable-keys-in-terminal-vim
+! See also:
+! * ~/.tmux.conf
+! * ~/.inputrc
 URxvt*keysym.ISO_Left_Tab:   \033[9;2u
 URxvt*keysym.C-Tab:          \033[9;5u
 URxvt*keysym.C-ISO_Left_Tab: \033[9;6u
@@ -108,7 +111,9 @@ URxvt*keysym.C-E:            \033[69;5u
 URxvt*keysym.C-F:            \033[70;5u
 URxvt*keysym.C-G:            \033[71;5u
 URxvt*keysym.C-H:            \033[72;5u
+! NOT WORKING IN VIM
 URxvt*keysym.C-I:            \033[73;5u
+! NOT WORKING IN VIM
 URxvt*keysym.C-J:            \033[74;5u
 URxvt*keysym.C-K:            \033[75;5u
 URxvt*keysym.C-L:            \033[76;5u
@@ -126,30 +131,42 @@ URxvt*keysym.C-W:            \033[87;5u
 URxvt*keysym.C-X:            \033[88;5u
 URxvt*keysym.C-Y:            \033[89;5u
 URxvt*keysym.C-Z:            \033[90;5u
+URxvt*keysym.S-F1:           \033[1;2P
+URxvt*keysym.S-F2:           \033[1;2Q
+URxvt*keysym.S-F3:           \033[1;2R
+URxvt*keysym.S-F4:           \033[1;2S
+URxvt*keysym.S-F5:           \033[15;2~
+URxvt*keysym.S-F6:           \033[17;2~
+URxvt*keysym.S-F7:           \033[18;2~
+URxvt*keysym.S-F8:           \033[19;2~
+URxvt*keysym.S-F9:           \033[20;2~
+URxvt*keysym.S-F10:          \033[21;2~
+URxvt*keysym.S-F11:          \033[23;2~
+URxvt*keysym.S-F12:          \033[24;2~
 URxvt*keysym.C-F1:           \033[1;5P
-URxvt*keysym.C-F2:           \033[2;5P
-URxvt*keysym.C-F3:           \033[3;5P
-URxvt*keysym.C-F4:           \033[4;5P
-URxvt*keysym.C-F5:           \033[5;5P
-URxvt*keysym.C-F6:           \033[6;5P
-URxvt*keysym.C-F7:           \033[7;5P
-URxvt*keysym.C-F8:           \033[8;5P
-URxvt*keysym.C-F9:           \033[9;5P
-URxvt*keysym.C-F10:          \033[10;5P
-URxvt*keysym.C-F11:          \033[11;5P
-URxvt*keysym.C-F12:          \033[12;5P
+URxvt*keysym.C-F2:           \033[1;5Q
+URxvt*keysym.C-F3:           \033[1;5R
+URxvt*keysym.C-F4:           \033[1;5S
+URxvt*keysym.C-F5:           \033[15;5~
+URxvt*keysym.C-F6:           \033[17;5~
+URxvt*keysym.C-F7:           \033[18;5~
+URxvt*keysym.C-F8:           \033[19;5~
+URxvt*keysym.C-F9:           \033[20;5~
+URxvt*keysym.C-F10:          \033[21;5~
+URxvt*keysym.C-F11:          \033[23;5~
+URxvt*keysym.C-F12:          \033[24;5~
 URxvt*keysym.C-S-F1:         \033[1;6P
-URxvt*keysym.C-S-F2:         \033[2;6P
-URxvt*keysym.C-S-F3:         \033[3;6P
-URxvt*keysym.C-S-F4:         \033[4;6P
-URxvt*keysym.C-S-F5:         \033[5;6P
-URxvt*keysym.C-S-F6:         \033[6;6P
-URxvt*keysym.C-S-F7:         \033[7;6P
-URxvt*keysym.C-S-F8:         \033[8;6P
-URxvt*keysym.C-S-F9:         \033[9;6P
-URxvt*keysym.C-S-F10:        \033[10;6P
-URxvt*keysym.C-S-F11:        \033[11;6P
-URxvt*keysym.C-S-F12:        \033[12;6P
+URxvt*keysym.C-S-F2:         \033[1;6Q
+URxvt*keysym.C-S-F3:         \033[1;6R
+URxvt*keysym.C-S-F4:         \033[1;6S
+URxvt*keysym.C-S-F5:         \033[15;6~
+URxvt*keysym.C-S-F6:         \033[17;6~
+URxvt*keysym.C-S-F7:         \033[18;6~
+URxvt*keysym.C-S-F8:         \033[19;6~
+URxvt*keysym.C-S-F9:         \033[20;6~
+URxvt*keysym.C-S-F10:        \033[21;6~
+URxvt*keysym.C-S-F11:        \033[23;6~
+URxvt*keysym.C-S-F12:        \033[24;6~
 
 ! Load local settings
 #include ".Xlocal"
