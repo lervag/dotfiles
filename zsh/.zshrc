@@ -347,9 +347,6 @@ for file in $sysfiles[@]; do
   [ -r $file ] && source $file
 done
 
-# Load direnv (if possible)
-command -v direnv &>/dev/null && eval "$(direnv hook zsh)"
-
 #}}}1
 
 # Welcome message for login shells
