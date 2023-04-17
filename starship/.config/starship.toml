@@ -34,5 +34,8 @@ disabled = true
 [python]
 format = '(in [$virtualenv]($style))'
 
+[scala]
+disabled = true
+
 [package]
 disabled = true
