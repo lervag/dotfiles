@@ -350,7 +350,7 @@ done
 #}}}1
 
 # Welcome message for login shells
-if [[ $SHLVL -eq 1 && -z "$TMUX" ]] ; then
+if [[ $SHLVL -le 2 && -z "$TMUX" ]] ; then
   ls-sessions
 fi
 
