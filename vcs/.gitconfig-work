@@ -1,4 +1,7 @@
 [user]
   email = karl.yngve.lervag@sikt.no
 
+[includeIf "gitdir:~/sikt/usit/"]
+  path = .gitconfig-usit
+
 ; vim: ft=gitconfig
