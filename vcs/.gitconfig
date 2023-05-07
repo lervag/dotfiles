@@ -59,6 +59,7 @@
   tool = mydiff
   conflictStyle = diff3
   log = true
+  ff = false
 
 [mergetool]
   keepBackup = false
