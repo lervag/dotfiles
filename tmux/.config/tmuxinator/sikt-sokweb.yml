@@ -1,4 +1,4 @@
-name: alp
+name: søknadsweb
 root: ~/sikt/opptak/sokweb
 
 on_project_start:

@@ -1,5 +1,5 @@
-name: nomination
-root: ~/sikt/opptak/nomination
+name: samordna-opptak
+root: ~/sikt/opptak/samordna-opptak
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
