@@ -34,4 +34,5 @@ if command -v fd >/dev/null; then
 fi
 FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --height 90% --reverse --info=inline"
 FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --exact --tiebreak=length,end"
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind=tab:down,btab:up"
 export FZF_DEFAULT_OPTS

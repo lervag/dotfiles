@@ -304,7 +304,8 @@ bindkey -a "j" down-line-or-search
 bindkey "\e[32;2u" magic-space
 bindkey "\e[32;5u" magic-space
 bindkey "\e[32;6u" magic-space
-bindkey "\e[9;2u" reverse-menu-complete
+# bindkey "\e[9;2u" reverse-menu-complete
+bindkey "\e[[Z" reverse-menu-complete
 bindkey "\e[9;5u" fzf-completion
 bindkey "\e[9;6u" reverse-menu-complete
 bindkey "\e[13;2u" accept-line

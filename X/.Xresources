@@ -83,7 +83,7 @@ URxvt.iso14755_52:       false
 ! See also:
 ! * ~/.tmux.conf
 ! * ~/.inputrc
-URxvt*keysym.ISO_Left_Tab:   \033[9;2u
+/* URxvt*keysym.ISO_Left_Tab:   \033[9;2u */
 URxvt*keysym.C-Tab:          \033[9;5u
 URxvt*keysym.C-ISO_Left_Tab: \033[9;6u
 URxvt*keysym.S-Return:       \033[13;2u
