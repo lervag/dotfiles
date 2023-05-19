@@ -13,7 +13,6 @@ set mark-symlinked-directories on
 "\e[32;2u": " "
 "\e[32;5u": " "
 "\e[32;6u": " "
-#"\e[9;2u": "\t"
 "\e[9;5u": "\t"
 "\e[9;6u": "\t"
 "\e[13;2u": accept-line
