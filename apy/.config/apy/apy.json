@@ -9,6 +9,6 @@
     ["lualatex", "-interaction=nonstopmode", "tmp.tex"],
     ["pdfcrop", "tmp.pdf", "tmp.pdf"],
     ["pdf2svg", "tmp.pdf", "tmp.svg"],
-    ["sed", "-i", "-E", "s/ (width|height)=\"\"[0-9]+/&pt/g", "tmp.svg"]
+    ["sed", "-i", "-E", "1,5s/ (width|height)=\"[0-9.]+/&pt/g", "tmp.svg"]
   ]
 }
