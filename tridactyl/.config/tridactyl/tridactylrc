@@ -8,18 +8,17 @@ blacklistadd https://feedly.com
 blacklistadd https://unit.atlassian.net
 
 unbind <c-e>
-
 bind --mode=browser <c-e> tab #
 
-bind /     fillcmdline find
-bind ?     fillcmdline find -?
+bind / fillcmdline find
+bind ? fillcmdline find -?
 
 bind n findnext 1
 bind N findnext -1
 
-bind ,r source
-
 bind yt tabduplicate
-bind <c-y> tabdetach
+bind yT tabdetach
+
+bind ,r source
 
 " vim: set filetype=tridactyl
