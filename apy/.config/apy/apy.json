@@ -1,5 +1,5 @@
 {
-  "base": "/home/lervag/documents/anki",
+  "base_path": "/home/lervag/documents/anki",
   "pngCommands": [
     ["latex", "-interaction=nonstopmode", "tmp.tex"],
     ["dvipng", "-D", "150", "-T", "tight", "-bg", "Transparent",
