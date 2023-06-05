@@ -1,5 +1,5 @@
 name: apy
-root: ~/code/apy
+root: ~/workdir/apy
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
