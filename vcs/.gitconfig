@@ -90,10 +90,10 @@
 [includeIf "hasconfig:remote.*.url:git@gitlab.sikt.no:*/**"]
   path = .gitconfig-sikt
 
-[includeIf "hasconfig:remote.*.url:git@bitbucket.org:unit-norge-team/*"]
+[includeIf "hasconfig:remote.*.url:git@bitbucket.org:unit-norge-team/**"]
   path = .gitconfig-sikt
 
-[includeIf "hasconfig:remote.*.url:git@github.com:sun-opsys/*"]
+[includeIf "hasconfig:remote.*.url:git@github.com:sun-opsys/**"]
   path = .gitconfig-sikt
 
 [includeIf "hasconfig:remote.*.url:git@github.uio.no:*/**"]
