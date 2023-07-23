@@ -87,8 +87,14 @@
 [include]
   path = .gitconfig-local
 
-[includeIf "gitdir:~/sikt/"]
-  path = .gitconfig-work
+[includeIf "hasconfig:remote.*.url:git@gitlab.sikt.no:*/**"]
+  path = .gitconfig-sikt
 
-[includeIf "gitdir:~/.vim/"]
-  path = .gitconfig-personal
+[includeIf "hasconfig:remote.*.url:git@bitbucket.org:unit-norge-team/*"]
+  path = .gitconfig-sikt
+
+[includeIf "hasconfig:remote.*.url:git@github.com:sun-opsys/*"]
+  path = .gitconfig-sikt
+
+[includeIf "hasconfig:remote.*.url:git@github.uio.no:*/**"]
+  path = .gitconfig-usit
