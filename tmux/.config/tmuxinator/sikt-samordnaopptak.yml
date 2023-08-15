@@ -13,7 +13,8 @@ windows:
       layout: even-horizontal
       panes:
         - editor:
-          - nvim
+          - sleep 0.1
+          - nvim modules/sokerportal/src/main/scala/so/sokerportal/Main.scala
         - shell:
   - database:
       panes:
