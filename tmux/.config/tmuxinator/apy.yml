@@ -13,8 +13,6 @@ windows:
       layout: even-horizontal
       panes:
         - editor:
-          - sleep 0.1
-          - clear
-          - nvim +"VimuxOpenRunner"
+          - poetry run nvim +"VimuxOpenRunner"
         - tests:
-          - clear
+          - poetry shell
