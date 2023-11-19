@@ -1,5 +1,5 @@
 name: advent
-root: ~/code/advent-2022/
+root: ~/code/advent-of-code/
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
@@ -15,4 +15,4 @@ windows:
         - editor:
           - nvim
         - shell:
-          - sbt
+          -
