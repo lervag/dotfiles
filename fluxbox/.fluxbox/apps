@@ -34,6 +34,10 @@
   [Position] (Center) {0 0}
 [end]
 
+[app] (name=kitty)
+  [Position] (Center) {0 0}
+[end]
+
 [app] (name=anki)
   [Position] (Center) {0 0}
 [end]
