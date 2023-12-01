@@ -1,5 +1,5 @@
 name: advent
-root: ~/code/advent-of-code/
+root: ~/workdir/advent-of-code/
 
 on_project_start:
   - xdotool windowsize --usehints $(xdotool getactivewindow) 165 100%
