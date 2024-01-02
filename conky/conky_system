@@ -5,38 +5,38 @@ conky.config = {
   border_outer_margin = 0,
   own_window = true,
   own_window_transparent = true,
-  own_window_type = 'override',
+  own_window_type = "desktop",
   own_window_argb_visual = true,
-  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
   update_interval = 1.0,
   total_run_times = 0,
-  alignment = 'top_right',
+  alignment = "top_right",
   minimum_width = 350,
   minimum_height = 900,
   maximum_width = 350,
   gap_x = 10,
   gap_y = 10,
   use_xft = true,
-  font = 'JuliaMono:size=11',
-  font1 = 'JuliaMono:bold:size=11',
-  font2 = 'JuliaMono:bold:size=25',
+  font = "JuliaMono:size=11",
+  font1 = "JuliaMono:bold:size=11",
+  font2 = "JuliaMono:bold:size=25",
   xftalpha = 0.1,
   draw_outline = false,
   draw_shades = false,
   draw_borders = false,
   draw_graph_borders = false,
-  default_color = 'DimGray',
-  default_shade_color = 'red',
-  default_outline_color = 'green',
+  default_color = "DimGray",
+  default_shade_color = "red",
+  default_outline_color = "green",
   default_bar_width = 350,
   default_bar_height = 7,
   no_buffers = true,
   net_avg_samples = 2,
-  use_spacer = 'right',
-  if_up_strictness = 'address',
-  color1 = 'Tan1',
-  color2 = 'DarkSlateGray',
-};
+  use_spacer = "right",
+  if_up_strictness = "address",
+  color1 = "Tan1",
+  color2 = "DarkSlateGray",
+}
 
 conky.text = [[
 $font1${color1}WORKSPACE ${color2}${hr 2}${color}$font
@@ -73,6 +73,6 @@ $font1${color1}FILESYSTEM ${color2}${hr 2}${color}$font
 $alignr${fs_used_perc /home}%
 ${fs_bar /home}
 ${execpi 4 status-syncthing.py}
-]];
+]]
 
 -- vim: ft=lua

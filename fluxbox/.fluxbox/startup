@@ -3,8 +3,6 @@
 xcompmgr &
 dunst &>/tmp/dunst.log &
 
-set-keyboard.sh
-
 # Source environment variables
 source /home/lervag/.profile
 
