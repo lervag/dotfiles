@@ -16,7 +16,7 @@ XF86AudioPlay         :Exec playerctl play
 XF86AudioPause        :Exec playerctl pause
 XF86AudioNext         :Exec playerctl next
 XF86AudioPrev         :Exec playerctl previous
-XF86Display           :Exec connect-screen
+XF86Display           :Exec dock
 Mod4 F10              :CommandDialog
 Mod4 F11              :Reconfigure
 Mod4 F12              :Restart
