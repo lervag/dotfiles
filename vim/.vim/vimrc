@@ -226,6 +226,9 @@ nnoremap dg# g*``dgN
 
 " {{{1 Configure plugins
 
+filetype plugin indent on
+syntax enable
+
 " Disable a lot of unnecessary internal plugins
 let g:loaded_2html_plugin = 1
 let g:loaded_getscriptPlugin = 1
