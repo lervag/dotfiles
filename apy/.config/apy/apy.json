@@ -1,4 +1,5 @@
 {
+  "query": "tag:marked OR -flag:0 OR tag:leech",
   "base_path": "/home/lervag/documents/anki",
   "pngCommands": [
     ["latex", "-interaction=nonstopmode", "tmp.tex"],
