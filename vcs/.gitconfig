@@ -10,6 +10,9 @@
   excludesfile = ~/.gitignore
   quotepath = off
 
+[branch]
+  sort = -committerdate
+
 [delta]
   file-style = bold yellow
   file-decoration-style = bold yellow ul
@@ -80,6 +83,7 @@
 
 [rerere]
   enabled = true
+  autoUpdate = true
 
 [fetch]
   prune = true
