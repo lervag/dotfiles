@@ -14,7 +14,7 @@ windows:
       panes:
         - editor:
           - sleep 0.1
-          - nvim modules/sokerportal/src/main/scala/so/sokerportal/Main.scala
+          - nvim
         - shell:
   - database:
       panes:
