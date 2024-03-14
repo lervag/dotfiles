@@ -17,6 +17,6 @@ sleep 0.5
 local=/home/lervag/.fluxbox.startup.local
 [ -f "$local" ] && source "$local"
 
-conky -c /home/lervag/.dotfiles/conky/conky_system &
+conky &
 
 wait $fbpid
