@@ -8,6 +8,8 @@
     "checkThirdParty": false
   },
   "diagnostics.globals": [
-    "conky"
+    "conky",
+        "conky_parse",
+        "conky_workspace"
   ]
 }
