@@ -7,6 +7,8 @@ blacklistadd https://outlook.office.com
 blacklistadd https://feedly.com
 blacklistadd https://unit.atlassian.net
 
+seturl ^https://teams.microsoft.com superignore true
+
 unbind <c-e>
 bind --mode=browser <c-e> tab #
 
