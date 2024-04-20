@@ -32,18 +32,6 @@
   changed = yellow bold
   untracked = red bold
 
-[alias]
-  ci = commit
-  co = checkout
-  st = status
-  lg  = log       --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
-  lga = log --all --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
-  changelog = log --first-parent --decorate --date=short --format=format:'%C(bold white)%s %Cblue%h%C(yellow)%d%Creset%n%b'
-  rv-files = !git diff --name-only $(git merge-base HEAD \"${REVIEW_BASE:-master}\")
-  rv-st = !git diff --stat $(git merge-base HEAD \"${REVIEW_BASE:-master}\")
-  rv-one = !$EDITOR -p +\"tabdo silent Gdiffsplit ${REVIEW_BASE:-master} | wincmd H\" +WinResize
-  rv-all = !git rv-one $(git rv-files)
-
 [commit]
   verbose = true
 
@@ -74,6 +62,7 @@
 
 [push]
   default = current
+  autoSetupRemote = true
 
 [pull]
   ff = only
@@ -87,6 +76,17 @@
 
 [fetch]
   prune = true
+
+[alias]
+  ci = commit
+  co = checkout
+  st = status
+  lg  = log       --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
+  lga = log --all --decorate --graph --date=short --format=format:'%Cblue%h%Creset %Cgreen%ad (%ar)%C(bold yellow)%d%Creset%n        %C(white)%s%Creset%n        %an'
+  changelog = log --first-parent --decorate --date=short --format=format:'%C(bold white)%s %Cblue%h%C(yellow)%d%Creset%n%b'
+  rv-st = !git diff --stat $(git merge-base HEAD "${REVIEW_BASE:-master}")
+  rv-all = !git rv-one $(git rv-files)
+  rv-one = !$EDITOR -p +\"tabdo silent Gdiffsplit ${REVIEW_BASE:-master} | wincmd H\" +WinResize
 
 [include]
   path = .gitconfig-local
