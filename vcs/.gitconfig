@@ -35,6 +35,9 @@
 [commit]
   verbose = true
 
+[log]
+  date = iso
+
 [diff]
   algorithm = histogram
   indentHeuristic = true
@@ -43,12 +46,9 @@
 [difftool]
   prompt = false
 
-[difftool "difftastic"]
-  cmd = difft "$LOCAL" "$REMOTE"
-
 [merge]
   tool = mydiff
-  conflictStyle = diff3
+  conflictStyle = zdiff3
   log = true
   ff = false
 
@@ -63,6 +63,7 @@
 [push]
   default = current
   autoSetupRemote = true
+  followtags = true
 
 [pull]
   ff = only
@@ -76,6 +77,7 @@
 
 [fetch]
   prune = true
+  prunetags = true
 
 [alias]
   ci = commit
