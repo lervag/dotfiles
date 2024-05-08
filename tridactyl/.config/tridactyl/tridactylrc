@@ -12,6 +12,7 @@ seturl ^https://teams.microsoft.com superignore true
 unbind <c-e>
 bind --mode=browser <c-e> tab #
 
+unbind <C-f>
 bind / fillcmdline find
 bind ? fillcmdline find -?
 
