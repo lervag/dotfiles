@@ -62,7 +62,7 @@ alias -s pdf=zathura
 alias -s png=feh
 alias -s jpg=feh
 
-# {{{1 Utility functions
+#{{{1 Utility functions
 
 take() {
   mkdir -p $@ && cd ${@:$#}
