@@ -5,3 +5,4 @@ tags
 .envrc
 .tool-versions
 .luarc.json
+.tmuxinator.yml
