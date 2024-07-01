@@ -1,0 +1,38 @@
+# Handle some special keycodes
+# See also ~/.Xresources
+bind -n C-S-Space send "\e[32;6u"
+bind -n C-6       send "\e[54;5u"
+
+# Smart pane switching with awareness of Vim splits.
+# https://github.com/christoomey/vim-tmux-navigator
+%hidden CONTEXT="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ (vd|fzf|n?vim?)'"
+bind -n C-h if $CONTEXT { send C-h } { select-pane -L }
+bind -n C-l if $CONTEXT { send C-l } { select-pane -R }
+bind -n C-j if $CONTEXT { send C-j } { select-pane -D }
+bind -n C-k if $CONTEXT { send C-k } { select-pane -U }
+
+bind -n MouseDrag1Border resize-pane -M
+bind -n MouseDown1Pane   select-pane -t = \; send -M
+bind -n MouseDown2Pane   if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { run "xclip -o | tmux load-buffer -" ; paste-buffer }
+bind -n MouseDrag1Pane   if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { copy-mode }
+bind -n WheelUpPane      if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { copy-mode -e }
+bind -n DoubleClick1Pane select-pane -t = \; if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { copy-mode ; send -X select-word }
+bind -n TripleClick1Pane select-pane -t = \; if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { copy-mode ; send -X select-line }
+
+bind -n Up {
+  copy-mode
+  send -X -N 2 search-backward "^lervag@.*:"
+  send -X cursor-down
+  send -X cursor-right
+  send -X stop-selection
+}
+
+bind -n Down {
+  copy-mode
+  send -X search-forward "^lervag@.*:"
+  send -X cursor-down
+  send -X cursor-right
+  send -X stop-selection
+}
+
+# vim: filetype=tmux

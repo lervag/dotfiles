@@ -1,0 +1,4 @@
+unbind -a -Tprefix
+unbind -a -Troot
+unbind -a -Tcopy-mode
+unbind -a -Tcopy-mode-vi

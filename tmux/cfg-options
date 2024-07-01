@@ -1,0 +1,17 @@
+set -g prefix C-q
+set -g history-limit 50000
+set -g base-index 1
+set -g pane-base-index 1
+set -g status-keys vi
+set -g focus-events on
+set -g set-clipboard on
+set -g escape-time 10
+set -g mode-keys vi
+set -g main-pane-width 82
+set -g mouse on
+set -g default-terminal "tmux-256color"
+set -g copy-command "xclip -f -sel p | xclip -sel c"
+set -ga terminal-overrides ",rxvt-256color:Tc"
+set -ga terminal-overrides ",rxvt-256color:sitm=\E[3m"
+
+# vim: filetype=tmux

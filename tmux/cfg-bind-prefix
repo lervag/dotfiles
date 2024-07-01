@@ -1,0 +1,49 @@
+bind C-p   send-prefix
+
+bind C-h   list-keys
+bind c     new-window
+bind d     detach-client
+bind :     command-prompt
+bind g     attach -c "#{pane_current_path}"
+bind C-r   { source-file ~/.tmux.conf ; display "Config reloaded!" }
+
+# Sjå wiki:tmux for scriptet
+bind C-e   run _tmux-edit-scrollback
+
+bind \$    command-prompt -p "Rename session:" -I "#S" { rename-session "%%" }
+bind ,     command-prompt -p "Rename window:"  -I "#W" { rename-window "%%" }
+
+bind |     split-window -h -c "#{pane_current_path}"
+bind -     split-window -v -c "#{pane_current_path}"
+bind !     break-pane
+bind @     command-prompt -p "Fetch pane from [session:]window[.pane]:" { join-pane -s "%%" }
+
+bind v     copy-mode
+bind p     { run "xclip -o | tmux load-buffer -" ; paste-buffer }
+
+bind C-q   if "test #{window_panes} -eq 1"    last-window last-pane
+bind n     select-pane -t :.+
+bind \{    swap-pane -U
+bind \}    swap-pane -D
+bind z     resize-pane -Z
+bind F2    resize-pane -x 82
+
+bind C-l   if "test #{session_windows} -eq 1" last-pane   last-window
+bind N     next-window
+bind 0     select-window -t :=0
+bind 1     select-window -t :=1
+bind 2     select-window -t :=2
+bind 3     select-window -t :=3
+bind 4     select-window -t :=4
+bind 5     select-window -t :=5
+bind 6     select-window -t :=6
+bind 7     select-window -t :=7
+bind 8     select-window -t :=8
+bind 9     select-window -t :=9
+
+bind Space next-layout
+
+bind (     switch-client -p
+bind )     switch-client -n
+
+# vim: filetype=tmux
