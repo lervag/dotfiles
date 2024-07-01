@@ -57,7 +57,7 @@
   prompt = false
 
 [mergetool "mydiff"]
-  cmd = $EDITOR -f -d "$LOCAL" "$MERGED" "$REMOTE" +MergeMode
+  cmd = echo "NO! Please use this instead: git mt" && exit 1
   trustExitCode = true
 
 [push]
@@ -80,6 +80,7 @@
   prunetags = true
 
 [alias]
+  mt = "!nvim +DiffviewOpen +tabonly"
   ci = commit
   co = checkout
   st = status
