@@ -53,3 +53,7 @@
 [app] (title=Microsoft Teams Notification)
   [FocusNewWindow] {no}
 [end]
+
+[app] (name=gcr-prompter)
+  [Position] (Center) {0 0}
+[end]
