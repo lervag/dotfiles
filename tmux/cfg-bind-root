@@ -20,20 +20,20 @@ bind -n DoubleClick1Pane select-pane -t = \; if -F "#{||:#{pane_in_mode},#{mouse
 bind -n TripleClick1Pane select-pane -t = \; if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { copy-mode ; send -X select-line }
 
 %hidden SHELL_CONTEXT="ps -o state= -o comm= -t '#{pane_tty}' | tail -n 1 | grep -q '^S zsh'"
-bind -n Up if $SHELL_CONTEXT {
+bind -n S-Up if $SHELL_CONTEXT {
   copy-mode
   send -X -N 2 search-backward "^lervag@.*:"
   send -X cursor-down
   send -X cursor-right
   send -X stop-selection
-} { send Up }
+} { send S-Up }
 
-bind -n Down if $SHELL_CONTEXT {
+bind -n S-Down if $SHELL_CONTEXT {
   copy-mode
   send -X search-forward "^lervag@.*:"
   send -X cursor-down
   send -X cursor-right
   send -X stop-selection
-} { send Down }
+} { send S-Down }
 
 # vim: filetype=tmux
