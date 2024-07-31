@@ -6,3 +6,4 @@ tags
 .tool-versions
 .luarc.json
 .tmuxinator.yml
+.tmuxinator.yaml
