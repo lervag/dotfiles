@@ -1,8 +1,0 @@
-#compdef sintef-search
-
-opts=( \
-  '(-e --energy)'{-e,--energy}'[only show people in SINTEF Energy Research]' \
-  '(-h --help)'{-h,--help}'[show help]' \
-  )
-
-_arguments $opts '*::' && return 0

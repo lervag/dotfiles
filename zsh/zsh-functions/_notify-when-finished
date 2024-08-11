@@ -1,3 +1,0 @@
-#compdef notify-when-finished
-
-_arguments '1:pid: _kill'

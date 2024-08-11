@@ -1,7 +1,0 @@
-#compdef run-when-changed
-
-_arguments  \
-  '-d[Watch directory]:directory:_files -/' \
-  '-h[Show usage information]' \
-  ':command: _command_names -e' \
-  '*::arguments: _normal'
