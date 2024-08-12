@@ -13,5 +13,7 @@ set -g default-terminal "tmux-256color"
 set -g copy-command "xclip -f -sel p | xclip -sel c"
 set -ga terminal-overrides ",rxvt-256color:Tc"
 set -ga terminal-overrides ',rxvt-256color:sitm=\E[3m'
+set -ga terminal-overrides ",xterm-256color:Tc"
+set -ga terminal-overrides ',xterm-256color:sitm=\E[3m'
 
 # vim: filetype=tmux

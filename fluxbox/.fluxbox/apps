@@ -38,6 +38,10 @@
   [Position] (Center) {0 0}
 [end]
 
+[app] (name=org.wezfurlong.wezterm)
+  [Position] (Center) {0 0}
+[end]
+
 [app] (name=anki)
   [Position] (Center) {0 0}
 [end]
