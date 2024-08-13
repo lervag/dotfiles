@@ -5,9 +5,18 @@
 local wezterm = require "wezterm"
 local config = wezterm.config_builder()
 
-wezterm.log_info("hello world! my name is " .. wezterm.hostname())
-
 config.hide_tab_bar_if_only_one_tab = true
+config.font = wezterm.font "JuliaMono"
+config.font_size = 13.5
+config.initial_rows = 46
+config.initial_cols = 82
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+config.use_resize_increments = true
 config.colors = {
   foreground = "#839496",
   background = "#002b36",
@@ -40,16 +49,5 @@ config.colors = {
     "#fdf6e3",
   },
 }
-config.font = wezterm.font "JuliaMono"
-config.font_size = 13.5
-config.initial_rows = 46
-config.initial_cols = 82
-config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
-}
-config.use_resize_increments = true
 
 return config
