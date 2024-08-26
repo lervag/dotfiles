@@ -17,6 +17,30 @@ config.window_padding = {
   bottom = 0,
 }
 config.use_resize_increments = true
+
+config.keys = {
+  {
+    key = "-",
+    mods = "SUPER",
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
+    key = "-",
+    mods = "SHIFT|CTRL",
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
+    key = "_",
+    mods = "CTRL",
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
+    key = "_",
+    mods = "SHIFT|CTRL",
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+}
+
 config.colors = {
   foreground = "#839496",
   background = "#002b36",
