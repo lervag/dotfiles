@@ -12,7 +12,6 @@ bind -n C-j if $CONTEXT { send C-j } { select-pane -D }
 bind -n C-k if $CONTEXT { send C-k } { select-pane -U }
 
 bind -n MouseDrag1Border resize-pane -M
-bind -n MouseDown1Pane   select-pane -t = \; send -M
 bind -n MouseDown2Pane   if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { run "xclip -o | tmux load-buffer -" ; paste-buffer }
 bind -n MouseDrag1Pane   if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { copy-mode }
 bind -n WheelUpPane      if -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send -M } { copy-mode -e }
