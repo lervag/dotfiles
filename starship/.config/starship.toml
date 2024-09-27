@@ -1,4 +1,4 @@
-# add_newline = false
+right_format = "$custom"
 
 [battery]
 format = "[$symbol$percentage]($style) "
@@ -39,3 +39,9 @@ disabled = true
 
 [package]
 disabled = true
+
+[custom.upterm]
+command = 'true'
+when = 'test $UPTERM_ADMIN_SOCKET'
+description = 'Upterm indicator'
+format = 'upterm [ ](fg:#e0dac9)'
