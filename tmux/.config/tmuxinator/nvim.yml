@@ -15,6 +15,6 @@ windows:
         - editor:
           - sleep 0.1
           - clear
-          - nvim +"VimuxOpenRunner" init.lua
+          - nvim +"VimuxOpenRunner" lua/lervag/init/packages.lua
         - tests:
           - clear
