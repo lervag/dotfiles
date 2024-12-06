@@ -10,9 +10,4 @@ on_project_exit:
 
 windows:
   - dev:
-      layout: even-horizontal
-      panes:
-        - editor:
-          - nvim
-        - shell:
-          -
+      - nvim
