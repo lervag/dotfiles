@@ -6,4 +6,4 @@ on_project_start:
 
 windows:
   - dev:
-      - nvim
+      - nvim src/main/scala/Main.scala
