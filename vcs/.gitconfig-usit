@@ -1,6 +1,6 @@
 [user]
   email = karl.yngve.lervag@sikt.no
-  signingkey = D0429BD70323444C
+  signingkey = 3788D158E5C9D014
 
 [commit]
   gpgsign = true
