@@ -9,6 +9,8 @@ blacklistadd https://unit.atlassian.net
 
 seturl ^https://teams.microsoft.com superignore true
 
+unbind --mode=insert <c-i>
+
 unbind <c-e>
 bind --mode=browser <c-e> tab #
 
