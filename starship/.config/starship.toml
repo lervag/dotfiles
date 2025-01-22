@@ -40,6 +40,9 @@ disabled = true
 [package]
 disabled = true
 
+[aws]
+disabled = true
+
 [custom.upterm]
 command = 'true'
 when = 'test $UPTERM_ADMIN_SOCKET'
