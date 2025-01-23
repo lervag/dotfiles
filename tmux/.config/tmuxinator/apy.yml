@@ -13,5 +13,5 @@ windows:
       layout: even-horizontal
       panes:
         - editor:
-          - run nvim +"VimuxOpenRunner"
+          - nvim +"VimuxOpenRunner"
         - tests:
