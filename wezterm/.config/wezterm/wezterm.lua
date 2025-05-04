@@ -17,6 +17,7 @@ config.window_padding = {
   bottom = 0,
 }
 config.use_resize_increments = true
+config.max_fps = 120
 
 config.keys = {
   {
