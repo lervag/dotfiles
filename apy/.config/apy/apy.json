@@ -12,5 +12,6 @@
     ["pdf2svg", "tmp.pdf", "tmp.svg"],
     ["sed", "-i", "-E", "1,5s/ (width|height)=\"[0-9.]+/&pt/g", "tmp.svg"]
   ],
-  "review_show_cards": true
+  "review_show_cards": true,
+  "markdown_latex_mode": "latex"
 }
