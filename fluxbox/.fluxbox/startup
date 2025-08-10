@@ -19,4 +19,12 @@ local=/home/lervag/.fluxbox.startup.local
 
 conky &
 
+# Ensure that the Xorg session has a valid keyboard layout
+setxkbmap \
+  -model pc105 \
+  -layout no \
+  -variant nodeadkeys \
+  -option ctrl:nocaps \
+  -option compose:rctrl
+
 wait $fbpid
