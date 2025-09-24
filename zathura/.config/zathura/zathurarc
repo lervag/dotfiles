@@ -6,8 +6,8 @@ set window-title-basename true
 set incremental-search false
 set synctex true
 set selection-notification false
-set sandbox none
 set vertical-center true
+set database sqlite
 
 # Colors
 set inputbar-bg "#fdf6e3"
@@ -21,7 +21,6 @@ set index-bg "#fdf6e3"
 set index-active-fg "#657b83"
 set highlight-active-color "#008800"
 set highlight-color "#007777"
-set highlight-transparency 0.15
 set completion-highlight-fg "#fdf6e3"
 set completion-highlight-bg "#657b83"
 set notification-bg "#fdf6e3"
