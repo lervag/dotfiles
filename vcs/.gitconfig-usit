@@ -1,8 +1,0 @@
-[user]
-  email = karl.yngve.lervag@sikt.no
-  signingkey = 3788D158E5C9D014
-
-[commit]
-  gpgsign = true
-
-; vim: ft=gitconfig
