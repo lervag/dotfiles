@@ -1,3 +1,19 @@
+# Fluxbox keybindings
+#
+# Mod1 = Alt
+# Mod4 = Super
+#
+# Som en generell regel vil jeg bruke Super som en "leader" key for alle
+# hurtigtaster. Jeg har noen få unntak:
+#
+# Museklikkene
+# Alt Tab                   bytt vindu
+# Alt [Control] [Shift] 1-4 styr vindu
+# Alt F2                    start program
+# Alt F3                    hent passord
+#
+# Ellers er alt basert på at vindumanager starter med Supertast.
+
 # Mouse shortcuts
 OnDesktop Mouse1     :HideMenus
 OnDesktop Mouse2     :WorkspaceMenu
@@ -21,16 +37,14 @@ Mod4 F1               :Exec dock
 Mod4 F10              :CommandDialog
 Mod4 F11              :Reconfigure
 Mod4 F12              :Restart
-Mod4 Control s        :Exec systemctl suspend
-Mod4 Control l        :Exec xscreensaver-command -lock
+Mod4 Shift Control s  :Exec systemctl suspend
+Mod4 Shift Control l  :Exec xscreensaver-command -lock
 Mod4 Control Delete   :Exit
 Mod4 Escape           :ClientMenu
 Mod4 Control Escape   :RootMenu
 
 # Control windows
 Mod1 Tab       :NextGroup (workspace=[current])
-Mod1 Shift Tab :PrevGroup (workspace=[current])
-Mod1 F4        :Close
 Mod1 1         :Workspace 1
 Mod1 2         :Workspace 2
 Mod1 3         :Workspace 3
@@ -43,44 +57,44 @@ Mod1 Shift 1   :SendToWorkspace 1
 Mod1 Shift 2   :SendToWorkspace 2
 Mod1 Shift 3   :SendToWorkspace 3
 Mod1 Shift 4   :SendToWorkspace 4
+Mod4 F4        :Close
 Mod4 space     :WindowMenu
 Mod4 t         :MacroCmd {SetLayer Top} {ToggleCmd {SetLayer Top} {SetLayer Normal}}
 Mod4 f         :Maximize
 Mod4 Shift f   :Fullscreen
-Mod4 v         :MaximizeVertical
+Mod4 Shift v   :MaximizeVertical
 Mod4 Shift d   :MaximizeHorizontal
-Mod4 Shift v   :ArrangeWindowsVertical
-Mod4 c         :MoveTo 0 0 Center
+Mod4 Shift c   :MoveTo 0 0 Center
 Mod4 a         :MacroCmd {MoveTo  0%   0%} {ResizeTo  50% 100%}
 Mod4 d         :MacroCmd {MoveTo 50%   0%} {ResizeTo  50% 100%}
 Mod4 w         :MacroCmd {MoveTo  0%   0%} {ResizeTo 100%  50%}
 Mod4 s         :MacroCmd {MoveTo  0%  50%} {ResizeTo 100%  50%}
-Mod4 k         :MoveTo  * 0% Top
-Mod4 j         :MoveTo  * 0% Bottom
-Mod4 h         :MoveTo 0%  * Left
-Mod4 l         :MoveTo 0%  * Right
+Mod4 Shift k   :MoveTo  * 0% Top
+Mod4 Shift j   :MoveTo  * 0% Bottom
+Mod4 Shift h   :MoveTo 0%  * Left
+Mod4 Shift l   :MoveTo 0%  * Right
 Mod4 Mod1 k    :Move  0 -5
 Mod4 Mod1 j    :Move  0 +5
 Mod4 Mod1 h    :Move -5  0
 Mod4 Mod1 l    :Move +5  0
-Mod4 Shift k   :ResizeVertical -5%
-Mod4 Shift j   :ResizeVertical +5%
-Mod4 Shift h   :ResizeHorizontal -5%
-Mod4 Shift l   :ResizeHorizontal +5%
+Mod4 Control k :ResizeVertical -5%
+Mod4 Control j :ResizeVertical +5%
+Mod4 Control h :ResizeHorizontal -5%
+Mod4 Control l :ResizeHorizontal +5%
 
 # Application shortcuts
 Print        :Exec flameshot gui
-Mod1 x       :Exec wezterm-gui start
-Mod1 v       :Exec wezterm-gui start -- nvim
-Mod1 n       :Exec wezterm-gui start -- nvim +WikiIndex
-Mod1 j       :Exec wezterm-gui start -- tmuxinator start journal
-Mod1 e       :Exec _fluxbox_paste.sh -e
-Mod1 r       :Exec _fluxbox_paste.sh -er
-Mod1 y       :Exec _fluxbox_paste.sh
-Mod1 c       :Exec showtime.sh
-Mod1 g       :Exec firefox
+Mod4 x       :Exec wezterm-gui start
+Mod4 v       :Exec wezterm-gui start -- nvim
+Mod4 n       :Exec wezterm-gui start -- nvim +WikiIndex
+Mod4 j       :Exec wezterm-gui start -- tmuxinator start journal
+Mod4 e       :Exec _fluxbox_paste.sh -e
+Mod4 r       :Exec _fluxbox_paste.sh -er
+Mod4 y       :Exec _fluxbox_paste.sh
+Mod4 c       :Exec showtime.sh
+Mod4 g       :Exec firefox
+Mod4 o       :Exec ocrmyscreen
 Mod1 F2      :Exec dmenu_run_history -p "program:"
 Mod1 F3      :Exec passmenu --typepass --hitreturn
-Mod1 k       :Exec ocrmyscreen
-Mod4 n       :Exec dunstctl close
+Mod4 Shift n :Exec dunstctl close
 Mod4 Mod1 n  :Exec dunstctl history-pop
