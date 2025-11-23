@@ -67,8 +67,6 @@ Mod4 Shift d   :MaximizeHorizontal
 Mod4 Shift c   :MoveTo 0 0 Center
 Mod4 a         :MacroCmd {MoveTo  0%   0%} {ResizeTo  50% 100%}
 Mod4 d         :MacroCmd {MoveTo 50%   0%} {ResizeTo  50% 100%}
-Mod4 w         :MacroCmd {MoveTo  0%   0%} {ResizeTo 100%  50%}
-Mod4 s         :MacroCmd {MoveTo  0%  50%} {ResizeTo 100%  50%}
 Mod4 Shift k   :MoveTo  * 0% Top
 Mod4 Shift j   :MoveTo  * 0% Bottom
 Mod4 Shift h   :MoveTo 0%  * Left

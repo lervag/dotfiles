@@ -21,6 +21,11 @@ config.max_fps = 120
 
 config.keys = {
   {
+    key = "w",
+    mods = "SUPER",
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
     key = "-",
     mods = "SUPER",
     action = wezterm.action.DisableDefaultAssignment,
