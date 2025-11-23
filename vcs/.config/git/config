@@ -94,7 +94,7 @@
   rv-one = "!$EDITOR -p +\"tabdo silent Gdiffsplit ${REVIEW_BASE:-master} | wincmd H\" +WinResize"
 
 [include]
-  path = .gitconfig-local
+  path = config-local
 
 [includeIf "hasconfig:remote.*.url:git@github.com:thermophys/**"]
-  path = .gitconfig-thermophys
+  path = config-thermophys

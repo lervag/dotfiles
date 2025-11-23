@@ -21,7 +21,20 @@ export SAVEHIST=200000
 export SHELLCHECK_OPTS="-e SC2034 -e SC1090"
 export TEXMFHOME=$HOME/.texmf
 export XEDITOR="vim +%l %f"
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
+
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
+# Flytt en del filer inn i XDG-kataloger
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
 source "$DOTFILES/fzf/fzf-options.sh"
 [ -r "$HOME/.profile.local" ] && source "$HOME/.profile.local"
