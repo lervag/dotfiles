@@ -48,8 +48,6 @@ alias sdiff='sdiff -w $(( $(tput cols) - 2 ))'
 
 if command -v nvim &>/dev/null; then
   export MANPAGER="nvim +Man!"
-else
-  alias man="TERMINFO=~/.terminfo/ LESS=c TERM=mostlike PAGER=less man"
 fi
 
 # Extension based commands

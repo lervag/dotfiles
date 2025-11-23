@@ -1,3 +1,0 @@
-tmux-256color-italic|tmux with 256 colors and italics,
-  ritm=\E[23m, rmso=\E[27m, sitm=\E[3m, smso=\E[7m, kbs=\\177,
-  use=screen-256color,
