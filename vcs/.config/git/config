@@ -7,7 +7,6 @@
 
 [core]
   pager = delta
-  excludesfile = ~/.gitignore
   quotepath = off
 
 [branch]
