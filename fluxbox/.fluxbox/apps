@@ -30,6 +30,11 @@
   [Jump] {no}
 [end]
 
+[app] (class=.*wezterm)
+  [Position] (Center) {0 0}
+  [Maximized] {vert}
+[end]
+
 [app] (name=urxvt)
   [Position] (Center) {0 0}
 [end]
