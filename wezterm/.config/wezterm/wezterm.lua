@@ -3,6 +3,7 @@
 -- * https://wezfurlong.org/wezterm/config/lua/config/index.html
 
 local wezterm = require "wezterm"
+
 local config = wezterm.config_builder()
 
 config.hide_tab_bar_if_only_one_tab = true
@@ -19,7 +20,35 @@ config.window_padding = {
 config.use_resize_increments = true
 config.max_fps = 120
 
+wezterm.on("trigger-vim-with-scrollback", function(window, pane)
+  -- Source:
+  -- https://github.com/wezterm/wezterm/issues/222#issuecomment-706444410
+  local io = require "io"
+  local os = require "os"
+
+  local scrollback = pane:get_lines_as_text()
+
+  local name = os.tmpname()
+  local f = io.open(name, "w+")
+  f:write(scrollback)
+  f:flush()
+  f:close()
+
+  window:perform_action(
+    wezterm.action { SpawnCommandInNewWindow = { args = { "nvim", name } } },
+    pane
+  )
+
+  wezterm.sleep_ms(1000)
+  os.remove(name)
+end)
+
 config.keys = {
+  {
+    key = "E",
+    mods = "SHIFT|CTRL",
+    action = wezterm.action { EmitEvent = "trigger-vim-with-scrollback" },
+  },
   {
     key = "w",
     mods = "SUPER",
@@ -44,6 +73,13 @@ config.keys = {
     key = "_",
     mods = "SHIFT|CTRL",
     action = wezterm.action.DisableDefaultAssignment,
+  },
+}
+
+config.mouse_bindings = {
+  {
+    event = { Down = { streak = 3, button = "Left" } },
+    action = wezterm.action.SelectTextAtMouseCursor "SemanticZone",
   },
 }
 
