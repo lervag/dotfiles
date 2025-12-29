@@ -48,3 +48,9 @@ command = 'true'
 when = 'test $UPTERM_ADMIN_SOCKET'
 description = 'Upterm indicator'
 format = 'upterm [ ](fg:#e0dac9)'
+
+[mise]
+disabled = false
+healthy_symbol = ""
+unhealthy_symbol = "unhealthy"
+format = '[mise](italic purple) [$health](bold red) '
