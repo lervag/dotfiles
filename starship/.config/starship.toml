@@ -31,8 +31,8 @@ format = "[$user](fg:#e0dac9)"
 [git_status]
 disabled = true
 
-[python]
-format = '(in [$virtualenv]($style))'
+# [python]
+# format = '(in [$virtualenv]($style)) '
 
 [scala]
 disabled = true
