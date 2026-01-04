@@ -85,7 +85,7 @@ mount() {
 z() {
   pdf=$(fd -t f -e pdf . ~/.local/zotero | fzf -m -d '/' --with-nth=-1)
   if [ -f "$pdf" ]; then
-    echo ${pdf#*zotero/storage/}
+    echo "Opening: ~${pdf#$HOME}"
     zathura $pdf &
   fi
 }
