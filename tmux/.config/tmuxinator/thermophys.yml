@@ -1,0 +1,22 @@
+name: thermophys
+root: ~/thermophys/repo/
+
+on_project_start:
+  - xdotool windowstate --add FULLSCREEN $(xdotool getactivewindow)
+
+on_project_exit:
+  - xdotool windowstate --remove FULLSCREEN $(xdotool getactivewindow)
+
+windows:
+  - tpapi:
+      root: ~/thermophys/repo/tp-api
+      panes:
+        - mise dev
+  - backend:
+      root: ~/thermophys/repo/thermophys-backend/
+      panes:
+        - mise dev
+  - frontend:
+      root: ~/thermophys/repo/thermophys-frontend/
+      panes:
+        - mise dev
