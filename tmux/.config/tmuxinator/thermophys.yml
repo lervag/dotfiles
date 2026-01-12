@@ -2,10 +2,10 @@ name: thermophys
 root: ~/thermophys/repo/
 
 on_project_start:
-  - xdotool windowstate --add FULLSCREEN $(xdotool getactivewindow)
+  - xdotool windowstate --add MAXIMIZED_HORZ $(xdotool getactivewindow)
 
 on_project_exit:
-  - xdotool windowstate --remove FULLSCREEN $(xdotool getactivewindow)
+  - xdotool windowstate --remove MAXIMIZED_HORZ $(xdotool getactivewindow)
 
 windows:
   - tpapi:
