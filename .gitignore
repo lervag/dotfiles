@@ -4,4 +4,3 @@ fluxbox/.fluxbox/overlay
 fluxbox/.fluxbox/fbrun_history
 xfce/.config/xfce4/xfconf
 xfce/.config/xfce4/xfce4-screenshooter
-tmux/.config/tmuxinator/*.yml
