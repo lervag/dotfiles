@@ -2,8 +2,9 @@
 -- * ~/.local/wiki/wezterm.wiki
 -- * https://wezfurlong.org/wezterm/config/lua/config/index.html
 
+---@diagnostic disable-next-line: assign-type-mismatch
+---@type Wezterm
 local wezterm = require "wezterm"
-
 local config = wezterm.config_builder()
 
 config.hide_tab_bar_if_only_one_tab = true
