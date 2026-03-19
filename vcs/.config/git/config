@@ -91,6 +91,7 @@
   rv-all = "!git rv-one $(git rv-files)"
   rv-files = "!git diff --name-only $(git merge-base HEAD \"${REVIEW_BASE:-master}\")"
   rv-one = "!$EDITOR -p +\"tabdo silent Gdiffsplit ${REVIEW_BASE:-master} | wincmd H\" +WinResize"
+  reset-to-origin = reset --hard @{u}
 
 [include]
   path = config-local
