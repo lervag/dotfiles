@@ -4,6 +4,7 @@ set configversion 2.0
 
 blacklistadd https://mail.google.com
 blacklistadd https://outlook.office.com
+blacklistadd https://outlook.cloud.microsoft
 blacklistadd https://feedly.com
 
 seturl ^https://teams.microsoft.com superignore true
