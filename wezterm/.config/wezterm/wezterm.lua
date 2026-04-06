@@ -1,11 +1,10 @@
 -- Referanser
--- * ~/.local/wiki/wezterm.wiki
+-- * wiki:wezterm
 -- * https://wezfurlong.org/wezterm/config/lua/config/index.html
 
----@diagnostic disable-next-line: assign-type-mismatch
----@type Wezterm
 local wezterm = require "wezterm"
 local config = wezterm.config_builder()
+local actions = wezterm.action
 
 config.hide_tab_bar_if_only_one_tab = true
 config.font = wezterm.font "JuliaMono"
@@ -36,7 +35,7 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
   f:close()
 
   window:perform_action(
-    wezterm.action { SpawnCommandInNewWindow = { args = { "nvim", name } } },
+    actions.SpawnCommandInNewWindow { args = { "nvim", name } },
     pane
   )
 
@@ -48,39 +47,39 @@ config.keys = {
   {
     key = "E",
     mods = "SHIFT|CTRL",
-    action = wezterm.action { EmitEvent = "trigger-vim-with-scrollback" },
+    action = actions.EmitEvent "trigger-vim-with-scrollback",
   },
   {
     key = "w",
     mods = "SUPER",
-    action = wezterm.action.DisableDefaultAssignment,
+    action = actions.DisableDefaultAssignment,
   },
   {
     key = "-",
     mods = "SUPER",
-    action = wezterm.action.DisableDefaultAssignment,
+    action = actions.DisableDefaultAssignment,
   },
   {
     key = "-",
     mods = "SHIFT|CTRL",
-    action = wezterm.action.DisableDefaultAssignment,
+    action = actions.DisableDefaultAssignment,
   },
   {
     key = "_",
     mods = "CTRL",
-    action = wezterm.action.DisableDefaultAssignment,
+    action = actions.DisableDefaultAssignment,
   },
   {
     key = "_",
     mods = "SHIFT|CTRL",
-    action = wezterm.action.DisableDefaultAssignment,
+    action = actions.DisableDefaultAssignment,
   },
 }
 
 config.mouse_bindings = {
   {
     event = { Down = { streak = 3, button = "Left" } },
-    action = wezterm.action.SelectTextAtMouseCursor "SemanticZone",
+    action = actions.SelectTextAtMouseCursor "SemanticZone",
   },
 }
 
