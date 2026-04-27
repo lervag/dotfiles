@@ -12,6 +12,12 @@ windows:
       layout: even-horizontal
       root: ~/thermophys/repo
       panes:
-        - cd tp-api; mise dev
-        - cd thermophys-backend; mise dev
-        - cd thermophys-frontend; mise dev
+        - tp-api:
+          - cd tp-api
+          - mise dev
+        - thermophys-backend:
+          - cd thermophys-backend
+          - mise dev
+        - thermophys-frontend:
+          - cd thermophys-frontend
+          - mise dev
