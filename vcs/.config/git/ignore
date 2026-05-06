@@ -10,3 +10,5 @@ tags
 .git
 .opencode
 .grip/
+
+.claude/settings.local.json
