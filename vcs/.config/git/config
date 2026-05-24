@@ -79,7 +79,7 @@
   prunetags = true
 
 [alias]
-  mt = "!nvim +DiffviewOpen +tabonly +'let g:mergemode=1'"
+  mt = "!nvim +MergeMode"
   ci = commit
   co = checkout
   st = status
