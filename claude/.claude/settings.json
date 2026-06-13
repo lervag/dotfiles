@@ -1,9 +1,18 @@
 {
-  "theme": "dark",
   "env": {
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "DISABLE_AUTOUPDATER": "1",
     "IS_DEMO": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(gh issue view:*)",
+      "Bash(gh pr view:*)"
+    ]
+  },
+  "theme": "dark",
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
   }
 }
