@@ -61,6 +61,7 @@ Mod4 F4        :Close
 Mod4 space     :WindowMenu
 Mod4 t         :MacroCmd {SetLayer Top} {ToggleCmd {SetLayer Top} {SetLayer Normal}}
 Mod4 f         :Maximize
+Mod4 F2        :ArrangeWindowsVertical (.*wezterm.*)
 Mod4 Shift f   :Fullscreen
 Mod4 Shift v   :MaximizeVertical
 Mod4 Shift d   :MaximizeHorizontal
