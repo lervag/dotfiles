@@ -15,9 +15,6 @@ windows:
         - tp-api:
           - cd tp-api
           - mise dev
-        - thermophys-backend:
-          - cd thermophys-backend
-          - mise dev
         - thermophys-frontend:
           - cd thermophys-frontend
           - mise dev
