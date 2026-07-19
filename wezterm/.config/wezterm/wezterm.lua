@@ -105,7 +105,7 @@ config.colors = {
     "#eee8d5",
   },
   brights = {
-    "#002b36",
+    "#0d5e73", -- to avoid clash with background
     "#cb4b16",
     "#586e75",
     "#657b83",
