@@ -1,0 +1,7 @@
+[tools]
+usage = "latest"
+"github:raine/workmux" = "latest"
+
+[hooks.enter]
+shell = "zsh"
+script = 'eval "$(workmux completions zsh)"'
