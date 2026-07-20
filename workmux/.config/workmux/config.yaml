@@ -1,0 +1,7 @@
+nerdfont: true
+
+files:
+  symlink:
+    - .env
+  copy:
+    - .next/cache
