@@ -1,6 +1,9 @@
 [tools]
-usage = "latest"
 "github:raine/workmux" = "latest"
+usage = "latest"
+
+[settings]
+minimum_release_age = "7d"
 
 [hooks.enter]
 shell = "zsh"
