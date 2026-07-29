@@ -1,16 +1,8 @@
 # Personal dotfiles
 
-This repository simply contains my configurations and settings for personal
-conveniance.
+This repository simply contains my configurations and settings for personal conveniance.
 
 # Install
 
-Requires [GNU stow](https://www.gnu.org/software/stow/).
+I'm converting this to [mise bootstrap](https://mise.jdx.dev/bootstrap.html).
 
-```sh
-# One at a time
-stow bash zsh tmux ...
-
-# Or all at once
-for f in *(/); stow $f
-```

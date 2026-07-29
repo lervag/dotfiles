@@ -1,0 +1,123 @@
+[settings]
+dotfiles.default_mode = "symlink"
+
+# [bootstrap.packages]
+# "pacman:openssl" = "latest"
+# "pacman:base-devel" = "latest"
+
+[bootstrap.repos]
+"~/.config/nvim" = { url = "git@github.com:lervag/dotnvim.git" }
+"~/.dotfiles" = { url = "git@github.com:lervag/dotfiles.git" }
+"~/.password-store" = { url = "git@github.com:lervag/pass" }
+"~/scripts" = { url = "git@github.com:lervag/scripts.git" }
+
+[dotfiles]
+"~/.config/alacritty" = "alacritty/.config/alacritty"
+"~/.config/apy" = "apy/.config/apy"
+
+"~/.bash_profile" = "bash/.bash_profile"
+"~/.bashrc" = "bash/.bashrc"
+"~/.profile" = "bash/.profile"
+
+"~/.config/bat" = "bat/.config/bat"
+
+"~/.claude/keybindings.json" = "claude/.claude/keybindings.json"
+"~/.claude/settings.json" = "claude/.claude/settings.json"
+
+"~/.config/conky" = "conky/.config/conky"
+
+"~/.config/dunst" = "dunst/.config/dunst"
+
+"~/.config/feh" = "feh/.config/feh"
+
+"~/.config/flameshot" = "flameshot/.config/flameshot"
+
+"~/.fluxbox" = "fluxbox/.fluxbox"
+
+"~/.gnome-keybidings" = "gnome/.gnome-keybidings"
+
+"~/.gnupg/gpg-agent.conf" = "gpg/.gnupg/gpg-agent.conf"
+
+"~/.config/kitty" = "kitty/.config/kitty"
+
+"~/.chktexrc" = "latex/.chktexrc"
+"~/.references.bib" = "latex/.references.bib"
+"~/.references-mine.bib" = "latex/.references-mine.bib"
+"~/.config/latexmk" = "latex/.config/latexmk"
+"~/.texmf" = "latex/.texmf"
+
+"~/.clisprc.lisp" = "lisp/.clisprc.lisp"
+"~/.lisp-common" = "lisp/.lisp-common"
+"~/.sbclrc" = "lisp/.sbclrc"
+
+"~/.config/stylua" = "lua/.config/stylua"
+
+"~/.config/ack/ackrc" = "misc/.config/ack/ackrc"
+"~/.config/alsa" = "misc/.config/alsa"
+"~/.ctags" = "misc/.ctags"
+"~/.ctags.d" = "misc/.ctags.d"
+"~/.cvimrc" = "misc/.cvimrc"
+"~/.dircolors.ansi-dark" = "misc/.dircolors.ansi-dark"
+"~/.gtkrc-2.0.mine" = "misc/.gtkrc-2.0.mine"
+"~/.inputrc" = "misc/.inputrc"
+"~/.irbrc" = "misc/.irbrc"
+"~/.mailrc" = "misc/.mailrc"
+"~/.pam_environment" = "misc/.pam_environment"
+"~/.pdfpcrc" = "misc/.pdfpcrc"
+"~/.tecplot.cfg" = "misc/.tecplot.cfg"
+"~/.toprc" = "misc/.toprc"
+"~/.vintrc.yaml" = "misc/.vintrc.yaml"
+
+"~/.config/mise/config.toml" = "mise/.config/mise/config.toml"
+
+"~/.config/ncspot" = "ncspot/.config/ncspot"
+
+"~/.config/npm/npmrc" = "npm/.config/npm/npmrc"
+
+"~/.config/openbox" = "openbox/.config/openbox"
+
+"~/.pg_format" = "pg_format/.pg_format"
+
+"~/.pylintrc" = "python/.pylintrc"
+"~/.pythonrc.py" = "python/.pythonrc.py"
+
+"~/.screenrc" = "screen/.screenrc"
+
+"~/.config/sioyek" = "sioyek/.config/sioyek"
+
+"~/.ssh/config" = "ssh/.ssh/config"
+
+"~/.config/starship.toml" = "starship/.config/starship.toml"
+
+"~/.config/systemd/user/check-battery.service" = "systemd/.config/systemd/user/check-battery.service"
+"~/.config/systemd/user/check-battery.timer" = "systemd/.config/systemd/user/check-battery.timer"
+"~/.config/systemd/user/insync.service" = "systemd/.config/systemd/user/insync.service"
+
+"~/.tmux.conf" = "tmux/.tmux.conf"
+"~/.config/tmuxinator" = "tmux/.config/tmuxinator"
+
+"~/.config/tridactyl" = "tridactyl/.config/tridactyl"
+
+"~/.config/git/config" = "vcs/.config/git/config"
+"~/.config/git/config-thermophys" = "vcs/.config/git/config-thermophys"
+"~/.config/git/ignore" = "vcs/.config/git/ignore"
+"~/.config/hg/hgrc" = "vcs/.config/hg/hgrc"
+"~/.hgk" = "vcs/.hgk"
+"~/.mrconfig" = "vcs/.mrconfig"
+
+"~/.vim" = "vim/.vim"
+
+"~/.config/wezterm" = "wezterm/.config/wezterm"
+
+"~/.config/workmux/config.yaml" = "workmux/.config/workmux/config.yaml"
+
+"~/.Xresources" = "X/.Xresources"
+"~/.xinitrc" = "X/.xinitrc"
+"~/.xprofile" = "X/.xprofile"
+
+"~/.config/zathura" = "zathura/.config/zathura"
+
+"~/.config/zellij/config.kdl" = "zellij/.config/zellij/config.kdl"
+
+"~/.zshrc" = "zsh/.zshrc"
+"~/.zshenv" = "zsh/.zshenv"
