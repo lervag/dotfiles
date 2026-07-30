@@ -333,8 +333,12 @@ fi
 
 #{{{1 Load system-specific settings
 
+source "$DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+ZSH_HIGHLIGHT_STYLES[alias]='fg=green,underline'
+
 sysfiles=(
-  $DOTFILES/bash/common-functions.sh
   $HOME/.zshrc.local
   "/usr/share/fzf/key-bindings.zsh"
   "/usr/share/fzf/completion.zsh"
