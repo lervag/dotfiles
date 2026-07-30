@@ -352,7 +352,7 @@ done
 #}}}1
 
 # Welcome message for login shells
-if [[ $SHLVL -le 2 && -z "$TMUX" ]] && command -v ls-session >/dev/null ; then
+if [[ $SHLVL -le 2 && -z "$TMUX" ]] && command -v ls-sessions >/dev/null ; then
   ls-sessions
 fi
 
