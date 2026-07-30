@@ -55,8 +55,6 @@ dotfiles.default_mode = "symlink"
 "~/.config/workmux/config.yaml" = {}
 "~/.config/zathura/zathurarc" = {}
 "~/.config/zellij/config.kdl" = {}
-"~/.ctags" = {}
-"~/.ctags.d/default.ctags" = {}
 "~/.cvimrc" = {}
 "~/.dircolors.ansi-dark" = {}
 "~/.fluxbox" = { mode = "symlink-each" }
