@@ -26,8 +26,6 @@ if [ -f /etc/bash_completion ]; then
   source /etc/bash_completion
 fi
 
-source $DOTFILES/bash/auto_completions.sh
-
 umask 022           # Default file permissions
 ulimit -s unlimited # Set unlimited stack size
 
