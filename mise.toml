@@ -1,4 +1,5 @@
 [settings]
+dotfiles.root = "~/.dotfiles"
 dotfiles.default_mode = "symlink"
 
 # [bootstrap.packages]
@@ -16,76 +17,75 @@ dotfiles.default_mode = "symlink"
 "~/.zsh/zsh-syntax-highlighting" = { url = "https://github.com/zsh-users/zsh-syntax-highlighting.git", ref = "master" }
 
 [dotfiles]
-"~/.Xresources" = "X/.Xresources"
-"~/.bash_profile" = "bash/.bash_profile"
-"~/.bashrc" = "bash/.bashrc"
-"~/.chktexrc" = "latex/.chktexrc"
-"~/.claude/keybindings.json" = "claude/.claude/keybindings.json"
-"~/.claude/settings.json" = "claude/.claude/settings.json"
-"~/.clisprc.lisp" = "lisp/.clisprc.lisp"
-"~/.config/ack/ackrc" = "misc/.config/ack/ackrc"
-"~/.config/alacritty" = "alacritty/.config/alacritty"
-"~/.config/alsa" = "misc/.config/alsa"
-"~/.config/apy" = "apy/.config/apy"
-"~/.config/bat" = "bat/.config/bat"
-"~/.config/conky" = "conky/.config/conky"
-"~/.config/dunst" = "dunst/.config/dunst"
-"~/.config/feh" = "feh/.config/feh"
-"~/.config/flameshot" = "flameshot/.config/flameshot"
-"~/.config/git/config" = "vcs/.config/git/config"
-"~/.config/git/config-thermophys" = "vcs/.config/git/config-thermophys"
-"~/.config/git/ignore" = "vcs/.config/git/ignore"
-"~/.config/hg/hgrc" = "vcs/.config/hg/hgrc"
-"~/.config/kitty" = "kitty/.config/kitty"
-"~/.config/latexmk" = "latex/.config/latexmk"
-"~/.config/mise/config.toml" = "mise/.config/mise/config.toml"
-"~/.config/ncspot" = "ncspot/.config/ncspot"
-"~/.config/npm/npmrc" = "npm/.config/npm/npmrc"
-"~/.config/openbox" = "openbox/.config/openbox"
-"~/.config/sioyek" = "sioyek/.config/sioyek"
-"~/.config/starship.toml" = "starship/.config/starship.toml"
-"~/.config/stylua" = "lua/.config/stylua"
-"~/.config/systemd/user/check-battery.service" = "systemd/.config/systemd/user/check-battery.service"
-"~/.config/systemd/user/check-battery.timer" = "systemd/.config/systemd/user/check-battery.timer"
-"~/.config/systemd/user/insync.service" = "systemd/.config/systemd/user/insync.service"
-"~/.config/tmuxinator" = "tmux/.config/tmuxinator"
-"~/.config/tridactyl" = "tridactyl/.config/tridactyl"
-"~/.config/wezterm" = "wezterm/.config/wezterm"
-"~/.config/workmux/config.yaml" = "workmux/.config/workmux/config.yaml"
-"~/.config/zathura" = "zathura/.config/zathura"
-"~/.config/zellij/config.kdl" = "zellij/.config/zellij/config.kdl"
-"~/.ctags" = "misc/.ctags"
-"~/.ctags.d" = "misc/.ctags.d"
-"~/.cvimrc" = "misc/.cvimrc"
-"~/.dircolors.ansi-dark" = "misc/.dircolors.ansi-dark"
-"~/.fluxbox" = "fluxbox/.fluxbox"
-"~/.gnome-keybidings" = "gnome/.gnome-keybidings"
-"~/.gnupg/gpg-agent.conf" = "gpg/.gnupg/gpg-agent.conf"
-"~/.gtkrc-2.0.mine" = "misc/.gtkrc-2.0.mine"
-"~/.hgk" = "vcs/.hgk"
-"~/.inputrc" = "misc/.inputrc"
-"~/.irbrc" = "misc/.irbrc"
-"~/.lisp-common" = "lisp/.lisp-common"
-"~/.mailrc" = "misc/.mailrc"
-"~/.mrconfig" = "vcs/.mrconfig"
-"~/.pam_environment" = "misc/.pam_environment"
-"~/.pdfpcrc" = "misc/.pdfpcrc"
-"~/.pg_format" = "pg_format/.pg_format"
-"~/.profile" = "bash/.profile"
-"~/.pylintrc" = "python/.pylintrc"
-"~/.pythonrc.py" = "python/.pythonrc.py"
-"~/.references-mine.bib" = "latex/.references-mine.bib"
-"~/.references.bib" = "latex/.references.bib"
-"~/.sbclrc" = "lisp/.sbclrc"
-"~/.screenrc" = "screen/.screenrc"
-"~/.ssh/config" = "ssh/.ssh/config"
-"~/.tecplot.cfg" = "misc/.tecplot.cfg"
-"~/.texmf" = "latex/.texmf"
-"~/.tmux.conf" = "tmux/.tmux.conf"
-"~/.toprc" = "misc/.toprc"
-"~/.vim" = "vim/.vim"
-"~/.vintrc.yaml" = "misc/.vintrc.yaml"
-"~/.xinitrc" = "X/.xinitrc"
-"~/.xprofile" = "X/.xprofile"
-"~/.zshenv" = "zsh/.zshenv"
-"~/.zshrc" = "zsh/.zshrc"
+"~/.Xresources" = {}
+"~/.bash_profile" = {}
+"~/.bashrc" = {}
+"~/.chktexrc" = {}
+"~/.claude/keybindings.json" = {}
+"~/.claude/settings.json" = {}
+"~/.clisprc.lisp" = {}
+"~/.config/ack/ackrc" = {}
+"~/.config/alacritty" = { mode = "symlink-each" }
+"~/.config/alsa/asoundrc" = {}
+"~/.config/apy/apy.json" = {}
+"~/.config/bat/config" = {}
+"~/.config/conky" = { mode = "symlink-each" }
+"~/.config/dunst/dunstrc" = {}
+"~/.config/feh/themes" = {}
+"~/.config/flameshot/flameshot.ini" = {}
+"~/.config/git/config" = {}
+"~/.config/git/config-thermophys" = {}
+"~/.config/git/ignore" = {}
+"~/.config/hg/hgrc" = {}
+"~/.config/kitty" = { mode = "symlink-each" }
+"~/.config/latexmk/latexmkrc" = {}
+"~/.config/mise/config.toml" = ".mise.global.config"
+"~/.config/ncspot/config.toml" = {}
+"~/.config/npm/npmrc" = {}
+"~/.config/openbox" = { mode = "symlink-each" }
+"~/.config/sioyek" = { mode = "symlink-each" }
+"~/.config/starship.toml" = {}
+"~/.config/stylua/stylua.toml" = {}
+"~/.config/systemd/user/check-battery.service" = {}
+"~/.config/systemd/user/check-battery.timer" = {}
+"~/.config/systemd/user/insync.service" = {}
+"~/.config/tmuxinator" = { mode = "symlink-each" }
+"~/.config/tridactyl/tridactylrc" = {}
+"~/.config/wezterm" = { mode = "symlink-each" }
+"~/.config/workmux/config.yaml" = {}
+"~/.config/zathura/zathurarc" = {}
+"~/.config/zellij/config.kdl" = {}
+"~/.ctags" = {}
+"~/.ctags.d/default.ctags" = {}
+"~/.cvimrc" = {}
+"~/.dircolors.ansi-dark" = {}
+"~/.fluxbox" = { mode = "symlink-each" }
+"~/.gnome-keybidings" = {}
+"~/.gnupg/gpg-agent.conf" = {}
+"~/.gtkrc-2.0.mine" = {}
+"~/.hgk" = {}
+"~/.inputrc" = {}
+"~/.irbrc" = {}
+"~/.lisp-common" = {}
+"~/.mailrc" = {}
+"~/.pam_environment" = {}
+"~/.pdfpcrc" = {}
+"~/.pg_format" = {}
+"~/.profile" = {}
+"~/.pylintrc" = {}
+"~/.pythonrc.py" = {}
+"~/.references-mine.bib" = {}
+"~/.references.bib" = {}
+"~/.sbclrc" = {}
+"~/.screenrc" = {}
+"~/.ssh/config" = {}
+"~/.tecplot.cfg" = {}
+"~/.texmf" = { mode = "symlink-each" }
+"~/.tmux.conf" = {}
+"~/.toprc" = {}
+"~/.vim" = { mode = "symlink-each" }
+"~/.vintrc.yaml" = {}
+"~/.xinitrc" = {}
+"~/.xprofile" = {}
+"~/.zshenv" = {}
+"~/.zshrc" = {}
