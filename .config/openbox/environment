@@ -1,1 +1,0 @@
-setxkbmap -layout no -variant nodeadkeys -model pc105 -option compose:caps
