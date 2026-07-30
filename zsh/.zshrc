@@ -96,7 +96,7 @@ z() {
 # Load some custom zsh functions, e.g. for completion
 fpath=($HOME/.local/zsh-functions $fpath)
 fpath=($DOTFILES/zsh/zsh-functions $fpath)
-fpath=($DOTFILES/zsh/zsh-completions/src $fpath)
+fpath=($HOME/.zsh/zsh-completions/src $fpath)
 
 # Set default file permissions
 umask 022
@@ -333,7 +333,7 @@ fi
 
 #{{{1 Load system-specific settings
 
-source "$DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_STYLES[alias]='fg=green,underline'

@@ -11,6 +11,10 @@ dotfiles.default_mode = "symlink"
 "~/.password-store" = { url = "git@github.com:lervag/pass", ref = "master" }
 "~/scripts" = { url = "git@github.com:lervag/scripts.git", ref = "master" }
 
+# third-party additions
+"~/.zsh/zsh-completions" = { url = "https://github.com/zsh-users/zsh-completions.git", ref = "master" }
+"~/.zsh/zsh-syntax-highlighting" = { url = "https://github.com/zsh-users/zsh-syntax-highlighting.git", ref = "master" }
+
 [dotfiles]
 "~/.Xresources" = "X/.Xresources"
 "~/.bash_profile" = "bash/.bash_profile"
