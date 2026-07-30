@@ -6,10 +6,10 @@ dotfiles.default_mode = "symlink"
 # "pacman:base-devel" = "latest"
 
 [bootstrap.repos]
-"~/.config/nvim" = { url = "git@github.com:lervag/dotnvim.git" }
-"~/.dotfiles" = { url = "git@github.com:lervag/dotfiles.git" }
-"~/.password-store" = { url = "git@github.com:lervag/pass" }
-"~/scripts" = { url = "git@github.com:lervag/scripts.git" }
+"~/.config/nvim" = { url = "git@github.com:lervag/dotnvim.git", ref = "main" }
+"~/.dotfiles" = { url = "git@github.com:lervag/dotfiles.git", ref = "master" }
+"~/.password-store" = { url = "git@github.com:lervag/pass", ref = "master" }
+"~/scripts" = { url = "git@github.com:lervag/scripts.git", ref = "master" }
 
 [dotfiles]
 "~/.config/alacritty" = "alacritty/.config/alacritty"

@@ -1,8 +1,11 @@
-# Personal dotfiles
+# Introduction
 
-This repository simply contains my configurations and settings for personal conveniance.
+This is my personal dotfiles repo.
 
-# Install
+The bootstrap config lives in `mise.toml` at the repo root.
+Run the commands below from within `~/.dotfiles` or from anywhere with `mise -C ~/.dotfiles …`).
 
-I'm converting this to [mise bootstrap](https://mise.jdx.dev/bootstrap.html).
+## Repositories
 
+External repos are declared in `[bootstrap.repos]` and managed with `mise bootstrap repos`.
+This replaces the old `mr` (myrepos) setup.
