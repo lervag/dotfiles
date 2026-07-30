@@ -46,8 +46,6 @@ alias cd..='cd ..'
 alias make='make --no-print-directory'
 
 # Load common functions and local settings
-funcs=$DOTFILES/bash/common-functions.sh
-[ -f $funcs ] && . $funcs
 [ -f $HOME/.bashrc.local ] && . $HOME/.bashrc.local
 
 # Set command prompt and remove CTRL-s and CTRL-q possibility
