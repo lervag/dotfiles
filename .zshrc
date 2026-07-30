@@ -95,7 +95,7 @@ z() {
 
 # Load some custom zsh functions, e.g. for completion
 fpath=($HOME/.local/zsh-functions $fpath)
-fpath=($DOTFILES/zsh/zsh-functions $fpath)
+fpath=($DOTFILES/zsh-functions $fpath)
 fpath=($HOME/.zsh/zsh-completions/src $fpath)
 
 # Set default file permissions
