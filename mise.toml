@@ -42,7 +42,6 @@ dotfiles.default_mode = "symlink"
 "~/.config/mise/config.toml" = ".mise.global.config"
 "~/.config/ncspot/config.toml" = {}
 "~/.config/npm/npmrc" = {}
-"~/.config/openbox" = { mode = "symlink-each" }
 "~/.config/sioyek" = { mode = "symlink-each" }
 "~/.config/starship.toml" = {}
 "~/.config/stylua/stylua.toml" = {}
