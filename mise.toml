@@ -46,14 +46,12 @@ dotfiles.default_mode = "symlink"
 "~/.config/stylua/stylua.toml" = {}
 "~/.config/systemd/user/check-battery.service" = {}
 "~/.config/systemd/user/check-battery.timer" = {}
-"~/.config/systemd/user/insync.service" = {}
 "~/.config/tmuxinator" = { mode = "symlink-each" }
 "~/.config/tridactyl/tridactylrc" = {}
 "~/.config/wezterm" = { mode = "symlink-each" }
 "~/.config/workmux/config.yaml" = {}
 "~/.config/zathura/zathurarc" = {}
 "~/.config/zellij/config.kdl" = {}
-"~/.cvimrc" = {}
 "~/.dircolors.ansi-dark" = {}
 "~/.fluxbox" = { mode = "symlink-each" }
 "~/.gnome-keybidings" = {}
@@ -76,7 +74,6 @@ dotfiles.default_mode = "symlink"
 "~/.sbclrc" = {}
 "~/.screenrc" = {}
 "~/.ssh/config" = {}
-"~/.tecplot.cfg" = {}
 "~/.texmf" = { mode = "symlink-each" }
 "~/.tmux.conf" = {}
 "~/.toprc" = {}
