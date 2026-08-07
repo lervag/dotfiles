@@ -43,7 +43,7 @@ export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
 export TERMINFO="$XDG_DATA_HOME"/terminfo
 export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 
-source "$DOTFILES/fzf/fzf-options.sh"
+source "$DOTFILES/lib/fzf/fzf-options.sh"
 [ -r "$HOME/.profile.local" ] && source "$HOME/.profile.local"
 
 stty -ixon

@@ -8,7 +8,6 @@ dotfiles.default_mode = "symlink"
 
 [bootstrap.repos]
 "~/.config/nvim" = { url = "git@github.com:lervag/dotnvim.git", ref = "main" }
-"~/.dotfiles" = { url = "git@github.com:lervag/dotfiles.git", ref = "master" }
 "~/.password-store" = { url = "git@github.com:lervag/pass", ref = "master" }
 "~/scripts" = { url = "git@github.com:lervag/scripts.git", ref = "master" }
 
@@ -64,6 +63,7 @@ dotfiles.default_mode = "symlink"
 "~/.inputrc" = {}
 "~/.irbrc" = {}
 "~/.lisp-common" = {}
+"~/.local/bin/dots" = {}
 "~/.mailrc" = {}
 "~/.pam_environment" = {}
 "~/.pdfpcrc" = {}

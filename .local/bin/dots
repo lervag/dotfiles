@@ -1,0 +1,191 @@
+#!/usr/bin/env bash
+#
+# dots — keep this machine in sync with the dotfiles repo.
+#
+# A thin wrapper around `mise bootstrap` (config: ~/.dotfiles/mise.toml). It
+# exists because two things can't be expressed as a plain mise task:
+#
+#   1. The `git pull` of ~/.dotfiles must run in a separate process from the
+#      mise invocation that reads the pulled mise.toml. Otherwise a config
+#      change only takes effect on the second run. This is also why ~/.dotfiles
+#      is deliberately absent from [bootstrap.repos].
+#   2. `mise bootstrap`'s repos step aborts the entire run if any repo has
+#      local changes, so one untracked file in a repo you happen to be editing
+#      would stop the dotfiles from being applied. We pull the repos ourselves
+#      (skipping and reporting dirty ones) and hand mise `--skip repos`.
+#
+# The whole script is wrapped in main() so that pulling a new version of this
+# very file mid-run can't confuse bash's incremental script reader.
+
+set -euo pipefail
+
+main() {
+  ROOT=${DOTFILES:-$HOME/.dotfiles}
+  step_seen=''
+
+  if [[ -t 1 ]]; then
+    bold=$'\e[1m' dim=$'\e[2m' red=$'\e[31m' green=$'\e[32m' yellow=$'\e[33m' reset=$'\e[0m'
+  else
+    bold='' dim='' red='' green='' yellow='' reset=''
+  fi
+
+  local cmd=${1-status}
+  if [[ $# -gt 0 ]]; then shift; fi
+
+  case $cmd in
+    status | st) cmd_status "$@" ;;
+    sync)        cmd_sync "$@" ;;
+    broken)      cmd_broken "$@" ;;
+    add)         mise bootstrap dotfiles add "$@" ;;
+    apply)       mise bootstrap dotfiles apply "$@" ;;
+    -h | --help | help) usage ;;
+    *) printf '%sdots: unknown command: %s%s\n\n' "$red" "$cmd" "$reset" >&2; usage >&2; exit 2 ;;
+  esac
+}
+
+usage() {
+  cat <<'EOF'
+usage: dots [command]
+
+  status        show repo and dotfile state (default)
+  sync          pull every repo, then converge this machine
+  broken [-r]   list dangling links into the repo (-r removes them)
+  add PATH      start managing PATH (moves it into the repo mirror)
+  apply [T...]  re-apply dotfiles without pulling
+
+Anything more exotic: mise -C ~/.dotfiles bootstrap --help
+EOF
+}
+
+# --- helpers ----------------------------------------------------------------
+
+mise() { command mise -C "$ROOT" "$@"; }
+step() { printf '%s%s%s%s\n' "${step_seen:+$'\n'}" "$bold" "$*" "$reset"; step_seen=1; }
+info() { printf '  %s\n' "$*"; }
+ok()   { printf '  %s%s%s\n' "$green" "$*" "$reset"; }
+warn() { printf '  %s%s%s\n' "$yellow" "$*" "$reset"; }
+die()  { printf '%sdots: %s%s\n' "$red" "$*" "$reset" >&2; exit 1; }
+
+repos_tsv() {
+  mise bootstrap repos status --json |
+    jq -r '.repos[] | [.path_raw, .path, .url, .ref, .state, .reason] | @tsv'
+}
+
+is_repo()  { [[ -e $1/.git ]]; }
+is_dirty() { [[ -n $(git -C "$1" status --porcelain 2>/dev/null) ]]; }
+
+repo_line() { printf '  %-32s %-7s %s\n' "$1" "$2" "$3"; }
+
+pull_repo() {
+  local path=$1 name=${2:-$1} before after n
+
+  if ! is_repo "$path"; then
+    warn "$name: not a git checkout, skipped"
+    return
+  fi
+  if is_dirty "$path"; then
+    warn "$name: local changes, not pulling — commit or stash first"
+    return
+  fi
+  if ! git -C "$path" rev-parse '@{u}' >/dev/null 2>&1; then
+    warn "$name: no upstream for '$(git -C "$path" branch --show-current)', skipped"
+    return
+  fi
+
+  before=$(git -C "$path" rev-parse HEAD)
+  if ! git -C "$path" pull --ff-only --quiet; then
+    warn "$name: pull failed — diverged from upstream?"
+    return
+  fi
+  after=$(git -C "$path" rev-parse HEAD)
+  if [[ $before == "$after" ]]; then
+    info "$name: up to date"
+  else
+    n=$(git -C "$path" rev-list --count "$before..$after")
+    ok "$name: pulled $n commit(s)"
+  fi
+}
+
+# --- commands ---------------------------------------------------------------
+
+cmd_status() {
+  step 'repos'
+  local dotfiles_state=current
+  if is_dirty "$ROOT"; then dotfiles_state='dirty: local changes'; fi
+
+  # shellcheck disable=SC2088
+  repo_line '~/.dotfiles' "$(git -C "$ROOT" branch --show-current)" "$dotfiles_state"
+
+  local path_raw path url ref state reason
+  while IFS=$'\t' read -r path_raw path url ref state reason; do
+    repo_line "$path_raw" "$ref" "$state${reason:+: $reason}"
+  done < <(repos_tsv)
+
+  step 'dotfiles'
+  local json pending
+  json=$(mise bootstrap dotfiles status --json)
+  pending=$(jq -r '.files[] | select(.state != "applied") | "\(.target)\t\(.state)"' <<<"$json")
+  if [[ -n $pending ]]; then
+    printf '%s\n' "$pending" | column -ts$'\t' | sed 's/^/  /'
+  else
+    ok "all $(jq '.files | length' <<<"$json") targets applied"
+  fi
+}
+
+cmd_sync() {
+  step 'pull ~/.dotfiles'
+  # shellcheck disable=SC2088
+  pull_repo "$ROOT" '~/.dotfiles'
+
+  step 'pull repos'
+  local path_raw path url ref state reason
+  while IFS=$'\t' read -r path_raw path url ref state reason; do
+    if is_repo "$path"; then
+      pull_repo "$path" "$path_raw"
+    else
+      info "$path_raw: cloning $url"
+      git clone --quiet --branch "$ref" "$url" "$path"
+      ok "$path_raw: cloned"
+    fi
+  done < <(repos_tsv)
+
+  # repos handled above; mise's own repos step would abort the whole run on any
+  # dirty checkout.
+  step 'converge'
+  mise bootstrap -y --skip repos
+}
+
+cmd_broken() {
+  local remove=0
+  case ${1-} in
+    -r | --remove) remove=1 ;;
+    '') ;;
+    *) die "broken: unknown flag: $1" ;;
+  esac
+
+  # Removing these can't lose data: the link points at nothing, so there is
+  # nothing to confirm and no prompt.
+  local link target found=0
+  while IFS= read -r link; do
+    if [[ -e $link ]]; then continue; fi
+    target=$(readlink "$link")
+    if [[ $target != "$ROOT"/* ]]; then continue; fi
+    found=$((found + 1))
+
+    if [[ $remove -eq 0 ]]; then
+      printf '  %s -> %s\n' "${link/#$HOME/\~}" "${target/#$HOME/\~}"
+    elif rm -- "$link"; then
+      ok "removed ${link/#$HOME/\~}"
+    else
+      warn "could not remove ${link/#$HOME/\~}"
+    fi
+  done < <(fd --hidden --no-ignore --type symlink . "$HOME")
+
+  if [[ $found -eq 0 ]]; then
+    ok 'no dangling links into the repo'
+  elif [[ $remove -eq 0 ]]; then
+    printf '\n%s%d dangling — dots broken -r to remove%s\n' "$dim" "$found" "$reset"
+  fi
+}
+
+main "$@"; exit $?

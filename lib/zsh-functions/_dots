@@ -1,0 +1,60 @@
+#compdef dots
+
+# Completion for `dots` (see ~/.dotfiles/.local/bin/dots).
+
+# The targets mise manages, e.g. ~/.zshrc — used for `edit` and `apply`.
+# `dotfiles status` is local-only and takes ~25ms, so calling it per completion
+# is cheap enough not to bother caching.
+_dots_targets() {
+  local -a targets
+  targets=(${(f)"$(command mise -C ${DOTFILES:-$HOME/.dotfiles} \
+    bootstrap dotfiles status --json 2>/dev/null | jq -r '.files[].target' 2>/dev/null)"})
+
+  (( $#targets )) || return 1
+  # -Q so the leading ~ isn't quoted to \~; mise accepts both the literal
+  # "~/.zshrc" and the path the shell expands it to.
+  _wanted dotfiles expl 'managed dotfile' compadd -Q -a targets
+}
+
+_dots() {
+  local curcontext="$curcontext" state line ret=1
+  local -a commands
+
+  commands=(
+    'status:show repo and dotfile state'
+    'sync:pull every repo, then converge this machine'
+    'broken:list dangling links into the repo'
+    'add:start managing a path'
+    'apply:re-apply dotfiles without pulling'
+    'help:show usage'
+  )
+
+  _arguments -C \
+    '(- 1 *)'{-h,--help}'[show usage]' \
+    '1: :->command' \
+    '*:: :->argument' && ret=0
+
+  case $state in
+    command)
+      _describe -t commands 'dots command' commands && ret=0
+      ;;
+    argument)
+      case $words[1] in
+        apply)
+          # apply takes any number of targets
+          _dots_targets && ret=0
+          ;;
+        add)
+          _files && ret=0
+          ;;
+        broken)
+          _arguments '(-r --remove)'{-r,--remove}'[remove the dangling links]' && ret=0
+          ;;
+      esac
+      ;;
+  esac
+
+  return ret
+}
+
+_dots "$@"

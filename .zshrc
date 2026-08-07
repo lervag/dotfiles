@@ -95,7 +95,7 @@ z() {
 
 # Load some custom zsh functions, e.g. for completion
 fpath=($HOME/.local/zsh-functions $fpath)
-fpath=($DOTFILES/zsh-functions $fpath)
+fpath=($DOTFILES/lib/zsh-functions $fpath)
 fpath=($HOME/.zsh/zsh-completions/src $fpath)
 
 # Set default file permissions
@@ -342,7 +342,7 @@ sysfiles=(
   $HOME/.zshrc.local
   "/usr/share/fzf/key-bindings.zsh"
   "/usr/share/fzf/completion.zsh"
-  $HOME/.dotfiles/fzf/fzf-history-widget.zsh
+  $HOME/.dotfiles/lib/fzf/fzf-history-widget.zsh
   )
 
 for file in $sysfiles[@]; do
