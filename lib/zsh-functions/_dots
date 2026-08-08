@@ -1,10 +1,5 @@
 #compdef dots
 
-# Completion for `dots` (see ~/.dotfiles/.local/bin/dots).
-
-# The targets mise manages, e.g. ~/.zshrc — used for `edit` and `apply`.
-# `dotfiles status` is local-only and takes ~25ms, so calling it per completion
-# is cheap enough not to bother caching.
 _dots_targets() {
   local -a targets
   targets=(${(f)"$(command mise -C ${DOTFILES:-$HOME/.dotfiles} \
@@ -23,9 +18,9 @@ _dots() {
   commands=(
     'status:show repo and dotfile state'
     'sync:pull every repo, then converge this machine'
-    'broken:list dangling links into the repo'
-    'add:start managing a path'
-    'apply:re-apply dotfiles without pulling'
+    'broken:list dangling links into the repo, offer to remove them'
+    'bs:run `mise bootstrap` in the repo'
+    'bootstrap:run `mise bootstrap` in the repo'
     'help:show usage'
   )
 
@@ -40,15 +35,19 @@ _dots() {
       ;;
     argument)
       case $words[1] in
-        apply)
-          # apply takes any number of targets
-          _dots_targets && ret=0
-          ;;
-        add)
-          _files && ret=0
-          ;;
-        broken)
-          _arguments '(-r --remove)'{-r,--remove}'[remove the dangling links]' && ret=0
+        bs | bootstrap)
+          # Complete managed targets ourselves for the subcommands that take
+          # them.
+          if [[ $words[2] == dotfiles ]] \
+            && [[ $words[3] == (apply|edit|status|unapply) ]] \
+            && [[ $CURRENT -gt 3 ]] \
+            && [[ $words[CURRENT] != -* ]]; then
+            _dots_targets && ret=0
+          else
+            words=(mise bootstrap "${(@)words[2,-1]}")
+            (( CURRENT += 1 ))
+            _mise && ret=0
+          fi
           ;;
       esac
       ;;

@@ -13,4 +13,5 @@ The dotfiles include a utility script `dots` to manage and sync dotfiles across 
 ## TODO
 
 - Convert battery checker systemd units into `bootstrap.linux.systemd`
+  https://mise.jdx.dev/bootstrap/systemd.html
 - Add `[bootstrap.packages]`? Not sure if it is needed...

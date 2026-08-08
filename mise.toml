@@ -2,10 +2,6 @@
 dotfiles.root = "~/.dotfiles"
 dotfiles.default_mode = "symlink"
 
-# [bootstrap.packages]
-# "pacman:openssl" = "latest"
-# "pacman:base-devel" = "latest"
-
 [bootstrap.repos]
 "~/.config/nvim" = { url = "git@github.com:lervag/dotnvim.git", ref = "main" }
 "~/.password-store" = { url = "git@github.com:lervag/pass", ref = "master" }
