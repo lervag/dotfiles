@@ -11,6 +11,19 @@ dotfiles.default_mode = "symlink"
 "~/.zsh/zsh-completions" = { url = "https://github.com/zsh-users/zsh-completions.git", ref = "master" }
 "~/.zsh/zsh-syntax-highlighting" = { url = "https://github.com/zsh-users/zsh-syntax-highlighting.git", ref = "master" }
 
+[bootstrap.linux.systemd.units.check-battery]
+description = "Notify on low battery"
+exec_start = "~/scripts/bin/check-battery.sh"
+type = "oneshot"
+wanted_by = []
+start = false
+
+[bootstrap.linux.systemd.units.check-battery-timer]
+description = "Timer to run battery notifier"
+unit = "check-battery"
+on_boot_sec = "5min"
+on_unit_active_sec = "5min"
+
 [dotfiles]
 "~/.Xresources" = {}
 "~/.bash_profile" = {}

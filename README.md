@@ -9,9 +9,3 @@ The dotfile entries in `mise.toml` mostly rely on symlinking.
 The target `{}` indicates that the target has the same path as the source, whereas `{ mode = "symlink-each" }` is used for directories with multiple targets.
 
 The dotfiles include a utility script `dots` to manage and sync dotfiles across machines.
-
-## TODO
-
-- Convert battery checker systemd units into `bootstrap.linux.systemd`
-  https://mise.jdx.dev/bootstrap/systemd.html
-- Add `[bootstrap.packages]`? Not sure if it is needed...

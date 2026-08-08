@@ -1,5 +1,0 @@
-[Unit]
-Description=Notify on low battery
-
-[Service]
-ExecStart=/home/lervag/scripts/bin/check-battery.sh
