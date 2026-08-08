@@ -53,8 +53,6 @@ on_unit_active_sec = "5min"
 "~/.config/sioyek" = { mode = "symlink-each" }
 "~/.config/starship.toml" = {}
 "~/.config/stylua/stylua.toml" = {}
-"~/.config/systemd/user/check-battery.service" = {}
-"~/.config/systemd/user/check-battery.timer" = {}
 "~/.config/tmuxinator" = { mode = "symlink-each" }
 "~/.config/tridactyl/tridactylrc" = {}
 "~/.config/wezterm" = { mode = "symlink-each" }
