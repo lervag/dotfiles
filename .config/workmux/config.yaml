@@ -5,3 +5,5 @@ files:
     - .env
   copy:
     - .next/cache
+
+worktree_dir: '../.worktrees__{project}'
