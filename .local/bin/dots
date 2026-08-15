@@ -83,8 +83,11 @@ cmd_sync() {
       pull_repo "$path" "$path_raw"
     else
       info "$path_raw: cloning $url"
-      git clone --quiet --branch "$ref" "$url" "$path"
-      ok "$path_raw: cloned"
+      if clone_repo "$url" "$ref" "$path"; then
+        ok "$path_raw: cloned"
+      else
+        warn "$path_raw: clone failed"
+      fi
     fi
   done < <(repos_tsv)
 
@@ -157,26 +160,41 @@ repo_line() {
   printf '  %-32s %-7s %s%s%s\n' "$name" "$ref" "$color" "$state${detail:+: $detail}" "$reset"
 }
 
+clone_repo() {
+  local url=$1 ref=$2 path=$3 err line
+
+  if err=$(git clone --quiet --branch "$ref" "$url" "$path" 2>&1); then
+    return 0
+  fi
+
+  while IFS= read -r line; do
+    [[ -n $line ]] && printf '    %s%s%s\n' "$dim" "$line" "$reset"
+  done <<<"$err"
+  return 1
+}
+
+# returns non-zero only on genuine failures — a deliberate skip (dirty tree, no
+# upstream) is not one.
 pull_repo() {
   local path=$1 name=${2:-$1} before after n
 
   if ! is_repo "$path"; then
     warn "$name: not a git checkout, skipped"
-    return
+    return 1
   fi
   if is_dirty "$path"; then
     warn "$name: local changes, not pulling — commit or stash first"
-    return
+    return 0
   fi
   if ! git -C "$path" rev-parse '@{u}' >/dev/null 2>&1; then
     warn "$name: no upstream for '$(git -C "$path" branch --show-current)', skipped"
-    return
+    return 0
   fi
 
   before=$(git -C "$path" rev-parse HEAD)
   if ! git -C "$path" pull --ff-only --quiet; then
     warn "$name: pull failed — diverged from upstream?"
-    return
+    return 1
   fi
   after=$(git -C "$path" rev-parse HEAD)
   if [[ $before == "$after" ]]; then
