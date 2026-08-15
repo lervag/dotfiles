@@ -14,7 +14,7 @@ windows:
       panes:
         - tp-api:
           - cd tp-api
-          - mise dev
+          - git fetch
         - thermophys-frontend:
           - cd thermophys-frontend
-          - mise dev
+          - git fetch
