@@ -95,6 +95,10 @@ cmd_sync() {
   # dirty checkout.
   step 'converge'
   "${MISE[@]}" bootstrap -y --skip repos
+
+  # converge installs missing tools; this moves the `latest` pins forward.
+  step 'upgrade tools'
+  "${MISE[@]}" upgrade
 }
 
 cmd_broken() {
@@ -173,14 +177,14 @@ clone_repo() {
   return 1
 }
 
-# returns non-zero only on genuine failures — a deliberate skip (dirty tree, no
-# upstream) is not one.
+# always succeeds — a repo we cannot pull is warned about, not fatal, so `set -e`
+# does not abort the rest of the sync.
 pull_repo() {
   local path=$1 name=${2:-$1} before after n
 
   if ! is_repo "$path"; then
     warn "$name: not a git checkout, skipped"
-    return 1
+    return 0
   fi
   if is_dirty "$path"; then
     warn "$name: local changes, not pulling — commit or stash first"
@@ -194,7 +198,7 @@ pull_repo() {
   before=$(git -C "$path" rev-parse HEAD)
   if ! git -C "$path" pull --ff-only --quiet; then
     warn "$name: pull failed — diverged from upstream?"
-    return 1
+    return 0
   fi
   after=$(git -C "$path" rev-parse HEAD)
   if [[ $before == "$after" ]]; then
