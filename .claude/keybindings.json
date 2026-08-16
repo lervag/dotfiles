@@ -103,6 +103,7 @@
         "ctrl+e": "transcript:toggleShowAll",
         "escape": "transcript:exit",
         "q": "transcript:exit",
+        "ctrl+d": "scroll:halfPageDown",
         "ctrl+u": "scroll:halfPageUp",
         "ctrl+b": "scroll:fullPageUp",
         "ctrl+f": "scroll:fullPageDown",
