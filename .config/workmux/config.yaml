@@ -1,5 +1,7 @@
 nerdfont: true
 
+window_placement: rightmost
+
 files:
   symlink:
     - .env

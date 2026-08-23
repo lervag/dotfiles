@@ -6,6 +6,7 @@ blacklistadd https://mail.google.com
 blacklistadd https://outlook.office.com
 blacklistadd https://outlook.cloud.microsoft
 blacklistadd https://feedly.com
+blacklistadd https://www.linkedin.com
 
 seturl ^https://teams.microsoft.com superignore true
 
