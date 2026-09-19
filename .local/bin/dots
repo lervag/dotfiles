@@ -105,8 +105,7 @@ cmd_broken() {
   if [[ $# -gt 0 ]]; then die "broken: unexpected argument: $1"; fi
 
   local -a dangling=()
-  mapfile -t dangling < <(spin 'scanning …' \
-    find "$HOME" \( -type d ! -readable -prune \) -o \( -xtype l -lname "$ROOT/*" -print \))
+  mapfile -td '' dangling < <(spin 'scanning …' scan_dangling)
 
   if [[ ${#dangling[@]} -eq 0 ]]; then
     ok 'no dangling links into the repo'
@@ -115,7 +114,7 @@ cmd_broken() {
 
   local link target
   for link in "${dangling[@]}"; do
-    target=$(readlink "$link")
+    target=$(readlink -- "$link")
     printf '  %s%s%s -> %s\n' "$yellow" "${link/#$HOME/\~}" "$reset" "${target/#$HOME/\~}"
   done
 
@@ -143,7 +142,27 @@ cmd_broken() {
 
 # HELPERS
 
-spin() { gum spin --title "$1" --show-output -- "${@:2}"; }
+# shellcheck disable=SC2329,SC2185
+scan_dangling() {
+  # fd walks $HOME in parallel, which is where the time goes; it has no filter
+  # for dead links or link targets, so find applies those two predicates to the
+  # candidates it collected. sort -z because fd's output order is not stable.
+  fd --hidden --no-ignore --absolute-path --print0 --type symlink . "$HOME" |
+    find -files0-from - -maxdepth 0 -xtype l -lname "$ROOT/*" -print0 |
+    sort -z
+}
+
+spin() {
+  local title=$1 rc=0
+  shift
+
+  if [[ -t 2 ]]; then printf '  %s%s%s' "$dim" "$title" "$reset" >&2; fi
+  "$@" || rc=$?
+  if [[ -t 2 ]]; then printf '\r\e[2K' >&2; fi
+
+  return "$rc"
+}
+
 step() { printf '%s%s%s%s\n' "${step_seen:+$'\n'}" "$bold" "$*" "$reset"; step_seen=1; }
 info() { printf '  %s\n' "$*"; }
 ok()   { printf '  %s%s%s\n' "$green" "$*" "$reset"; }
